@@ -29,7 +29,7 @@ void FighterShipComponent::initBaseStats()
 	baseStats.defense = 5;
 	baseStats.life = 10;
 
-	baseStats.movement = 5;
+	baseStats.movement = 10;
 
 	m_baseStats = baseStats;
 	m_bonusStats = Stats();
