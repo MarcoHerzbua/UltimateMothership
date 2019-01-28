@@ -11,3 +11,7 @@ ExitGameEvent::ExitGameEvent()
 	m_id = EXIT_GAME_EVENT;
 }
 
+MenuNavigationEvent::MenuNavigationEvent(GameEvents ev)
+{
+	m_id = ev;
+}

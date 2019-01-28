@@ -22,16 +22,16 @@ public:
 	HumanInputComponent(GameObject* gameObject, IControllerComponent* controllerComponent);
 	HumanInputComponent(GameObject* gameObject, IControllerComponent* controllerComponent, NLTmxMapObject& mapObject);
 
-	void update(const float deltaTimeSeconds) override;
-	void exit() override;
+	virtual void update(const float deltaTimeSeconds) override;
+	virtual void exit() override;
 
-	void init(InputActions action);
-	void initTmxData() override;
+	virtual void init(InputActions action);
+	virtual void initTmxData() override;
 
 private:
 	function<void(float)> m_doAction;
 	
 	SteeringComponent* m_steeringComp;
 
-	function<void(float)> generateFunction(InputActions action);
+	virtual function<void(float)> generateFunction(InputActions action);
 };

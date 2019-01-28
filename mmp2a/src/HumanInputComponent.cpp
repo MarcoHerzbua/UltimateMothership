@@ -6,6 +6,7 @@
 #include "GameObject.h"
 #include "IGameComponent.h"
 #include "SteeringComponent.h"
+#include "GameEvents.h"
 
 #include "NodeGraphRenderComponent.h"
 

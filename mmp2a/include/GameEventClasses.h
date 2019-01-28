@@ -2,6 +2,7 @@
 #pragma once
 #include "stdafx.h"
 #include "IGameEvent.h"
+#include "Direction.h"
 #pragma endregion
 
 
@@ -15,6 +16,12 @@ class ExitGameEvent : public virtual IGameEvent
 {
 public:
 	ExitGameEvent();
+};
+
+class MenuNavigationEvent : public virtual IGameEvent
+{
+public: 
+	MenuNavigationEvent(GameEvents ev);
 };
 
 static IGameEvent * createGameEvent(GameEvents event)

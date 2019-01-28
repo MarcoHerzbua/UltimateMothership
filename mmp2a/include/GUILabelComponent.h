@@ -13,11 +13,11 @@ class GameObject;
 
 #pragma endregion
 
-class GUIButtonComponent : public IGUIWidgetComponent
+class GUILabelComponent : public IGUIWidgetComponent
 {
 public:
-	GUIButtonComponent(GameObject* gameObject);
-	GUIButtonComponent(GameObject* gameObject, NLTmxMapObject& mapObject);
+	GUILabelComponent(GameObject* gameObject);
+	GUILabelComponent(GameObject* gameObject, NLTmxMapObject& mapObject);
 
 	void update(const float deltaTimeSeconds) override;
 	void exit() override;
@@ -25,7 +25,5 @@ public:
 	void init() override;
 	void initTmxData() override;
 
-	void setActive() override;
-	void setInactive() override;
 private:
 };

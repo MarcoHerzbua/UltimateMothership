@@ -16,8 +16,7 @@ using namespace sf;
 #pragma endregion
 
 class MenuState 
-	: public virtual IGameState
-	, public virtual IEventListener
+	: public IGameState
 {
 public:
 	MenuState();
@@ -26,7 +25,8 @@ public:
 
 	void update(const float deltaTimeSeconds) override;
 
-	void onEvent(IGameEvent * event) override;
+	void exit() override;
+
 private:
 	void handleKeyInput() override;
 };

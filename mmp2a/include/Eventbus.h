@@ -30,5 +30,6 @@ private:
 
 	std::queue<IGameEvent *> m_events_0;
 	std::queue<IGameEvent *> m_events_1;
+	std::queue<IGameEvent *> * m_activeQueue = &m_events_0;
 	std::vector<IEventListener *> m_listeners;
 };
