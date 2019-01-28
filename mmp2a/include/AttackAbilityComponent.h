@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "IAbilityComponent.h"
 
-class AttackAbilityComponent : IAbilityComponent
+class AttackAbilityComponent : public IAbilityComponent
 {
 
 };

@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "IAbilityComponent.h"
 
-class FarmAbilityComponent : IAbilityComponent
+class FarmAbilityComponent : public IAbilityComponent
 {
 
 };

@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "AttackAbilityComponent.h"
 
-class BasicAttackAbilityComponent : AttackAbilityComponent
+class BasicAttackAbilityComponent : public AttackAbilityComponent
 {
 
 };
