@@ -71,6 +71,8 @@ void SteeringComponent::initTmxData()
 	int startRow = 0;
 	int startCol = 0;
 
+	m_playerIndex = 0;
+
 	for (auto property : m_mapObject->properties)
 	{
 		auto name = property->name;
