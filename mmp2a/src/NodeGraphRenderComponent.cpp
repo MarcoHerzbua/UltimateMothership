@@ -46,7 +46,7 @@ void NodeGraphRenderComponent::initTmxData()
 	if (!m_mapLayer)
 		return;
 
-	m_zIndex = 0;
+	m_zIndex = 9;
 
 	int cols = m_mapObjectInfo.m_width;
 	int rows = m_mapObjectInfo.m_height;
