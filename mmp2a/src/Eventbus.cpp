@@ -43,16 +43,24 @@ void Eventbus::removeListener(const IEventListener * listener)
 {
 	auto lIt = findListenerIterator(listener);
 
-	if(lIt != m_listeners.end())
-		m_listeners.erase(lIt);
+	if (lIt != m_listeners.end())
+	{
+		(*lIt) = nullptr;
+		//m_listeners.erase(lIt);
+	}
 }
 
 void Eventbus::notifyListeners(IGameEvent * event)
 {
 	for (auto *l : m_listeners)
 	{
-		l->onEvent(event);
+		//TODO: rework to properly remove listeners from m_listeners
+		if (l)
+			l->onEvent(event);
+		else
+			m_listeners.erase(findListenerIterator(l));
 	}
+
 }
 
 void Eventbus::fireEvent(IGameEvent *event)

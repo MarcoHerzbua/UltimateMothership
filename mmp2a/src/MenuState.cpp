@@ -31,22 +31,18 @@ void MenuState::init()
 	TmxLoader::loadTmxFile("MenuMap.tmx", sf::Vector2f());
 }
 
+void MenuState::exit()
+{
+	IGameState::exit();
+
+	//Eventbus::getInstance().removeListener(this);
+}
+
 void MenuState::update(const float deltaTimeSeconds)
 {
 	m_gameObjectManager->update(deltaTimeSeconds);
 
 	handleKeyInput();
-}
-
-void MenuState::onEvent(IGameEvent * event)
-{
-	if (event->getID() == START_GAME_EVENT)
-		m_gameStateManager->setState(GameStates::MAIN_STATE);
-	if (event->getID() == EXIT_GAME_EVENT)
-	{
-		RenderWindow * window = GameStateManager::getInstance().getGamePtr()->getWindowPtr();
-		window->close();
-	}
 }
 
 

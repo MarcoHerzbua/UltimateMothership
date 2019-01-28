@@ -17,7 +17,6 @@ using namespace sf;
 
 class MenuState 
 	: public IGameState
-	, public IEventListener
 {
 public:
 	MenuState();
@@ -26,7 +25,8 @@ public:
 
 	void update(const float deltaTimeSeconds) override;
 
-	void onEvent(IGameEvent * event) override;
+	void exit() override;
+
 private:
 	void handleKeyInput() override;
 };
