@@ -339,6 +339,9 @@
     <ClInclude Include="..\include\UltimateAbilityAttackComponent.h">
       <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\Abilities.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\assets\pinball_background.jpg">

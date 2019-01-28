@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\Abilities.h" />
     <ClInclude Include="..\include\AIControllerComponent.h" />
     <ClInclude Include="..\include\AttackAbilityComponent.h" />
     <ClInclude Include="..\include\BasicAttackAbilityComponent.h" />
