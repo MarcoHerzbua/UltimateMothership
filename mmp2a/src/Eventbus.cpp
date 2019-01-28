@@ -11,12 +11,16 @@ Eventbus & Eventbus::getInstance()
 
 void Eventbus::update()
 {
-	while (m_events_0.size() != 0)
+	while (m_activeQueue->size() != 0)
 	{
-		IGameEvent * event = m_events_0.front();
+		IGameEvent * event = m_activeQueue->front();
 		notifyListeners(event);
-		m_events_0.pop();
+		m_activeQueue->pop();
 	}
+	if (m_activeQueue == &m_events_0)
+		m_activeQueue = &m_events_1;
+	else
+		m_activeQueue = &m_events_0;
 }
 
 void Eventbus::registerListener(IEventListener * listener)
@@ -39,19 +43,27 @@ void Eventbus::removeListener(const IEventListener * listener)
 {
 	auto lIt = findListenerIterator(listener);
 
-	if(lIt == m_listeners.end())
-		m_listeners.erase(lIt);
+	if (lIt != m_listeners.end())
+	{
+		(*lIt) = nullptr;
+		//m_listeners.erase(lIt);
+	}
 }
 
 void Eventbus::notifyListeners(IGameEvent * event)
 {
 	for (auto *l : m_listeners)
 	{
-		l->onEvent(event);
+		//TODO: rework to properly remove listeners from m_listeners
+		if (l)
+			l->onEvent(event);
+		else
+			m_listeners.erase(findListenerIterator(l));
 	}
+
 }
 
 void Eventbus::fireEvent(IGameEvent *event)
 {
-	m_events_0.push(event);
+	m_activeQueue->push(event);
 }

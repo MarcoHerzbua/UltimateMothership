@@ -19,6 +19,15 @@ IGUIWidgetComponent::IGUIWidgetComponent(GameObject * gameObject, NLTmxMapObject
 {
 }
 
+void IGUIWidgetComponent::exit()
+{
+	for (auto *e : m_events)
+	{
+		delete e;
+	}
+	m_events.clear();
+}
+
 void IGUIWidgetComponent::initTmxData()
 {
 	auto cmp = m_gameObject->findComponents(GUI_RENDER_COMPONENT)[0];

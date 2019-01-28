@@ -29,6 +29,8 @@ public:
 	bool isKeyPressed(const InputActions action, const int playerIndex);
 	bool isKeyReleased(const InputActions action, const int playerIndex);
 
+	void testControllerInput();
+
 	bool bind(const InputActions action, const Keyboard::Key keyCode, const int playerIndex);
 	bool unbind(const InputActions action, const int playerIndex);
 

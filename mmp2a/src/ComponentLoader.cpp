@@ -19,6 +19,8 @@
 #include "MotherShipComponent.h"
 #include "FighterShipComponent.h"
 #include "FarmShipComponent.h"
+#include "GUISteeringComponent.h"
+#include "GUILabelComponent.h"
 
 #include "GameComponents.h"
 
@@ -63,6 +65,8 @@ IGameComponent* ComponentLoader::createComponent(const GameComponents id, NLTmxM
 	case MOTHER_SHIP_COMPONENT:				return new MotherShipComponent(gameObject, mapObject);
 	case FIGHTER_SHIP_COMPONENT:			return new FighterShipComponent(gameObject, mapObject);
 	case FARM_SHIP_COMPONENT:				return new FarmShipComponent(gameObject, mapObject);
+	case GUI_STEERING_COMPONENT:			return new GUISteeringComponent(gameObject, mapObject);
+	case GUI_LABEL_COMPONENT:				return new GUILabelComponent(gameObject, mapObject);
 	default: break;
 	}
 

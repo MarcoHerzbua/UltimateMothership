@@ -11,6 +11,7 @@ void InputManager::update()
 	{
 		m_wasKeyDownLastFrame[pair.first] = isKeyDown(pair.first);
 	}
+	testControllerInput();
 }
 
 bool InputManager::isKeyDown(const Keyboard::Key keyCode)
@@ -68,6 +69,18 @@ bool InputManager::isKeyReleased(const InputActions action, const int playerInde
 
 	Keyboard::Key keyCode = m_keyBindings[playerIndex][action];
 	return isKeyReleased(keyCode);
+}
+
+void InputManager::testControllerInput()
+{
+	//for (int i = Joystick::Axis::X; i != Joystick::Axis::PovY; i++)
+	//{
+	//	//err() << Joystick::hasAxis(0, static_cast<Joystick::Axis>(i)) << " ";
+	//	err() << Joystick::getAxisPosition(0, static_cast<Joystick::Axis>(i)) << " ";
+	//	Joystick::Axis::
+	//}
+	//err() << "\n";
+	
 }
 
 

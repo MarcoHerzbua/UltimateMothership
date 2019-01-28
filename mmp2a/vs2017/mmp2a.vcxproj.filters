@@ -342,6 +342,18 @@
     <ClInclude Include="..\include\Abilities.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\GUIInputComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents\InputComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GUISteeringComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GUIControllerComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GUILabelComponent.h">
+      <Filter>Header Files\GameComponents\GUIComponents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\assets\pinball_background.jpg">
@@ -540,6 +552,18 @@
     </ClCompile>
     <ClCompile Include="..\src\BasicAttackAbilityComponent.cpp">
       <Filter>Source Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GUIInputComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents\InputComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GUISteeringComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GUIControllerComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GUILabelComponent.cpp">
+      <Filter>Source Files\GameComponents\GUIComponents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

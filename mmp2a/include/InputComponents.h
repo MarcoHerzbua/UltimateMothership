@@ -10,7 +10,7 @@ enum InputComponents
 
 	HUMAN_INPUT_COMPONENT,
 	AI_INPUT_COMPONENT,
-
+	GUI_INPUT_COMPONENT
 };
 
 static InputComponents stringToInputComponents(string s) {
@@ -19,7 +19,8 @@ static InputComponents stringToInputComponents(string s) {
 	static const map<string, InputComponents> optionStrings
 	{
 		{ "humaninputcomponent",	HUMAN_INPUT_COMPONENT	},
-		{ "aiinputcomponent",		AI_INPUT_COMPONENT		}
+		{ "aiinputcomponent",		AI_INPUT_COMPONENT		},
+		{ "guiinputcomponent",		GUI_INPUT_COMPONENT		}
 	};
 
 	auto itr = optionStrings.find(s);

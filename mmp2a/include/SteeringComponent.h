@@ -21,10 +21,10 @@ public:
 	SteeringComponent(GameObject* gameObject);
 	SteeringComponent(GameObject* gameObject, NLTmxMapObject& mapObject);
 
-	void update(const float deltaTimeSeconds) override;
+	virtual void update(const float deltaTimeSeconds) override;
 	void exit() override;
 
-	void initTmxData() override;
+	virtual void initTmxData() override;
 
 	
 	void registerController(ControllerComponent* c);
@@ -46,9 +46,9 @@ public:
 	float getTimeDelay() { return m_timeDelay; };
 
 	int getPlayerIndex() { return m_playerIndex; };
-private:
+protected:
 	static constexpr float m_timeDelay = 0.2f;
-	float m_timeSinceLastInput;
+	float m_timeSinceLastInput = 0.0f;
 
 	Node* m_currentNode;
 

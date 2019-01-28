@@ -108,37 +108,72 @@ void GUIRenderComponent::setWidgetActive(IGUIWidgetComponent * widget)
 void GUIRenderComponent::setNextWidgetActive()
 {
 	auto wIt = findWidgetComponentIterator(m_activeWidget);
-	++wIt;
-	if (wIt == m_widgets.end())
-		wIt = m_widgets.begin();
+	auto currIt = wIt;
 
-	setWidgetActive(*wIt);
+	if (wIt == m_widgets.end())
+		currIt = m_widgets.begin();
+	else
+		++currIt;
+
+	//iterate through widgets until a Button is found
+	while(wIt != currIt)
+	{
+		if (currIt == m_widgets.end())
+		{
+			currIt = m_widgets.begin();
+			continue;
+		}
+
+		if ((*currIt)->getId() == GUI_BUTTON_COMPONENT)
+		{
+			setWidgetActive(*currIt);
+			return;
+		}
+		++currIt;
+	}
+
+	err() << "No Buttons for navigation found in GUI\n";
 }
 
 void GUIRenderComponent::setPreviousWidgetActive()
 {
 	auto wIt = findWidgetComponentIterator(m_activeWidget);
+	auto currIt = wIt;
 
 	if (wIt == m_widgets.begin())
-		wIt = --m_widgets.end();
+		currIt = --m_widgets.end();
 	else
-		--wIt;
+		--currIt;
 
-	setWidgetActive(*wIt);
+	//iterate through widgets until a Button is found
+	while (wIt != currIt)
+	{
+		if (currIt == m_widgets.begin())
+		{
+			if ((*currIt)->getId() == GUI_BUTTON_COMPONENT)
+			{
+				setWidgetActive(*currIt);
+				return;
+			}
+
+			currIt = --m_widgets.end();
+			continue;
+		}
+
+		if ((*currIt)->getId() == GUI_BUTTON_COMPONENT)
+		{
+			setWidgetActive(*currIt);
+			return;
+		}
+		--currIt;
+	}
+
+	err() << "No Buttons for navigation found in GUI\n";
+
 }
 
 void GUIRenderComponent::update(const float deltaTimeSeconds)
 {
-	//TODO: for Testing!! Implement Input for MenuNavigation properly
-	if (InputManager::getInstance().isKeyPressed(InputActions::MOVE_UP_ACTION, 0))
-	{
-		setPreviousWidgetActive();
-	}
-
-	if (InputManager::getInstance().isKeyPressed(InputActions::MOVE_DOWN_ACTION, 0))
-	{
-		setNextWidgetActive();
-	}
 
 	if (InputManager::getInstance().isKeyPressed(InputActions::SWITCH_STATE_ACTION, 0))
 	{
@@ -170,11 +205,31 @@ void GUIRenderComponent::exit()
 	}
 	m_widgets.clear();
 	delete m_gui;
+
 	//TODO: m_theme is shared_ptr: Check if Object is deleted correctly
 	//delete m_theme;
 }
 
 void GUIRenderComponent::setScale(const float scale)
 {
+}
+
+void GUIRenderComponent::onEvent(IGameEvent * event)
+{
+	switch (event->getID())
+	{
+	case(NAVIGATE_DOWN_EVENT):
+	{
+		setNextWidgetActive();
+	}
+	break;
+	case(NAVIGATE_UP_EVENT):
+	{
+		setPreviousWidgetActive();
+	}
+	break;
+	default:
+		break;
+	}
 }
 

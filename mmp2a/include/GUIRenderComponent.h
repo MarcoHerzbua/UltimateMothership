@@ -6,6 +6,7 @@
 // abstract
 #include "RenderComponent.h"
 #include "IGameComponent.h"
+#include "IEventListener.h"
 
 // enums
 #include "GameComponents.h"
@@ -17,7 +18,9 @@ class IGUIWidgetComponent;
 
 #pragma endregion
 
-class GUIRenderComponent : public RenderComponent
+class GUIRenderComponent 
+	: public RenderComponent
+	, public IEventListener
 {
 public:
 	GUIRenderComponent(GameObject* gameObject);
@@ -27,6 +30,8 @@ public:
 	void draw(sf::RenderWindow* window) override;
 	void exit() override;
 	void setScale(const float scale) override;
+	
+	void onEvent(IGameEvent * event) override;
 
 	void initTmxData() override;
 

@@ -27,6 +27,10 @@
     <ClInclude Include="..\include\FarmAbilityComponent.h" />
     <ClInclude Include="..\include\GameEventClasses.h" />
     <ClInclude Include="..\include\GameEvents.h" />
+    <ClInclude Include="..\include\GUIControllerComponent.h" />
+    <ClInclude Include="..\include\GUIInputComponent.h" />
+    <ClInclude Include="..\include\GUILabelComponent.h" />
+    <ClInclude Include="..\include\GUISteeringComponent.h" />
     <ClInclude Include="..\include\IAbilityComponent.h" />
     <ClInclude Include="..\include\IEventListener.h" />
     <ClInclude Include="..\include\GUIButtonComponent.h" />
@@ -105,6 +109,10 @@
     <ClCompile Include="..\include\IEventListener.cpp" />
     <ClCompile Include="..\src\AIControllerComponent.cpp" />
     <ClCompile Include="..\src\AiInputComponent.cpp" />
+    <ClCompile Include="..\src\GUIControllerComponent.cpp" />
+    <ClCompile Include="..\src\GUIInputComponent.cpp" />
+    <ClCompile Include="..\src\GUILabelComponent.cpp" />
+    <ClCompile Include="..\src\GUISteeringComponent.cpp" />
     <ClCompile Include="..\src\AttackAbilityComponent.cpp" />
     <ClCompile Include="..\src\BasicAttackAbilityComponent.cpp" />
     <ClCompile Include="..\src\FarmAbilityComponent.cpp" />
