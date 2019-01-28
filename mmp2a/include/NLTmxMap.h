@@ -1,0 +1,132 @@
+#pragma once
+
+// TMX map file parser from https://github.com/catnapgames/TestNLTmxMap
+// modification: getTilesetForGrid added (WL)
+
+#include <string>
+#include <vector>
+
+using namespace std;
+
+
+
+class NLTmxMapTileset {
+public:
+    int firstGid;
+    string name;
+    int tileWidth;
+    int tileHeight;
+    string filename;
+};
+
+struct NLTmxMapLayerProperty {
+	string name;
+	string value;
+};
+
+class NLTmxMapLayer {
+public:
+    string name;
+    int width;
+    int height;
+    int* data;
+	vector<NLTmxMapLayerProperty*> properties;
+
+    
+    ~NLTmxMapLayer() {
+        delete [] data;
+		for (auto property : properties) {
+			delete property;
+		}
+    }
+};
+
+
+
+struct NLTmxMapObjectProperty {
+    string name;
+    string value;
+};
+
+
+class NLTmxMapObject {
+public:
+    string name;
+	string type;
+    int gid;
+    int x;
+    int y;
+    int width;
+    int height;
+    vector<NLTmxMapObjectProperty*> properties;
+    
+public:
+    
+    ~NLTmxMapObject() {
+        for ( auto property : properties ) {
+            delete property;
+        }
+    }
+};
+
+struct NLTmxMapObjectGroupProperty
+{
+	string name;
+	string value;
+};
+
+
+class NLTmxMapObjectGroup {
+public:
+    string name;
+    int width;
+    int height;
+    bool visible;
+    
+	vector<NLTmxMapObjectGroupProperty *> properties;
+    vector<NLTmxMapObject*> objects;
+    
+    ~NLTmxMapObjectGroup() {
+        for ( auto o : objects ) {
+            delete o;
+        }
+		for (auto p : properties)
+		{
+			delete p;
+		}
+    }
+};
+
+
+class NLTmxMap {
+public:
+    
+    int width;
+    int height;
+    int tileWidth;
+    int tileHeight;
+    
+    vector<NLTmxMapTileset*> tilesets;
+    vector<NLTmxMapLayer*> layers;
+    vector<NLTmxMapObjectGroup*> groups;
+    
+    ~NLTmxMap() {
+        for ( auto g : groups ) {
+            delete g;
+        }
+        
+        for ( auto l : layers ) {
+            delete l;
+        }
+        
+        for ( auto ts : tilesets ) {
+            delete ts;
+        }
+    }
+    
+	NLTmxMapTileset* getTilesetForGrid(int grid);
+};
+
+
+NLTmxMap* NLLoadTmxMap( char *xml );
+
