@@ -25,6 +25,7 @@
     <ClInclude Include="..\include\GameEvents.h" />
     <ClInclude Include="..\include\GUIControllerComponent.h" />
     <ClInclude Include="..\include\GUIInputComponent.h" />
+    <ClInclude Include="..\include\GUILabelComponent.h" />
     <ClInclude Include="..\include\GUISteeringComponent.h" />
     <ClInclude Include="..\include\IEventListener.h" />
     <ClInclude Include="..\include\GUIButtonComponent.h" />
@@ -100,6 +101,7 @@
     <ClCompile Include="..\src\AiInputComponent.cpp" />
     <ClCompile Include="..\src\GUIControllerComponent.cpp" />
     <ClCompile Include="..\src\GUIInputComponent.cpp" />
+    <ClCompile Include="..\src\GUILabelComponent.cpp" />
     <ClCompile Include="..\src\GUISteeringComponent.cpp" />
     <ClCompile Include="..\src\mmp2a.cpp" />
     <ClCompile Include="..\src\Eventbus.cpp" />

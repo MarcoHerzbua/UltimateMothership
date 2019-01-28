@@ -28,11 +28,7 @@ void GUIButtonComponent::update(const float deltaTimeSeconds)
 
 void GUIButtonComponent::exit()
 {
-	for (auto *e : m_events)
-	{
-		delete e;
-	}
-	m_events.clear();
+	IGUIWidgetComponent::exit();
 }
 
 void GUIButtonComponent::init()

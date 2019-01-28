@@ -17,6 +17,7 @@
 #include "SteeringComponent.h"
 #include "GUIButtonComponent.h"
 #include "GUISteeringComponent.h"
+#include "GUILabelComponent.h"
 
 #include "GameComponents.h"
 
@@ -59,6 +60,7 @@ IGameComponent* ComponentLoader::createComponent(const GameComponents id, NLTmxM
 	case GUI_RENDER_COMPONENT:				return new GUIRenderComponent(gameObject, mapObject);
 	case GUI_BUTTON_COMPONENT:				return new GUIButtonComponent(gameObject, mapObject);
 	case GUI_STEERING_COMPONENT:			return new GUISteeringComponent(gameObject, mapObject);
+	case GUI_LABEL_COMPONENT:				return new GUILabelComponent(gameObject, mapObject);
 	default: break;
 	}
 

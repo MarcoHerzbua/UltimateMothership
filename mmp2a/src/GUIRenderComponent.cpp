@@ -107,26 +107,73 @@ void GUIRenderComponent::setWidgetActive(IGUIWidgetComponent * widget)
 
 void GUIRenderComponent::setNextWidgetActive()
 {
+	auto wIt = findWidgetComponentIterator(m_activeWidget);
+	auto currIt = wIt;
 
+	if (wIt == m_widgets.end())
+		currIt = m_widgets.begin();
+	else
+		++currIt;
+
+	//iterate through widgets until a Button is found
+	while(wIt != currIt)
+	{
+		if (currIt == m_widgets.end())
+		{
+			currIt = m_widgets.begin();
+			continue;
+		}
+
+		if ((*currIt)->getId() == GUI_BUTTON_COMPONENT)
+		{
+			setWidgetActive(*currIt);
+			return;
+		}
+		++currIt;
+	}
+
+	err() << "No Buttons for navigation found in GUI\n";
 }
 
 void GUIRenderComponent::setPreviousWidgetActive()
 {
+	auto wIt = findWidgetComponentIterator(m_activeWidget);
+	auto currIt = wIt;
+
+	if (wIt == m_widgets.begin())
+		currIt = --m_widgets.end();
+	else
+		--currIt;
+
+	//iterate through widgets until a Button is found
+	while (wIt != currIt)
+	{
+		if (currIt == m_widgets.begin())
+		{
+			if ((*currIt)->getId() == GUI_BUTTON_COMPONENT)
+			{
+				setWidgetActive(*currIt);
+				return;
+			}
+
+			currIt = --m_widgets.end();
+			continue;
+		}
+
+		if ((*currIt)->getId() == GUI_BUTTON_COMPONENT)
+		{
+			setWidgetActive(*currIt);
+			return;
+		}
+		--currIt;
+	}
+
+	err() << "No Buttons for navigation found in GUI\n";
 
 }
 
 void GUIRenderComponent::update(const float deltaTimeSeconds)
 {
-	//TODO: for Testing!! Implement Input for MenuNavigation properly
-	if (InputManager::getInstance().isKeyPressed(InputActions::MOVE_UP_ACTION, 0))
-	{
-		setPreviousWidgetActive();
-	}
-
-	if (InputManager::getInstance().isKeyPressed(InputActions::MOVE_DOWN_ACTION, 0))
-	{
-		setNextWidgetActive();
-	}
 
 	if (InputManager::getInstance().isKeyPressed(InputActions::SWITCH_STATE_ACTION, 0))
 	{
@@ -158,9 +205,7 @@ void GUIRenderComponent::exit()
 	}
 	m_widgets.clear();
 	delete m_gui;
-	//normally the destructor of IEventListener removes the Listener from the Eventbus
-	//here we need to remove it manually because the 
-	Eventbus::getInstance().removeListener(this);
+
 	//TODO: m_theme is shared_ptr: Check if Object is deleted correctly
 	//delete m_theme;
 }
@@ -175,24 +220,12 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	{
 	case(NAVIGATE_DOWN_EVENT):
 	{
-		auto wIt = findWidgetComponentIterator(m_activeWidget);
-		++wIt;
-		if (wIt == m_widgets.end())
-			wIt = m_widgets.begin();
-
-		setWidgetActive(*wIt);
+		setNextWidgetActive();
 	}
 	break;
 	case(NAVIGATE_UP_EVENT):
 	{
-		auto wIt = findWidgetComponentIterator(m_activeWidget);
-
-		if (wIt == m_widgets.begin())
-			wIt = --m_widgets.end();
-		else
-			--wIt;
-
-		setWidgetActive(*wIt);
+		setPreviousWidgetActive();
 	}
 	break;
 	default:

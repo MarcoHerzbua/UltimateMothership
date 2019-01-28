@@ -15,8 +15,6 @@ enum GameComponents
 	RENDER_COMPONENT,
 	SPRITE_RENDER_COMPONENT,
 	SHAPE_RENDER_COMPONENT,
-	GUI_RENDER_COMPONENT,
-	GUI_BUTTON_COMPONENT,
 	LAYER_RENDER_COMPONENT,
 	DEBUG_GEOMETRY_RENDER_COMPONENT,
 	NODE_GRAPH_RENDER_COMPONENT,
@@ -27,7 +25,11 @@ enum GameComponents
 	OBSERVER_COMPONENT,
 	DEATH_ZONE_COMPONENT,
 	STEERING_COMPONENT,
-	GUI_STEERING_COMPONENT
+
+	GUI_STEERING_COMPONENT,
+	GUI_RENDER_COMPONENT,
+	GUI_BUTTON_COMPONENT,
+	GUI_LABEL_COMPONENT
 };
 
 static GameComponents stringToGameComponents(string s) {
@@ -42,8 +44,6 @@ static GameComponents stringToGameComponents(string s) {
 		{ "rendercomponent",				RENDER_COMPONENT					},
 		{ "spriterendercomponent",			SPRITE_RENDER_COMPONENT				},
 		{ "shaperendercomponent",			SHAPE_RENDER_COMPONENT				},
-		{ "guirendercomponent",				GUI_RENDER_COMPONENT				},
-		{ "guibuttoncomponent",				GUI_BUTTON_COMPONENT				},
 		{ "layerrendercomponent",			LAYER_RENDER_COMPONENT				},
 		{ "debuggeometryrendercomponent",	DEBUG_GEOMETRY_RENDER_COMPONENT		},
 		{ "nodegraphcomponent",				NODE_GRAPH_RENDER_COMPONENT			},
@@ -54,7 +54,10 @@ static GameComponents stringToGameComponents(string s) {
 		{ "observercomponent",				OBSERVER_COMPONENT					},
 		{ "deathzonecomponent",				DEATH_ZONE_COMPONENT				},
 		{ "steeringcomponent",				STEERING_COMPONENT					},
-		{ "guisteeringcomponent",			GUI_STEERING_COMPONENT				}
+		{ "guisteeringcomponent",			GUI_STEERING_COMPONENT				},
+		{ "guirendercomponent",				GUI_RENDER_COMPONENT				},
+		{ "guibuttoncomponent",				GUI_BUTTON_COMPONENT				},
+		{ "guilabelcomponent",				GUI_LABEL_COMPONENT				},
 
 	};
 

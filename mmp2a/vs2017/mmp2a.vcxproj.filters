@@ -315,6 +315,9 @@
     <ClInclude Include="..\include\GUIControllerComponent.h">
       <Filter>Header Files\GameComponents\SteeringComponents\ControlComponents</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\GUILabelComponent.h">
+      <Filter>Header Files\GameComponents\GUIComponents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\assets\pinball_background.jpg">
@@ -489,6 +492,9 @@
     </ClCompile>
     <ClCompile Include="..\src\GUIControllerComponent.cpp">
       <Filter>Source Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GUILabelComponent.cpp">
+      <Filter>Source Files\GameComponents\GUIComponents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
