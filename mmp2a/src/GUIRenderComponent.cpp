@@ -107,24 +107,12 @@ void GUIRenderComponent::setWidgetActive(IGUIWidgetComponent * widget)
 
 void GUIRenderComponent::setNextWidgetActive()
 {
-	auto wIt = findWidgetComponentIterator(m_activeWidget);
-	++wIt;
-	if (wIt == m_widgets.end())
-		wIt = m_widgets.begin();
 
-	setWidgetActive(*wIt);
 }
 
 void GUIRenderComponent::setPreviousWidgetActive()
 {
-	auto wIt = findWidgetComponentIterator(m_activeWidget);
 
-	if (wIt == m_widgets.begin())
-		wIt = --m_widgets.end();
-	else
-		--wIt;
-
-	setWidgetActive(*wIt);
 }
 
 void GUIRenderComponent::update(const float deltaTimeSeconds)
@@ -170,11 +158,45 @@ void GUIRenderComponent::exit()
 	}
 	m_widgets.clear();
 	delete m_gui;
+	//normally the destructor of IEventListener removes the Listener from the Eventbus
+	//here we need to remove it manually because the 
+	Eventbus::getInstance().removeListener(this);
 	//TODO: m_theme is shared_ptr: Check if Object is deleted correctly
 	//delete m_theme;
 }
 
 void GUIRenderComponent::setScale(const float scale)
 {
+}
+
+void GUIRenderComponent::onEvent(IGameEvent * event)
+{
+	switch (event->getID())
+	{
+	case(NAVIGATE_DOWN_EVENT):
+	{
+		auto wIt = findWidgetComponentIterator(m_activeWidget);
+		++wIt;
+		if (wIt == m_widgets.end())
+			wIt = m_widgets.begin();
+
+		setWidgetActive(*wIt);
+	}
+	break;
+	case(NAVIGATE_UP_EVENT):
+	{
+		auto wIt = findWidgetComponentIterator(m_activeWidget);
+
+		if (wIt == m_widgets.begin())
+			wIt = --m_widgets.end();
+		else
+			--wIt;
+
+		setWidgetActive(*wIt);
+	}
+	break;
+	default:
+		break;
+	}
 }
 

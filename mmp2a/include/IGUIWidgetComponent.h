@@ -23,7 +23,7 @@ public:
 	IGUIWidgetComponent(GameObject* gameObject, NLTmxMapObject& mapObject);
 
 	virtual void update(const float deltaTimeSeconds) = 0;
-	virtual void exit() = 0;
+	virtual void exit();
 
 	virtual void init() = 0;
 	virtual void initTmxData() override;

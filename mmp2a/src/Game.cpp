@@ -91,8 +91,8 @@ bool Game::init()
 
 void Game::update(const float deltaTimeSeconds)
 {
-	m_gameStateManager->update(deltaTimeSeconds);
 	m_eventbus->update();
+	m_gameStateManager->update(deltaTimeSeconds);
 	//has to be called after GameStateMng->update; potential Bug
 	m_inputManager->update();
 }

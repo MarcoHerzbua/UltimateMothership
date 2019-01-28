@@ -16,8 +16,8 @@ using namespace sf;
 #pragma endregion
 
 class MenuState 
-	: public virtual IGameState
-	, public virtual IEventListener
+	: public IGameState
+	, public IEventListener
 {
 public:
 	MenuState();

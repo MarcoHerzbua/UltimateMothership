@@ -27,7 +27,7 @@ enum GameComponents
 	OBSERVER_COMPONENT,
 	DEATH_ZONE_COMPONENT,
 	STEERING_COMPONENT,
-
+	GUI_STEERING_COMPONENT
 };
 
 static GameComponents stringToGameComponents(string s) {
@@ -53,7 +53,8 @@ static GameComponents stringToGameComponents(string s) {
 		{ "pointcountercomponent",			POINT_COUNTER_COMPONENT				},
 		{ "observercomponent",				OBSERVER_COMPONENT					},
 		{ "deathzonecomponent",				DEATH_ZONE_COMPONENT				},
-		{ "steeringcomponent",				STEERING_COMPONENT					}
+		{ "steeringcomponent",				STEERING_COMPONENT					},
+		{ "guisteeringcomponent",			GUI_STEERING_COMPONENT				}
 
 	};
 

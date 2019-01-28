@@ -12,6 +12,7 @@ enum ControllerComponents
 
 	AI_CONTROLLER_COMPONENT,
 	HUMAN_CONTROLLER_COMPONENT,
+	GUI_CONTROLLER_COMPONENT
 
 };
 
@@ -22,7 +23,8 @@ static ControllerComponents stringToControllerComponents(string s) {
 	{
 		{ "controllercomponent",			CONTROLLER_COMPONENT		},
 		{ "aicontrollercomponent",			AI_CONTROLLER_COMPONENT		},
-		{ "humancontrollercomponent",		HUMAN_CONTROLLER_COMPONENT	}
+		{ "humancontrollercomponent",		HUMAN_CONTROLLER_COMPONENT	},
+		{ "guicontrollercomponent",			GUI_CONTROLLER_COMPONENT	}
 	};
 
 	auto itr = optionStrings.find(s);
