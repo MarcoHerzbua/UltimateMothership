@@ -46,10 +46,10 @@ void NodeGraphRenderComponent::initTmxData()
 	if (!m_mapLayer)
 		return;
 
-	m_zIndex = 0;
+	m_zIndex = 9;
 
-	int rows = m_mapObjectInfo.m_width - 1;
-	int cols = m_mapObjectInfo.m_height - 1;
+	int cols = m_mapObjectInfo.m_width;
+	int rows = m_mapObjectInfo.m_height;
 
 	for (auto prop : m_mapLayer->properties)
 	{
@@ -60,7 +60,7 @@ void NodeGraphRenderComponent::initTmxData()
 		if (prop->name == "cols")
 			cols = stoi(prop->value);
 	}
-	
+
 	createGrid(rows, cols);
 	
 	m_mapLayer = nullptr;
@@ -69,8 +69,6 @@ void NodeGraphRenderComponent::initTmxData()
 
 void NodeGraphRenderComponent::createGrid(int rows, int cols)
 {
-	
-
 	m_graph = new Graph(rows, cols);
 
 	int endX = m_mapObjectInfo.m_width;
@@ -103,7 +101,7 @@ void NodeGraphRenderComponent::createGrid(int rows, int cols)
 			node->setOrigin(Vector2f(radius, radius));
 			node->setPosition(position);
 			node->setRadius(radius);
-			node->setFillColor(Color(0, 0, 0, 175));
+			node->setFillColor(Color(255, 255, 255, 50));
 
 			m_graph->addNode(node);
 		}
@@ -154,7 +152,7 @@ void NodeGraphRenderComponent::createGrid(int rows, int cols)
 			size.y = radius * 0.5f + abs(n2_min_n.y) * 0.5f;
 			(*eIti)->setSize(size);
 			(*eIti)->setOrigin(size * 0.5f);
-			(*eIti)->setFillColor(Color(0, 0, 0, 175));
+			(*eIti)->setFillColor(Color(255, 255, 255, 50));
 			(*eIti)->setPosition(pos);
 		}
 }

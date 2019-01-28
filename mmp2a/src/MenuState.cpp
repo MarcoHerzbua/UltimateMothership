@@ -28,7 +28,7 @@ void MenuState::init()
 {
 	IGameState::init();
 
-	TmxLoader::loadTmxFile("MenuMap.tmx", sf::Vector2f());
+	TmxLoader::loadTmxFile("MenuMapNew.tmx", sf::Vector2f());
 }
 
 void MenuState::exit()
