@@ -28,6 +28,10 @@ enum GameComponents
 	DEATH_ZONE_COMPONENT,
 	STEERING_COMPONENT,
 
+	SHIP_COMPONENT,
+	MOTHER_SHIP_COMPONENT,
+	FIGHTER_SHIP_COMPONENT,
+	FARM_SHIP_COMPONENT
 };
 
 static GameComponents stringToGameComponents(string s) {
@@ -53,7 +57,12 @@ static GameComponents stringToGameComponents(string s) {
 		{ "pointcountercomponent",			POINT_COUNTER_COMPONENT				},
 		{ "observercomponent",				OBSERVER_COMPONENT					},
 		{ "deathzonecomponent",				DEATH_ZONE_COMPONENT				},
-		{ "steeringcomponent",				STEERING_COMPONENT					}
+		{ "steeringcomponent",				STEERING_COMPONENT					},
+
+		{ "shipcomponent",					SHIP_COMPONENT						},
+		{ "mothershipcomponent",			MOTHER_SHIP_COMPONENT				},
+		{ "fightershipcomponent",			FIGHTER_SHIP_COMPONENT				},
+		{ "farmshipcomponent",				FARM_SHIP_COMPONENT					},
 
 	};
 
