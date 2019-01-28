@@ -36,5 +36,5 @@ private:
 	Texture m_texture;
 	Sprite m_textureSprite;
 	
-	void init(const string& path, const Vector2f& size);
+	void init(const string& path, const Vector2f& size, const Vector2f& setPos);
 };
