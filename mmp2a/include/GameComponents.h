@@ -29,7 +29,11 @@ enum GameComponents
 	GUI_STEERING_COMPONENT,
 	GUI_RENDER_COMPONENT,
 	GUI_BUTTON_COMPONENT,
-	GUI_LABEL_COMPONENT
+	GUI_LABEL_COMPONENT,
+	SHIP_COMPONENT,
+	MOTHER_SHIP_COMPONENT,
+	FIGHTER_SHIP_COMPONENT,
+	FARM_SHIP_COMPONENT
 };
 
 static GameComponents stringToGameComponents(string s) {
@@ -58,6 +62,11 @@ static GameComponents stringToGameComponents(string s) {
 		{ "guirendercomponent",				GUI_RENDER_COMPONENT				},
 		{ "guibuttoncomponent",				GUI_BUTTON_COMPONENT				},
 		{ "guilabelcomponent",				GUI_LABEL_COMPONENT				},
+
+		{ "shipcomponent",					SHIP_COMPONENT						},
+		{ "mothershipcomponent",			MOTHER_SHIP_COMPONENT				},
+		{ "fightershipcomponent",			FIGHTER_SHIP_COMPONENT				},
+		{ "farmshipcomponent",				FARM_SHIP_COMPONENT					},
 
 	};
 

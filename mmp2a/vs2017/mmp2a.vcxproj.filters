@@ -103,6 +103,18 @@
     <Filter Include="Source Files\GameComponents\GUIComponents">
       <UniqueIdentifier>{2194106a-0bb1-42bf-a513-19f56f8a908d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameComponents\UnitComponents">
+      <UniqueIdentifier>{66cd68de-2f56-40fc-a37c-830b8573a1a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents\UnitComponents">
+      <UniqueIdentifier>{ff29eccd-9cbc-4918-9faf-e2d8a33cd7f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents\UnitComponents\AbilityComponents">
+      <UniqueIdentifier>{fdd7cd13-9bc2-4ee5-9426-eaed8324a35e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameComponents\UnitComponents\AbilityComponents">
+      <UniqueIdentifier>{66aa910c-94d6-4aac-a676-034bbd2e6dd8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Game.h">
@@ -306,6 +318,30 @@
     <ClInclude Include="..\include\IGUIWidgetComponent.h">
       <Filter>Header Files\GameComponents\GUIComponents</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\ShipComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\MotherShipComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\IAbilityComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AttackAbilityComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\FarmAbilityComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\BasicAttackAbilityComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\UltimateAbilityAttackComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Abilities.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
     <ClInclude Include="..\include\GUIInputComponent.h">
       <Filter>Header Files\GameComponents\SteeringComponents\InputComponents</Filter>
     </ClInclude>
@@ -483,6 +519,39 @@
     </ClCompile>
     <ClCompile Include="..\src\mmp2a.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\FighterShipComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\FarmShipComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FarmShipComponent.cpp">
+      <Filter>Source Files\GameComponents\UnitComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ShipComponent.cpp">
+      <Filter>Source Files\GameComponents\UnitComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MotherShipComponent.cpp">
+      <Filter>Source Files\GameComponents\UnitComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FighterShipComponent.cpp">
+      <Filter>Source Files\GameComponents\UnitComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IAbilityComponent.cpp">
+      <Filter>Source Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AttackAbilityComponent.cpp">
+      <Filter>Source Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FarmAbilityComponent.cpp">
+      <Filter>Source Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UltimateAttackAbilityComponent.cpp">
+      <Filter>Source Files\GameComponents\UnitComponents\AbilityComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BasicAttackAbilityComponent.cpp">
+      <Filter>Source Files\GameComponents\UnitComponents\AbilityComponents</Filter>
     </ClCompile>
     <ClCompile Include="..\src\GUIInputComponent.cpp">
       <Filter>Source Files\GameComponents\SteeringComponents\InputComponents</Filter>
