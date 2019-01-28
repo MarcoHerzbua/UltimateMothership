@@ -66,6 +66,7 @@ struct Stats
 class ShipComponent : public IGameComponent
 {
 public:
+	ShipComponent() = default;
 	ShipComponent(GameObject* gameObject);
 	ShipComponent(GameObject* gameObject, NLTmxMapObject& mapObject);
 

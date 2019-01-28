@@ -8,13 +8,15 @@
 MotherShipComponent::MotherShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)
 {
-	m_id = MOTHER_SHIP_COMPONENT;
+	m_id = MOTHER_SHIP_COMPONENT; 
+	initBaseStats();
 }
 
 MotherShipComponent::MotherShipComponent(GameObject * gameObject, NLTmxMapObject & mapObject)
 	: ShipComponent(gameObject, mapObject)
 {
 	m_id = MOTHER_SHIP_COMPONENT;
+	initBaseStats();
 }
 
 void MotherShipComponent::update(const float deltaTime)

@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "ShipComponent.h"
 
-class FighterShipComponent : ShipComponent
+class FighterShipComponent : public ShipComponent
 {
 public:
 	FighterShipComponent(GameObject* gameObject);

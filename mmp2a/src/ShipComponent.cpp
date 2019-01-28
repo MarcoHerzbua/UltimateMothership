@@ -5,16 +5,12 @@ ShipComponent::ShipComponent(GameObject * gameObject)
 	: IGameComponent(gameObject)
 {
 	m_id = SHIP_COMPONENT;
-
-	initBaseStats();
 }
 
 ShipComponent::ShipComponent(GameObject * gameObject, NLTmxMapObject & mapObject)
 	: IGameComponent(gameObject, mapObject)
 {
 	m_id = SHIP_COMPONENT;
-
-	initBaseStats();
 }
 
 void ShipComponent::exit()

@@ -8,12 +8,14 @@ FighterShipComponent::FighterShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)
 {
 	m_id = FIGHTER_SHIP_COMPONENT;
+	initBaseStats();
 }
 
 FighterShipComponent::FighterShipComponent(GameObject * gameObject, NLTmxMapObject & mapObject)
 	: ShipComponent(gameObject, mapObject)
 {
 	m_id = FIGHTER_SHIP_COMPONENT;
+	initBaseStats();
 }
 
 void FighterShipComponent::update(const float deltaTime)
