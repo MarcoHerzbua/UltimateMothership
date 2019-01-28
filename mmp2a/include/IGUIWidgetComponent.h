@@ -33,8 +33,8 @@ public:
 	sf::Vector2f getWidgetSize() { return m_widget->getSize(); };
 	sf::Vector2f getWidgetPosition() { return m_widget->getPosition(); };
 
-	void setActive();
-	void setInactive();
+	virtual void setActive();
+	virtual void setInactive();
 	void onActivation();
 protected:
 	string m_widgetName;

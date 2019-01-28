@@ -25,5 +25,7 @@ public:
 	void init() override;
 	void initTmxData() override;
 
+	void setActive() override;
+	void setInactive() override;
 private:
 };
