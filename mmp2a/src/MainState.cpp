@@ -28,7 +28,7 @@ void MainState::init()
 {
 	IGameState::init();
 
-	TmxLoader::loadTmxFile("BasicTilemap.tmx", Vector2f());
+	TmxLoader::loadTmxFile("SpaceMap.tmx", Vector2f());
 }
 
 void MainState::update(const float deltaTimeSeconds)

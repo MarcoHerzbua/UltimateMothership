@@ -55,7 +55,7 @@ private:
 
 	vector<GameObject *> m_objects;
 
-	const string m_assetPath = "../assets/";
+	const string m_assetPath = "../spaceAssets/";
 
 	bool m_firstRegister = true;
 }; 
