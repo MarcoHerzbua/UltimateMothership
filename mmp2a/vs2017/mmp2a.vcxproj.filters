@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\GameState">
+      <UniqueIdentifier>{7a893faf-9ea4-4cd9-b96e-3cccdb15e706}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\defaultFiles">
+      <UniqueIdentifier>{f5b9711c-c9fb-4797-bb5e-d1ac984904ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\defaultFiles">
+      <UniqueIdentifier>{cbc89234-fde8-430e-80d8-a74af6800990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameState">
+      <UniqueIdentifier>{a2fc0689-c18d-4298-af86-91926853c13d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\enum">
+      <UniqueIdentifier>{d40bb6e6-fed6-4068-ae4c-7419d171a457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rapidxml">
+      <UniqueIdentifier>{d550027d-0f60-4348-98d5-2d8ade564d94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers">
+      <UniqueIdentifier>{5983bb15-0695-4c80-bd1b-eea9a86fd16f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers">
+      <UniqueIdentifier>{f4ce7878-404e-42be-bf67-f12dc75ed110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MapLoader">
+      <UniqueIdentifier>{40e26c17-94be-470a-9e06-840a239c0a77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MapLoader">
+      <UniqueIdentifier>{f2660d07-6309-4a9f-afe4-4dc0d0a5fd5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graph">
+      <UniqueIdentifier>{e689e9e9-5c43-40cc-902f-bf301443f78e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graph">
+      <UniqueIdentifier>{fbebfb6f-57a5-4bce-bfec-a7b11ebf6e7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameComponents">
+      <UniqueIdentifier>{2bd2500c-0445-4b4f-853d-0f164ec6c11a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameComponents\SteeringComponents">
+      <UniqueIdentifier>{e02c1d5f-53be-4297-8ecc-08844e11ec9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameComponents\SteeringComponents\InputComponents">
+      <UniqueIdentifier>{d32f49ee-fdfe-4ae6-ab20-5f0925ff8146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameComponents\SteeringComponents\ControlComponents">
+      <UniqueIdentifier>{85fceed5-fe7c-47a0-9d92-2ca364699201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameComponents\ObserverComponents">
+      <UniqueIdentifier>{1e77c26e-26c4-4943-9111-c4b4eacb50a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameComponents\RenderComponents">
+      <UniqueIdentifier>{c3d3be26-caea-49a7-95f0-99d7e52f5619}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameComponents\UpdateComponents">
+      <UniqueIdentifier>{c387b71d-728a-4f66-af44-2d2c5a00a68c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents">
+      <UniqueIdentifier>{699e4ef6-6d0d-4dd4-9c3e-07391ba0c2f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents\UpdateComponents">
+      <UniqueIdentifier>{ea769640-357d-4608-a8ab-00af8bc125cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents\RenderComponents">
+      <UniqueIdentifier>{b8bfdbfe-4dd5-4d6e-95f0-2020dfd9787d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents\ObserverComponents">
+      <UniqueIdentifier>{1b21ede0-a204-4f25-93f2-f15a5c952dcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents\SteeringComponents">
+      <UniqueIdentifier>{456f4c75-82ca-434e-b136-c0d884bdfbe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents\SteeringComponents\ControlComponents">
+      <UniqueIdentifier>{10d52279-233d-4b6f-a0f0-3655e14b3a63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents\SteeringComponents\InputComponents">
+      <UniqueIdentifier>{9b44d720-92a5-4d34-aa7c-def0357fce67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Eventbus">
+      <UniqueIdentifier>{3e33d66f-cafa-42cf-83cf-93b59177071a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Eventbus">
+      <UniqueIdentifier>{e966cae9-8ac6-4f03-accf-c9531f6f0fb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameComponents\GUIComponents">
+      <UniqueIdentifier>{7bae7be4-d09f-4bbf-9a39-b91ef61771b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponents\GUIComponents">
+      <UniqueIdentifier>{2194106a-0bb1-42bf-a513-19f56f8a908d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\IGameState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\MainState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\MenuState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\targetver.h">
+      <Filter>Header Files\defaultFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\stdafx.h">
+      <Filter>Header Files\defaultFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameStates.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameComponents.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\IGameComponent.h">
+      <Filter>Header Files\GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\InputActions.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Transformation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameObjects.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\NLTmxMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\rapidxml\rapidxml.hpp">
+      <Filter>rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\rapidxml\rapidxml_iterators.hpp">
+      <Filter>rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\rapidxml\rapidxml_print.hpp">
+      <Filter>rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\rapidxml\rapidxml_utils.hpp">
+      <Filter>rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameObjectManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameStateManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\InputManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RenderManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\PhysicsManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\LayerRenderComponent.h">
+      <Filter>Header Files\GameComponents\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RenderComponent.h">
+      <Filter>Header Files\GameComponents\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ShapeRenderComponent.h">
+      <Filter>Header Files\GameComponents\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\SpriteRenderComponent.h">
+      <Filter>Header Files\GameComponents\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\CameraComponent.h">
+      <Filter>Header Files\GameComponents\UpdateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\CollisionComponent.h">
+      <Filter>Header Files\GameComponents\UpdateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RigidBodyComponent.h">
+      <Filter>Header Files\GameComponents\UpdateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DebugGeometryRenderComponent.h">
+      <Filter>Header Files\GameComponents\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ObserverComponent.h">
+      <Filter>Header Files\GameComponents\ObserverComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\PointCounterComponent.h">
+      <Filter>Header Files\GameComponents\ObserverComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ObservableComponent.h">
+      <Filter>Header Files\GameComponents\ObserverComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DeathZoneComponent.h">
+      <Filter>Header Files\GameComponents\ObserverComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\LayerLoader.h">
+      <Filter>Header Files\MapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\MapLoader.h">
+      <Filter>Header Files\MapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ObjectLoader.h">
+      <Filter>Header Files\MapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ComponentLoader.h">
+      <Filter>Header Files\MapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\TmxLoader.h">
+      <Filter>Header Files\MapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\TextureLoader.h">
+      <Filter>Header Files\MapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ControllerComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AIControllerComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\NodeGraphLoader.h">
+      <Filter>Header Files\MapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\NodeGraphRenderComponent.h">
+      <Filter>Header Files\GameComponents\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Direction.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ControllerComponents.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\InputComponents.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\LayerComponents.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Eventbus.h">
+      <Filter>Header Files\Eventbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\IGameEvent.h">
+      <Filter>Header Files\Eventbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\IEventListener.h">
+      <Filter>Header Files\Eventbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameEventClasses.h">
+      <Filter>Header Files\Eventbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameEvents.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graph.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Node.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Edge.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\HumanControllerComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AiInputComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents\InputComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\HumanInputComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents\InputComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\SteeringComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\IInputComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents\InputComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\IControllerComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\HelperMethods.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GUIButtonComponent.h">
+      <Filter>Header Files\GameComponents\GUIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GUIRenderComponent.h">
+      <Filter>Header Files\GameComponents\GUIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\IGUIWidgetComponent.h">
+      <Filter>Header Files\GameComponents\GUIComponents</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\assets\pinball_background.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\assets\ball.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MainState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MenuState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp">
+      <Filter>Source Files\defaultFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IGameState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\NLTmxMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RenderManager.cpp">
+      <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InputManager.cpp">
+      <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameStateManager.cpp">
+      <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameObjectManager.cpp">
+      <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IGameComponent.cpp">
+      <Filter>Source Files\GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PhysicsManager.cpp">
+      <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CameraComponent.cpp">
+      <Filter>Source Files\GameComponents\UpdateComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CollisionComponent.cpp">
+      <Filter>Source Files\GameComponents\UpdateComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RigidBodyComponent.cpp">
+      <Filter>Source Files\GameComponents\UpdateComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LayerRenderComponent.cpp">
+      <Filter>Source Files\GameComponents\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RenderComponent.cpp">
+      <Filter>Source Files\GameComponents\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ShapeRenderComponent.cpp">
+      <Filter>Source Files\GameComponents\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SpriteRenderComponent.cpp">
+      <Filter>Source Files\GameComponents\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DebugGeometryRenderComponent.cpp">
+      <Filter>Source Files\GameComponents\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PointCounterComponent.cpp">
+      <Filter>Source Files\GameComponents\ObserverComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ObservableComponent.cpp">
+      <Filter>Source Files\GameComponents\ObserverComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DeathZoneComponent.cpp">
+      <Filter>Source Files\GameComponents\ObserverComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LayerLoader.cpp">
+      <Filter>Source Files\MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ComponentLoader.cpp">
+      <Filter>Source Files\MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MapLoader.cpp">
+      <Filter>Source Files\MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ObjectLoader.cpp">
+      <Filter>Source Files\MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TmxLoader.cpp">
+      <Filter>Source Files\MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TextureLoader.cpp">
+      <Filter>Source Files\MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ControllerComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AIControllerComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\NodeGraphLoader.cpp">
+      <Filter>Source Files\MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\NodeGraphRenderComponent.cpp">
+      <Filter>Source Files\GameComponents\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Edge.cpp">
+      <Filter>Source Files\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graph.cpp">
+      <Filter>Source Files\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Node.cpp">
+      <Filter>Source Files\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\HumanControllerComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AiInputComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents\InputComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\HumanInputComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents\InputComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IInputComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents\InputComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IControllerComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents\ControlComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SteeringComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\HelperMethods.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Eventbus.cpp">
+      <Filter>Source Files\Eventbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IGameEvent.cpp">
+      <Filter>Source Files\Eventbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameEventClasses.cpp">
+      <Filter>Source Files\Eventbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GUIButtonComponent.cpp">
+      <Filter>Source Files\GameComponents\GUIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GUIRenderComponent.cpp">
+      <Filter>Source Files\GameComponents\GUIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IGUIWidgetComponent.cpp">
+      <Filter>Source Files\GameComponents\GUIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\IEventListener.cpp">
+      <Filter>Source Files\Eventbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mmp2a.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\assets\vgafix.fon">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\assets\REFSAN.TTF">
+      <Filter>Resource Files</Filter>
+    </Font>
+  </ItemGroup>
+</Project>
