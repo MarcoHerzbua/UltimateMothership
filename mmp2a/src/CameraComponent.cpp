@@ -62,6 +62,7 @@ void CameraComponent::initTmxData()
 {
 	GameObject* boundObj = nullptr;
 	m_zoom = 1.f;
+	Vector2f pos = Vector2f();
 
 	for (auto property : m_mapObject->properties)
 	{
@@ -72,16 +73,22 @@ void CameraComponent::initTmxData()
 			boundObj = GameObjectManager::getInstance().findGameObjects(boundObjectId)[0];
 		}
 		if (name == "Zoom")
-		{
 			m_zoom = stof(property->value);
-		}
+		
+		if (name == "posX")
+			pos.x = stoi(property->value);
+
+		if (name == "posY")
+			pos.y = stoi(property->value);
 	}
 
 	if (boundObj)
 		bindCameraToObject(boundObj);
 	else
+	{
+		m_gameObject->moveObject(pos);
 		bindCameraToObject(m_gameObject);
-
+	}
 
 	m_mapObject = nullptr;
 }

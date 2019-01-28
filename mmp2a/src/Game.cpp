@@ -99,7 +99,7 @@ void Game::update(const float deltaTimeSeconds)
 
 void Game::draw()
 {
-	m_window.clear();
+	m_window.clear(Color(255,255,255));
 
 	m_renderManager->draw(&m_window);
 
