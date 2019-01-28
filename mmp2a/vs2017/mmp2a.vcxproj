@@ -20,9 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\AIControllerComponent.h" />
+    <ClInclude Include="..\include\AttackAbilityComponent.h" />
+    <ClInclude Include="..\include\BasicAttackAbilityComponent.h" />
     <ClInclude Include="..\include\Eventbus.h" />
+    <ClInclude Include="..\include\FarmAbilityComponent.h" />
     <ClInclude Include="..\include\GameEventClasses.h" />
     <ClInclude Include="..\include\GameEvents.h" />
+    <ClInclude Include="..\include\IAbilityComponent.h" />
     <ClInclude Include="..\include\IEventListener.h" />
     <ClInclude Include="..\include\GUIButtonComponent.h" />
     <ClInclude Include="..\include\IGameEvent.h" />
@@ -60,6 +64,7 @@
     <ClInclude Include="..\include\MainState.h" />
     <ClInclude Include="..\include\MapLoader.h" />
     <ClInclude Include="..\include\MenuState.h" />
+    <ClInclude Include="..\include\MotherShipComponent.h" />
     <ClInclude Include="..\include\NLTmxMap.h" />
     <ClInclude Include="..\include\Node.h" />
     <ClInclude Include="..\include\NodeGraphRenderComponent.h" />
@@ -78,6 +83,7 @@
     <ClInclude Include="..\include\RenderManager.h" />
     <ClInclude Include="..\include\RigidBodyComponent.h" />
     <ClInclude Include="..\include\ShapeRenderComponent.h" />
+    <ClInclude Include="..\include\ShipComponent.h" />
     <ClInclude Include="..\include\SpriteRenderComponent.h" />
     <ClInclude Include="..\include\stdafx.h" />
     <ClInclude Include="..\include\SteeringComponent.h" />
@@ -86,15 +92,24 @@
     <ClInclude Include="..\include\TextureLoader.h" />
     <ClInclude Include="..\include\TmxLoader.h" />
     <ClInclude Include="..\include\Transformation.h" />
+    <ClInclude Include="..\include\UltimateAbilityAttackComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\assets\ball.png" />
     <Image Include="..\assets\pinball_background.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\include\FarmShipComponent.h" />
+    <ClCompile Include="..\include\FighterShipComponent.h" />
     <ClCompile Include="..\include\IEventListener.cpp" />
     <ClCompile Include="..\src\AIControllerComponent.cpp" />
     <ClCompile Include="..\src\AiInputComponent.cpp" />
+    <ClCompile Include="..\src\AttackAbilityComponent.cpp" />
+    <ClCompile Include="..\src\BasicAttackAbilityComponent.cpp" />
+    <ClCompile Include="..\src\FarmAbilityComponent.cpp" />
+    <ClCompile Include="..\src\FarmShipComponent.cpp" />
+    <ClCompile Include="..\src\FighterShipComponent.cpp" />
+    <ClCompile Include="..\src\IAbilityComponent.cpp" />
     <ClCompile Include="..\src\mmp2a.cpp" />
     <ClCompile Include="..\src\Eventbus.cpp" />
     <ClCompile Include="..\src\GameEventClasses.cpp" />
@@ -125,6 +140,7 @@
     <ClCompile Include="..\src\MainState.cpp" />
     <ClCompile Include="..\src\MapLoader.cpp" />
     <ClCompile Include="..\src\MenuState.cpp" />
+    <ClCompile Include="..\src\MotherShipComponent.cpp" />
     <ClCompile Include="..\src\NLTmxMap.cpp" />
     <ClCompile Include="..\src\Node.cpp" />
     <ClCompile Include="..\src\NodeGraphRenderComponent.cpp" />
@@ -138,12 +154,14 @@
     <ClCompile Include="..\src\RenderManager.cpp" />
     <ClCompile Include="..\src\RigidBodyComponent.cpp" />
     <ClCompile Include="..\src\ShapeRenderComponent.cpp" />
+    <ClCompile Include="..\src\ShipComponent.cpp" />
     <ClCompile Include="..\src\SpriteRenderComponent.cpp" />
     <ClCompile Include="..\src\stdafx.cpp" />
     <ClCompile Include="..\src\SteeringComponent.cpp" />
     <ClCompile Include="..\src\GUIRenderComponent.cpp" />
     <ClCompile Include="..\src\TextureLoader.cpp" />
     <ClCompile Include="..\src\TmxLoader.cpp" />
+    <ClCompile Include="..\src\UltimateAttackAbilityComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\assets\vgafix.fon" />
