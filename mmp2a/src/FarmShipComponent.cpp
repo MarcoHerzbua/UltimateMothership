@@ -47,5 +47,5 @@ void FarmShipComponent::initTmxData()
 {
 	ShipComponent::initTmxData();
 
-	m_gameObject = nullptr;
+	m_mapObject = nullptr;
 }
