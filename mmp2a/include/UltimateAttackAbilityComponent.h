@@ -11,4 +11,10 @@ public:
 
 	void update(const float deltaTime) override;
 
+	void useAbility(Target t) override;
+
+private:
+	static constexpr int m_baseDamage = 50;
+
+	int getBaseDamage() override { return m_baseDamage; };
 };

@@ -12,3 +12,5 @@ AttackAbilityComponent::AttackAbilityComponent(GameObject* gameObject, NLTmxMapO
 {
 	m_id = ATTACK_ABILITY;
 }
+
+

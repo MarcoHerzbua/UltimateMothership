@@ -16,3 +16,19 @@ UltimateAttackAbilityComponent::UltimateAttackAbilityComponent(GameObject * game
 void UltimateAttackAbilityComponent::update(const float deltaTime)
 {
 }
+
+void UltimateAttackAbilityComponent::useAbility(Target t)
+{
+	ShipComponent* target = getShipFromGameObject(t.target);
+	ShipComponent* origin = getShipFromGameObject(t.origin);
+
+	Stats targetStats = target->getCurrentStats();
+	Stats originStats = origin->getCurrentStats();
+
+	target->getDamage(getBaseDamage(), originStats.attack);
+
+	if (target->isDead())
+	{
+		//TODO Player origin wins
+	}
+}

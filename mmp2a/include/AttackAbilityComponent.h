@@ -14,4 +14,8 @@ public:
 
 	virtual void update(const float deltaTime) override = 0;
 
+	virtual void useAbility(Target t) override = 0;
+
+private:
+	virtual int getBaseDamage() = 0;
 };
