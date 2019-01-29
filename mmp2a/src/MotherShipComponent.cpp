@@ -2,7 +2,7 @@
 #include "MotherShipComponent.h"
 
 #include "BasicAttackAbilityComponent.h"
-#include "UltimateAbilityAttackComponent.h"
+#include "UltimateAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
 
 MotherShipComponent::MotherShipComponent(GameObject * gameObject)

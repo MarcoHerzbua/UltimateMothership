@@ -27,19 +27,26 @@ void ShipComponent::exit()
 
 void ShipComponent::initTmxData()
 {
-	if (!m_gameObject)
+	if (!m_mapObject)
 		return;
 
-	for (auto property : m_mapObject->properties)
-	{
-		auto name = property->name;
-		if (name == "BonusAttack")
-			m_bonusStats.attack += stoi(property->value);
-		if (name == "BonusDefense")
-			m_bonusStats.defense += stoi(property->value);
-		if (name == "BonusLife")
-			m_bonusStats.life += stoi(property->value);
-		if (name == "BonusMovement")
-			m_bonusStats.movement += stoi(property->value);
-	}
+	m_mapObject = nullptr;
+}
+
+void ShipComponent::getDamage(int baseDamage, int attack)
+{
+	// formula used to calculate damage
+	// Damage = Base Damage * 2 ^ ((Attack - Defense)/Doubling Rate)
+
+	float doublingRate = 25; //TODO chagne doublingRate according to tests
+
+	int damage = (float)(attack * (pow(2, ((attack - m_currentStats.defense) / doublingRate))));
+
+	m_currentStats.life -= m_currentStats.life - damage >= 0 ? damage : m_currentStats.life;
+}
+
+void ShipComponent::restoreLife(int amount)
+{
+	if (m_currentStats.life + amount <= m_baseStats.life)
+		m_currentStats.life += amount;
 }
