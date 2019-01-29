@@ -17,6 +17,9 @@ enum InputActions
 
 	SWITCH_HUMAN_AI,
 
+	NEXT_UNIT_ACTION,
+	NEXT_PLAYER_ACTION,
+
 };
 
 static InputActions stringToInputAction(string s) {
@@ -32,7 +35,12 @@ static InputActions stringToInputAction(string s) {
 		{ "moveup",				MOVE_UP_ACTION			},
 		{ "movedown",			MOVE_DOWN_ACTION		},
 
-		{ "switchhumanai",		SWITCH_HUMAN_AI			}
+		{ "switchhumanai",		SWITCH_HUMAN_AI			},
+
+		{ "nextunit",			NEXT_UNIT_ACTION		},
+		{ "nextplayer",			NEXT_PLAYER_ACTION		},
+
+
 	};
 
 	auto itr = optionStrings.find(s);
