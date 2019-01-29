@@ -16,3 +16,8 @@ FarmAbilityComponent::FarmAbilityComponent(GameObject* gameObject, NLTmxMapObjec
 void FarmAbilityComponent::update(const float deltaTime)
 {
 }
+
+void FarmAbilityComponent::useAbility(Target t)
+{
+
+}
