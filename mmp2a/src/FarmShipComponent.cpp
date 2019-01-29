@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "FarmShipComponent.h"
 
+#include "IAbilityComponent.h"
 #include "BasicAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
 
@@ -34,10 +35,9 @@ void FarmShipComponent::initBaseStats()
 	baseStats.movement = 7;
 
 	m_baseStats = baseStats;
-	m_bonusStats = Stats();
 
-	IAbilityComponent* attack = new BasicAttackAbilityComponent();
-	IAbilityComponent* farm = new FarmAbilityComponent();
+	IAbilityComponent* attack = new BasicAttackAbilityComponent(m_gameObject);
+	IAbilityComponent* farm = new FarmAbilityComponent(m_gameObject);
 
 	m_abilities[BASIC_ATTACK_ABILITY] = attack;
 	m_abilities[FARM_ABILITY] = farm;
@@ -45,7 +45,8 @@ void FarmShipComponent::initBaseStats()
 
 void FarmShipComponent::initTmxData()
 {
-	ShipComponent::initTmxData();
+	if (!m_mapObject)
+		return;
 
-	m_gameObject = nullptr;
+	m_mapObject = nullptr;
 }

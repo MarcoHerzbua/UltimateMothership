@@ -8,6 +8,8 @@ enum Abilities
 {
 	NULL_ABILITY = 0,
 
+	ABILITY,
+
 	ATTACK_ABILITY,
 	FARM_ABILITY,
 
@@ -20,6 +22,7 @@ static Abilities stringToAbilities(string s) {
 
 	static const map<string, Abilities> optionStrings
 	{
+		{ "ability",					ABILITY					},
 		{ "attackability",				ATTACK_ABILITY			},
 		{ "farmability",				FARM_ABILITY			},
 		{ "basicattackability",			BASIC_ATTACK_ABILITY	},

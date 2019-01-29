@@ -336,9 +336,6 @@
     <ClInclude Include="..\include\BasicAttackAbilityComponent.h">
       <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\UltimateAbilityAttackComponent.h">
-      <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\Abilities.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
@@ -353,6 +350,9 @@
     </ClInclude>
     <ClInclude Include="..\include\GUILabelComponent.h">
       <Filter>Header Files\GameComponents\GUIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\UltimateAttackAbilityComponent.h">
+      <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
