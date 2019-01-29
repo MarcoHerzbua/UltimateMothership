@@ -22,7 +22,14 @@ UpdateShipStatsEvent::UpdateShipStatsEvent(ShipComponent * cmp)
 	m_shipComponent = cmp;
 }
 
-UpdatePlayerStatsEvent::UpdatePlayerStatsEvent()
+UpdatePlayerStatsEvent::UpdatePlayerStatsEvent(int resources)
 {
 	m_id = UPDATE_PLAYERSTATS_EVENT;
+	m_resources = resources;
+}
+
+UpdateButtonMapEvent::UpdateButtonMapEvent(vector<sf::String> buttonMap)
+{
+	m_id = UPDATE_BUTTONMAP_EVENT;
+	m_buttonMap = buttonMap;
 }

@@ -35,8 +35,15 @@ public:
 class UpdatePlayerStatsEvent : public virtual IGameEvent
 {
 public:
-	UpdatePlayerStatsEvent(/*TODO: pass releveant parameters here*/);
-	//TODO: save parameters as members
+	UpdatePlayerStatsEvent(int resources);
+	int m_resources;
+};
+
+class UpdateButtonMapEvent : public virtual IGameEvent
+{
+public:
+	UpdateButtonMapEvent(vector<sf::String> buttonMap);
+	vector<sf::String> m_buttonMap;
 };
 
 //THis method gets called when Buttons with Events are created in Tiled (Action_ = ...)

@@ -6,6 +6,9 @@
 #include "BasicAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
 
+#include "Eventbus.h"
+#include "GameEventClasses.h"
+
 FighterShipComponent::FighterShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)
 {
@@ -22,7 +25,7 @@ FighterShipComponent::FighterShipComponent(GameObject * gameObject, NLTmxMapObje
 
 void FighterShipComponent::update(const float deltaTime)
 {
-
+	//Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(this));
 }
 
 void FighterShipComponent::initBaseStats()

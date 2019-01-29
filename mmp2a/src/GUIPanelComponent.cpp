@@ -67,6 +67,10 @@ void GUIPanelComponent::initTmxData()
 	//bg->moveToBack();
 	Color color;
 	if (background == "LightGray") color = Color(160, 160, 160);
+	else if (background == "Green") color = Color::Green;
+	else if (background == "Red") color = Color::Red;
+	else if (background == "Blue") color = Color::Blue;
+	else if (background == "Yellow") color = Color::Yellow;
 	else color = Color(128, 128, 128);
 
 	panel->getRenderer()->setBackgroundColor(color);

@@ -232,10 +232,38 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	case(UPDATE_SHIPSTATS_EVENT):
 	{
 		auto ev = dynamic_cast<UpdateShipStatsEvent*>(event);
-		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1ShipStats"));
-		widget->setText(to_string(ev->m_shipComponent->getBaseStats().life));
+		auto stats = ev->m_shipComponent->getCurrentStats();
+
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1HPStats"));
+		widget->setText(to_string(stats.life));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1AtkStats"));
+		widget->setText(to_string(stats.attack));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1DefStats"));
+		widget->setText(to_string(stats.defense));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1MoveStats"));
+		widget->setText(to_string(stats.movement));
 	}
 	break;
+	case(UPDATE_PLAYERSTATS_EVENT):
+	{
+		auto ev = dynamic_cast<UpdatePlayerStatsEvent*>(event);
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1ResourceStats"));
+		widget->setText(to_string(ev->m_resources));
+	}
+	break;
+	case(UPDATE_BUTTONMAP_EVENT):
+	{
+		auto ev = dynamic_cast<UpdateButtonMapEvent*>(event);
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonOneText"));
+		widget->setText(ev->m_buttonMap[0]);
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonTwoText"));
+		widget->setText(ev->m_buttonMap[1]);
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonThreeText"));
+		widget->setText(ev->m_buttonMap[2]);
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonFourText"));
+		widget->setText(ev->m_buttonMap[3]);
+
+	}
 	default:
 		break;
 	}
