@@ -34,6 +34,8 @@ private:
 	InputManager * m_inputManager;
 	GameObjectManager * m_gameObjectManager;
 	RenderManager* m_renderManager;
+	PlayerManager* m_playerManager;
+
 	Eventbus * m_eventbus;
 
 	Vector2u m_windowSize;
