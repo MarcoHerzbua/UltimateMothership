@@ -60,7 +60,7 @@ void GUIButtonComponent::initTmxData()
 		{
 			auto event = stringToGameEvents(property->value);
 			if (event == NULL_GAME_EVENT) err() << "NULL_GAME_EVENT when creating " << m_mapObject->name << "\n";
-			m_events.push_back(createGameEvent(event));
+			m_events.push_back(event);
 		}
 		if (name == "TextSize")
 			textSize = stoi(property->value);

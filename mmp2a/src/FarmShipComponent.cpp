@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "FarmShipComponent.h"
-
+#include "IAbilityComponent.h"
 #include "BasicAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
+
 
 FarmShipComponent::FarmShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)

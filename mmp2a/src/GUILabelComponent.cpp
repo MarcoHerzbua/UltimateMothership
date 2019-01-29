@@ -78,3 +78,12 @@ void GUILabelComponent::initTmxData()
 	m_mapObject = nullptr;
 
 }
+
+void GUILabelComponent::setWidgetText(sf::String s)
+{
+	auto gui = m_guiRenderComponent->getGUI();
+	gui->remove(m_widget);
+	auto widget = static_pointer_cast<tgui::Label>(m_widget);
+	widget->setText(s);
+	gui->add(widget);
+}

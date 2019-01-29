@@ -15,6 +15,7 @@ void Eventbus::update()
 	{
 		IGameEvent * event = m_activeQueue->front();
 		notifyListeners(event);
+		delete event;
 		m_activeQueue->pop();
 	}
 	if (m_activeQueue == &m_events_0)

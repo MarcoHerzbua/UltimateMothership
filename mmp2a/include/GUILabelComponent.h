@@ -25,5 +25,6 @@ public:
 	void init() override;
 	void initTmxData() override;
 
+	void setWidgetText(sf::String s) override;
 private:
 };
