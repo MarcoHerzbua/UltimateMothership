@@ -97,7 +97,7 @@
     <ClInclude Include="..\include\TextureLoader.h" />
     <ClInclude Include="..\include\TmxLoader.h" />
     <ClInclude Include="..\include\Transformation.h" />
-    <ClInclude Include="..\include\UltimateAbilityAttackComponent.h" />
+    <ClInclude Include="..\include\UltimateAttackAbilityComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\assets\ball.png" />
