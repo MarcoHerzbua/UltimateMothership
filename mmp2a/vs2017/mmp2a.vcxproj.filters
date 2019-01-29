@@ -354,6 +354,12 @@
     <ClInclude Include="..\include\UltimateAttackAbilityComponent.h">
       <Filter>Header Files\GameComponents\UnitComponents\AbilityComponents</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\PlayerManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Stats.h">
+      <Filter>Header Files\GameComponents\UnitComponents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\assets\pinball_background.jpg">
@@ -564,6 +570,9 @@
     </ClCompile>
     <ClCompile Include="..\src\GUILabelComponent.cpp">
       <Filter>Source Files\GameComponents\GUIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PlayerManager.cpp">
+      <Filter>Source Files\Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

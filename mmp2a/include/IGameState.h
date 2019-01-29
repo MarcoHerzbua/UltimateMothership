@@ -40,6 +40,7 @@ protected:
 	RenderManager * m_renderManager;
 	GameObjectManager * m_gameObjectManager;
 	PhysicsManager * m_physicsManager;
+	PlayerManager* m_playerManager;
 
 	virtual void handleKeyInput() = 0;
 };
