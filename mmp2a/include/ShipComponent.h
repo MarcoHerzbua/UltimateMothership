@@ -1,4 +1,4 @@
-#pragma once
+	#pragma once
 
 #include "stdafx.h"
 #include "IGameComponent.h"
@@ -8,6 +8,12 @@
 
 class IAbilityComponent;
 class GameObject;
+
+struct Target
+{
+	GameObject* origin;
+	GameObject* target;
+};
 
 struct Stats
 {
@@ -75,12 +81,16 @@ public:
 
 	void exit() override;
 	
-	virtual void update(const float deltaTime) override = 0;
+	virtual void update(const float deltaTime) override {};
 
-	virtual void initBaseStats() = 0;
+	virtual void initBaseStats() {};
 
 	virtual void initTmxData();
 
+
+	void addTarget(Target t, Abilities a);
+	void resolveTargets();
+	void resolveTargets(Abilities a);
 
 	// =============================================================
 	
@@ -114,6 +124,7 @@ public:
 
 	void restoreLife(int amount);
 
+	bool isDead() { return m_currentStats.life <= 0; };
 
 protected:
 	int m_totalRessources;
@@ -123,4 +134,6 @@ protected:
 	Stats m_baseStats;
 
 	map<Abilities, IAbilityComponent*> m_abilities;
+
+	void clearTargets();
 };

@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "ShipComponent.h"
 
+#include "IAbilityComponent.h"
+
 ShipComponent::ShipComponent(GameObject * gameObject)
 	: IGameComponent(gameObject)
 {
@@ -18,8 +20,8 @@ void ShipComponent::exit()
 	for (auto ability : m_abilities)
 	{
 		// TODO do as soon as possible
-		/*ability.second()->exit();
-		delete ability.second();*/
+		ability.second->exit();
+		delete ability.second;
 	}
 
 	m_abilities.clear();
@@ -31,6 +33,24 @@ void ShipComponent::initTmxData()
 		return;
 
 	m_mapObject = nullptr;
+}
+
+void ShipComponent::addTarget(Target t, Abilities a)
+{
+	m_abilities[a]->addTarget(t);
+}
+
+void ShipComponent::resolveTargets()
+{
+	for (auto ability : m_abilities)
+	{
+		ability.second->resolveTargets();
+	}
+}
+
+void ShipComponent::resolveTargets(Abilities a)
+{
+	m_abilities[a]->resolveTargets();
 }
 
 void ShipComponent::getDamage(int baseDamage, int attack)
@@ -49,4 +69,8 @@ void ShipComponent::restoreLife(int amount)
 {
 	if (m_currentStats.life + amount <= m_baseStats.life)
 		m_currentStats.life += amount;
+}
+
+void ShipComponent::clearTargets()
+{
 }

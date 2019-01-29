@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "FighterShipComponent.h"
 
+#include "IAbilityComponent.h"
 #include "BasicAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
 
