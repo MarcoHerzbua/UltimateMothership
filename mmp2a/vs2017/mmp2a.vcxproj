@@ -23,6 +23,7 @@
     <ClInclude Include="..\include\AIControllerComponent.h" />
     <ClInclude Include="..\include\AttackAbilityComponent.h" />
     <ClInclude Include="..\include\BasicAttackAbilityComponent.h" />
+    <ClInclude Include="..\include\ControllerMapping.h" />
     <ClInclude Include="..\include\Eventbus.h" />
     <ClInclude Include="..\include\FarmAbilityComponent.h" />
     <ClInclude Include="..\include\GameEventClasses.h" />

@@ -357,6 +357,9 @@
     <ClInclude Include="..\include\GUIPanelComponent.h">
       <Filter>Header Files\GameComponents\GUIComponents</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\ControllerMapping.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\assets\pinball_background.jpg">
