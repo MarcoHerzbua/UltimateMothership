@@ -25,7 +25,8 @@ void Eventbus::update()
 
 void Eventbus::registerListener(IEventListener * listener)
 {
-	m_listeners.push_back(listener);
+	//m_listeners.push_back(listener);
+	m_listeners.insert(m_listeners.begin(), listener);
 }
 
 std::vector<IEventListener*>::iterator Eventbus::findListenerIterator(const IEventListener * listener)
