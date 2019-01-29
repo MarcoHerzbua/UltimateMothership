@@ -15,3 +15,14 @@ MenuNavigationEvent::MenuNavigationEvent(GameEvents ev)
 {
 	m_id = ev;
 }
+
+UpdateShipStatsEvent::UpdateShipStatsEvent(ShipComponent * cmp)
+{
+	m_id = UPDATE_SHIPSTATS_EVENT;
+	m_shipComponent = cmp;
+}
+
+UpdatePlayerStatsEvent::UpdatePlayerStatsEvent()
+{
+	m_id = UPDATE_PLAYERSTATS_EVENT;
+}

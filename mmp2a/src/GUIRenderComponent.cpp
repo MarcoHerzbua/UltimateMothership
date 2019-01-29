@@ -229,6 +229,13 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 			m_activeWidget->onActivation();
 	}
 	break;
+	case(UPDATE_SHIPSTATS_EVENT):
+	{
+		auto ev = dynamic_cast<UpdateShipStatsEvent*>(event);
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1ShipStats"));
+		widget->setText(to_string(ev->m_shipComponent->getBaseStats().life));
+	}
+	break;
 	default:
 		break;
 	}

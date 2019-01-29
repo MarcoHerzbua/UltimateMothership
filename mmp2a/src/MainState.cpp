@@ -13,6 +13,7 @@
 #include "RenderManager.h"
 #include "PhysicsManager.h"
 
+#include "GameEventClasses.h"
 #include "TmxLoader.h"
 
 #pragma endregion
