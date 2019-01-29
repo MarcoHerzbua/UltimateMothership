@@ -47,5 +47,10 @@ void MainState::handleKeyInput()
 	{
 		m_gameStateManager->setState(GameStates::MENU_STATE);
 	}
+	if (m_inputManager->isKeyPressed(InputActions::SWITCH_STATE_ACTION, 0))
+	{
+		Eventbus::getInstance().fireEvent(new TogglePopupEvent());
+	}
+
 }
 

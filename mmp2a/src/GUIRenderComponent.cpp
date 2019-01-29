@@ -44,6 +44,10 @@ void GUIRenderComponent::initTmxData()
 		{
 			theme = property->value;
 		}
+		if (name == "zIndex")
+		{
+			m_zIndex = stoi(property->value);
+		}
 	}
 
 	m_gui->setFont(path + font);
@@ -264,6 +268,23 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 		widget->setText(ev->m_buttonMap[3]);
 
 	}
+	break;
+	case(TOGGLE_POPUP_EVENT):
+	{
+		auto panel = static_pointer_cast<tgui::Panel>(m_gui->get("PanelPopup"));
+		panel->setVisible(!panel->isVisible());
+		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonOne"));
+		panel->setVisible(!panel->isVisible());
+		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonTwo"));
+		panel->setVisible(!panel->isVisible());
+		auto label = static_pointer_cast<tgui::Label>(m_gui->get("PopupHeader"));
+		label->setVisible(!label->isVisible());
+		label = static_pointer_cast<tgui::Label>(m_gui->get("PopupButtonOneText"));
+		label->setVisible(!label->isVisible());
+		label = static_pointer_cast<tgui::Label>(m_gui->get("PopupButtonTwoText"));
+		label->setVisible(!label->isVisible());
+	}
+	break;
 	default:
 		break;
 	}

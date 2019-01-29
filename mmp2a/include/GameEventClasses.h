@@ -46,6 +46,12 @@ public:
 	vector<sf::String> m_buttonMap;
 };
 
+class TogglePopupEvent : public virtual IGameEvent
+{
+public:
+	TogglePopupEvent();
+};
+
 //THis method gets called when Buttons with Events are created in Tiled (Action_ = ...)
 static IGameEvent * createGameEvent(GameEvents event)
 {

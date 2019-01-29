@@ -33,3 +33,8 @@ UpdateButtonMapEvent::UpdateButtonMapEvent(vector<sf::String> buttonMap)
 	m_id = UPDATE_BUTTONMAP_EVENT;
 	m_buttonMap = buttonMap;
 }
+
+TogglePopupEvent::TogglePopupEvent()
+{
+	m_id = TOGGLE_POPUP_EVENT;
+}
