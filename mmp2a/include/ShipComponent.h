@@ -1,4 +1,4 @@
-#pragma once
+	#pragma once
 
 #include "stdafx.h"
 #include "IGameComponent.h"
@@ -9,10 +9,17 @@
 class IAbilityComponent;
 class GameObject;
 
+struct Target
+{
+	GameObject* origin;
+	GameObject* target;
+};
+
 struct Stats
 {
 	int attack;
 	int defense;
+
 	int life;
 
 	int movement;
@@ -74,38 +81,59 @@ public:
 
 	void exit() override;
 	
-	virtual void update(const float deltaTime) override = 0;
+	virtual void update(const float deltaTime) override {};
 
-	virtual void initBaseStats() = 0;
+	virtual void initBaseStats() {};
 
 	virtual void initTmxData();
 
-	Stats getTotalStats() { return m_baseStats + m_bonusStats; };
 
-	Stats getBonusStats() { return m_bonusStats; };
+	void addTarget(Target t, Abilities a);
+	void resolveTargets();
+	void resolveTargets(Abilities a);
+
+	// =============================================================
+	
 	Stats getBaseStats() { return m_baseStats; };
+	Stats getCurrentStats() { return m_currentStats; };
+	
+	// =============================================================
 
-	int getCurrentMovement() { return m_currentMovement; };
+	int getCurrentMovement() { return m_currentStats.movement; };
 
-	void decreasMovement() { if (canMove()) m_currentMovement--; };
-	bool canMove() { return m_currentMovement > 0; };
+	void decreasMovement() { if (canMove()) m_currentStats.movement--; };
+	void decreasMovement(int amount) { if (canMove(amount)) m_currentStats.movement -= amount; };
+	bool canMove() { return m_currentStats.movement > 0; };
+	bool canMove(int amount) { return m_currentStats.movement - amount >= 0; };
 
-	void resetMovement() { m_currentMovement = getTotalStats().movement; };
+	void resetMovement() { m_currentStats.movement = m_baseStats.movement; };
+
+	// =============================================================
 
 	int getCurrentRessources() { return m_currentRessources; };
 	int getTotalRessources() { return m_totalRessources; };
 
 	void increaseRessources() { m_currentRessources++; m_totalRessources++; };
-	void removeRessources(int amount) { m_currentRessources -= amount; };
+	void increaseRessources(int amount) { m_currentRessources += amount; m_totalRessources++; };
+	void decreaseRessources(int amount) { m_currentRessources -= amount; };
+
+	// =============================================================
+
+	// basedamage of ability, attack of other player
+	void getDamage(int baseDamage, int attack);
+
+	void restoreLife(int amount);
+
+	bool isDead() { return m_currentStats.life <= 0; };
 
 protected:
-	int m_currentMovement;
-	
 	int m_totalRessources;
 	int m_currentRessources;
 
+	Stats m_currentStats;
 	Stats m_baseStats;
-	Stats m_bonusStats;
 
 	map<Abilities, IAbilityComponent*> m_abilities;
+
+	void clearTargets();
 };

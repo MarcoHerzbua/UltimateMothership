@@ -2,8 +2,9 @@
 #include "MotherShipComponent.h"
 #include "IAbilityComponent.h"
 
+#include "IAbilityComponent.h"
 #include "BasicAttackAbilityComponent.h"
-#include "UltimateAbilityAttackComponent.h"
+#include "UltimateAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
 
 MotherShipComponent::MotherShipComponent(GameObject * gameObject)
@@ -36,11 +37,10 @@ void MotherShipComponent::initBaseStats()
 	baseStats.movement = 5;
 
 	m_baseStats = baseStats;
-	m_bonusStats = Stats();
 
-	IAbilityComponent* basicAttack = new BasicAttackAbilityComponent();
-	IAbilityComponent* ultimateAttack = new UltimateAttackAbilityComponent();
-	IAbilityComponent* farm = new FarmAbilityComponent();
+	IAbilityComponent* basicAttack = new BasicAttackAbilityComponent(m_gameObject);
+	IAbilityComponent* ultimateAttack = new UltimateAttackAbilityComponent(m_gameObject);
+	IAbilityComponent* farm = new FarmAbilityComponent(m_gameObject);
 
 	m_abilities[BASIC_ATTACK_ABILITY] = basicAttack;
 	m_abilities[ULTIMATE_ATTACK_ABILITY] = ultimateAttack;
@@ -49,7 +49,8 @@ void MotherShipComponent::initBaseStats()
 
 void MotherShipComponent::initTmxData()
 {
-	ShipComponent::initTmxData();
+	if (!m_mapObject)
+		return;
 
-	m_gameObject = nullptr;
+	m_mapObject = nullptr;
 }

@@ -12,7 +12,6 @@
 IGameComponent::IGameComponent(GameObject* gameObject)
 	: m_gameObject(gameObject)
 {
-	//m_mapObject = new NLTmxMapObject();
 	m_mapObject = nullptr;
 }
 
