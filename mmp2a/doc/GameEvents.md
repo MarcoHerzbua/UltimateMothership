@@ -6,3 +6,4 @@ UpdateShipStatsEvent(ShipComponent * cmp)	//Event to Update GUI with the Stats o
 UpdatePlayerStatsEvent(int resources)	//Event to Update GUI with the Playerstats
 UpdateButtonMapEvent(vector<String> buttonMap)	//Event to Update buttonmap in GUI
 						//idx of vector == corresponding button
+TogglePopupEvent()	//sets Popupwindow visible/hidden
