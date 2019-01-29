@@ -13,6 +13,8 @@
 
 #include "GameObject.h"
 
+#include "PlayerManager.h"
+
 #pragma endregion
 
 SteeringComponent::SteeringComponent(GameObject * gameObject)

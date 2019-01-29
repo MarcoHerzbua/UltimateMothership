@@ -11,6 +11,7 @@
 #include "RenderManager.h"
 #include "Eventbus.h"
 
+#include "PlayerManager.h"
 #pragma endregion
 
 using namespace std;

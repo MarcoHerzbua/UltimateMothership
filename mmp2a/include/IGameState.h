@@ -15,6 +15,7 @@
 #include "RenderManager.h"
 #include "GameObjectManager.h"
 #include "PhysicsManager.h"
+#include "PlayerManager.h"
 
 #include "HelperMethods.h"
 #pragma endregion

@@ -3,72 +3,12 @@
 #include "stdafx.h"
 #include "IGameComponent.h"
 
-#include "GameComponents.h"
 #include "Abilities.h"
+
+#include "Stats.h"
 
 class IAbilityComponent;
 class GameObject;
-
-struct Target
-{
-	GameObject* origin;
-	GameObject* target;
-};
-
-struct Stats
-{
-	int attack;
-	int defense;
-
-	int life;
-
-	int movement;
-
-	Stats operator+(Stats rhs) 
-	{
-		*this + rhs;
-	}
-	Stats operator+(Stats* rhs)
-	{
-		Stats result;
-
-		result.attack = this->attack + rhs->attack;
-		result.defense = this->defense + rhs->defense;
-		result.life = this->life + rhs->life;
-
-		result.movement = this->movement + rhs->movement;
-
-		return result;
-	}
-	Stats operator-(Stats rhs)
-	{
-		*this - rhs;
-	}
-	Stats operator-(Stats* rhs)
-	{
-		Stats result;
-
-		result.attack = this->attack - rhs->attack;
-		result.defense = this->defense - rhs->defense;
-		result.life = this->life - rhs->life;
-
-		result.movement = this->movement - rhs->movement;
-
-		return result;
-	}
-
-	bool operator==(Stats* rhs)
-	{
-		return (this->attack == rhs->attack) 
-			&& (this->defense == rhs->defense) 
-			&& (this->life == rhs->life)
-			&& (this->movement == rhs->movement) ;
-	}
-	bool operator!=(Stats* rhs)
-	{
-		return !(this == rhs);
-	}
-};
 
 class ShipComponent : public IGameComponent
 {
@@ -110,15 +50,6 @@ public:
 
 	// =============================================================
 
-	int getCurrentRessources() { return m_currentRessources; };
-	int getTotalRessources() { return m_totalRessources; };
-
-	void increaseRessources() { m_currentRessources++; m_totalRessources++; };
-	void increaseRessources(int amount) { m_currentRessources += amount; m_totalRessources++; };
-	void decreaseRessources(int amount) { m_currentRessources -= amount; };
-
-	// =============================================================
-
 	// basedamage of ability, attack of other player
 	void getDamage(int baseDamage, int attack);
 
@@ -127,9 +58,6 @@ public:
 	bool isDead() { return m_currentStats.life <= 0; };
 
 protected:
-	int m_totalRessources;
-	int m_currentRessources;
-
 	Stats m_currentStats;
 	Stats m_baseStats;
 
