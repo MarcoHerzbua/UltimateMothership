@@ -5,6 +5,8 @@
 #include "NLTmxMap.h"
 #include "Abilities.h"
 
+#include "ShipComponent.h"
+
 class GameObject;
 
 class IAbilityComponent
@@ -22,6 +24,11 @@ public:
 
 	virtual void initTmxData();
 
+	void addTarget(Target t);
+	void resolveTargets();
+	virtual void useAbility(Target t) = 0;
+	
+
 	Abilities getId() { return m_id; };
 	GameObject* getGameObjectPtr() { return m_gameObject; };
 
@@ -29,4 +36,9 @@ protected:
 	Abilities m_id;
 	GameObject* m_gameObject;
 	NLTmxMapObject* m_mapObject;
+
+	vector<Target> m_targets;
+
+	void clearTargets();
+	ShipComponent* getShipFromGameObject(GameObject* g);
 };
