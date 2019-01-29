@@ -47,7 +47,7 @@ public:
 
 	int getPlayerIndex() { return m_playerIndex; };
 protected:
-	static constexpr float m_timeDelay = 0.2f;
+	static constexpr float m_timeDelay = 0.3f;
 	float m_timeSinceLastInput = 0.0f;
 
 	Node* m_currentNode;

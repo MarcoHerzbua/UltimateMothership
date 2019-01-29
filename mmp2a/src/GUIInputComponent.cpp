@@ -54,7 +54,7 @@ function<void(float)> GUIInputComponent::generateFunction(InputActions action)
 	auto function = [steeringComp = this->m_steeringComp, action, event]
 	(const float deltaTime) -> void {
 		if (steeringComp->getTimeSinceLastInput() >= steeringComp->getTimeDelay()
-			&& InputManager::getInstance().isKeyPressed(action, steeringComp->getPlayerIndex()))
+			&& InputManager::getInstance().isActionActive(action, steeringComp->getPlayerIndex()))
 		{
 			steeringComp->setTimeSinceLastInput(0);
 			

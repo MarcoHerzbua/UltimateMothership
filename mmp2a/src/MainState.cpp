@@ -43,11 +43,11 @@ void MainState::update(const float deltaTimeSeconds)
 
 void MainState::handleKeyInput()
 {
-	if (m_inputManager->isKeyPressed(InputActions::EXIT_ACTION, 0))
+	if (m_inputManager->isActionActive(InputActions::EXIT_ACTION, 0))
 	{
 		m_gameStateManager->setState(GameStates::MENU_STATE);
 	}
-	if (m_inputManager->isKeyPressed(InputActions::SWITCH_STATE_ACTION, 0))
+	if (m_inputManager->isActionActive(InputActions::SWITCH_STATE_ACTION, 0))
 	{
 		Eventbus::getInstance().fireEvent(new TogglePopupEvent());
 	}
