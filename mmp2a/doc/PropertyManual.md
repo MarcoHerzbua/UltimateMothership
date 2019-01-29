@@ -94,6 +94,11 @@ Name | Description | Default-value
 -----|-------------|--------------
 Text		| Text				    | none
 TextSize	| Schriftgröße			| trial and error :|
+GUILabelComponent:
+Name:		Description			Default:
+Text		Text				none
+TextSize	Schriftgr��e			trial and error :|
+XAlignment	Textausrichtung in XAchse	0 = Left, 1 = Center, 2 Right
 
 ## GUISteeringComponent:
 Name | Description | Default-value
@@ -101,3 +106,12 @@ Name | Description | Default-value
 PlayerIndex	| idx				    | 0
 Action_		| InputActions			| MoveUp, MoveDown
 
+
+GUISteeringComponent:
+Name:		Description			Default:
+PlayerIndex	idx				0
+Action_		InputActions			MoveUp, MoveDown
+
+ButtonPanelComponent:
+Name:		Description			Default:
+Background	Background Image		DarkGray, LightGray

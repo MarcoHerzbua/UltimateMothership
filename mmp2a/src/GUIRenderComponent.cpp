@@ -44,6 +44,10 @@ void GUIRenderComponent::initTmxData()
 		{
 			theme = property->value;
 		}
+		if (name == "zIndex")
+		{
+			m_zIndex = stoi(property->value);
+		}
 	}
 
 	m_gui->setFont(path + font);
@@ -175,11 +179,6 @@ void GUIRenderComponent::setPreviousWidgetActive()
 void GUIRenderComponent::update(const float deltaTimeSeconds)
 {
 
-	if (InputManager::getInstance().isKeyPressed(InputActions::SWITCH_STATE_ACTION, 0))
-	{
-		if (m_activeWidget)
-			m_activeWidget->onActivation();
-	}
 
 	//if (InputManager::getInstance().isKeyPressed(InputActions::EXIT_ACTION, 0))
 	//{
@@ -226,6 +225,64 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	case(NAVIGATE_UP_EVENT):
 	{
 		setPreviousWidgetActive();
+	}
+	break;
+	case(CONFIRM_EVENT):
+	{
+		if (m_activeWidget)
+			m_activeWidget->onActivation();
+	}
+	break;
+	case(UPDATE_SHIPSTATS_EVENT):
+	{
+		auto ev = dynamic_cast<UpdateShipStatsEvent*>(event);
+		auto stats = ev->m_shipComponent->getCurrentStats();
+
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1HPStats"));
+		widget->setText(to_string(stats.life));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1AtkStats"));
+		widget->setText(to_string(stats.attack));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1DefStats"));
+		widget->setText(to_string(stats.defense));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1MoveStats"));
+		widget->setText(to_string(stats.movement));
+	}
+	break;
+	case(UPDATE_PLAYERSTATS_EVENT):
+	{
+		auto ev = dynamic_cast<UpdatePlayerStatsEvent*>(event);
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1ResourceStats"));
+		widget->setText(to_string(ev->m_resources));
+	}
+	break;
+	case(UPDATE_BUTTONMAP_EVENT):
+	{
+		auto ev = dynamic_cast<UpdateButtonMapEvent*>(event);
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonOneText"));
+		widget->setText(ev->m_buttonMap[0]);
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonTwoText"));
+		widget->setText(ev->m_buttonMap[1]);
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonThreeText"));
+		widget->setText(ev->m_buttonMap[2]);
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonFourText"));
+		widget->setText(ev->m_buttonMap[3]);
+
+	}
+	break;
+	case(TOGGLE_POPUP_EVENT):
+	{
+		auto panel = static_pointer_cast<tgui::Panel>(m_gui->get("PanelPopup"));
+		panel->setVisible(!panel->isVisible());
+		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonOne"));
+		panel->setVisible(!panel->isVisible());
+		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonTwo"));
+		panel->setVisible(!panel->isVisible());
+		auto label = static_pointer_cast<tgui::Label>(m_gui->get("PopupHeader"));
+		label->setVisible(!label->isVisible());
+		label = static_pointer_cast<tgui::Label>(m_gui->get("PopupButtonOneText"));
+		label->setVisible(!label->isVisible());
+		label = static_pointer_cast<tgui::Label>(m_gui->get("PopupButtonTwoText"));
+		label->setVisible(!label->isVisible());
 	}
 	break;
 	default:

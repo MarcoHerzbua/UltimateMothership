@@ -5,6 +5,7 @@
 #include "BasicAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
 
+
 FarmShipComponent::FarmShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)
 {

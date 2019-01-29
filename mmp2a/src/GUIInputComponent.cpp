@@ -42,27 +42,23 @@ void GUIInputComponent::initTmxData()
 
 void GUIInputComponent::exit()
 {
-	delete m_event;
 }
 
 
 function<void(float)> GUIInputComponent::generateFunction(InputActions action)
 {
-	Direction dir = inputActionsToDirection(action);
-	GameEvents ev = directionToGameEvents(dir);
-	if (ev == NULL_GAME_EVENT) err() << "NULL_GAME_EVENT when creating Event in GUIInputComponent\n";
+	//Direction dir = inputActionsToDirection(action);
+	GameEvents event = inputToGameEvents(action);
+	if (event == NULL_GAME_EVENT) err() << "NULL_GAME_EVENT when creating Event in GUIInputComponent\n";
 
-	//has to be saved into member variable, so it can be deleted properly later
-	m_event = new MenuNavigationEvent(ev);
-
-	auto function = [steeringComp = this->m_steeringComp, action, event = this->m_event]
+	auto function = [steeringComp = this->m_steeringComp, action, event]
 	(const float deltaTime) -> void {
 		if (steeringComp->getTimeSinceLastInput() >= steeringComp->getTimeDelay()
 			&& InputManager::getInstance().isKeyPressed(action, steeringComp->getPlayerIndex()))
 		{
 			steeringComp->setTimeSinceLastInput(0);
 			
-			Eventbus::getInstance().fireEvent(event);
+			Eventbus::getInstance().fireEvent(new MenuNavigationEvent(event));
 		}
 	};
 
