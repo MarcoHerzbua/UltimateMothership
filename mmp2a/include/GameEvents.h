@@ -12,6 +12,7 @@ enum GameEvents
 	NAVIGATE_DOWN_EVENT,
 	NAVIGATE_LEFT_EVENT,
 	NAVIGATE_RIGHT_EVENT,
+	CONFIRM_EVENT,
 	NULL_GAME_EVENT
 };
 
@@ -25,7 +26,8 @@ static GameEvents stringToGameEvents(string s) {
 		{ "navigatedownevent",				NAVIGATE_DOWN_EVENT						},
 		{ "navigateleftevent",				NAVIGATE_LEFT_EVENT						},
 		{ "navigaterightevent",				NAVIGATE_RIGHT_EVENT					},
-		{ "exitgameevent",					EXIT_GAME_EVENT							}
+		{ "exitgameevent",					EXIT_GAME_EVENT							},
+		{ "confirmevent",					CONFIRM_EVENT							}
 
 	};
 
@@ -36,14 +38,16 @@ static GameEvents stringToGameEvents(string s) {
 	return NULL_GAME_EVENT;
 }
 
-static GameEvents directionToGameEvents(Direction s) {
+static GameEvents inputToGameEvents(InputActions s) {
 
-	static const std::map<Direction, GameEvents> optionStrings
+	static const std::map<InputActions, GameEvents> optionStrings
 	{
-		{ UP,				NAVIGATE_UP_EVENT						},
-		{ DOWN,				NAVIGATE_DOWN_EVENT						},
-		{ LEFT,				NAVIGATE_LEFT_EVENT						},
-		{ RIGHT,			NAVIGATE_RIGHT_EVENT					}
+		{ MOVE_UP_ACTION,				NAVIGATE_UP_EVENT						},
+		{ MOVE_DOWN_ACTION,				NAVIGATE_DOWN_EVENT						},
+		{ MOVE_LEFT_ACTION,				NAVIGATE_LEFT_EVENT						},
+		{ MOVE_RIGHT_ACTION,			NAVIGATE_RIGHT_EVENT					},
+		{ SWITCH_STATE_ACTION,			CONFIRM_EVENT							},
+		{ EXIT_ACTION,					EXIT_GAME_EVENT						}
 
 	};
 

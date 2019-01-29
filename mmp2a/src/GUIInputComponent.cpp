@@ -48,8 +48,8 @@ void GUIInputComponent::exit()
 
 function<void(float)> GUIInputComponent::generateFunction(InputActions action)
 {
-	Direction dir = inputActionsToDirection(action);
-	GameEvents ev = directionToGameEvents(dir);
+	//Direction dir = inputActionsToDirection(action);
+	GameEvents ev = inputToGameEvents(action);
 	if (ev == NULL_GAME_EVENT) err() << "NULL_GAME_EVENT when creating Event in GUIInputComponent\n";
 
 	//has to be saved into member variable, so it can be deleted properly later

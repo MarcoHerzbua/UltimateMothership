@@ -175,11 +175,6 @@ void GUIRenderComponent::setPreviousWidgetActive()
 void GUIRenderComponent::update(const float deltaTimeSeconds)
 {
 
-	if (InputManager::getInstance().isKeyPressed(InputActions::SWITCH_STATE_ACTION, 0))
-	{
-		if (m_activeWidget)
-			m_activeWidget->onActivation();
-	}
 
 	//if (InputManager::getInstance().isKeyPressed(InputActions::EXIT_ACTION, 0))
 	//{
@@ -226,6 +221,12 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	case(NAVIGATE_UP_EVENT):
 	{
 		setPreviousWidgetActive();
+	}
+	break;
+	case(CONFIRM_EVENT):
+	{
+		if (m_activeWidget)
+			m_activeWidget->onActivation();
 	}
 	break;
 	default:
