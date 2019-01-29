@@ -69,6 +69,7 @@ void GUILabelComponent::initTmxData()
 	label->setText(text);
 	label->setTextSize(textSize);
 	label->setHorizontalAlignment(tgui::Label::HorizontalAlignment::Center);
+
 	//label->setAutoSize(true);
 	m_guiRenderComponent->addWidgetComponent(this);
 	m_mapObject = nullptr;
