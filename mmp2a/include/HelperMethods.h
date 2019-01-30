@@ -3,6 +3,9 @@
 
 #include "Node.h"
 
+class GameObject;
+class ShipComponent;
+
 using namespace std;
 using namespace sf;
 
@@ -31,5 +34,5 @@ namespace hm
 	
 	Vector2f getCenter(const FloatRect& rect);
 	
-	
+	ShipComponent* getShipFromGameObject(GameObject* g);
 }

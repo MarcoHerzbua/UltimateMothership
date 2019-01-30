@@ -7,9 +7,12 @@
 
 #include "Stats.h"
 
-class ShipComponent;
+#include "HelperMethods.h"
 
+class ShipComponent;
 class GameObject;
+
+using namespace hm;
 
 class IAbilityComponent
 {
@@ -42,5 +45,4 @@ protected:
 	vector<Target> m_targets;
 
 	void clearTargets();
-	ShipComponent* getShipFromGameObject(GameObject* g);
 };
