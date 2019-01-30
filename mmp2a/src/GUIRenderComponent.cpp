@@ -285,6 +285,13 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 		label->setVisible(!label->isVisible());
 	}
 	break;
+	case (UPDATE_POPUP_EVENT):
+	{
+		auto ev = dynamic_cast<UpdatePopupEvent*>(event);
+		auto label = static_pointer_cast<tgui::Label>(m_gui->get("PopupHeader"));
+		label->setText(ev->m_text);
+	}
+	break;
 	default:
 		break;
 	}

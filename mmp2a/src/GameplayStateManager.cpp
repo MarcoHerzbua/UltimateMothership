@@ -34,6 +34,11 @@ void GameplayStateManager::exit()
 
 void GameplayStateManager::onEvent(IGameEvent * event)
 {
+	if (event->getID() == GAMEPLAYSTATE_CHANGE_EVENT)
+	{
+		auto ev = dynamic_cast<GameplayStateChangeEvent*>(event);
+		setState(TRANSITION_GAMEPLAY_STATE);
+	}
 }
 
 void GameplayStateManager::registerState(GameplayStates name, IGameplayState * state)

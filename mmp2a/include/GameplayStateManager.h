@@ -12,7 +12,8 @@ class IGameplayState;
 
 #pragma endregion
 
-class GameplayStateManager : IEventListener
+class GameplayStateManager 
+	: IEventListener
 {
 public:
 	static GameplayStateManager& getInstance();

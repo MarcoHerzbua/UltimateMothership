@@ -14,6 +14,7 @@
 
 class GameplayAttackState : public IGameplayState
 {
+public:
 	GameplayAttackState();
 
 	void init() override;

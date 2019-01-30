@@ -6,7 +6,12 @@
 // game classes
 #include "Game.h"
 #include "GameObject.h"
-
+#include "GameplayAbilityState.h"
+#include "GameplayAttackState.h"
+#include "GameplayMoveState.h"
+#include "GameplaySelectionState.h"
+#include "GameplayTransitionState.h"
+#include "GameEventClasses.h"
 // singleton
 #include "InputManager.h"
 #include "GameStateManager.h"
@@ -33,18 +38,27 @@ void MainState::init()
 	m_playerManager->registerPlayer(0);
 	m_playerManager->registerPlayer(1);
 
-	TmxLoader::loadTmxFile("SpaceMapTesting.tmx", Vector2f());
+	TmxLoader::loadTmxFile("SpaceMap.tmx", Vector2f());
 
 	m_gameplayStateManager = &GameplayStateManager::getInstance();
 
-	//TODO: set up GameplayStateManager here!!!
-}
+	//states get registered automatically when constructed
+	auto abilityState = new GameplayAbilityState();
+	auto attackState = new GameplayAttackState();
+	auto moveState = new GameplayMoveState();
+	auto selectState = new GameplaySelectionState();
+	auto transitionState = new GameplayTransitionState();
+
+	Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(transitionState, selectState));
+	Eventbus::getInstance().fireEvent(new UpdatePopupEvent("The Game is about to start! Player 1 goes first"));
+	//m_gameplayStateManager->setState(TRANSITION_GAMEPLAY_STATE);
+}							
 
 void MainState::update(const float deltaTimeSeconds)
 {
 	m_gameObjectManager->update(deltaTimeSeconds);
 	m_playerManager->update(deltaTimeSeconds);
-	
+	m_gameplayStateManager->update(deltaTimeSeconds);
 
 	handleKeyInput();
 }
@@ -52,7 +66,6 @@ void MainState::update(const float deltaTimeSeconds)
 void MainState::exit()
 {
 	IGameState::exit();
-	GameplayStateManager::getInstance().exit();
 }
 
 
@@ -61,10 +74,6 @@ void MainState::handleKeyInput()
 	if (m_inputManager->isActionActive(InputActions::EXIT_ACTION, 0))
 	{
 		m_gameStateManager->setState(GameStates::MENU_STATE);
-	}
-	if (m_inputManager->isActionActive(InputActions::SWITCH_STATE_ACTION, 0))
-	{
-		Eventbus::getInstance().fireEvent(new TogglePopupEvent());
 	}
 
 }

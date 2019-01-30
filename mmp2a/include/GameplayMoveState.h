@@ -14,6 +14,7 @@
 
 class GameplayMoveState : public IGameplayState
 {
+public:
 	GameplayMoveState();
 
 	void init() override;

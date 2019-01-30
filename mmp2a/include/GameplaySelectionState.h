@@ -14,6 +14,7 @@
 
 class GameplaySelectionState : public IGameplayState
 {
+public:
 	GameplaySelectionState();
 
 	void init() override;

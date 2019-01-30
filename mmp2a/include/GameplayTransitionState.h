@@ -12,7 +12,9 @@
 
 #pragma endregion
 
-class GameplayTransitionState : public IGameplayState
+class GameplayTransitionState 
+	: public IGameplayState
+	, public IEventListener
 {
 public:
 	GameplayTransitionState();
@@ -23,8 +25,15 @@ public:
 
 	void exit() override;
 
+	void onEvent(IGameEvent * event) override;
+
+	void setNextState(IGameplayState * next) { m_nextState = next; };
+	void setPreviousState(IGameplayState * prev) { m_previousState = prev; };
+
 private:
 	void handleKeyInput() override;
 
+	IGameplayState * m_previousState;
+	IGameplayState * m_nextState;
 
 };

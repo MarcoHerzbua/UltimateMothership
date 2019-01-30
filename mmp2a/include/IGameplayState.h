@@ -8,6 +8,8 @@
 
 // singleton
 #include "GameplayStateManager.h"
+#include "InputManager.h"
+#include "GameEventClasses.h"
 
 #pragma endregion
 
@@ -22,6 +24,7 @@ public:
 
 	virtual void exit();
 
+	virtual GameplayStates getID() { return m_id; };
 protected:
 	GameplayStates m_id;
 

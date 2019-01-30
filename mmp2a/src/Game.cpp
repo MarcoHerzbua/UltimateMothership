@@ -111,6 +111,7 @@ void Game::draw()
 void Game::shutdown()
 {
 	m_gameStateManager->exit();
+	GameplayStateManager::getInstance().exit();
 }
 
 void Game::bindKeys()
