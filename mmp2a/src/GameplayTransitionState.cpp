@@ -36,12 +36,13 @@ void GameplayTransitionState::onEvent(IGameEvent * event)
 
 void GameplayTransitionState::handleKeyInput()
 {
-	if (InputManager::getInstance().isActionActive(InputActions::SWITCH_STATE_ACTION, 0))
+	auto playerMng = &PlayerManager::getInstance();
+	if (InputManager::getInstance().isActionActive(InputActions::A_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
 		Eventbus::getInstance().fireEvent(new TogglePopupEvent());
 		m_gameplayStateManager->setState(m_nextState->getID());
 	}
-	if (InputManager::getInstance().isActionActive(EXIT_ACTION, 0))
+	if (InputManager::getInstance().isActionActive(B_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
 		Eventbus::getInstance().fireEvent(new TogglePopupEvent());
 		m_gameplayStateManager->setState(m_previousState->getID());

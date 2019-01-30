@@ -15,6 +15,7 @@ void GameplayAbilityState::init()
 
 void GameplayAbilityState::update(const float deltaTimeSeconds)
 {
+	handleKeyInput();
 }
 
 void GameplayAbilityState::exit()
@@ -23,4 +24,18 @@ void GameplayAbilityState::exit()
 
 void GameplayAbilityState::handleKeyInput()
 {
+	auto playerMng = &PlayerManager::getInstance();
+
+	if (InputManager::getInstance().isActionActive(A_BUTTON_ACTION, playerMng->getActivePlayer()))
+	{
+		Eventbus::getInstance().fireEvent(
+			new GameplayStateChangeEvent(this, m_gameplayStateManager->getState(ATTACK_GAMEPLAY_STATE)));
+		Eventbus::getInstance().fireEvent(
+			new UpdatePopupEvent("You are about to attack an enemy!! Continue?"));
+	}
+	if (InputManager::getInstance().isActionActive(B_BUTTON_ACTION, playerMng->getActivePlayer()))
+	{
+		m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
+	}
+
 }

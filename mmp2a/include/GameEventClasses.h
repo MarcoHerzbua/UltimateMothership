@@ -68,6 +68,12 @@ public:
 	string m_text;
 };
 
+class GameplayEndTurnEvent : public virtual IGameEvent
+{
+public:
+	GameplayEndTurnEvent();
+};
+
 //THis method gets called when Buttons with Events are created in Tiled (Action_ = ...)
 static IGameEvent * createGameEvent(GameEvents event)
 {

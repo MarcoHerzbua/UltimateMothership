@@ -10,6 +10,7 @@
 #include "GameplayStateManager.h"
 #include "InputManager.h"
 #include "GameEventClasses.h"
+#include "PlayerManager.h"
 
 #pragma endregion
 

@@ -51,3 +51,8 @@ UpdatePopupEvent::UpdatePopupEvent(std::string text)
 	m_id = UPDATE_POPUP_EVENT;
 	m_text = text;
 }
+
+GameplayEndTurnEvent::GameplayEndTurnEvent()
+{
+	m_id = GAMEPLAYSTATE_END_TURN_EVENT;
+}

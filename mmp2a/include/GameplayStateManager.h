@@ -32,7 +32,7 @@ public:
 	// ====================================================
 
 	Game * getGamePtr() { return m_game; };
-
+	IGameplayState * getState(GameplayStates state) { return m_states[state]; };
 private:
 	GameplayStateManager(void) = default;
 	~GameplayStateManager(void) = default;
@@ -40,7 +40,6 @@ private:
 	GameplayStateManager& operator=(GameplayStateManager const&) = delete;
 
 	void setState(IGameplayState * state);
-
 	// ====================================================
 
 	Game * m_game;

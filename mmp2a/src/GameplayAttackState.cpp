@@ -17,6 +17,10 @@ void GameplayAttackState::init()
 
 void GameplayAttackState::update(const float deltaTimeSeconds)
 {
+	//TODO: resolve Attack here
+	m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
+	PlayerManager::getInstance().activateNextUnit();
+
 }
 
 void GameplayAttackState::exit()
