@@ -3,6 +3,8 @@
 #include "stdafx.h"
 #include "IAbilityComponent.h"
 
+#include "ShipComponent.h"
+
 class FarmAbilityComponent : public IAbilityComponent
 {
 public:

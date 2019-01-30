@@ -5,7 +5,9 @@
 #include "NLTmxMap.h"
 #include "Abilities.h"
 
-#include "ShipComponent.h"
+#include "Stats.h"
+
+class ShipComponent;
 
 class GameObject;
 

@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "UltimateAttackAbilityComponent.h"
 
+#include "ShipComponent.h"
+
 UltimateAttackAbilityComponent::UltimateAttackAbilityComponent(GameObject * gameObject)
 	: AttackAbilityComponent(gameObject)
 {

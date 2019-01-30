@@ -15,12 +15,15 @@ void IGameState::init()
 
 	m_renderManager = &RenderManager::getInstance();
 	m_gameObjectManager = &GameObjectManager::getInstance();
-	m_physicsManager = &PhysicsManager::getInstance();
+	//m_physicsManager = &PhysicsManager::getInstance();
+
+	m_playerManager = &PlayerManager::getInstance();
 }
 
 void IGameState::exit()
 {
 	if (m_renderManager) m_renderManager->clearComponents();
-	if (m_physicsManager) m_physicsManager->clearComponents();
+	//if (m_physicsManager) m_physicsManager->clearComponents();
 	if (m_gameObjectManager) m_gameObjectManager->clearGameObjects();
+	if (m_playerManager) m_playerManager->clearComponents();
 }
