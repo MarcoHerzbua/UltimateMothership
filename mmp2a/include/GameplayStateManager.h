@@ -18,8 +18,6 @@ class GameplayStateManager
 public:
 	static GameplayStateManager& getInstance();
 
-	void init(Game * game);
-
 	void update(const float deltaTimeSeconds);
 
 	void exit();
@@ -31,7 +29,6 @@ public:
 
 	// ====================================================
 
-	Game * getGamePtr() { return m_game; };
 	IGameplayState * getState(GameplayStates state) { return m_states[state]; };
 private:
 	GameplayStateManager(void) = default;
@@ -41,8 +38,6 @@ private:
 
 	void setState(IGameplayState * state);
 	// ====================================================
-
-	Game * m_game;
 
 	IGameplayState * m_currentState = nullptr;
 	std::map<GameplayStates, IGameplayState *> m_states;
