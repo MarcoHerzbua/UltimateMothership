@@ -366,6 +366,9 @@
     <ClInclude Include="..\include\ControllerMapping.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\CursorComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\assets\pinball_background.jpg">
@@ -582,6 +585,9 @@
     </ClCompile>
     <ClCompile Include="..\src\GUIPanelComponent.cpp">
       <Filter>Source Files\GameComponents\GUIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CursorComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

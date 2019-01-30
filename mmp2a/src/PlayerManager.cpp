@@ -29,7 +29,18 @@ void PlayerManager::update(const float deltaTimeSeconds)
 		activateNextUnit();
 	}
 
-	updateUnit(deltaTimeSeconds);
+	updateCursor(deltaTimeSeconds);
+	//updateUnit(deltaTimeSeconds);
+}
+
+void PlayerManager::registerCursor(SteeringComponent* s)
+{
+	m_cursor = s;
+}
+
+void PlayerManager::updateCursor(const float deltaTimeSeconds)
+{
+	m_cursor->updateUnit(deltaTimeSeconds);
 }
 
 void PlayerManager::updateUnit(const float deltaTimeSeconds)

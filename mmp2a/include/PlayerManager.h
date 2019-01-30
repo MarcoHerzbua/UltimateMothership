@@ -21,9 +21,11 @@ public:
 
 	void update(const float deltaTimeSeconds);
 	void updateUnit(const float deltaTimeSeconds);
-	
+	void updateCursor(const float deltaTimeSeconds);
+
 	void registerPlayer(int p);
 	void registerUnit(int p, SteeringComponent* s);
+	void registerCursor(SteeringComponent* s);
 
 	void activateFirstUnit();
 	void activateLastUnit();
@@ -56,6 +58,8 @@ private:
 	vector<int> m_players;
 	map<int, vector<SteeringComponent*>> m_units;
 	map<int, int> m_ressources;
+
+	SteeringComponent* m_cursor;
 
 	vector<int>::iterator m_activePlayer;
 	vector<SteeringComponent*>::iterator m_activeUnit;
