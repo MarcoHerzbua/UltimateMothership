@@ -61,9 +61,6 @@
     <Filter Include="Header Files\GameComponents\SteeringComponents\ControlComponents">
       <UniqueIdentifier>{85fceed5-fe7c-47a0-9d92-2ca364699201}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameComponents\ObserverComponents">
-      <UniqueIdentifier>{1e77c26e-26c4-4943-9111-c4b4eacb50a2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\GameComponents\RenderComponents">
       <UniqueIdentifier>{c3d3be26-caea-49a7-95f0-99d7e52f5619}</UniqueIdentifier>
     </Filter>
@@ -78,9 +75,6 @@
     </Filter>
     <Filter Include="Source Files\GameComponents\RenderComponents">
       <UniqueIdentifier>{b8bfdbfe-4dd5-4d6e-95f0-2020dfd9787d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\GameComponents\ObserverComponents">
-      <UniqueIdentifier>{1b21ede0-a204-4f25-93f2-f15a5c952dcb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\GameComponents\SteeringComponents">
       <UniqueIdentifier>{456f4c75-82ca-434e-b136-c0d884bdfbe1}</UniqueIdentifier>
@@ -189,9 +183,6 @@
     <ClInclude Include="..\include\RenderManager.h">
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\PhysicsManager.h">
-      <Filter>Header Files\Managers</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\LayerRenderComponent.h">
       <Filter>Header Files\GameComponents\RenderComponents</Filter>
     </ClInclude>
@@ -207,26 +198,8 @@
     <ClInclude Include="..\include\CameraComponent.h">
       <Filter>Header Files\GameComponents\UpdateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\CollisionComponent.h">
-      <Filter>Header Files\GameComponents\UpdateComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\RigidBodyComponent.h">
-      <Filter>Header Files\GameComponents\UpdateComponents</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\DebugGeometryRenderComponent.h">
       <Filter>Header Files\GameComponents\RenderComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\ObserverComponent.h">
-      <Filter>Header Files\GameComponents\ObserverComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\PointCounterComponent.h">
-      <Filter>Header Files\GameComponents\ObserverComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\ObservableComponent.h">
-      <Filter>Header Files\GameComponents\ObserverComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\DeathZoneComponent.h">
-      <Filter>Header Files\GameComponents\ObserverComponents</Filter>
     </ClInclude>
     <ClInclude Include="..\include\LayerLoader.h">
       <Filter>Header Files\MapLoader</Filter>
@@ -401,14 +374,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\assets\pinball_background.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\assets\ball.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="..\src\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -445,16 +410,7 @@
     <ClCompile Include="..\src\IGameComponent.cpp">
       <Filter>Source Files\GameComponents</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\PhysicsManager.cpp">
-      <Filter>Source Files\Managers</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\CameraComponent.cpp">
-      <Filter>Source Files\GameComponents\UpdateComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CollisionComponent.cpp">
-      <Filter>Source Files\GameComponents\UpdateComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\RigidBodyComponent.cpp">
       <Filter>Source Files\GameComponents\UpdateComponents</Filter>
     </ClCompile>
     <ClCompile Include="..\src\LayerRenderComponent.cpp">
@@ -471,15 +427,6 @@
     </ClCompile>
     <ClCompile Include="..\src\DebugGeometryRenderComponent.cpp">
       <Filter>Source Files\GameComponents\RenderComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\PointCounterComponent.cpp">
-      <Filter>Source Files\GameComponents\ObserverComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ObservableComponent.cpp">
-      <Filter>Source Files\GameComponents\ObserverComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\DeathZoneComponent.cpp">
-      <Filter>Source Files\GameComponents\ObserverComponents</Filter>
     </ClCompile>
     <ClCompile Include="..\src\LayerLoader.cpp">
       <Filter>Source Files\MapLoader</Filter>
@@ -640,15 +587,5 @@
     <ClCompile Include="..\src\GameplayEndTurnState.cpp">
       <Filter>Source Files\GameState\GameplayStates</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\assets\vgafix.fon">
-      <Filter>Resource Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="..\assets\REFSAN.TTF">
-      <Filter>Resource Files</Filter>
-    </Font>
   </ItemGroup>
 </Project>

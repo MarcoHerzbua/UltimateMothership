@@ -48,11 +48,9 @@
     <ClInclude Include="..\include\IGUIWidgetComponent.h" />
     <ClInclude Include="..\include\AiInputComponent.h" />
     <ClInclude Include="..\include\CameraComponent.h" />
-    <ClInclude Include="..\include\CollisionComponent.h" />
     <ClInclude Include="..\include\ControllerComponent.h" />
     <ClInclude Include="..\include\ComponentLoader.h" />
     <ClInclude Include="..\include\ControllerComponents.h" />
-    <ClInclude Include="..\include\DeathZoneComponent.h" />
     <ClInclude Include="..\include\DebugGeometryRenderComponent.h" />
     <ClInclude Include="..\include\Direction.h" />
     <ClInclude Include="..\include\Edge.h" />
@@ -86,19 +84,14 @@
     <ClInclude Include="..\include\NodeGraphRenderComponent.h" />
     <ClInclude Include="..\include\NodeGraphLoader.h" />
     <ClInclude Include="..\include\ObjectLoader.h" />
-    <ClInclude Include="..\include\ObservableComponent.h" />
-    <ClInclude Include="..\include\ObserverComponent.h" />
-    <ClInclude Include="..\include\PhysicsManager.h" />
     <ClInclude Include="..\include\HumanControllerComponent.h" />
     <ClInclude Include="..\include\PlayerManager.h" />
-    <ClInclude Include="..\include\PointCounterComponent.h" />
     <ClInclude Include="..\include\rapidxml\rapidxml.hpp" />
     <ClInclude Include="..\include\rapidxml\rapidxml_iterators.hpp" />
     <ClInclude Include="..\include\rapidxml\rapidxml_print.hpp" />
     <ClInclude Include="..\include\rapidxml\rapidxml_utils.hpp" />
     <ClInclude Include="..\include\RenderComponent.h" />
     <ClInclude Include="..\include\RenderManager.h" />
-    <ClInclude Include="..\include\RigidBodyComponent.h" />
     <ClInclude Include="..\include\ShapeRenderComponent.h" />
     <ClInclude Include="..\include\ShipComponent.h" />
     <ClInclude Include="..\include\SpriteRenderComponent.h" />
@@ -111,10 +104,6 @@
     <ClInclude Include="..\include\TmxLoader.h" />
     <ClInclude Include="..\include\Transformation.h" />
     <ClInclude Include="..\include\UltimateAttackAbilityComponent.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\assets\ball.png" />
-    <Image Include="..\assets\pinball_background.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\include\FarmShipComponent.h" />
@@ -148,10 +137,8 @@
     <ClCompile Include="..\src\IGameEvent.cpp" />
     <ClCompile Include="..\src\IGUIWidgetComponent.cpp" />
     <ClCompile Include="..\src\CameraComponent.cpp" />
-    <ClCompile Include="..\src\CollisionComponent.cpp" />
     <ClCompile Include="..\src\ControllerComponent.cpp" />
     <ClCompile Include="..\src\ComponentLoader.cpp" />
-    <ClCompile Include="..\src\DeathZoneComponent.cpp" />
     <ClCompile Include="..\src\DebugGeometryRenderComponent.cpp" />
     <ClCompile Include="..\src\Edge.cpp" />
     <ClCompile Include="..\src\Game.cpp" />
@@ -177,14 +164,10 @@
     <ClCompile Include="..\src\NodeGraphRenderComponent.cpp" />
     <ClCompile Include="..\src\NodeGraphLoader.cpp" />
     <ClCompile Include="..\src\ObjectLoader.cpp" />
-    <ClCompile Include="..\src\ObservableComponent.cpp" />
-    <ClCompile Include="..\src\PhysicsManager.cpp" />
     <ClCompile Include="..\src\HumanControllerComponent.cpp" />
     <ClCompile Include="..\src\PlayerManager.cpp" />
-    <ClCompile Include="..\src\PointCounterComponent.cpp" />
     <ClCompile Include="..\src\RenderComponent.cpp" />
     <ClCompile Include="..\src\RenderManager.cpp" />
-    <ClCompile Include="..\src\RigidBodyComponent.cpp" />
     <ClCompile Include="..\src\ShapeRenderComponent.cpp" />
     <ClCompile Include="..\src\ShipComponent.cpp" />
     <ClCompile Include="..\src\SpriteRenderComponent.cpp" />
@@ -194,12 +177,6 @@
     <ClCompile Include="..\src\TextureLoader.cpp" />
     <ClCompile Include="..\src\TmxLoader.cpp" />
     <ClCompile Include="..\src\UltimateAttackAbilityComponent.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\assets\vgafix.fon" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="..\assets\REFSAN.TTF" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -16,8 +16,7 @@
 // singleton
 #include "InputManager.h"
 #include "GameStateManager.h"
-#include "RenderManager.h"
-#include "PhysicsManager.h"
+//#include "PhysicsManager.h"
 
 #include "GameEventClasses.h"
 #include "TmxLoader.h"
