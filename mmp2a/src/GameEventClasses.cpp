@@ -38,3 +38,21 @@ TogglePopupEvent::TogglePopupEvent()
 {
 	m_id = TOGGLE_POPUP_EVENT;
 }
+
+GameplayStateChangeEvent::GameplayStateChangeEvent(IGameplayState * prev, IGameplayState * next)
+{
+	m_id = GAMEPLAYSTATE_CHANGE_EVENT;
+	m_prev = prev;
+	m_next = next;
+}
+
+UpdatePopupEvent::UpdatePopupEvent(std::string text)
+{
+	m_id = UPDATE_POPUP_EVENT;
+	m_text = text;
+}
+
+GameplayEndTurnEvent::GameplayEndTurnEvent()
+{
+	m_id = GAMEPLAYSTATE_END_TURN_EVENT;
+}

@@ -4,6 +4,7 @@
 #include "IGameEvent.h"
 #include "Direction.h"
 #include "ShipComponent.h"
+#include "IGameplayState.h"
 #pragma endregion
 
 
@@ -50,6 +51,27 @@ class TogglePopupEvent : public virtual IGameEvent
 {
 public:
 	TogglePopupEvent();
+};
+
+class GameplayStateChangeEvent : public virtual IGameEvent
+{
+public:
+	GameplayStateChangeEvent(IGameplayState * prev, IGameplayState * next);
+	IGameplayState * m_prev;
+	IGameplayState * m_next;
+};
+
+class UpdatePopupEvent : public virtual IGameEvent
+{
+public:
+	UpdatePopupEvent(std::string text);
+	string m_text;
+};
+
+class GameplayEndTurnEvent : public virtual IGameEvent
+{
+public:
+	GameplayEndTurnEvent();
 };
 
 //THis method gets called when Buttons with Events are created in Tiled (Action_ = ...)

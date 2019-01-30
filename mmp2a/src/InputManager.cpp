@@ -12,15 +12,17 @@ void InputManager::update()
 		m_wasKeyDownLastFrame[pair.first] = isKeyDown(pair.first);
 	}
 
-	//int playerIdx = 0;
-	//for (auto map : m_wasButtonDownLastFrame)
-	//{
-	//	for (auto pair : map)
-	//	{
-	//		map[pair.first] = isButtonDown(pair.first, playerIdx);
-	//	}
-	//	playerIdx++;
-	//}
+	int playerIdx = 0;
+	for (auto &map : m_wasButtonDownLastFrame)
+	{
+		for (auto &pair : map)
+		{
+			map[pair.first] = isButtonDown(pair.first, playerIdx);
+		}
+		playerIdx++;
+	}
+
+	//err() << m_wasButtonDownLastFrame[0][BUTTON_A];
 }
 
 bool InputManager::isKeyDown(const Keyboard::Key keyCode)
@@ -35,13 +37,15 @@ bool InputManager::isKeyUp(const Keyboard::Key keyCode)
 
 bool InputManager::isKeyPressed(const Keyboard::Key keyCode)
 {
-	return (Keyboard::isKeyPressed(keyCode) != m_wasKeyDownLastFrame[keyCode]) && !m_wasKeyDownLastFrame[keyCode];
+	return (Keyboard::isKeyPressed(keyCode) != m_wasKeyDownLastFrame[keyCode])
+		&& !m_wasKeyDownLastFrame[keyCode];
 }
 
 bool InputManager::isKeyReleased(const Keyboard::Key keyCode)
 {
 	return (Keyboard::isKeyPressed(keyCode) != m_wasKeyDownLastFrame[keyCode]) && m_wasKeyDownLastFrame[keyCode];
 }
+
 
 bool InputManager::isButtonDown(const ControllerButtonMapping buttonIdx, const int playerIdx)
 {
