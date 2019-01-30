@@ -29,10 +29,15 @@ void MainState::init()
 {
 	IGameState::init();
 
+
 	m_playerManager->registerPlayer(0);
 	m_playerManager->registerPlayer(1);
 
 	TmxLoader::loadTmxFile("SpaceMapTesting.tmx", Vector2f());
+
+	m_gameplayStateManager = &GameplayStateManager::getInstance();
+
+	//TODO: set up GameplayStateManager here!!!
 }
 
 void MainState::update(const float deltaTimeSeconds)
@@ -40,7 +45,14 @@ void MainState::update(const float deltaTimeSeconds)
 	m_gameObjectManager->update(deltaTimeSeconds);
 	m_playerManager->update(deltaTimeSeconds);
 	
+
 	handleKeyInput();
+}
+
+void MainState::exit()
+{
+	IGameState::exit();
+	GameplayStateManager::getInstance().exit();
 }
 
 
