@@ -28,15 +28,11 @@ void MotherShipComponent::update(const float deltaTime)
 
 void MotherShipComponent::initBaseStats()
 {
-	Stats baseStats;
+	m_baseStats.attack = 50;
+	m_baseStats.defense = 50;
+	m_baseStats.life = 100;
 
-	baseStats.attack = 50;
-	baseStats.defense = 50;
-	baseStats.life = 100;
-
-	baseStats.movement = 5;
-
-	m_baseStats = baseStats;
+	m_baseStats.movement = 5;
 
 	IAbilityComponent* basicAttack = new BasicAttackAbilityComponent(m_gameObject);
 	IAbilityComponent* ultimateAttack = new UltimateAttackAbilityComponent(m_gameObject);

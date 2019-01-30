@@ -4,6 +4,7 @@
 #include "SteeringComponent.h"
 #include "CursorComponent.h"
 #include "InputManager.h"
+#include "ShipComponent.h"
 #include "Eventbus.h"
 #include "GameEventClasses.h"
 
@@ -54,7 +55,10 @@ void PlayerManager::updateCursor(const float deltaTimeSeconds)
 void PlayerManager::updateUnit(const float deltaTimeSeconds)
 {
 	if (m_units[*m_activePlayer].size() > 0)
+	{
 		(*m_activeUnit)->updateUnit(deltaTimeSeconds);
+		
+	}
 }
 
 void PlayerManager::registerPlayer(int p)
@@ -66,17 +70,19 @@ void PlayerManager::registerPlayer(int p)
 void PlayerManager::registerUnit(int p, SteeringComponent* s)
 {
 	m_units[p].push_back(s);
+	m_ships[p].push_back(getShipFromGameObject(s->getGameObjectPtr()));
 }
 
-void PlayerManager::changeActiveShip()
+void PlayerManager::changeActivePlayer()
 {
-	m_activeShip = getShipFromGameObject((*m_activeUnit)->getGameObjectPtr());
+	for (auto ship : m_ships[*m_activePlayer])
+		ship->resetMovement();
 }
 
 void PlayerManager::activateFirstUnit()
 {
 	m_activeUnit = m_units[*m_activePlayer].begin();
-	changeActiveShip();
+	m_activeShip = m_ships[*m_activePlayer].begin();
 
 	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(m_activeShip));
 }
@@ -84,7 +90,7 @@ void PlayerManager::activateFirstUnit()
 void PlayerManager::activateLastUnit()
 {
 	m_activeUnit = m_units[*m_activePlayer].end()--;
-	changeActiveShip();
+	m_activeShip = m_ships[*m_activePlayer].end()--;
 
 	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(m_activeShip));
 }
@@ -92,11 +98,10 @@ void PlayerManager::activateLastUnit()
 void PlayerManager::activateNextUnit()
 {
 	m_activeUnit++;
+	m_activeShip++;
 
 	if (m_activeUnit == m_units[*m_activePlayer].end())
 		activateFirstUnit();
-
-	changeActiveShip();
 
 	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(m_activeShip));
 }
@@ -107,9 +112,10 @@ void PlayerManager::activatePrevUnit()
 		activateLastUnit();
 
 	else
+	{
 		m_activeUnit--;
-
-	changeActiveShip();
+		m_activeShip--;
+	}
 
 	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(m_activeShip));
 }
@@ -121,6 +127,7 @@ void PlayerManager::activateFirstPlayer()
 	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
 
 	activateFirstUnit();
+	changeActivePlayer();
 }
 
 
@@ -131,6 +138,7 @@ void PlayerManager::activateLastPlayer()
 	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
 	
 	activateFirstUnit();
+	changeActivePlayer();
 }
 
 void PlayerManager::activateNextPlayer()
@@ -145,6 +153,7 @@ void PlayerManager::activateNextPlayer()
 	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
 
 	activateFirstUnit();
+	changeActivePlayer();
 }
 
 void PlayerManager::activatePrevPlayer()
@@ -160,6 +169,7 @@ void PlayerManager::activatePrevPlayer()
 	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
 
 	activateFirstUnit();
+	changeActivePlayer();
 }
 
 void PlayerManager::clearComponents()
@@ -170,7 +180,9 @@ void PlayerManager::clearComponents()
 	for (auto player : m_players)
 	{
 		m_units[player].clear();
+		m_ships[player].clear();
 	}
 	m_units.clear();
+	m_ships.clear();
 	m_players.clear();
 }

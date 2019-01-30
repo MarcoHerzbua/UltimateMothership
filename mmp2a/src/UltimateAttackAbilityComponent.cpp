@@ -7,12 +7,16 @@ UltimateAttackAbilityComponent::UltimateAttackAbilityComponent(GameObject * game
 	: AttackAbilityComponent(gameObject)
 {
 	m_id = ULTIMATE_ATTACK_ABILITY;
+
+	m_range = 1000;
 }
 
 UltimateAttackAbilityComponent::UltimateAttackAbilityComponent(GameObject * gameObject, NLTmxMapObject & mapObject)
 	: AttackAbilityComponent(gameObject, mapObject)
 {
 	m_id = ULTIMATE_ATTACK_ABILITY;
+
+	m_range = 1000;
 }
 
 void UltimateAttackAbilityComponent::update(const float deltaTime)

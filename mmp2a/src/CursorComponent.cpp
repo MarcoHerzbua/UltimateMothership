@@ -36,13 +36,13 @@ void CursorComponent::updateCursor(const float deltaTimeSeconds)
 	m_distanceToActive = graph->calcDistance(*(PlayerManager::getInstance().getActiveUnit()->getCurrentNode()), *(m_steering->getCurrentNode()));
 
 	
-
 	if (InputManager::getInstance().isKeyPressed(MOVE_ABILITY_ACTION, m_steering->getPlayerIndex()))
 	{
-		cout << "shipMovement; " << PlayerManager::getInstance().getActiveShip()->getCurrentMovement() << endl;
-		cout << "distance: " << m_distanceToActive << endl;
-			//if (ship->getCurrentMovement() >= m_distanceToActive)
+		if (PlayerManager::getInstance().getActiveShip()->getCurrentMovement() >= m_distanceToActive)
+		{
 			PlayerManager::getInstance().getActiveUnit()->moveToTargetNode(m_steering->getCurrentNode());
+			PlayerManager::getInstance().getActiveShip()->decreasMovement(m_distanceToActive);
+		}
 	}
 }
 

@@ -12,12 +12,16 @@ BasicAttackAbilityComponent::BasicAttackAbilityComponent(GameObject* gameObject)
 	: AttackAbilityComponent(gameObject)
 {
 	m_id = BASIC_ATTACK_ABILITY;
+	
+	m_range = 5;
 }
 
 BasicAttackAbilityComponent::BasicAttackAbilityComponent(GameObject* gameObject, NLTmxMapObject& mapObject)
 	: AttackAbilityComponent(gameObject, mapObject)
 {
 	m_id = BASIC_ATTACK_ABILITY;
+	
+	m_range = 5;
 }
 
 void BasicAttackAbilityComponent::update(const float deltaTime)
