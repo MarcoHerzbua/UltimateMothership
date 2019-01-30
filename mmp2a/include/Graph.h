@@ -34,11 +34,15 @@ public:
 	stack<InputActions> getPath(Node& start, Node& destination);
 	stack<InputActions> getpathFromNodeRecord(NodeRecord* rec, const Node& start, const Node& destination);
 
-	vector<Node*>::iterator getNodesBeginn() { return m_nodes.begin(); };
+	int calcDistance(Node& start, Node& destination);
+
+	vector<Node*>::iterator getNodesBegin() { return m_nodes.begin(); };
 	vector<Node*>::iterator getNodesEnd() { return m_nodes.end(); };
 
 	Node* getNodeOnPos(int row, int col);
 	Node* getNodeOnPos(int idx);
+
+	Vector2i getNodePosition(Node* n);
 
 	int getRows() { return m_rows; };
 	int getCols() { return m_cols; };
