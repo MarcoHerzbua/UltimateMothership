@@ -5,7 +5,7 @@
 
 // abstract
 #include "RenderComponent.h"
-#include "RigidBodyComponent.h"
+//#include "RigidBodyComponent.h"
 
 // enums
 #include "GameComponents.h"
