@@ -84,7 +84,7 @@ void PlayerManager::activateFirstUnit()
 	m_activeUnit = m_units[*m_activePlayer].begin();
 	m_activeShip = m_ships[*m_activePlayer].begin();
 
-	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(m_activeShip));
+	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(*m_activeShip));
 }
 
 void PlayerManager::activateLastUnit()
@@ -92,7 +92,7 @@ void PlayerManager::activateLastUnit()
 	m_activeUnit = m_units[*m_activePlayer].end()--;
 	m_activeShip = m_ships[*m_activePlayer].end()--;
 
-	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(m_activeShip));
+	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(*m_activeShip));
 }
 
 void PlayerManager::activateNextUnit()
@@ -103,7 +103,7 @@ void PlayerManager::activateNextUnit()
 	if (m_activeUnit == m_units[*m_activePlayer].end())
 		activateFirstUnit();
 
-	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(m_activeShip));
+	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(*m_activeShip));
 }
 
 void PlayerManager::activatePrevUnit()
@@ -117,7 +117,7 @@ void PlayerManager::activatePrevUnit()
 		m_activeShip--;
 	}
 
-	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(m_activeShip));
+	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(*m_activeShip));
 }
 
 void PlayerManager::activateFirstPlayer()

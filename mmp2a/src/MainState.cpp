@@ -37,7 +37,7 @@ void MainState::init()
 	m_playerManager->registerPlayer(0);
 	m_playerManager->registerPlayer(1);
 
-	TmxLoader::loadTmxFile("SpaceMapTesting.tmx", Vector2f());
+	TmxLoader::loadTmxFile("SpaceMap.tmx", Vector2f());
 
 	m_gameplayStateManager = &GameplayStateManager::getInstance();
 
