@@ -14,6 +14,7 @@
 // #include "DeathZoneComponent.h"
 #include "GUIRenderComponent.h"
 #include "SteeringComponent.h"
+#include "CursorComponent.h"
 #include "GUIButtonComponent.h"
 #include "MotherShipComponent.h"
 #include "FighterShipComponent.h"
@@ -60,6 +61,7 @@ IGameComponent* ComponentLoader::createComponent(const GameComponents id, NLTmxM
 	// case POINT_COUNTER_COMPONENT:			return new PointCounterComponent(gameObject, mapObject);
 	// case DEATH_ZONE_COMPONENT:				return new DeathZoneComponent(gameObject, mapObject);
 	case STEERING_COMPONENT:				return new SteeringComponent(gameObject, mapObject);
+	case CURSOR_COMPONENT:					return new CursorComponent(gameObject, mapObject);
 	case GUI_RENDER_COMPONENT:				return new GUIRenderComponent(gameObject, mapObject);
 	case GUI_BUTTON_COMPONENT:				return new GUIButtonComponent(gameObject, mapObject);
 	case MOTHER_SHIP_COMPONENT:				return new MotherShipComponent(gameObject, mapObject);

@@ -159,3 +159,33 @@ stack<InputActions> Graph::getpathFromNodeRecord(NodeRecord* rec, const Node& st
 
 	return path;
 }
+
+int Graph::calcDistance(Node & start, Node & destination)
+{
+	Vector2i startPos = getNodePosition(&start);
+	Vector2i destinationPos = getNodePosition(&destination);
+
+	int distance = abs(startPos.x - destinationPos.x) + abs(startPos.y - destinationPos.y);
+
+	return distance;
+}
+
+Vector2i Graph::getNodePosition(Node* n)
+{
+	int index = 0;
+	for (auto node : m_nodes)
+	{
+		if (node == n)
+			break;
+
+		index++;
+	}
+
+	Vector2i pos;
+
+	pos.x = index / m_cols;
+	pos.y = index % m_cols;
+
+	return pos;
+
+}

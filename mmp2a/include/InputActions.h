@@ -25,6 +25,11 @@ enum InputActions
 	NEXT_UNIT_ACTION,
 	NEXT_PLAYER_ACTION,
 
+	MOVE_ABILITY_ACTION,
+	BASIC_ATTACK_ABILITY_ACTION,
+	ULTIMATE_ATTACK_ABILITY_ACTION,
+	FARM_ABILITY_ACTION,
+
 };
 
 static InputActions stringToInputAction(string s) {
@@ -35,17 +40,20 @@ static InputActions stringToInputAction(string s) {
 		{ "exit",				EXIT_ACTION				},
 		{ "switchstate",		CONFIRM_ACTION		},
 
-		{ "moveleft",			MOVE_LEFT_ACTION		},
-		{ "moveright",			MOVE_RIGHT_ACTION		},
-		{ "moveup",				MOVE_UP_ACTION			},
-		{ "movedown",			MOVE_DOWN_ACTION		},
+		{ "moveleft",						MOVE_LEFT_ACTION				},
+		{ "moveright",						MOVE_RIGHT_ACTION				},
+		{ "moveup",							MOVE_UP_ACTION					},
+		{ "movedown",						MOVE_DOWN_ACTION				},
 
-		{ "switchhumanai",		SWITCH_HUMAN_AI			},
+		{ "switchhumanai",					SWITCH_HUMAN_AI					},
 
-		{ "nextunit",			NEXT_UNIT_ACTION		},
-		{ "nextplayer",			NEXT_PLAYER_ACTION		},
+		{ "nextunit",						NEXT_UNIT_ACTION				},
+		{ "nextplayer",						NEXT_PLAYER_ACTION				},
 
-
+		{ "moveabilityaction",				MOVE_ABILITY_ACTION,			},
+		{ "basicattackabilityaction",		BASIC_ATTACK_ABILITY_ACTION,	},
+		{ "ultimateattackabilityaction",	ULTIMATE_ATTACK_ABILITY_ACTION,	},
+		{ "farmabilityaction",				FARM_ABILITY_ACTION,			},
 	};
 
 	auto itr = optionStrings.find(s);

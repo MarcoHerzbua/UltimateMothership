@@ -45,27 +45,3 @@ void IAbilityComponent::clearTargets()
 	m_targets.clear();
 }
 
-ShipComponent* IAbilityComponent::getShipFromGameObject(GameObject* g)
-{
-	ShipComponent* ship;
-
-	auto s = g->findComponents(FIGHTER_SHIP_COMPONENT);
-	if (s.size() > 0)
-		ship = static_cast<ShipComponent*>(s[0]);
-	else
-	{
-		s = g->findComponents(MOTHER_SHIP_COMPONENT);
-		if (s.size() > 0)
-			ship = static_cast<ShipComponent*>(s[0]);
-		else
-		{
-			s = g->findComponents(FARM_SHIP_COMPONENT);
-			if (s.size() > 0)
-				ship = static_cast<ShipComponent*>(s[0]);
-			else
-				return nullptr;
-		}
-	}
-
-	return ship;
-}

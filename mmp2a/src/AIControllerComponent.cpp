@@ -13,6 +13,8 @@
 
 #include "AiInputComponent.h"
 
+#include "Node.h"
+
 #pragma endregion
 
 AIControllerComponent::AIControllerComponent(GameObject * gameObject, SteeringComponent* steeringComponent)
@@ -51,7 +53,11 @@ void AIControllerComponent::initTmxData()
 void AIControllerComponent::activate()
 {
 	cout << "playerIndex: " << m_steeringComponent->getPlayerIndex() << " -- AI active" << endl;
-	m_aiActionStack = m_graph->getPath(*(m_steeringComponent->getCurrentNode()), *(m_graph->getNodeOnPos(0)));
+}
+
+void AIControllerComponent::moveToTargetNode(Node* n)
+{
+	m_aiActionStack = m_graph->getPath(*(m_steeringComponent->getCurrentNode()), *n);
 }
 
 InputActions AIControllerComponent::getNextActionFromStack()

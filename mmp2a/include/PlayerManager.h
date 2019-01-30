@@ -6,6 +6,7 @@
 #include "HelperMethods.h"
 
 class SteeringComponent;
+class CursorComponent;
 
 using namespace sf;
 using namespace hm;
@@ -21,9 +22,13 @@ public:
 
 	void update(const float deltaTimeSeconds);
 	void updateUnit(const float deltaTimeSeconds);
-	
+	void updateCursor(const float deltaTimeSeconds);
+
 	void registerPlayer(int p);
 	void registerUnit(int p, SteeringComponent* s);
+	void registerCursor(CursorComponent* c);
+
+	void changeActiveShip();
 
 	void activateFirstUnit();
 	void activateLastUnit();
@@ -46,6 +51,8 @@ public:
 	void decreaseRessources(int playerIndex, int amount) { m_ressources[playerIndex] -= amount; };
 
 	int getActivePlayer() { return *m_activePlayer; };
+	SteeringComponent* getActiveUnit() { return *m_activeUnit; };
+	ShipComponent* getActiveShip() { return m_activeShip; };
 
 private:
 	PlayerManager(void) = default;
@@ -57,8 +64,11 @@ private:
 	map<int, vector<SteeringComponent*>> m_units;
 	map<int, int> m_ressources;
 
+	CursorComponent* m_cursor;
+
 	vector<int>::iterator m_activePlayer;
 	vector<SteeringComponent*>::iterator m_activeUnit;
+	ShipComponent* m_activeShip;
 
 	bool m_firstActivePlayer = true;
 	bool m_firstActiveUnit = true;
