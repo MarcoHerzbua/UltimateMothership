@@ -7,8 +7,8 @@ enum GameObjects
 {
 	NULL_OBJECT = 0,
 
-	PLAYER1_OBJECT,
-	PLAYER2_OBJECT,
+	// PLAYER1_OBJECT,
+	// PLAYER2_OBJECT,
 
 	CAMERA_OBJECT,
 
@@ -26,8 +26,8 @@ static GameObjects stringToGameObjects(string s) {
 
 	static const std::map<std::string, GameObjects> optionStrings
 	{
-		{ "player1",		PLAYER1_OBJECT			},
-		{ "player2",		PLAYER2_OBJECT			},
+		// { "player1",		PLAYER1_OBJECT			},
+		// { "player2",		PLAYER2_OBJECT			},
 		{ "camera",			CAMERA_OBJECT			},
 		{ "tilemap",		TILEMAP_OBJECT			},
 		{ "exittext",		EXIT_TEXT_OBJECT		},

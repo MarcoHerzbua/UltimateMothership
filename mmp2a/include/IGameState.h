@@ -14,7 +14,7 @@
 #include "GameStateManager.h"
 #include "RenderManager.h"
 #include "GameObjectManager.h"
-#include "PhysicsManager.h"
+//#include "PhysicsManager.h"
 #include "PlayerManager.h"
 
 #include "HelperMethods.h"
@@ -39,7 +39,7 @@ protected:
 
 	RenderManager * m_renderManager;
 	GameObjectManager * m_gameObjectManager;
-	PhysicsManager * m_physicsManager;
+	//PhysicsManager * m_physicsManager;
 	PlayerManager* m_playerManager;
 
 	virtual void handleKeyInput() = 0;
