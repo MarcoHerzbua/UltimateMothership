@@ -34,9 +34,10 @@ UpdateButtonMapEvent::UpdateButtonMapEvent(vector<sf::String> buttonMap)
 	m_buttonMap = buttonMap;
 }
 
-TogglePopupEvent::TogglePopupEvent()
+TogglePopupEvent::TogglePopupEvent(bool isVisible)
 {
 	m_id = TOGGLE_POPUP_EVENT;
+	m_isVisible = isVisible;
 }
 
 GameplayStateChangeEvent::GameplayStateChangeEvent(IGameplayState * prev, IGameplayState * next)
@@ -55,4 +56,12 @@ UpdatePopupEvent::UpdatePopupEvent(std::string text)
 GameplayEndTurnEvent::GameplayEndTurnEvent()
 {
 	m_id = GAMEPLAYSTATE_END_TURN_EVENT;
+}
+
+ToggleLabelTextEvent::ToggleLabelTextEvent(bool setVisible, int playerIdx)
+{
+	m_id = TOGGLE_LABEL_TEXT_EVENT;
+	m_isVisible = setVisible;
+	m_playerIdx = playerIdx;
+
 }

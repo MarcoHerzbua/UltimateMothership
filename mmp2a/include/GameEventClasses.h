@@ -50,7 +50,8 @@ public:
 class TogglePopupEvent : public virtual IGameEvent
 {
 public:
-	TogglePopupEvent();
+	TogglePopupEvent(bool setVisible);
+	bool m_isVisible;
 };
 
 class GameplayStateChangeEvent : public virtual IGameEvent
@@ -72,6 +73,14 @@ class GameplayEndTurnEvent : public virtual IGameEvent
 {
 public:
 	GameplayEndTurnEvent();
+};
+
+class ToggleLabelTextEvent : public virtual IGameEvent
+{
+public:
+	ToggleLabelTextEvent(bool setVisible, int playeridx);
+	bool m_isVisible;
+	int m_playerIdx;
 };
 
 //THis method gets called when Buttons with Events are created in Tiled (Action_ = ...)

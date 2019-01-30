@@ -280,18 +280,20 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	break;
 	case(TOGGLE_POPUP_EVENT):
 	{
+		auto ev = dynamic_cast<TogglePopupEvent*>(event);
+
 		auto panel = static_pointer_cast<tgui::Panel>(m_gui->get("PanelPopup"));
-		panel->setVisible(!panel->isVisible());
+		panel->setVisible(ev->m_isVisible);
 		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonOne"));
-		panel->setVisible(!panel->isVisible());
+		panel->setVisible(ev->m_isVisible);
 		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonTwo"));
-		panel->setVisible(!panel->isVisible());
+		panel->setVisible(ev->m_isVisible);
 		auto label = static_pointer_cast<tgui::Label>(m_gui->get("PopupHeader"));
-		label->setVisible(!label->isVisible());
+		label->setVisible(ev->m_isVisible);
 		label = static_pointer_cast<tgui::Label>(m_gui->get("PopupButtonOneText"));
-		label->setVisible(!label->isVisible());
+		label->setVisible(ev->m_isVisible);
 		label = static_pointer_cast<tgui::Label>(m_gui->get("PopupButtonTwoText"));
-		label->setVisible(!label->isVisible());
+		label->setVisible(ev->m_isVisible);
 	}
 	break;
 	case (UPDATE_POPUP_EVENT):
@@ -299,6 +301,30 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 		auto ev = dynamic_cast<UpdatePopupEvent*>(event);
 		auto label = static_pointer_cast<tgui::Label>(m_gui->get("PopupHeader"));
 		label->setText(ev->m_text);
+	}
+	break;
+	case (TOGGLE_LABEL_TEXT_EVENT):
+	{
+		auto ev = dynamic_cast<ToggleLabelTextEvent*>(event);
+
+		string player = "P" + to_string(ev->m_playerIdx + 1);
+
+		Color color;
+		ev->m_isVisible ? color = Color::Blue : color = Color::White;
+
+		vector<string> labelNames =
+		{
+			"ShipStatsHeader", "HP", "Atk", "Def", "Move",
+			"HPStats", "AtkStats", "DefStats", "MoveStats",
+			"PlayerStatsHeader", "Resource", "ResourceStats"
+		};
+
+		for (int i = 0; i < labelNames.size(); i++)
+		{
+			auto widget = static_pointer_cast<tgui::Label>(m_gui->get(player + labelNames[i]));
+			widget->getRenderer()->setTextColor(color);
+
+		}
 	}
 	break;
 	default:
