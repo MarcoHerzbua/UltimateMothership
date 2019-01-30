@@ -64,14 +64,21 @@ void PlayerManager::registerUnit(int p, SteeringComponent* s)
 	m_units[p].push_back(s);
 }
 
+void PlayerManager::changeActiveShip()
+{
+	m_activeShip = getShipFromGameObject((*m_activeUnit)->getGameObjectPtr());
+}
+
 void PlayerManager::activateFirstUnit()
 {
 	m_activeUnit = m_units[*m_activePlayer].begin();
+	changeActiveShip();
 }
 
 void PlayerManager::activateLastUnit()
 {
 	m_activeUnit = m_units[*m_activePlayer].end()--;
+	changeActiveShip();
 }
 
 void PlayerManager::activateNextUnit()
@@ -80,6 +87,8 @@ void PlayerManager::activateNextUnit()
 
 	if (m_activeUnit == m_units[*m_activePlayer].end())
 		activateFirstUnit();
+
+	changeActiveShip();
 }
 
 void PlayerManager::activatePrevUnit()
@@ -89,6 +98,8 @@ void PlayerManager::activatePrevUnit()
 
 	else
 		m_activeUnit--;
+
+	changeActiveShip();
 }
 
 void PlayerManager::activateFirstPlayer()

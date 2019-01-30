@@ -3,8 +3,12 @@
 
 #include "IGameComponent.h"
 
+#include "HelperMethods.h"
+
 class GameObject;
 class SteeringComponent;
+
+using namespace hm;
 
 class CursorComponent : public IGameComponent
 {
@@ -24,4 +28,5 @@ protected:
 
 	SteeringComponent* m_steering;
 
+	int m_distanceToActive;
 };
