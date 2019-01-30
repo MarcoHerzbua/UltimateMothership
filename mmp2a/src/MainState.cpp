@@ -29,13 +29,16 @@ void MainState::init()
 {
 	IGameState::init();
 
-	TmxLoader::loadTmxFile("SpaceMap.tmx", Vector2f());
+	m_playerManager->registerPlayer(0);
+	m_playerManager->registerPlayer(1);
+
+	TmxLoader::loadTmxFile("SpaceMapTesting.tmx", Vector2f());
 }
 
 void MainState::update(const float deltaTimeSeconds)
 {
-	m_physicsManager->update(deltaTimeSeconds);
 	m_gameObjectManager->update(deltaTimeSeconds);
+	m_playerManager->update(deltaTimeSeconds);
 	
 	handleKeyInput();
 }

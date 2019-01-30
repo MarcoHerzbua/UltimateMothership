@@ -13,6 +13,8 @@
 
 #include "GameObject.h"
 
+#include "PlayerManager.h"
+
 #pragma endregion
 
 SteeringComponent::SteeringComponent(GameObject * gameObject)
@@ -29,8 +31,34 @@ SteeringComponent::SteeringComponent(GameObject * gameObject, NLTmxMapObject & m
 
 void SteeringComponent::update(const float deltaTimeSeconds)
 { 
+	////TODO movement of GameObject -> could be moved to a MovementManager etc (like physicsManager without physics)
+	//m_gameObject->setPosition(m_currentNode->getPosition()); 
+
+	//addTimeSinceLastInput(deltaTimeSeconds);
+
+
+	////TODO: Just for testing, add functionality somewhere else
+	//if (InputManager::getInstance().isKeyPressed(SWITCH_HUMAN_AI, m_playerIndex))
+	//{
+	//	if (m_aiControlled)
+	//	{
+	//		setActiveController(findController(HUMAN_CONTROLLER_COMPONENT));
+	//		m_aiControlled = false;
+	//	}
+	//	else
+	//	{
+	//		setActiveController(findController(AI_CONTROLLER_COMPONENT));
+	//		m_aiControlled = true;
+	//	}
+	//}
+
+	//m_activeController->update(deltaTimeSeconds);
+}
+
+void SteeringComponent::updateUnit(const float deltaTimeSeconds)
+{
 	//TODO movement of GameObject -> could be moved to a MovementManager etc (like physicsManager without physics)
-	m_gameObject->setPosition(m_currentNode->getPosition()); 
+	m_gameObject->setPosition(m_currentNode->getPosition());
 
 	addTimeSinceLastInput(deltaTimeSeconds);
 
@@ -100,6 +128,9 @@ void SteeringComponent::initTmxData()
 	m_currentNode = nodeGraphRenderComp->getGraph().getNodeOnPos(startRow, startCol);
 	
 	setCurrentNode(m_currentNode);
+	m_gameObject->setPosition(m_currentNode->getPosition());
+
+	PlayerManager::getInstance().registerUnit(m_playerIndex, this);
 
 	m_mapObject = nullptr;
 }

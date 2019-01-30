@@ -2,6 +2,8 @@
 #include "ShipComponent.h"
 
 #include "IAbilityComponent.h"
+#include "GameObject.h"
+
 
 ShipComponent::ShipComponent(GameObject * gameObject)
 	: IGameComponent(gameObject)

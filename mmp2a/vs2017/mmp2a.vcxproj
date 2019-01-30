@@ -81,6 +81,7 @@
     <ClInclude Include="..\include\ObserverComponent.h" />
     <ClInclude Include="..\include\PhysicsManager.h" />
     <ClInclude Include="..\include\HumanControllerComponent.h" />
+    <ClInclude Include="..\include\PlayerManager.h" />
     <ClInclude Include="..\include\PointCounterComponent.h" />
     <ClInclude Include="..\include\rapidxml\rapidxml.hpp" />
     <ClInclude Include="..\include\rapidxml\rapidxml_iterators.hpp" />
@@ -92,6 +93,7 @@
     <ClInclude Include="..\include\ShapeRenderComponent.h" />
     <ClInclude Include="..\include\ShipComponent.h" />
     <ClInclude Include="..\include\SpriteRenderComponent.h" />
+    <ClInclude Include="..\include\Stats.h" />
     <ClInclude Include="..\include\stdafx.h" />
     <ClInclude Include="..\include\SteeringComponent.h" />
     <ClInclude Include="..\include\targetver.h" />
@@ -161,6 +163,7 @@
     <ClCompile Include="..\src\ObservableComponent.cpp" />
     <ClCompile Include="..\src\PhysicsManager.cpp" />
     <ClCompile Include="..\src\HumanControllerComponent.cpp" />
+    <ClCompile Include="..\src\PlayerManager.cpp" />
     <ClCompile Include="..\src\PointCounterComponent.cpp" />
     <ClCompile Include="..\src\RenderComponent.cpp" />
     <ClCompile Include="..\src\RenderManager.cpp" />

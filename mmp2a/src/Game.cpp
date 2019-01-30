@@ -74,6 +74,8 @@ bool Game::init()
 	m_inputManager = &InputManager::getInstance();
 	m_gameObjectManager = &GameObjectManager::getInstance();
 	m_renderManager = &RenderManager::getInstance();
+	m_playerManager = &PlayerManager::getInstance();
+
 	m_eventbus = &Eventbus::getInstance();
 
 	m_gameStateManager->init(this);
@@ -128,11 +130,17 @@ void Game::bindKeys()
 	m_inputManager->bind(MOVE_DOWN_ACTION, LEFT_STICK_DOWN, 0);
 	m_inputManager->bind(MOVE_RIGHT_ACTION, LEFT_STICK_RIGHT, 0);
 
-	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::Up, 1);
-	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::Left, 1);
-	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::Down, 1);
-	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::Right, 1);
+	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 1);
+	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 1);
+	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 1);
+	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 1);
 
 	m_inputManager->bind(SWITCH_HUMAN_AI, Keyboard::Num1, 0);
-	m_inputManager->bind(SWITCH_HUMAN_AI, Keyboard::Num2, 1);
+	m_inputManager->bind(SWITCH_HUMAN_AI, Keyboard::Num1, 1);
+
+	m_inputManager->bind(NEXT_PLAYER_ACTION, Keyboard::Num9, 0);
+	m_inputManager->bind(NEXT_PLAYER_ACTION, Keyboard::Num9, 1);
+
+	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::Num0, 0);
+	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::Num0, 1);
 }

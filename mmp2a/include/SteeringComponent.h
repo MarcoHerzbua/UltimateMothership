@@ -26,6 +26,7 @@ public:
 
 	virtual void initTmxData() override;
 
+	void updateUnit(const float deltaTimeSeconds);
 	
 	void registerController(ControllerComponent* c);
 	void removeController(ControllerComponents cId);

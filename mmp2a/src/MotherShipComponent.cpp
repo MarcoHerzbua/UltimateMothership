@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "MotherShipComponent.h"
-#include "IAbilityComponent.h"
 
 #include "IAbilityComponent.h"
+
 #include "BasicAttackAbilityComponent.h"
 #include "UltimateAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"

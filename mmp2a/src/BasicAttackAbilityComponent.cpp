@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "BasicAttackAbilityComponent.h"
 
+#include "IGameComponent.h"
+#include "SteeringComponent.h"
+#include "PlayerManager.h"
+
 #include "ShipComponent.h"
-#include "MotherShipComponent.h"
-#include "FarmShipComponent.h"
-#include "FighterShipComponent.h"
-#include "GameObject.h"
+
 
 BasicAttackAbilityComponent::BasicAttackAbilityComponent(GameObject* gameObject)
 	: AttackAbilityComponent(gameObject)
@@ -31,18 +32,21 @@ void BasicAttackAbilityComponent::useAbility(Target t)
 	Stats targetStats = target->getCurrentStats();
 	Stats originStats = origin->getCurrentStats();
 
+	const int targetPlayerIndex = static_cast<SteeringComponent*>(t.target->findComponents(STEERING_COMPONENT)[0])->getPlayerIndex();
+	const int originPlayerIndex = static_cast<SteeringComponent*>(t.origin->findComponents(STEERING_COMPONENT)[0])->getPlayerIndex();
+
 	target->getDamage(getBaseDamage(), originStats.attack);
 
 	if (target->isDead())
 	{
-		origin->increaseRessources(5);
+		PlayerManager::getInstance().increaseRessources(originPlayerIndex, 5);
 	}
 	else
 	{
 		origin->getDamage(getBaseDamage(), targetStats.attack);
 		if (origin->isDead())
 		{
-			target->increaseRessources(5);
+			PlayerManager::getInstance().increaseRessources(targetPlayerIndex, 5); 
 		}
 	}
 }
