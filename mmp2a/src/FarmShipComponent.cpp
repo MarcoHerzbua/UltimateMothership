@@ -10,14 +10,14 @@ FarmShipComponent::FarmShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)
 {
 	m_id = FARM_SHIP_COMPONENT;
-	initBaseStats();
+	//initBaseStats();
 }
 
 FarmShipComponent::FarmShipComponent(GameObject * gameObject, NLTmxMapObject & mapObject)
 	: ShipComponent(gameObject, mapObject)
 {
 	m_id = FARM_SHIP_COMPONENT;
-	initBaseStats();
+	//initBaseStats();
 }
 
 void FarmShipComponent::update(const float deltaTime)
