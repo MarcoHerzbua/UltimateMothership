@@ -2,6 +2,7 @@
 #include "PlayerManager.h"
 
 #include "SteeringComponent.h"
+#include "CursorComponent.h"
 #include "InputManager.h"
 
 void PlayerManager::update(const float deltaTimeSeconds)
@@ -19,6 +20,11 @@ void PlayerManager::update(const float deltaTimeSeconds)
 		m_firstActiveUnit = false;
 	}
 
+	updateUnit(deltaTimeSeconds);
+
+	if ((*m_activeUnit)->isMoving())
+		return;
+
 	if (InputManager::getInstance().isKeyPressed(NEXT_PLAYER_ACTION, *m_activePlayer))
 	{
 		activateNextPlayer();
@@ -30,17 +36,16 @@ void PlayerManager::update(const float deltaTimeSeconds)
 	}
 
 	updateCursor(deltaTimeSeconds);
-	//updateUnit(deltaTimeSeconds);
 }
 
-void PlayerManager::registerCursor(SteeringComponent* s)
+void PlayerManager::registerCursor(CursorComponent* c)
 {
-	m_cursor = s;
+	m_cursor = c;
 }
 
 void PlayerManager::updateCursor(const float deltaTimeSeconds)
 {
-	m_cursor->updateUnit(deltaTimeSeconds);
+	m_cursor->updateCursor(deltaTimeSeconds);
 }
 
 void PlayerManager::updateUnit(const float deltaTimeSeconds)

@@ -4,6 +4,7 @@
 #include "IGameComponent.h"
 
 class GameObject;
+class SteeringComponent;
 
 class CursorComponent : public IGameComponent
 {
@@ -16,6 +17,11 @@ public:
 
 	void initTmxData() override;
 
+	void updateCursor(const float deltaTimeSeconds);
+
+
 protected:
-	
+
+	SteeringComponent* m_steering;
+
 };
