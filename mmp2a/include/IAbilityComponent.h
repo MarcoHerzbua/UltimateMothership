@@ -37,12 +37,16 @@ public:
 	Abilities getId() { return m_id; };
 	GameObject* getGameObjectPtr() { return m_gameObject; };
 
+	int getRange() { return m_range; };
+
 protected:
 	Abilities m_id;
 	GameObject* m_gameObject;
 	NLTmxMapObject* m_mapObject;
 
 	vector<Target> m_targets;
+
+	int m_range;
 
 	void clearTargets();
 };
