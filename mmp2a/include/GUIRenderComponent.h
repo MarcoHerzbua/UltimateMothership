@@ -43,6 +43,8 @@ public:
 	void setWidgetActive(IGUIWidgetComponent * widget);
 	void setNextWidgetActive();
 	void setPreviousWidgetActive();
+
+	tgui::Gui* getGUI() { return m_gui; };
 private:
 	tgui::Gui * m_gui;
 	shared_ptr<tgui::Theme> m_theme;

@@ -23,6 +23,4 @@ private:
 	SteeringComponent* m_steeringComp;
 
 	function<void(float)> generateFunction(InputActions action) override;
-
-	IGameEvent * m_event;
 };

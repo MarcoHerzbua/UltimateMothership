@@ -48,6 +48,7 @@ void GUILabelComponent::initTmxData()
 	string path = GameObjectManager::getInstance().getAssetPath();
 	string text = "This is a placeholder text!";
 	int textSize = 16;
+	auto xAlignment = tgui::Label::HorizontalAlignment::Center;
 
 	for (auto property : m_mapObject->properties)
 	{
@@ -58,6 +59,8 @@ void GUILabelComponent::initTmxData()
 		}
 		if (name == "TextSize")
 			textSize = stoi(property->value);
+		if (name == "XAlignment")
+			xAlignment = static_cast<tgui::Label::HorizontalAlignment>(stoi(property->value));
 	}
 
 	//if (!m_font.loadFromFile(path))
@@ -68,9 +71,19 @@ void GUILabelComponent::initTmxData()
 
 	label->setText(text);
 	label->setTextSize(textSize);
-	label->setHorizontalAlignment(tgui::Label::HorizontalAlignment::Center);
+	label->setHorizontalAlignment(xAlignment);
+
 	//label->setAutoSize(true);
 	m_guiRenderComponent->addWidgetComponent(this);
 	m_mapObject = nullptr;
 
+}
+
+void GUILabelComponent::setWidgetText(sf::String s)
+{
+	auto gui = m_guiRenderComponent->getGUI();
+	gui->remove(m_widget);
+	auto widget = static_pointer_cast<tgui::Label>(m_widget);
+	widget->setText(s);
+	gui->add(widget);
 }

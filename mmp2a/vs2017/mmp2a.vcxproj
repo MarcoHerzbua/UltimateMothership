@@ -23,6 +23,7 @@
     <ClInclude Include="..\include\AIControllerComponent.h" />
     <ClInclude Include="..\include\AttackAbilityComponent.h" />
     <ClInclude Include="..\include\BasicAttackAbilityComponent.h" />
+    <ClInclude Include="..\include\ControllerMapping.h" />
     <ClInclude Include="..\include\Eventbus.h" />
     <ClInclude Include="..\include\FarmAbilityComponent.h" />
     <ClInclude Include="..\include\GameEventClasses.h" />
@@ -30,6 +31,7 @@
     <ClInclude Include="..\include\GUIControllerComponent.h" />
     <ClInclude Include="..\include\GUIInputComponent.h" />
     <ClInclude Include="..\include\GUILabelComponent.h" />
+    <ClInclude Include="..\include\GUIPanelComponent.h" />
     <ClInclude Include="..\include\GUISteeringComponent.h" />
     <ClInclude Include="..\include\IAbilityComponent.h" />
     <ClInclude Include="..\include\IEventListener.h" />
@@ -114,6 +116,7 @@
     <ClCompile Include="..\src\GUIControllerComponent.cpp" />
     <ClCompile Include="..\src\GUIInputComponent.cpp" />
     <ClCompile Include="..\src\GUILabelComponent.cpp" />
+    <ClCompile Include="..\src\GUIPanelComponent.cpp" />
     <ClCompile Include="..\src\GUISteeringComponent.cpp" />
     <ClCompile Include="..\src\AttackAbilityComponent.cpp" />
     <ClCompile Include="..\src\BasicAttackAbilityComponent.cpp" />

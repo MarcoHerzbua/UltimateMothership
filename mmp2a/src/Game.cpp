@@ -116,12 +116,19 @@ void Game::shutdown()
 void Game::bindKeys()
 {
 	m_inputManager->bind(EXIT_ACTION, Keyboard::Escape, 0);
+	m_inputManager->bind(EXIT_ACTION, BUTTON_BACK, 0);
+
 	m_inputManager->bind(SWITCH_STATE_ACTION, Keyboard::Space, 0);
+	m_inputManager->bind(SWITCH_STATE_ACTION, BUTTON_A, 0);
 
 	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 0);
 	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 0);
 	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 0);
 	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 0);
+	m_inputManager->bind(MOVE_UP_ACTION, LEFT_STICK_UP, 0);
+	m_inputManager->bind(MOVE_LEFT_ACTION, LEFT_STICK_LEFT, 0);
+	m_inputManager->bind(MOVE_DOWN_ACTION, LEFT_STICK_DOWN, 0);
+	m_inputManager->bind(MOVE_RIGHT_ACTION, LEFT_STICK_RIGHT, 0);
 
 	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 1);
 	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 1);
