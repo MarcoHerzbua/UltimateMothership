@@ -28,9 +28,9 @@ void GameplayEndTurnState::onEvent(IGameEvent * event)
 	{
 		PlayerManager::getInstance().activateNextPlayer();
 
-		string playerText = "Player " + PlayerManager::getInstance().getActivePlayer();
+		//string playerText = "Player " + PlayerManager::getInstance().getActivePlayer();
 		Eventbus::getInstance().fireEvent(
-			new UpdatePopupEvent(playerText + " is now in Control!!"));
+			new UpdatePopupEvent("Next Player is now in Control!!"));
 
 		auto selectEvent = m_gameplayStateManager->getState(SELECTION_GAMEPLAY_STATE);
 		Eventbus::getInstance().fireEvent(

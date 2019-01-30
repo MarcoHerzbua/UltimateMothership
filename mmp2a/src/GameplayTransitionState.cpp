@@ -31,6 +31,7 @@ void GameplayTransitionState::onEvent(IGameEvent * event)
 		auto ev = dynamic_cast<GameplayStateChangeEvent*>(event);
 		setNextState(ev->m_next);
 		setPreviousState(ev->m_prev);
+		Eventbus::getInstance().fireEvent(new TogglePopupEvent());
 	}
 }
 

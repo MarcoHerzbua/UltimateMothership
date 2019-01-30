@@ -56,6 +56,28 @@ void GameplayStateManager::registerState(GameplayStates name, IGameplayState * s
 void GameplayStateManager::setState(GameplayStates name)
 {
 	setState(m_states[name]);
+	auto eventBus = &Eventbus::getInstance();
+
+	switch (name)
+	{
+	case(TRANSITION_GAMEPLAY_STATE):
+		eventBus->fireEvent(new UpdateButtonMapEvent({ "Popup", "Confirm", "Decline", "", "" }));
+		break;
+	case(SELECTION_GAMEPLAY_STATE):
+		eventBus->fireEvent(new UpdateButtonMapEvent({ "Selection", "Move", "End Turn", "Use Abilities", "Recruit" }));
+		break;	
+	case(ABILITY_GAMEPLAY_STATE):
+		eventBus->fireEvent(new UpdateButtonMapEvent({ "Abilities", "Attack", "Back to Unitselect", "", "" }));
+		break;
+	case(MOVE_GAMEPLAY_STATE):
+		eventBus->fireEvent(new UpdateButtonMapEvent({ "Move", "Confirm Move", "Back to Unitselect", "", "" }));
+		break;
+	case(END_TURN_GAMEPLAY_STATE):
+		eventBus->fireEvent(new GameplayEndTurnEvent());
+		break;
+	default:
+		break;
+	}
 }
 
 void GameplayStateManager::setState(IGameplayState * state)

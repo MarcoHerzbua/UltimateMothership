@@ -121,10 +121,16 @@ void Game::bindKeys()
 
 	m_inputManager->bind(CONFIRM_ACTION, Keyboard::Space, 0);
 	m_inputManager->bind(CONFIRM_ACTION, BUTTON_START, 0);
+
 	m_inputManager->bind(A_BUTTON_ACTION, BUTTON_A, 0);
 	m_inputManager->bind(X_BUTTON_ACTION, BUTTON_X, 0);
 	m_inputManager->bind(B_BUTTON_ACTION, BUTTON_B, 0);
 	m_inputManager->bind(Y_BUTTON_ACTION, BUTTON_Y, 0);
+
+	m_inputManager->bind(A_BUTTON_ACTION, BUTTON_A, 1);
+	m_inputManager->bind(X_BUTTON_ACTION, BUTTON_X, 1);
+	m_inputManager->bind(B_BUTTON_ACTION, BUTTON_B, 1);
+	m_inputManager->bind(Y_BUTTON_ACTION, BUTTON_Y, 1);
 
 	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 0);
 	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 0);

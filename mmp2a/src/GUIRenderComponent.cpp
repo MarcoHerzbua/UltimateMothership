@@ -258,14 +258,16 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	case(UPDATE_BUTTONMAP_EVENT):
 	{
 		auto ev = dynamic_cast<UpdateButtonMapEvent*>(event);
-		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonOneText"));
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonMapHeader"));
 		widget->setText(ev->m_buttonMap[0]);
-		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonTwoText"));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonOneText"));
 		widget->setText(ev->m_buttonMap[1]);
-		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonThreeText"));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonTwoText"));
 		widget->setText(ev->m_buttonMap[2]);
-		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonFourText"));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonThreeText"));
 		widget->setText(ev->m_buttonMap[3]);
+		widget = static_pointer_cast<tgui::Label>(m_gui->get("ButtonFourText"));
+		widget->setText(ev->m_buttonMap[4]);
 
 	}
 	break;
