@@ -34,7 +34,10 @@ public:
 	vector<ControllerComponent*>::iterator findControllerIterator(const ControllerComponents cId);
 	void setActiveController(ControllerComponents cId);
 	void setActiveController(ControllerComponent* c);
-	
+
+	void moveToTargetNode(Node* n);
+	bool isMoving();
+
 	ControllerComponent* getActiveController() { return m_activeController; };
 
 	void setCurrentNode(Node* node) { m_currentNode = node; }
@@ -48,7 +51,7 @@ public:
 
 	int getPlayerIndex() { return m_playerIndex; };
 protected:
-	static constexpr float m_timeDelay = 0.3f;
+	static constexpr float m_timeDelay = 0.1f;
 	float m_timeSinceLastInput = 0.0f;
 
 	Node* m_currentNode;
@@ -58,4 +61,7 @@ protected:
 
 	int m_playerIndex;
 	bool m_aiControlled;
+
+	bool m_locked = false;
+	bool m_doneWithMovement = true;
 };

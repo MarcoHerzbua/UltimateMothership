@@ -142,7 +142,7 @@ void NodeGraphRenderComponent::createGrid(int rows, int cols)
 
 		}
 
-	for (auto nIti = m_graph->getNodesBeginn(); nIti != m_graph->getNodesEnd(); nIti++)
+	for (auto nIti = m_graph->getNodesBegin(); nIti != m_graph->getNodesEnd(); nIti++)
 		for (auto eIti = (*nIti)->getEdgesBeginn(); eIti != (*nIti)->getEdgesEnd(); eIti++)
 		{
 			Vector2f n2_min_n = 0.5f * ((*eIti)->getTargetNode()->getPosition() - (*nIti)->getPosition());

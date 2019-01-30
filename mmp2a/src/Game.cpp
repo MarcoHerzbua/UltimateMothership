@@ -155,4 +155,7 @@ void Game::bindKeys()
 
 	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::Num0, 0);
 	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::Num0, 1);
+
+	m_inputManager->bind(MOVE_ABILITY_ACTION, Keyboard::Num8, 0);
+	m_inputManager->bind(MOVE_ABILITY_ACTION, Keyboard::Num8, 1);
 }

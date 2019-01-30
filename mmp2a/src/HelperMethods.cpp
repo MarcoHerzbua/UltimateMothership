@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "HelperMethods.h"
 
+#include "GameObject.h"
+#include "ShipComponent.h"
+
+
 float hm::calcNodeDistance(Node& a, Node& b)
 {
 	Vector2f pos = a.getPosition() - b.getPosition();
@@ -35,3 +39,27 @@ Vector2f hm::getCenter(const FloatRect & rect)
 	return Vector2f(rect.left, rect.top) + 0.5f * Vector2f(rect.width, rect.height);
 }
 
+ShipComponent* hm::getShipFromGameObject(GameObject* g)
+{
+	ShipComponent* ship;
+
+	auto s = g->findComponents(FIGHTER_SHIP_COMPONENT);
+	if (s.size() > 0)
+		ship = static_cast<ShipComponent*>(s[0]);
+	else
+	{
+		s = g->findComponents(MOTHER_SHIP_COMPONENT);
+		if (s.size() > 0)
+			ship = static_cast<ShipComponent*>(s[0]);
+		else
+		{
+			s = g->findComponents(FARM_SHIP_COMPONENT);
+			if (s.size() > 0)
+				ship = static_cast<ShipComponent*>(s[0]);
+			else
+				return nullptr;
+		}
+	}
+
+	return ship;
+}

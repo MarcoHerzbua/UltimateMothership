@@ -5,6 +5,8 @@
 #include "BasicAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
 
+#include "Stats.h"
+
 #include "Eventbus.h"
 #include "GameEventClasses.h"
 

@@ -2,6 +2,7 @@
 #include "PlayerManager.h"
 
 #include "SteeringComponent.h"
+#include "CursorComponent.h"
 #include "InputManager.h"
 
 void PlayerManager::update(const float deltaTimeSeconds)
@@ -19,8 +20,32 @@ void PlayerManager::update(const float deltaTimeSeconds)
 		m_firstActiveUnit = false;
 	}
 
-
 	updateUnit(deltaTimeSeconds);
+
+	if ((*m_activeUnit)->isMoving())
+		return;
+
+	if (InputManager::getInstance().isKeyPressed(NEXT_PLAYER_ACTION, *m_activePlayer))
+	{
+		activateNextPlayer();
+	}
+
+	if (InputManager::getInstance().isKeyPressed(NEXT_UNIT_ACTION, *m_activePlayer))
+	{
+		activateNextUnit();
+	}
+
+	updateCursor(deltaTimeSeconds);
+}
+
+void PlayerManager::registerCursor(CursorComponent* c)
+{
+	m_cursor = c;
+}
+
+void PlayerManager::updateCursor(const float deltaTimeSeconds)
+{
+	m_cursor->updateCursor(deltaTimeSeconds);
 }
 
 void PlayerManager::updateUnit(const float deltaTimeSeconds)
@@ -39,14 +64,21 @@ void PlayerManager::registerUnit(int p, SteeringComponent* s)
 	m_units[p].push_back(s);
 }
 
+void PlayerManager::changeActiveShip()
+{
+	m_activeShip = getShipFromGameObject((*m_activeUnit)->getGameObjectPtr());
+}
+
 void PlayerManager::activateFirstUnit()
 {
 	m_activeUnit = m_units[*m_activePlayer].begin();
+	changeActiveShip();
 }
 
 void PlayerManager::activateLastUnit()
 {
 	m_activeUnit = m_units[*m_activePlayer].end()--;
+	changeActiveShip();
 }
 
 void PlayerManager::activateNextUnit()
@@ -55,6 +87,8 @@ void PlayerManager::activateNextUnit()
 
 	if (m_activeUnit == m_units[*m_activePlayer].end())
 		activateFirstUnit();
+
+	changeActiveShip();
 }
 
 void PlayerManager::activatePrevUnit()
@@ -64,6 +98,8 @@ void PlayerManager::activatePrevUnit()
 
 	else
 		m_activeUnit--;
+
+	changeActiveShip();
 }
 
 void PlayerManager::activateFirstPlayer()

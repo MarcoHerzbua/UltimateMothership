@@ -23,7 +23,7 @@ public:
 	
 	virtual void update(const float deltaTime) override {};
 
-	virtual void initBaseStats() {};
+	virtual void initBaseStats() = 0;
 
 	virtual void initTmxData();
 

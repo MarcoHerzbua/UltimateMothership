@@ -345,6 +345,9 @@
     <ClInclude Include="..\include\ControllerMapping.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\CursorComponent.h">
+      <Filter>Header Files\GameComponents\SteeringComponents</Filter>
+    </ClInclude>
     <ClInclude Include="..\include\GameplayStates.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
@@ -559,6 +562,9 @@
     </ClCompile>
     <ClCompile Include="..\src\GUIPanelComponent.cpp">
       <Filter>Source Files\GameComponents\GUIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CursorComponent.cpp">
+      <Filter>Source Files\GameComponents\SteeringComponents</Filter>
     </ClCompile>
     <ClCompile Include="..\src\GameplayStateManager.cpp">
       <Filter>Source Files\Managers</Filter>

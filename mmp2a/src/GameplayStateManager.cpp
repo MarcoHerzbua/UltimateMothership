@@ -8,11 +8,6 @@ GameplayStateManager & GameplayStateManager::getInstance()
 	return m_instance;
 }
 
-void GameplayStateManager::init(Game * game)
-{
-	m_game = game;
-}
-
 void GameplayStateManager::update(const float deltaTimeSeconds)
 {
 	m_currentState->update(deltaTimeSeconds);
