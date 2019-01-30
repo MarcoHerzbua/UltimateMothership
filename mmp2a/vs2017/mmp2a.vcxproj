@@ -28,6 +28,13 @@
     <ClInclude Include="..\include\FarmAbilityComponent.h" />
     <ClInclude Include="..\include\GameEventClasses.h" />
     <ClInclude Include="..\include\GameEvents.h" />
+    <ClInclude Include="..\include\GameplayAbilityState.h" />
+    <ClInclude Include="..\include\GameplayAttackState.h" />
+    <ClInclude Include="..\include\GameplayEndTurnState.h" />
+    <ClInclude Include="..\include\GameplayMoveState.h" />
+    <ClInclude Include="..\include\GameplaySelectionState.h" />
+    <ClInclude Include="..\include\GameplayStates.h" />
+    <ClInclude Include="..\include\GameplayTransitionState.h" />
     <ClInclude Include="..\include\GUIControllerComponent.h" />
     <ClInclude Include="..\include\GUIInputComponent.h" />
     <ClInclude Include="..\include\GUILabelComponent.h" />
@@ -37,6 +44,7 @@
     <ClInclude Include="..\include\IEventListener.h" />
     <ClInclude Include="..\include\GUIButtonComponent.h" />
     <ClInclude Include="..\include\IGameEvent.h" />
+    <ClInclude Include="..\include\IGameplayState.h" />
     <ClInclude Include="..\include\IGUIWidgetComponent.h" />
     <ClInclude Include="..\include\AiInputComponent.h" />
     <ClInclude Include="..\include\CameraComponent.h" />
@@ -67,6 +75,7 @@
     <ClInclude Include="..\include\LayerLoader.h" />
     <ClInclude Include="..\include\LayerRenderComponent.h" />
     <ClInclude Include="..\include\MainState.h" />
+    <ClInclude Include="..\include\GameplayStateManager.h" />
     <ClInclude Include="..\include\MapLoader.h" />
     <ClInclude Include="..\include\MenuState.h" />
     <ClInclude Include="..\include\MotherShipComponent.h" />
@@ -99,9 +108,15 @@
   <ItemGroup>
     <ClCompile Include="..\include\FarmShipComponent.h" />
     <ClCompile Include="..\include\FighterShipComponent.h" />
-    <ClCompile Include="..\include\IEventListener.cpp" />
     <ClCompile Include="..\src\AIControllerComponent.cpp" />
     <ClCompile Include="..\src\AiInputComponent.cpp" />
+    <ClCompile Include="..\src\GameplayAbilityState.cpp" />
+    <ClCompile Include="..\src\GameplayAttackState.cpp" />
+    <ClCompile Include="..\src\GameplayEndTurnState.cpp" />
+    <ClCompile Include="..\src\GameplayMoveState.cpp" />
+    <ClCompile Include="..\src\GameplaySelectionState.cpp" />
+    <ClCompile Include="..\src\GameplayStateManager.cpp" />
+    <ClCompile Include="..\src\GameplayTransitionState.cpp" />
     <ClCompile Include="..\src\GUIControllerComponent.cpp" />
     <ClCompile Include="..\src\GUIInputComponent.cpp" />
     <ClCompile Include="..\src\GUILabelComponent.cpp" />
@@ -113,6 +128,8 @@
     <ClCompile Include="..\src\FarmShipComponent.cpp" />
     <ClCompile Include="..\src\FighterShipComponent.cpp" />
     <ClCompile Include="..\src\IAbilityComponent.cpp" />
+    <ClCompile Include="..\src\IEventListener.cpp" />
+    <ClCompile Include="..\src\IGameplayState.cpp" />
     <ClCompile Include="..\src\mmp2a.cpp" />
     <ClCompile Include="..\src\Eventbus.cpp" />
     <ClCompile Include="..\src\GameEventClasses.cpp" />

@@ -2,20 +2,20 @@
 
 #pragma once
 #include "stdafx.h"
+#include "IGameplayState.h"
+
+// enums
+#include "GameplayStates.h"
+
+// singleton
 #include "GameplayStateManager.h"
-
-// interface
-#include "IGameState.h"
-
-// forward declaration
-class GameStateManager;
 
 #pragma endregion
 
-class MainState : public virtual IGameState
+class GameplayMoveState : public IGameplayState
 {
 public:
-	MainState();
+	GameplayMoveState();
 
 	void init() override;
 
@@ -26,5 +26,6 @@ public:
 private:
 	void handleKeyInput() override;
 
-	GameplayStateManager * m_gameplayStateManager;
+
+
 };

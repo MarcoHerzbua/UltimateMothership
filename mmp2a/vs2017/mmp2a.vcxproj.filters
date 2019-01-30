@@ -109,6 +109,12 @@
     <Filter Include="Header Files\GameComponents\UnitComponents\AbilityComponents">
       <UniqueIdentifier>{66aa910c-94d6-4aac-a676-034bbd2e6dd8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameState\GameplayStates">
+      <UniqueIdentifier>{ff59c242-3d1d-48e2-acc9-a8c8325cef36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameState\GameplayStates">
+      <UniqueIdentifier>{d353a2ac-7c6f-4c43-90eb-39b3ecb18c7b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Game.h">
@@ -339,6 +345,33 @@
     <ClInclude Include="..\include\ControllerMapping.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\GameplayStates.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameplayStateManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\IGameplayState.h">
+      <Filter>Header Files\GameState\GameplayStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameplayTransitionState.h">
+      <Filter>Header Files\GameState\GameplayStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameplaySelectionState.h">
+      <Filter>Header Files\GameState\GameplayStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameplayMoveState.h">
+      <Filter>Header Files\GameState\GameplayStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameplayAbilityState.h">
+      <Filter>Header Files\GameState\GameplayStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameplayAttackState.h">
+      <Filter>Header Files\GameState\GameplayStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameplayEndTurnState.h">
+      <Filter>Header Files\GameState\GameplayStates</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\GameObject.cpp">
@@ -473,9 +506,6 @@
     <ClCompile Include="..\src\IGUIWidgetComponent.cpp">
       <Filter>Source Files\GameComponents\GUIComponents</Filter>
     </ClCompile>
-    <ClCompile Include="..\include\IEventListener.cpp">
-      <Filter>Source Files\Eventbus</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\mmp2a.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -529,6 +559,33 @@
     </ClCompile>
     <ClCompile Include="..\src\GUIPanelComponent.cpp">
       <Filter>Source Files\GameComponents\GUIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplayStateManager.cpp">
+      <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplayAbilityState.cpp">
+      <Filter>Source Files\GameState\GameplayStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplayAttackState.cpp">
+      <Filter>Source Files\GameState\GameplayStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplayMoveState.cpp">
+      <Filter>Source Files\GameState\GameplayStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplayTransitionState.cpp">
+      <Filter>Source Files\GameState\GameplayStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IEventListener.cpp">
+      <Filter>Source Files\Eventbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IGameplayState.cpp">
+      <Filter>Source Files\GameState\GameplayStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplaySelectionState.cpp">
+      <Filter>Source Files\GameState\GameplayStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplayEndTurnState.cpp">
+      <Filter>Source Files\GameState\GameplayStates</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -19,15 +19,6 @@ void PlayerManager::update(const float deltaTimeSeconds)
 		m_firstActiveUnit = false;
 	}
 
-	if (InputManager::getInstance().isKeyPressed(NEXT_PLAYER_ACTION, *m_activePlayer))
-	{
-		activateNextPlayer();
-	}
-
-	if (InputManager::getInstance().isKeyPressed(NEXT_UNIT_ACTION, *m_activePlayer))
-	{
-		activateNextUnit();
-	}
 
 	updateUnit(deltaTimeSeconds);
 }
