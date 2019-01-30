@@ -53,6 +53,7 @@ void MainState::init()
 	Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(transitionState, selectState));
 	Eventbus::getInstance().fireEvent(new UpdatePopupEvent("The Game is about to start! Player 1 goes first"));
 	Eventbus::getInstance().fireEvent(new TogglePopupEvent());
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
 	//m_gameplayStateManager->setState(TRANSITION_GAMEPLAY_STATE);
 }							
 

@@ -238,21 +238,28 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 		auto ev = dynamic_cast<UpdateShipStatsEvent*>(event);
 		auto stats = ev->m_shipComponent->getCurrentStats();
 
-		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1HPStats"));
+		int playerIdx = PlayerManager::getInstance().getActivePlayer();
+		string player = "P" + to_string(playerIdx + 1);
+
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "HPStats"));
 		widget->setText(to_string(stats.life));
-		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1AtkStats"));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "AtkStats"));
 		widget->setText(to_string(stats.attack));
-		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1DefStats"));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "DefStats"));
 		widget->setText(to_string(stats.defense));
-		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1MoveStats"));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "MoveStats"));
 		widget->setText(to_string(stats.movement));
 	}
 	break;
 	case(UPDATE_PLAYERSTATS_EVENT):
 	{
 		auto ev = dynamic_cast<UpdatePlayerStatsEvent*>(event);
-		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1ResourceStats"));
-		widget->setText(to_string(ev->m_resources));
+
+		int playerIdx = PlayerManager::getInstance().getActivePlayer();
+		string player = "P" + to_string(playerIdx + 1);
+
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "ResourceStats"));
+		widget->setText(to_string(PlayerManager::getInstance().getRessources(playerIdx)/*ev->m_resources*/));
 	}
 	break;
 	case(UPDATE_BUTTONMAP_EVENT):

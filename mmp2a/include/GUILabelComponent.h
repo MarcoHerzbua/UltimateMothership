@@ -26,5 +26,6 @@ public:
 	void initTmxData() override;
 
 	void setWidgetText(sf::String s) override;
+	void setTextColor(Color c);
 private:
 };
