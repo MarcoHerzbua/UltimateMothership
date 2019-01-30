@@ -54,8 +54,8 @@ static GameEvents inputToGameEvents(InputActions s) {
 		{ MOVE_DOWN_ACTION,				NAVIGATE_DOWN_EVENT						},
 		{ MOVE_LEFT_ACTION,				NAVIGATE_LEFT_EVENT						},
 		{ MOVE_RIGHT_ACTION,			NAVIGATE_RIGHT_EVENT					},
-		{ CONFIRM_ACTION,			CONFIRM_EVENT							},
-		{ EXIT_ACTION,					EXIT_GAME_EVENT						}
+		{ A_BUTTON_ACTION,				CONFIRM_EVENT							},
+		{ ESCAPE_ACTION,					EXIT_GAME_EVENT						}
 
 	};
 

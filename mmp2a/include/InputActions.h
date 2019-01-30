@@ -7,8 +7,9 @@ enum InputActions
 {
 	NULL_ACTION = 0,
 
-	EXIT_ACTION,
-	CONFIRM_ACTION,
+	//EXIT_ACTION,
+	//CONFIRM_ACTION,
+	ESCAPE_ACTION,
 
 	X_BUTTON_ACTION,
 	B_BUTTON_ACTION,
@@ -37,8 +38,8 @@ static InputActions stringToInputAction(string s) {
 
 	static const std::map<std::string, InputActions> optionStrings
 	{
-		{ "exit",				EXIT_ACTION				},
-		{ "switchstate",		CONFIRM_ACTION		},
+		{ "exit",				ESCAPE_ACTION				},
+		{ "switchstate",		A_BUTTON_ACTION		},
 
 		{ "moveleft",						MOVE_LEFT_ACTION				},
 		{ "moveright",						MOVE_RIGHT_ACTION				},
