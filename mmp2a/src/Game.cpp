@@ -125,6 +125,7 @@ void Game::bindKeys()
 	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 0);
 	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 0);
 	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 0);
+
 	m_inputManager->bind(MOVE_UP_ACTION, LEFT_STICK_UP, 0);
 	m_inputManager->bind(MOVE_LEFT_ACTION, LEFT_STICK_LEFT, 0);
 	m_inputManager->bind(MOVE_DOWN_ACTION, LEFT_STICK_DOWN, 0);

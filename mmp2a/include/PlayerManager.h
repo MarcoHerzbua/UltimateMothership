@@ -27,11 +27,13 @@ public:
 
 	void activateFirstUnit();
 	void activateLastUnit();
+
 	void activateNextUnit();
 	void activatePrevUnit();
 
 	void activateFirstPlayer();
 	void activateLastPlayer();
+
 	void activateNextPlayer();
 	void activatePrevPlayer();
 
@@ -42,6 +44,8 @@ public:
 	void increaseRessources(int playerIndex) { m_ressources[playerIndex]++; };
 	void increaseRessources(int playerIndex, int amount) { m_ressources[playerIndex] += amount; };
 	void decreaseRessources(int playerIndex, int amount) { m_ressources[playerIndex] -= amount; };
+
+	int getActivePlayer() { return *m_activePlayer; };
 
 private:
 	PlayerManager(void) = default;
