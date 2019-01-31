@@ -39,6 +39,7 @@ public:
 
 	int getRange() { return m_range; };
 
+	void clearTargets();
 protected:
 	Abilities m_id;
 	GameObject* m_gameObject;
@@ -48,5 +49,4 @@ protected:
 
 	int m_range;
 
-	void clearTargets();
 };

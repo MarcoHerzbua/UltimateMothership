@@ -23,3 +23,10 @@ RenderComponent::RenderComponent(GameObject * gameObject, NLTmxMapObject & mapOb
 {
 	RenderManager::getInstance().addComponent(this);
 }
+
+
+void RenderComponent::exit()
+{
+	RenderManager::getInstance().removeComponent(this);
+}
+

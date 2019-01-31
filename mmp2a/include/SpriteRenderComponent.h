@@ -21,7 +21,6 @@ public:
 
 	void update(const float deltaTime) override;
 	void draw(RenderWindow* window) override;
-	void exit() override;
 	void setScale(const float scale) override;
 
 	void initTmxData() override;

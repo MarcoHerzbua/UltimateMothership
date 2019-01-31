@@ -3,6 +3,8 @@
 
 #include "IAbilityComponent.h"
 #include "GameObject.h"
+#include "GameObjectManager.h"
+#include "SteeringComponent.h"
 
 
 ShipComponent::ShipComponent(GameObject * gameObject)
@@ -73,6 +75,9 @@ void ShipComponent::getDamage(int baseDamage, int attack)
 	int damage = (float)(attack * (pow(2, ((attack - m_currentStats.defense) / doublingRate))));
 
 	m_currentStats.life -= m_currentStats.life - damage >= 0 ? damage : m_currentStats.life;
+
+	if (isDead())
+		die();
 }
 
 void ShipComponent::restoreLife(int amount)
@@ -91,6 +96,17 @@ IAbilityComponent * ShipComponent::getAbilityComponent(Abilities a)
 	return nullptr;
 }
 
+void ShipComponent::die()
+{
+	GameObjectManager::getInstance().markForDelete(this->getGameObjectPtr());
+
+	static_cast<SteeringComponent*>(m_gameObject->findComponents(STEERING_COMPONENT)[0])->getCurrentNode()->removeGameObject(m_gameObject);
+}
+
 void ShipComponent::clearTargets()
 {
+	for (auto ability : m_abilities)
+	{
+		ability.second->clearTargets();
+	}
 }

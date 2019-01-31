@@ -117,9 +117,6 @@ void SpriteRenderComponent::draw(sf::RenderWindow* window)
 		window->draw(m_textureSprite);
 }
 
-void SpriteRenderComponent::exit()
-{
-}
 
 void SpriteRenderComponent::setScale(const float scale)
 {

@@ -43,6 +43,8 @@ void RenderManager::removeComponent(RenderComponent * c)
 			m_components.erase(i);
 			return;
 		}
+
+		i++;
 	}
 
 	err() << "RenderManager::removeComponent --- could not find component to remove" << std::endl;
