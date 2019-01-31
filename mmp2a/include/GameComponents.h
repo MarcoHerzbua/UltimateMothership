@@ -14,6 +14,7 @@ enum GameComponents
 
 	RENDER_COMPONENT,
 	SPRITE_RENDER_COMPONENT,
+	SPRITE_SWITCHER_COMPONENT,
 	SHAPE_RENDER_COMPONENT,
 	LAYER_RENDER_COMPONENT,
 	DEBUG_GEOMETRY_RENDER_COMPONENT,
@@ -50,6 +51,7 @@ static GameComponents stringToGameComponents(string s) {
 
 		{ "rendercomponent",				RENDER_COMPONENT					},
 		{ "spriterendercomponent",			SPRITE_RENDER_COMPONENT				},
+		{ "spriteswitchercomponent",		SPRITE_SWITCHER_COMPONENT			},
 		{ "shaperendercomponent",			SHAPE_RENDER_COMPONENT				},
 		{ "layerrendercomponent",			LAYER_RENDER_COMPONENT				},
 		{ "debuggeometryrendercomponent",	DEBUG_GEOMETRY_RENDER_COMPONENT		},

@@ -28,15 +28,11 @@ void FarmShipComponent::update(const float deltaTime)
 
 void FarmShipComponent::initBaseStats()
 {
-	Stats baseStats;
+	m_baseStats.attack = 5;
+	m_baseStats.defense = 10;
+	m_baseStats.life = 20;
 
-	baseStats.attack = 5;
-	baseStats.defense = 10;
-	baseStats.life = 20;
-
-	baseStats.movement = 7;
-
-	m_baseStats = baseStats;
+	m_baseStats.movement = 7;
 
 	IAbilityComponent* attack = new BasicAttackAbilityComponent(m_gameObject);
 	IAbilityComponent* farm = new FarmAbilityComponent(m_gameObject);

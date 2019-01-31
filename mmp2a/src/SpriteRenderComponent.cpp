@@ -6,6 +6,7 @@
 // game classes
 #include "Game.h"
 #include "GameObject.h"
+#include "SpriteSwitcherComponent.h"
 
 #pragma endregion
 
@@ -82,6 +83,10 @@ void SpriteRenderComponent::initTmxData()
 			size.y = stoi(property->value);
 		if (name == "tileSize")
 			tileSize = stoi(property->value);
+		if (name == "setId")
+			m_setId = stoi(property->value);
+		if (name == "active")
+			m_active = property->value == "true" ? true : false;
 	}
 
 	setPos = setPos * tileSize;
@@ -90,6 +95,9 @@ void SpriteRenderComponent::initTmxData()
 		init(path, size, setPos);
 	else
 		init(path, size);	
+
+	if (m_gameObject->findComponents(SPRITE_SWITCHER_COMPONENT).size() != 0)
+		static_cast<SpriteSwitcherComponent*>(m_gameObject->findComponents(SPRITE_SWITCHER_COMPONENT)[0])->registerSprite(m_setId, this);
 
 	m_mapObject = nullptr;
 }
@@ -105,7 +113,8 @@ void SpriteRenderComponent::update(const float deltaTimeSeconds)
 
 void SpriteRenderComponent::draw(sf::RenderWindow* window)
 {
-	window->draw(m_textureSprite);
+	if (m_active)
+		window->draw(m_textureSprite);
 }
 
 void SpriteRenderComponent::exit()

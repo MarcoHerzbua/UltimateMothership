@@ -9,6 +9,8 @@ IAbilityComponent::IAbilityComponent(GameObject * gameObject)
 {
 	m_mapObject = nullptr;
 	m_id = ABILITY;
+
+	m_range = 1;
 }
 
 IAbilityComponent::IAbilityComponent(GameObject * gameObject, NLTmxMapObject & mapObject)
@@ -16,6 +18,8 @@ IAbilityComponent::IAbilityComponent(GameObject * gameObject, NLTmxMapObject & m
 	, m_mapObject(&mapObject)
 {
 	m_id = ABILITY;
+	
+	m_range = 1;
 }
 
 void IAbilityComponent::exit()
