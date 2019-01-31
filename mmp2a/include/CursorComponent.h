@@ -25,9 +25,14 @@ public:
 
 	Node* getCurrentNode();
 	int getDistanceToActive() { return m_distanceToActive; };
+
+	int getPossibleRange() { return m_possibleRange; };
+	void setPossibleRange(int range) { m_possibleRange = range; };
 protected:
 
 	SteeringComponent* m_steering;
 
 	int m_distanceToActive;
+
+	int m_possibleRange = 0;
 };
