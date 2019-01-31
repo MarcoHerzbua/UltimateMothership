@@ -45,6 +45,8 @@ void MotherShipComponent::initBaseStats()
 
 void MotherShipComponent::initTmxData()
 {
+	ShipComponent::initTmxData();
+
 	if (!m_mapObject)
 		return;
 

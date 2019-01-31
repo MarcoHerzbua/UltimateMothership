@@ -34,6 +34,15 @@ void ShipComponent::initTmxData()
 	if (!m_mapObject)
 		return;
 
+	for (auto property : m_mapObject->properties)
+	{
+		auto name = property->name;
+		if (name == "ShipName")
+		{
+			m_name = property->value;
+		}
+	}
+
 	m_mapObject = nullptr;
 }
 
