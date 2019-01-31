@@ -50,7 +50,7 @@ void MainState::init()
 	auto transitionState = new GameplayTransitionState();
 	auto endTurnState = new GameplayEndTurnState();
 
-	Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(transitionState, selectState));
+	Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(selectState, selectState));
 	Eventbus::getInstance().fireEvent(new UpdatePopupEvent("The Game is about to start! Player 1 goes first"));
 	//Eventbus::getInstance().fireEvent(new TogglePopupEvent(true));
 

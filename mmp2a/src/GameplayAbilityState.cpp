@@ -91,9 +91,6 @@ void GameplayAbilityState::handleKeyInput()
 				enemyShip = cursorNode->getGameObject(go);
 				if (enemyShip) //nullptr means no Object of this type found
 				{
-					//decrease Movement to 0
-					playerMng->getActiveShip()->decreasMovement(playerMng->getActiveShip()->getCurrentMovement());
-
 					Target t = { playerMng->getActiveShip()->getGameObjectPtr(), enemyShip };
 					playerMng->getActiveShip()->addTarget(t, BASIC_ATTACK_ABILITY);
 

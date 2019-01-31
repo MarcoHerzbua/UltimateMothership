@@ -36,8 +36,8 @@ public:
 class UpdatePlayerStatsEvent : public virtual IGameEvent
 {
 public:
-	UpdatePlayerStatsEvent(/*int resources*/);
-	/*int m_resources;*/
+	UpdatePlayerStatsEvent(int playerIdx);
+	int m_playerIdx;
 };
 
 class UpdateButtonMapEvent : public virtual IGameEvent

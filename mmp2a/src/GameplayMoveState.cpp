@@ -40,7 +40,10 @@ void GameplayMoveState::handleKeyInput()
 	{
 		if (playerMng->getActiveShip()->getCurrentMovement() == 0)
 		{
-			m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
+			auto selectState = m_gameplayStateManager->getState(SELECTION_GAMEPLAY_STATE);
+			Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(selectState, selectState));
+			Eventbus::getInstance().fireEvent(
+				new	UpdatePopupEvent("Unit cannot move any further this round! Let me switch to the next Unit for you :*"));
 			playerMng->activateNextUnit();
 			return;
 		}

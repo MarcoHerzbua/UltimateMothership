@@ -16,9 +16,7 @@ void PlayerManager::update(const float deltaTimeSeconds)
 	{
 		activateFirstPlayer();
 		Eventbus::getInstance().fireEvent(new ToggleLabelTextEvent(true, *m_activePlayer));
-		activateNextPlayer();
-		Eventbus::getInstance().fireEvent(new ToggleLabelTextEvent(true, *m_activePlayer));
-		activateFirstPlayer();
+
 		m_firstActivePlayer = false;
 	}
 
@@ -95,10 +93,6 @@ void PlayerManager::preChangeActiveUnit()
 		static_cast<SpriteSwitcherComponent*>((*m_activeUnit)->getGameObjectPtr()->findComponents(SPRITE_SWITCHER_COMPONENT)[0])->activateSet(0);
 }
 
-
-
-
-
 void PlayerManager::activateFirstUnit()
 {
 	preChangeActiveUnit();
@@ -134,6 +128,9 @@ void PlayerManager::activateNextUnit()
 	}
 
 	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(*m_activeShip));
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(0));
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(1));
+
 	changeActiveUnit();
 }
 
@@ -143,8 +140,8 @@ void PlayerManager::activatePrevUnit()
 
 	if (m_activeUnit == m_units[*m_activePlayer].begin())
 	{
-		m_activeUnit = m_units[*m_activePlayer].end()--;
-		m_activeShip = m_ships[*m_activePlayer].end()--;
+		m_activeUnit = --m_units[*m_activePlayer].end();
+		m_activeShip = --m_ships[*m_activePlayer].end();
 	}
 
 	else
@@ -154,6 +151,8 @@ void PlayerManager::activatePrevUnit()
 	}
 
 	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(*m_activeShip));
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(0));
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(1));
 
 	changeActiveUnit();
 }
@@ -162,7 +161,8 @@ void PlayerManager::activateFirstPlayer()
 {
 	m_activePlayer = m_players.begin();
 	
-	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(0));
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(1));
 
 	activateFirstUnit();
 	changeActivePlayer();
@@ -173,8 +173,9 @@ void PlayerManager::activateLastPlayer()
 {
 	m_activePlayer = m_players.end()--;
 
-	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
-	
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(0));
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(1));
+
 	activateFirstUnit();
 	changeActivePlayer();
 }
@@ -189,7 +190,8 @@ void PlayerManager::activateNextPlayer()
 	
 
 	Eventbus::getInstance().fireEvent(new ToggleLabelTextEvent(true, *m_activePlayer));
-	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(0));
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(1));
 
 	activateFirstUnit();
 	changeActivePlayer();
@@ -206,7 +208,8 @@ void PlayerManager::activatePrevPlayer()
 		m_activePlayer--;
 
 	Eventbus::getInstance().fireEvent(new ToggleLabelTextEvent(true, *m_activePlayer));
-	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(0));
+	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(1));
 
 	activateFirstUnit();
 	changeActivePlayer();

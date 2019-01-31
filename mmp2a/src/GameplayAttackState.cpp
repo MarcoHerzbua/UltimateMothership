@@ -17,11 +17,13 @@ void GameplayAttackState::init()
 
 void GameplayAttackState::update(const float deltaTimeSeconds)
 {
-	//TODO: resolve Attack here
-	PlayerManager::getInstance().getActiveShip()->resolveTargets();
-	m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
-	PlayerManager::getInstance().activateNextUnit();
+	auto playerMng = &PlayerManager::getInstance();
+	//decrease Movement to 0
+	playerMng->getActiveShip()->decreasMovement(playerMng->getActiveShip()->getCurrentMovement());
 
+	playerMng->getActiveShip()->resolveTargets(BASIC_ATTACK_ABILITY);
+	m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
+	playerMng->activateNextUnit();
 }
 
 void GameplayAttackState::exit()
