@@ -112,6 +112,16 @@ void GameplayAbilityState::handleKeyInput()
 				enemyShip = cursorNode->getGameObject(go);
 				if (enemyShip) //nullptr means no Object of this type found
 				{
+					//TODO: UlitmateCosts are hardcoded at the moment
+					if (playerMng->getRessources(playerMng->getActivePlayer()) < 10)
+					{
+						Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(this, this));
+						Eventbus::getInstance().fireEvent(new UpdatePopupEvent("Not enough Resources to cast Ultimate!!"));
+						return;
+					}
+
+					playerMng->decreaseRessources(playerMng->getActivePlayer(), 10);
+
 					Target t = { playerMng->getActiveShip()->getGameObjectPtr(), enemyShip };
 					playerMng->getActiveShip()->addTarget(t, ULTIMATE_ATTACK_ABILITY);
 

@@ -21,7 +21,7 @@ void GameplayAttackState::update(const float deltaTimeSeconds)
 	//decrease Movement to 0
 	playerMng->getActiveShip()->decreasMovement(playerMng->getActiveShip()->getCurrentMovement());
 
-	playerMng->getActiveShip()->resolveTargets(BASIC_ATTACK_ABILITY);
+	playerMng->getActiveShip()->resolveTargets();
 	m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
 	playerMng->activateNextUnit();
 }
