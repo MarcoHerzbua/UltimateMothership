@@ -58,9 +58,12 @@ public:
 	bool isDead() { return m_currentStats.life <= 0; };
 
 	IAbilityComponent * getAbilityComponent(Abilities a);
+	string getName() { return m_name; };
+
 protected:
 	Stats m_currentStats;
 	Stats m_baseStats;
+	string m_name;
 
 	map<Abilities, IAbilityComponent*> m_abilities;
 

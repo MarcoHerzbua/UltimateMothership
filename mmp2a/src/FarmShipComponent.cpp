@@ -47,8 +47,11 @@ void FarmShipComponent::initBaseStats()
 
 void FarmShipComponent::initTmxData()
 {
+	ShipComponent::initTmxData();
+
 	if (!m_mapObject)
 		return;
+
 
 	m_mapObject = nullptr;
 }
