@@ -34,3 +34,50 @@ Edge * Node::getEdgeInDir(Direction d)
 
 	return nullptr;
 }
+
+GameObject * Node::getGameObject(GameObjects go)
+{
+	for (auto *object : m_gameObjects)
+	{
+		if (object->getId() == go)
+			return object;
+	}
+	err() << "Gameobject in not found in Node\n";
+	return nullptr;
+}
+
+void Node::addGameObject(GameObject * go)
+{
+	m_gameObjects.push_back(go);
+}
+
+bool Node::removeGameObject(GameObjects go)
+{
+	auto objectPtr = getGameObject(go);
+	for (auto it = m_gameObjects.begin(); it != m_gameObjects.end(); it++)
+	{
+		if ((*it) == objectPtr)
+		{
+			m_gameObjects.erase(it);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Node::removeGameObject(GameObject * go)
+{
+	if (m_gameObjects.size() == 0)
+		return false;
+
+	for (auto it = m_gameObjects.begin(); it != m_gameObjects.end(); it++)
+	{
+		if ((*it) == go)
+		{
+			m_gameObjects.erase(it);
+			return true;
+		}
+	}
+	return false;
+
+}

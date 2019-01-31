@@ -25,7 +25,6 @@ void ShipComponent::exit()
 		ability.second->exit();
 		delete ability.second;
 	}
-
 	m_abilities.clear();
 }
 
@@ -33,6 +32,15 @@ void ShipComponent::initTmxData()
 {
 	if (!m_mapObject)
 		return;
+
+	for (auto property : m_mapObject->properties)
+	{
+		auto name = property->name;
+		if (name == "ShipName")
+		{
+			m_name = property->value;
+		}
+	}
 
 	m_mapObject = nullptr;
 }
@@ -71,6 +79,16 @@ void ShipComponent::restoreLife(int amount)
 {
 	if (m_currentStats.life + amount <= m_baseStats.life)
 		m_currentStats.life += amount;
+}
+
+IAbilityComponent * ShipComponent::getAbilityComponent(Abilities a)
+{
+	auto ability = m_abilities.find(a);
+
+	if (ability != m_abilities.end())
+		return (*ability).second;
+	
+	return nullptr;
 }
 
 void ShipComponent::clearTargets()

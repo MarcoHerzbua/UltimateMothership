@@ -31,10 +31,12 @@ void MotherShipComponent::initBaseStats()
 	m_baseStats.attack = 50;
 	m_baseStats.defense = 50;
 	m_baseStats.life = 100;
-
 	m_baseStats.movement = 5;
 
-	m_currentStats = m_baseStats;
+	m_currentStats.attack = 50;
+	m_currentStats.defense = 50;
+	m_currentStats.life = 100;
+	m_currentStats.movement = 5;
 
 	IAbilityComponent* basicAttack = new BasicAttackAbilityComponent(m_gameObject);
 	IAbilityComponent* ultimateAttack = new UltimateAttackAbilityComponent(m_gameObject);
@@ -47,6 +49,8 @@ void MotherShipComponent::initBaseStats()
 
 void MotherShipComponent::initTmxData()
 {
+	ShipComponent::initTmxData();
+
 	if (!m_mapObject)
 		return;
 

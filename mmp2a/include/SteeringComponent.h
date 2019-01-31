@@ -40,7 +40,7 @@ public:
 
 	ControllerComponent* getActiveController() { return m_activeController; };
 
-	void setCurrentNode(Node* node) { m_currentNode = node; }
+	virtual void setCurrentNode(Node* node);
 	Node* getCurrentNode() { return m_currentNode; }
 	
 	void setTimeSinceLastInput(float time) { m_timeSinceLastInput = time; }

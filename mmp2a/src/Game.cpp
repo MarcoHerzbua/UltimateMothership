@@ -69,6 +69,7 @@ RenderWindow* Game::getWindowPtr()
 bool Game::init()
 {
 	m_window.create(VideoMode(m_windowSize.x, m_windowSize.y), "SFML");
+	// m_window.create(VideoMode(m_windowSize.x, m_windowSize.y), "SFML", Style::Fullscreen);
 
 	m_gameStateManager = &GameStateManager::getInstance();
 	m_inputManager = &InputManager::getInstance();
@@ -134,18 +135,42 @@ void Game::bindKeys()
 	m_inputManager->bind(MOVE_DOWN_ACTION, LEFT_STICK_DOWN, 0);
 	m_inputManager->bind(MOVE_RIGHT_ACTION, LEFT_STICK_RIGHT, 0);
 
+	m_inputManager->bind(A_BUTTON_ACTION, BUTTON_A, 1);
+	m_inputManager->bind(X_BUTTON_ACTION, BUTTON_X, 1);
+	m_inputManager->bind(B_BUTTON_ACTION, BUTTON_B, 1);
+	m_inputManager->bind(Y_BUTTON_ACTION, BUTTON_Y, 1);
+	m_inputManager->bind(NEXT_UNIT_ACTION, BUTTON_RB, 1);
+	m_inputManager->bind(PREV_UNIT_ACTION, BUTTON_LB, 1);
+
+	m_inputManager->bind(MOVE_UP_ACTION, LEFT_STICK_UP, 1);
+	m_inputManager->bind(MOVE_LEFT_ACTION, LEFT_STICK_LEFT, 1);
+	m_inputManager->bind(MOVE_DOWN_ACTION, LEFT_STICK_DOWN, 1);
+	m_inputManager->bind(MOVE_RIGHT_ACTION, LEFT_STICK_RIGHT, 1);
+
+
 	m_inputManager->bind(A_BUTTON_ACTION, Keyboard::Down, 1);
 	m_inputManager->bind(X_BUTTON_ACTION, Keyboard::Left, 1);
 	m_inputManager->bind(B_BUTTON_ACTION, Keyboard::Right, 1);
 	m_inputManager->bind(Y_BUTTON_ACTION, Keyboard::Up, 1);
 	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::E, 1);
-	m_inputManager->bind(PREV_UNIT_ACTION, Keyboard::Q, 0);
-
+	m_inputManager->bind(PREV_UNIT_ACTION, Keyboard::Q, 1);
 
 	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 1);
 	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 1);
 	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 1);
 	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 1);
+
+	m_inputManager->bind(A_BUTTON_ACTION, Keyboard::Down, 0);
+	m_inputManager->bind(X_BUTTON_ACTION, Keyboard::Left, 0);
+	m_inputManager->bind(B_BUTTON_ACTION, Keyboard::Right, 0);
+	m_inputManager->bind(Y_BUTTON_ACTION, Keyboard::Up, 0);
+	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::E, 0);
+	m_inputManager->bind(PREV_UNIT_ACTION, Keyboard::Q, 0);
+
+	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 0);
+	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 0);
+	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 0);
+	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 0);
 
 
 	//m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 1);

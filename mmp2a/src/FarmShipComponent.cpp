@@ -31,10 +31,12 @@ void FarmShipComponent::initBaseStats()
 	m_baseStats.attack = 5;
 	m_baseStats.defense = 10;
 	m_baseStats.life = 20;
-
 	m_baseStats.movement = 7;
 
-	m_currentStats = m_baseStats;
+	m_currentStats.attack = 5;
+	m_currentStats.defense = 10;
+	m_currentStats.life = 20;
+	m_currentStats.movement = 7;
 
 	IAbilityComponent* attack = new BasicAttackAbilityComponent(m_gameObject);
 	IAbilityComponent* farm = new FarmAbilityComponent(m_gameObject);
@@ -45,8 +47,11 @@ void FarmShipComponent::initBaseStats()
 
 void FarmShipComponent::initTmxData()
 {
+	ShipComponent::initTmxData();
+
 	if (!m_mapObject)
 		return;
+
 
 	m_mapObject = nullptr;
 }

@@ -30,6 +30,8 @@ public:
 	void registerCursor(CursorComponent* c);
 
 	void changeActivePlayer();
+	void preChangeActiveUnit();
+	void changeActiveUnit();
 
 	void activateFirstUnit();
 	void activateLastUnit();

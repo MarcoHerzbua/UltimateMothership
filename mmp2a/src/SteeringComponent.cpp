@@ -73,6 +73,16 @@ bool SteeringComponent::isMoving()
 	return false;
 }
 
+void SteeringComponent::setCurrentNode(Node * node)
+{
+	if (!m_currentNode->removeGameObject(m_gameObject))
+		err() << "GameObject could not be removed from Node\n";
+
+	m_currentNode = node;
+	
+	m_currentNode->addGameObject(m_gameObject);
+}
+
 void SteeringComponent::exit()
 {
 	for (auto c : m_controller)
