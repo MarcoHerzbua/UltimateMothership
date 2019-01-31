@@ -24,6 +24,7 @@ enum InputActions
 	SWITCH_HUMAN_AI,
 
 	NEXT_UNIT_ACTION,
+	PREV_UNIT_ACTION,
 	NEXT_PLAYER_ACTION,
 
 	MOVE_ABILITY_ACTION,
@@ -49,6 +50,7 @@ static InputActions stringToInputAction(string s) {
 		{ "switchhumanai",					SWITCH_HUMAN_AI					},
 
 		{ "nextunit",						NEXT_UNIT_ACTION				},
+		{ "previousunit",						PREV_UNIT_ACTION				},
 		{ "nextplayer",						NEXT_PLAYER_ACTION				},
 
 		{ "moveabilityaction",				MOVE_ABILITY_ACTION,			},
