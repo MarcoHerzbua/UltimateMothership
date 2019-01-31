@@ -65,8 +65,11 @@ bool Node::removeGameObject(GameObjects go)
 	return false;
 }
 
-bool Node::removeGameobject(GameObject * go)
+bool Node::removeGameObject(GameObject * go)
 {
+	if (m_gameObjects.size() == 0)
+		return false;
+
 	for (auto it = m_gameObjects.begin(); it != m_gameObjects.end(); it++)
 	{
 		if ((*it) == go)

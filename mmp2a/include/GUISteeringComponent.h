@@ -17,5 +17,5 @@ public:
 	void update(const float deltaTimeSeconds) override;
 	void initTmxData() override;
 
-
+	void setCurrentNode(Node * node) override;
 };

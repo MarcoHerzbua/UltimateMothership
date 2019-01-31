@@ -48,7 +48,8 @@ void GameplayMoveState::handleKeyInput()
 		auto cursorNode = playerMng->getCursor()->getCurrentNode();
 		auto distanceToActive = playerMng->getCursor()->getDistanceToActive();
 		
-		if (playerMng->getActiveShip()->getCurrentMovement() >= distanceToActive)
+		if (playerMng->getActiveShip()->getCurrentMovement() >= distanceToActive
+			&& !cursorNode->isNodeOccupied())
 		{
 			playerMng->getActiveUnit()->moveToTargetNode(cursorNode);
 			playerMng->getActiveShip()->decreasMovement(distanceToActive);

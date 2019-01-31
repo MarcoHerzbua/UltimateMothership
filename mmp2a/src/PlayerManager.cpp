@@ -90,8 +90,8 @@ void PlayerManager::activateFirstUnit()
 
 void PlayerManager::activateLastUnit()
 {
-	m_activeUnit = m_units[*m_activePlayer].end()--;
-	m_activeShip = m_ships[*m_activePlayer].end()--;
+	m_activeUnit = --m_units[*m_activePlayer].end();
+	m_activeShip = --m_ships[*m_activePlayer].end();
 
 	Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(*m_activeShip));
 }

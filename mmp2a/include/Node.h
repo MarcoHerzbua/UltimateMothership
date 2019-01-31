@@ -42,6 +42,7 @@ public:
 	void addGameObject(GameObject * go);
 	bool removeGameObject(GameObjects go);
 	bool removeGameObject(GameObject * go);
+	bool isNodeOccupied() { return m_gameObjects.size() > 1; }; //the Cursor is also saved as a Gameobject
 private:
 	CircleShape m_debugGeometry;
 	
