@@ -29,6 +29,7 @@ void CursorComponent::update(const float deltaTimeSeconds)
 
 void CursorComponent::updateCursor(const float deltaTimeSeconds)
 {
+	m_steering->setPlayerIndex(PlayerManager::getInstance().getActivePlayer());
 	m_steering->updateUnit(deltaTimeSeconds); // move cursor
 
 	auto graph = &static_cast<NodeGraphRenderComponent*>(GameObjectManager::getInstance().findGameObjects(TILEMAP_OBJECT)[0]->findComponents(NODE_GRAPH_RENDER_COMPONENT)[0])->getGraph();

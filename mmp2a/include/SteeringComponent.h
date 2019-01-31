@@ -50,6 +50,7 @@ public:
 	float getTimeDelay() { return m_timeDelay; };
 
 	int getPlayerIndex() { return m_playerIndex; };
+	void setPlayerIndex(int idx) { m_playerIndex = idx; };
 protected:
 	static constexpr float m_timeDelay = 0.2f;
 	float m_timeSinceLastInput = 0.0f;
