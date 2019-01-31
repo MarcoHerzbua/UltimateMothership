@@ -16,6 +16,9 @@ void PlayerManager::update(const float deltaTimeSeconds)
 	{
 		activateFirstPlayer();
 		Eventbus::getInstance().fireEvent(new ToggleLabelTextEvent(true, *m_activePlayer));
+		activateNextPlayer();
+		Eventbus::getInstance().fireEvent(new ToggleLabelTextEvent(true, *m_activePlayer));
+		activateFirstPlayer();
 		m_firstActivePlayer = false;
 	}
 
@@ -30,15 +33,11 @@ void PlayerManager::update(const float deltaTimeSeconds)
 	if ((*m_activeUnit)->isMoving())
 		return;
 
-	if (InputManager::getInstance().isKeyPressed(NEXT_PLAYER_ACTION, *m_activePlayer))
-	{
-		activateNextPlayer();
-	}
+	//if (InputManager::getInstance().isKeyPressed(NEXT_PLAYER_ACTION, *m_activePlayer))
+	//{
+	//	activateNextPlayer();
+	//}
 
-	if (InputManager::getInstance().isKeyPressed(NEXT_UNIT_ACTION, *m_activePlayer))
-	{
-		activateNextUnit();
-	}
 
 	updateCursor(deltaTimeSeconds);
 }
