@@ -9,6 +9,7 @@
 #include "GameObjectManager.h"
 
 #include "ShipComponent.h"
+#include "SpriteSwitcherComponent.h"
 #include "Stats.h"
 
 CursorComponent::CursorComponent(GameObject* gameObject)
@@ -46,6 +47,23 @@ void CursorComponent::updateCursor(const float deltaTimeSeconds)
 	//}
 }
 
+	bool moveInRange = PlayerManager::getInstance().getActiveShip()->getCurrentMovement() >= m_distanceToActive;
+
+	auto switcher = static_cast<SpriteSwitcherComponent*>(m_gameObject->findComponents(SPRITE_SWITCHER_COMPONENT)[0]);
+
+	if (!moveInRange)
+		switcher->activateSet(1);
+	else
+		switcher->activateSet(0);
+
+	if (InputManager::getInstance().isKeyPressed(MOVE_ABILITY_ACTION, m_steering->getPlayerIndex()))
+	{
+		if (moveInRange)
+		{
+			PlayerManager::getInstance().getActiveUnit()->moveToTargetNode(m_steering->getCurrentNode());
+			PlayerManager::getInstance().getActiveShip()->decreasMovement(m_distanceToActive);
+		}
+	}
 Node * CursorComponent::getCurrentNode()
 {
 	return m_steering->getCurrentNode();
