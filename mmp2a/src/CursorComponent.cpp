@@ -37,7 +37,7 @@ void CursorComponent::updateCursor(const float deltaTimeSeconds)
 	
 	m_distanceToActive = graph->calcDistance(*(PlayerManager::getInstance().getActiveUnit()->getCurrentNode()), *(getCurrentNode()));
 
-	bool moveInRange = PlayerManager::getInstance().getActiveShip()->getCurrentMovement() >= m_distanceToActive;
+	bool moveInRange = m_possibleRange >= m_distanceToActive;
 
 	auto switcher = static_cast<SpriteSwitcherComponent*>(m_gameObject->findComponents(SPRITE_SWITCHER_COMPONENT)[0]);
 
@@ -45,15 +45,6 @@ void CursorComponent::updateCursor(const float deltaTimeSeconds)
 		switcher->activateSet(1);
 	else
 		switcher->activateSet(0);
-
-	//if (InputManager::getInstance().isKeyPressed(MOVE_ABILITY_ACTION, m_steering->getPlayerIndex()))
-	//{
-	//	if (moveInRange)
-	//	{
-	//		PlayerManager::getInstance().getActiveUnit()->moveToTargetNode(m_steering->getCurrentNode());
-	//		PlayerManager::getInstance().getActiveShip()->decreasMovement(m_distanceToActive);
-	//	}
-	//}
 }
 
 

@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "GameplaySelectionState.h"
 
+#include "CursorComponent.h"
+#include "ShipComponent.h"
+
 GameplaySelectionState::GameplaySelectionState()
 {
 	m_id = SELECTION_GAMEPLAY_STATE;
@@ -27,6 +30,9 @@ void GameplaySelectionState::exit()
 void GameplaySelectionState::handleKeyInput()
 {
 	auto playerMng = &PlayerManager::getInstance();
+
+	playerMng->getCursor()->setPossibleRange(playerMng->getActiveShip()->getCurrentMovement());
+
 	if (InputManager::getInstance().isActionActive(NEXT_UNIT_ACTION, playerMng->getActivePlayer()))
 	{
 		playerMng->activateNextUnit();
