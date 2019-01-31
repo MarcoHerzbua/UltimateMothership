@@ -57,6 +57,7 @@ public:
 
 	bool isDead() { return m_currentStats.life <= 0; };
 
+	IAbilityComponent * getAbilityComponent(Abilities a);
 	string getName() { return m_name; };
 
 protected:

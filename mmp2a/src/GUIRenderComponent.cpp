@@ -238,21 +238,28 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 		auto ev = dynamic_cast<UpdateShipStatsEvent*>(event);
 		auto stats = ev->m_shipComponent->getCurrentStats();
 
-		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1HPStats"));
+		int playerIdx = PlayerManager::getInstance().getActivePlayer();
+		string player = "P" + to_string(playerIdx + 1);
+
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "HPStats"));
 		widget->setText(to_string(stats.life));
-		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1AtkStats"));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "AtkStats"));
 		widget->setText(to_string(stats.attack));
-		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1DefStats"));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "DefStats"));
 		widget->setText(to_string(stats.defense));
-		widget = static_pointer_cast<tgui::Label>(m_gui->get("P1MoveStats"));
+		widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "MoveStats"));
 		widget->setText(to_string(stats.movement));
 	}
 	break;
 	case(UPDATE_PLAYERSTATS_EVENT):
 	{
 		auto ev = dynamic_cast<UpdatePlayerStatsEvent*>(event);
-		auto widget = static_pointer_cast<tgui::Label>(m_gui->get("P1ResourceStats"));
-		widget->setText(to_string(ev->m_resources));
+
+		int playerIdx = PlayerManager::getInstance().getActivePlayer();
+		string player = "P" + to_string(playerIdx + 1);
+
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "ResourceStats"));
+		widget->setText(to_string(PlayerManager::getInstance().getRessources(playerIdx)/*ev->m_resources*/));
 	}
 	break;
 	case(UPDATE_BUTTONMAP_EVENT):
@@ -273,18 +280,20 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	break;
 	case(TOGGLE_POPUP_EVENT):
 	{
+		auto ev = dynamic_cast<TogglePopupEvent*>(event);
+
 		auto panel = static_pointer_cast<tgui::Panel>(m_gui->get("PanelPopup"));
-		panel->setVisible(!panel->isVisible());
+		panel->setVisible(ev->m_isVisible);
 		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonOne"));
-		panel->setVisible(!panel->isVisible());
+		panel->setVisible(ev->m_isVisible);
 		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonTwo"));
-		panel->setVisible(!panel->isVisible());
+		panel->setVisible(ev->m_isVisible);
 		auto label = static_pointer_cast<tgui::Label>(m_gui->get("PopupHeader"));
-		label->setVisible(!label->isVisible());
+		label->setVisible(ev->m_isVisible);
 		label = static_pointer_cast<tgui::Label>(m_gui->get("PopupButtonOneText"));
-		label->setVisible(!label->isVisible());
+		label->setVisible(ev->m_isVisible);
 		label = static_pointer_cast<tgui::Label>(m_gui->get("PopupButtonTwoText"));
-		label->setVisible(!label->isVisible());
+		label->setVisible(ev->m_isVisible);
 	}
 	break;
 	case (UPDATE_POPUP_EVENT):
@@ -292,6 +301,30 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 		auto ev = dynamic_cast<UpdatePopupEvent*>(event);
 		auto label = static_pointer_cast<tgui::Label>(m_gui->get("PopupHeader"));
 		label->setText(ev->m_text);
+	}
+	break;
+	case (TOGGLE_LABEL_TEXT_EVENT):
+	{
+		auto ev = dynamic_cast<ToggleLabelTextEvent*>(event);
+
+		string player = "P" + to_string(ev->m_playerIdx + 1);
+
+		Color color;
+		ev->m_isVisible ? color = Color::Blue : color = Color::White;
+
+		vector<string> labelNames =
+		{
+			"ShipStatsHeader", "HP", "Atk", "Def", "Move",
+			"HPStats", "AtkStats", "DefStats", "MoveStats",
+			"PlayerStatsHeader", "Resource", "ResourceStats"
+		};
+
+		for (int i = 0; i < labelNames.size(); i++)
+		{
+			auto widget = static_pointer_cast<tgui::Label>(m_gui->get(player + labelNames[i]));
+			widget->getRenderer()->setTextColor(color);
+
+		}
 	}
 	break;
 	default:

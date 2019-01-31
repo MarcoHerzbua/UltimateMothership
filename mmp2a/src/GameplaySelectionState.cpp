@@ -31,10 +31,14 @@ void GameplaySelectionState::handleKeyInput()
 	{
 		playerMng->activateNextUnit();
 	}
-	if (InputManager::getInstance().isKeyPressed(NEXT_PLAYER_ACTION, playerMng->getActivePlayer()))
+	if (InputManager::getInstance().isActionActive(PREV_UNIT_ACTION, playerMng->getActivePlayer()))
 	{
-		playerMng->activateNextPlayer();
+		playerMng->activatePrevUnit();
 	}
+	//if (InputManager::getInstance().isKeyPressed(NEXT_PLAYER_ACTION, playerMng->getActivePlayer()))
+	//{
+	//	playerMng->activateNextPlayer();
+	//}
 
 	if (InputManager::getInstance().isActionActive(X_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{

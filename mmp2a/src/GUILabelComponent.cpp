@@ -63,15 +63,11 @@ void GUILabelComponent::initTmxData()
 			xAlignment = static_cast<tgui::Label::HorizontalAlignment>(stoi(property->value));
 	}
 
-	//if (!m_font.loadFromFile(path))
-	//{
-	//	err() << "Font not loaded\n";
-	//	return;
-	//}
 
 	label->setText(text);
 	label->setTextSize(textSize);
 	label->setHorizontalAlignment(xAlignment);
+	setTextColor(Color::White);
 
 	//label->setAutoSize(true);
 	m_guiRenderComponent->addWidgetComponent(this);
@@ -86,4 +82,10 @@ void GUILabelComponent::setWidgetText(sf::String s)
 	auto widget = static_pointer_cast<tgui::Label>(m_widget);
 	widget->setText(s);
 	gui->add(widget);
+}
+
+void GUILabelComponent::setTextColor(Color c)
+{
+	auto label = static_pointer_cast<tgui::Label>(m_widget);
+	label->getRenderer()->setTextColor(c);
 }

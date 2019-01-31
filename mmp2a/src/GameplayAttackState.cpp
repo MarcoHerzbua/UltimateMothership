@@ -18,6 +18,7 @@ void GameplayAttackState::init()
 void GameplayAttackState::update(const float deltaTimeSeconds)
 {
 	//TODO: resolve Attack here
+	PlayerManager::getInstance().getActiveShip()->resolveTargets();
 	m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
 	PlayerManager::getInstance().activateNextUnit();
 

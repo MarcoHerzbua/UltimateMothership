@@ -26,6 +26,4 @@ public:
 private:
 	void handleKeyInput() override;
 
-
-
 };

@@ -1,5 +1,9 @@
 #include "stdafx.h"
 #include "GameplayMoveState.h"
+#include "NodeGraphRenderComponent.h"
+#include "GameObjectManager.h"
+#include "SteeringComponent.h"
+#include "CursorComponent.h"
 
 GameplayMoveState::GameplayMoveState()
 {
@@ -27,22 +31,36 @@ void GameplayMoveState::handleKeyInput()
 {
 	auto playerMng = &PlayerManager::getInstance();
 
+	if (PlayerManager::getInstance().getActiveUnit()->isMoving())
+		return;
+
+	
+
 	if (InputManager::getInstance().isActionActive(A_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
-		//TODO: Move Unit to the chosen Node or show pop up if not possible
-		if (/*Node is out of range*/ true)
+		if (playerMng->getActiveShip()->getCurrentMovement() == 0)
+		{
+			m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
+			playerMng->activateNextUnit();
+			return;
+		}
+
+		auto cursorNode = playerMng->getCursor()->getCurrentNode();
+		auto distanceToActive = playerMng->getCursor()->getDistanceToActive();
+		
+		if (playerMng->getActiveShip()->getCurrentMovement() >= distanceToActive
+			&& !cursorNode->isNodeOccupied())
+		{
+			playerMng->getActiveUnit()->moveToTargetNode(cursorNode);
+			playerMng->getActiveShip()->decreasMovement(distanceToActive);
+			Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(playerMng->getActiveShip()));
+		}
+		else
 		{
 			Eventbus::getInstance().fireEvent(
 				new GameplayStateChangeEvent(this, this));
 			Eventbus::getInstance().fireEvent(new UpdatePopupEvent(
 				"The chosen Unit is unable to move to this location! Try Again!"));
-		}
-		else
-		{
-			//TODO: Move Unit to Node
-			m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
-			playerMng->activateNextUnit();
-			//TODO: Lock unit so it can't be moved again
 		}
 	}
 	if (InputManager::getInstance().isActionActive(B_BUTTON_ACTION, playerMng->getActivePlayer()))

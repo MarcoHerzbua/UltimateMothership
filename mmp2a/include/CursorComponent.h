@@ -23,7 +23,8 @@ public:
 
 	void updateCursor(const float deltaTimeSeconds);
 
-
+	Node* getCurrentNode();
+	int getDistanceToActive() { return m_distanceToActive; };
 protected:
 
 	SteeringComponent* m_steering;

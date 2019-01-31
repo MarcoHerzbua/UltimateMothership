@@ -45,3 +45,8 @@ void GUISteeringComponent::initTmxData()
 
 
 }
+
+void GUISteeringComponent::setCurrentNode(Node * node)
+{
+	//Clear the function... no node needed when navigating the GUI
+}

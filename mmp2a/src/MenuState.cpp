@@ -48,11 +48,11 @@ void MenuState::update(const float deltaTimeSeconds)
 
 void MenuState::handleKeyInput()
 {
-	if (m_inputManager->isKeyPressed(InputActions::EXIT_ACTION, 0))
-	{
-		RenderWindow * window = m_gameStateManager->getGamePtr()->getWindowPtr();
-		window->close();
-	}
+	//if (m_inputManager->isKeyPressed(InputActions::B_BUTTON_ACTION, 0))
+	//{
+	//	RenderWindow * window = m_gameStateManager->getGamePtr()->getWindowPtr();
+	//	window->close();
+	//}
 	
 	//if (m_inputManager->isKeyPressed(InputActions::CONFIRM_ACTION, 0))
 	//{

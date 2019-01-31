@@ -117,36 +117,66 @@ void Game::shutdown()
 
 void Game::bindKeys()
 {
-	m_inputManager->bind(EXIT_ACTION, Keyboard::Escape, 0);
-	m_inputManager->bind(EXIT_ACTION, BUTTON_BACK, 0);
+	m_inputManager->bind(ESCAPE_ACTION, Keyboard::Escape, 0);
+	m_inputManager->bind(ESCAPE_ACTION, BUTTON_BACK, 0);
+	m_inputManager->bind(ESCAPE_ACTION, Keyboard::Escape, 1);
+	m_inputManager->bind(ESCAPE_ACTION, BUTTON_BACK, 1);
 
-	m_inputManager->bind(CONFIRM_ACTION, Keyboard::Space, 0);
-	m_inputManager->bind(CONFIRM_ACTION, BUTTON_START, 0);
 
 	m_inputManager->bind(A_BUTTON_ACTION, BUTTON_A, 0);
 	m_inputManager->bind(X_BUTTON_ACTION, BUTTON_X, 0);
 	m_inputManager->bind(B_BUTTON_ACTION, BUTTON_B, 0);
 	m_inputManager->bind(Y_BUTTON_ACTION, BUTTON_Y, 0);
-
-	m_inputManager->bind(A_BUTTON_ACTION, BUTTON_A, 1);
-	m_inputManager->bind(X_BUTTON_ACTION, BUTTON_X, 1);
-	m_inputManager->bind(B_BUTTON_ACTION, BUTTON_B, 1);
-	m_inputManager->bind(Y_BUTTON_ACTION, BUTTON_Y, 1);
-
-	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 0);
-	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 0);
-	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 0);
-	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 0);
+	m_inputManager->bind(NEXT_UNIT_ACTION, BUTTON_RB, 0);
+	m_inputManager->bind(PREV_UNIT_ACTION, BUTTON_LB, 0);
 
 	m_inputManager->bind(MOVE_UP_ACTION, LEFT_STICK_UP, 0);
 	m_inputManager->bind(MOVE_LEFT_ACTION, LEFT_STICK_LEFT, 0);
 	m_inputManager->bind(MOVE_DOWN_ACTION, LEFT_STICK_DOWN, 0);
 	m_inputManager->bind(MOVE_RIGHT_ACTION, LEFT_STICK_RIGHT, 0);
 
+	m_inputManager->bind(A_BUTTON_ACTION, BUTTON_A, 1);
+	m_inputManager->bind(X_BUTTON_ACTION, BUTTON_X, 1);
+	m_inputManager->bind(B_BUTTON_ACTION, BUTTON_B, 1);
+	m_inputManager->bind(Y_BUTTON_ACTION, BUTTON_Y, 1);
+	m_inputManager->bind(NEXT_UNIT_ACTION, BUTTON_RB, 1);
+	m_inputManager->bind(PREV_UNIT_ACTION, BUTTON_LB, 1);
+
+	m_inputManager->bind(MOVE_UP_ACTION, LEFT_STICK_UP, 1);
+	m_inputManager->bind(MOVE_LEFT_ACTION, LEFT_STICK_LEFT, 1);
+	m_inputManager->bind(MOVE_DOWN_ACTION, LEFT_STICK_DOWN, 1);
+	m_inputManager->bind(MOVE_RIGHT_ACTION, LEFT_STICK_RIGHT, 1);
+
+
+	m_inputManager->bind(A_BUTTON_ACTION, Keyboard::Down, 1);
+	m_inputManager->bind(X_BUTTON_ACTION, Keyboard::Left, 1);
+	m_inputManager->bind(B_BUTTON_ACTION, Keyboard::Right, 1);
+	m_inputManager->bind(Y_BUTTON_ACTION, Keyboard::Up, 1);
+	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::E, 1);
+	m_inputManager->bind(PREV_UNIT_ACTION, Keyboard::Q, 1);
+
 	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 1);
 	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 1);
 	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 1);
 	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 1);
+
+	m_inputManager->bind(A_BUTTON_ACTION, Keyboard::Down, 0);
+	m_inputManager->bind(X_BUTTON_ACTION, Keyboard::Left, 0);
+	m_inputManager->bind(B_BUTTON_ACTION, Keyboard::Right, 0);
+	m_inputManager->bind(Y_BUTTON_ACTION, Keyboard::Up, 0);
+	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::E, 0);
+	m_inputManager->bind(PREV_UNIT_ACTION, Keyboard::Q, 0);
+
+	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 0);
+	m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 0);
+	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 0);
+	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 0);
+
+
+	//m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 1);
+	//m_inputManager->bind(MOVE_LEFT_ACTION, Keyboard::A, 1);
+	//m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 1);
+	//m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 1);
 
 	m_inputManager->bind(SWITCH_HUMAN_AI, Keyboard::Num1, 0);
 	m_inputManager->bind(SWITCH_HUMAN_AI, Keyboard::Num1, 1);

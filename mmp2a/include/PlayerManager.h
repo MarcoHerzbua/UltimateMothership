@@ -56,6 +56,7 @@ public:
 	int getActivePlayer() { return *m_activePlayer; };
 	SteeringComponent* getActiveUnit() { return *m_activeUnit; };
 	ShipComponent* getActiveShip() { return *m_activeShip; };
+	CursorComponent* getCursor() { return m_cursor; };
 
 private:
 	PlayerManager(void) = default;

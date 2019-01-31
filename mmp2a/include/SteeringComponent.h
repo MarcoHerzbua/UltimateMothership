@@ -40,7 +40,7 @@ public:
 
 	ControllerComponent* getActiveController() { return m_activeController; };
 
-	void setCurrentNode(Node* node) { m_currentNode = node; }
+	virtual void setCurrentNode(Node* node);
 	Node* getCurrentNode() { return m_currentNode; }
 	
 	void setTimeSinceLastInput(float time) { m_timeSinceLastInput = time; }
@@ -50,8 +50,9 @@ public:
 	float getTimeDelay() { return m_timeDelay; };
 
 	int getPlayerIndex() { return m_playerIndex; };
+	void setPlayerIndex(int idx) { m_playerIndex = idx; };
 protected:
-	static constexpr float m_timeDelay = 0.1f;
+	static constexpr float m_timeDelay = 0.2f;
 	float m_timeSinceLastInput = 0.0f;
 
 	Node* m_currentNode;

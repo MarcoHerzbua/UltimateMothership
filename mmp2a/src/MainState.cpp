@@ -52,7 +52,9 @@ void MainState::init()
 
 	Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(transitionState, selectState));
 	Eventbus::getInstance().fireEvent(new UpdatePopupEvent("The Game is about to start! Player 1 goes first"));
-	Eventbus::getInstance().fireEvent(new TogglePopupEvent());
+	//Eventbus::getInstance().fireEvent(new TogglePopupEvent(true));
+
+	//Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent());
 	//m_gameplayStateManager->setState(TRANSITION_GAMEPLAY_STATE);
 }							
 
@@ -73,7 +75,7 @@ void MainState::exit()
 
 void MainState::handleKeyInput()
 {
-	if (m_inputManager->isActionActive(InputActions::EXIT_ACTION, 0))
+	if (m_inputManager->isActionActive(InputActions::ESCAPE_ACTION, 0))
 	{
 		m_gameStateManager->setState(GameStates::MENU_STATE);
 	}

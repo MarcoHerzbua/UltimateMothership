@@ -61,7 +61,6 @@ void GUIPanelComponent::initTmxData()
 			//textSize = stoi(property->value);
 	}
 
-	//TODO: figure out why it wont fucking load a picture 
 	//auto bg = make_shared<tgui::Picture>("background.jpg");
 	//panel->add(bg);
 	//bg->moveToBack();
