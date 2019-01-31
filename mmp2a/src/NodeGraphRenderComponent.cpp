@@ -29,6 +29,7 @@ void NodeGraphRenderComponent::update(const float deltaTimeSeconds)
 
 void NodeGraphRenderComponent::exit()
 {
+	RenderComponent::exit();
 	delete m_graph;
 }
 

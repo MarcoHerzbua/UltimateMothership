@@ -4,6 +4,7 @@
 #include "LayerRenderComponent.h"
 #include "RenderManager.h"
 #include "Game.h"
+#include "SpriteRenderComponent.h"
 
 #pragma endregion
 
@@ -40,6 +41,8 @@ void LayerRenderComponent::draw(sf::RenderWindow* window)
 
 void LayerRenderComponent::exit()
 {
+	RenderComponent::exit();
+
 	for (auto &sprite : m_sprites)
 	{
 		delete sprite;

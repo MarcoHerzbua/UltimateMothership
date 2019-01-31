@@ -240,8 +240,9 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 
 		int playerIdx = PlayerManager::getInstance().getActivePlayer();
 		string player = "P" + to_string(playerIdx + 1);
-
-		auto widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "HPStats"));
+		auto widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "ShipStatsHeader"));
+		widget->setText(ev->m_shipComponent->getName());
+		widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "HPStats"));
 		widget->setText(to_string(stats.life));
 		widget = static_pointer_cast<tgui::Label>(m_gui->get(player + "AtkStats"));
 		widget->setText(to_string(stats.attack));
