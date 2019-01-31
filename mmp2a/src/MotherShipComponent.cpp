@@ -34,6 +34,8 @@ void MotherShipComponent::initBaseStats()
 
 	m_baseStats.movement = 5;
 
+	m_currentStats = m_baseStats;
+
 	IAbilityComponent* basicAttack = new BasicAttackAbilityComponent(m_gameObject);
 	IAbilityComponent* ultimateAttack = new UltimateAttackAbilityComponent(m_gameObject);
 	IAbilityComponent* farm = new FarmAbilityComponent(m_gameObject);

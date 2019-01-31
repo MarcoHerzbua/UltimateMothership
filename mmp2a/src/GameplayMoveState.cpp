@@ -31,20 +31,20 @@ void GameplayMoveState::handleKeyInput()
 {
 	auto playerMng = &PlayerManager::getInstance();
 
+	if (PlayerManager::getInstance().getActiveUnit()->isMoving())
+		return;
+
+
 	if (InputManager::getInstance().isActionActive(A_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
-		auto graph = &static_cast<NodeGraphRenderComponent*>(GameObjectManager::getInstance().findGameObjects(TILEMAP_OBJECT)[0]->findComponents(NODE_GRAPH_RENDER_COMPONENT)[0])->getGraph();
-		auto unitNode = playerMng->getActiveUnit()->getCurrentNode();
-		auto cursorNode = playerMng->getCursor()->getSteeringComponent()->getCurrentNode();
-
-		auto distanceToActive = graph->calcDistance(*(unitNode), *(cursorNode));
+		auto cursorNode = playerMng->getCursor()->getCurrentNode();
+		auto distanceToActive = playerMng->getCursor()->getDistanceToActive();
 		
-		if (PlayerManager::getInstance().getActiveShip()->getCurrentMovement() >= distanceToActive)
+		if (playerMng->getActiveShip()->getCurrentMovement() >= distanceToActive)
 		{
-			PlayerManager::getInstance().getActiveUnit()->moveToTargetNode(cursorNode);
-			PlayerManager::getInstance().getActiveShip()->decreasMovement(distanceToActive);
-			m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
-			playerMng->activateNextUnit();
+			playerMng->getActiveUnit()->moveToTargetNode(cursorNode);
+			playerMng->getActiveShip()->decreasMovement(distanceToActive);
+			Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(playerMng->getActiveShip()));
 		}
 		else
 		{

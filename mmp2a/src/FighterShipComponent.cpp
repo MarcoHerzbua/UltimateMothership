@@ -37,6 +37,8 @@ void FighterShipComponent::initBaseStats()
 
 	m_baseStats.movement = 10;
 
+	m_currentStats = m_baseStats;
+
 	IAbilityComponent* attack = new BasicAttackAbilityComponent(m_gameObject);
 	IAbilityComponent* farm = new FarmAbilityComponent(m_gameObject);
 
