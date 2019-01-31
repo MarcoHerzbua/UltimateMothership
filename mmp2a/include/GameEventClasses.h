@@ -83,6 +83,13 @@ public:
 	int m_playerIdx;
 };
 
+class ToggleGameOverEvent : public virtual IGameEvent
+{
+public:
+	ToggleGameOverEvent(int winPlayerIdx);
+	int m_winPlayerIdx;
+};
+
 //THis method gets called when Buttons with Events are created in Tiled (Action_ = ...)
 static IGameEvent * createGameEvent(GameEvents event)
 {

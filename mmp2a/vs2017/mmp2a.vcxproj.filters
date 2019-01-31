@@ -378,6 +378,9 @@
     <ClInclude Include="..\include\SpriteSwitcherComponent.h">
       <Filter>Header Files\GameComponents\RenderComponents</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\GameplayGameOverState.h">
+      <Filter>Header Files\GameState\GameplayStates</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\GameObject.cpp">
@@ -598,6 +601,9 @@
     </ClCompile>
     <ClCompile Include="..\src\SpriteSwitcherComponent.cpp">
       <Filter>Source Files\GameComponents\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplayGameOverState.cpp">
+      <Filter>Source Files\GameState\GameplayStates</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

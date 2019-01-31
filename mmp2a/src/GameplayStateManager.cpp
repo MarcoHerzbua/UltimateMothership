@@ -31,8 +31,12 @@ void GameplayStateManager::onEvent(IGameEvent * event)
 {
 	if (event->getID() == GAMEPLAYSTATE_CHANGE_EVENT)
 	{
-		auto ev = dynamic_cast<GameplayStateChangeEvent*>(event);
+		//auto ev = dynamic_cast<GameplayStateChangeEvent*>(event);
 		setState(TRANSITION_GAMEPLAY_STATE);
+	}
+	if (event->getID() == TOGGLE_GAME_OVER_EVENT)
+	{
+		setState(GAME_OVER_GAMEPLAY_STATE);
 	}
 }
 
@@ -69,6 +73,9 @@ void GameplayStateManager::setState(GameplayStates name)
 		break;
 	case(END_TURN_GAMEPLAY_STATE):
 		eventBus->fireEvent(new GameplayEndTurnEvent());
+		break;
+	case(GAME_OVER_GAMEPLAY_STATE):
+		eventBus->fireEvent(new UpdateButtonMapEvent({ "Game Over", "Confirm", "Decline", "", "" }));
 		break;
 	default:
 		break;

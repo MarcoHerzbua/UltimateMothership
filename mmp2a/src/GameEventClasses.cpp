@@ -65,3 +65,9 @@ ToggleLabelTextEvent::ToggleLabelTextEvent(bool setVisible, int playerIdx)
 	m_playerIdx = playerIdx;
 
 }
+
+ToggleGameOverEvent::ToggleGameOverEvent(int winPlayerIdx)
+{
+	m_id = TOGGLE_GAME_OVER_EVENT;
+	m_winPlayerIdx = winPlayerIdx;
+}

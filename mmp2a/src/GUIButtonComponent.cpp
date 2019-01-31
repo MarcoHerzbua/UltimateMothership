@@ -46,7 +46,7 @@ void GUIButtonComponent::initTmxData()
 	button->setSize(m_mapObject->width, m_mapObject->height);
 
 	string path = GameObjectManager::getInstance().getAssetPath();
-	string text = "This is a placeholder text!";
+	string text = "";
 	int textSize = 16;
 
 	for (auto property : m_mapObject->properties)
@@ -64,7 +64,9 @@ void GUIButtonComponent::initTmxData()
 		}
 		if (name == "TextSize")
 			textSize = stoi(property->value);
-
+		if (name == "isVisible")
+			if (property->value == "false")
+				button->setVisible(false);
 	}
 
 	//if (!m_font.loadFromFile(path))

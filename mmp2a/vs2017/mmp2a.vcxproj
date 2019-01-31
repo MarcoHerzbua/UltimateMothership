@@ -32,6 +32,7 @@
     <ClInclude Include="..\include\GameplayAbilityState.h" />
     <ClInclude Include="..\include\GameplayAttackState.h" />
     <ClInclude Include="..\include\GameplayEndTurnState.h" />
+    <ClInclude Include="..\include\GameplayGameOverState.h" />
     <ClInclude Include="..\include\GameplayMoveState.h" />
     <ClInclude Include="..\include\GameplaySelectionState.h" />
     <ClInclude Include="..\include\GameplayStates.h" />
@@ -115,6 +116,7 @@
     <ClCompile Include="..\src\GameplayAbilityState.cpp" />
     <ClCompile Include="..\src\GameplayAttackState.cpp" />
     <ClCompile Include="..\src\GameplayEndTurnState.cpp" />
+    <ClCompile Include="..\src\GameplayGameOverState.cpp" />
     <ClCompile Include="..\src\GameplayMoveState.cpp" />
     <ClCompile Include="..\src\GameplaySelectionState.cpp" />
     <ClCompile Include="..\src\GameplayStateManager.cpp" />
