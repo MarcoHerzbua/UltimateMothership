@@ -69,6 +69,7 @@ RenderWindow* Game::getWindowPtr()
 bool Game::init()
 {
 	m_window.create(VideoMode(m_windowSize.x, m_windowSize.y), "SFML");
+	// m_window.create(VideoMode(m_windowSize.x, m_windowSize.y), "SFML", Style::Fullscreen);
 
 	m_gameStateManager = &GameStateManager::getInstance();
 	m_inputManager = &InputManager::getInstance();

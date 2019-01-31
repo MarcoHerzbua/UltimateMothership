@@ -22,7 +22,6 @@ FighterShipComponent::FighterShipComponent(GameObject * gameObject, NLTmxMapObje
 {
 	m_id = FIGHTER_SHIP_COMPONENT;
 	initBaseStats();
-
 }
 
 void FighterShipComponent::update(const float deltaTime)
