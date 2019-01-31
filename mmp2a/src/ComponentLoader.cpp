@@ -5,6 +5,7 @@
 
 #include "IGameComponent.h"
 #include "SpriteRenderComponent.h"
+#include "SpriteSwitcherComponent.h"
 #include "ShapeRenderComponent.h"
 #include "CameraComponent.h"
 // #include "RigidBodyComponent.h"
@@ -53,6 +54,7 @@ IGameComponent* ComponentLoader::createComponent(const GameComponents id, NLTmxM
 	switch (id)
 	{
 	case SPRITE_RENDER_COMPONENT:			return new SpriteRenderComponent(gameObject, mapObject);
+	case SPRITE_SWITCHER_COMPONENT:			return new SpriteSwitcherComponent(gameObject, mapObject);
 	case SHAPE_RENDER_COMPONENT:			return new ShapeRenderComponent(gameObject, mapObject);
 	case CAMERA_COMPONENT:					return new CameraComponent(gameObject, mapObject);
 	// case RIGID_BODY_COMPONENT:				return new RigidBodyComponent(gameObject, mapObject);
