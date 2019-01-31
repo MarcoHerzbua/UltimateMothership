@@ -37,8 +37,15 @@ public:
 	void setOrigin(Vector2f o) { m_debugGeometry.setOrigin(o); };
 	void setRadius(float r) { m_debugGeometry.setRadius(r); };
 	void setFillColor(Color c) { m_debugGeometry.setFillColor(c); };
+
+	GameObject * getGameObject(GameObjects go);
+	void addGameObject(GameObject * go);
+	bool removeGameObject(GameObjects go);
+	bool removeGameObject(GameObject * go);
 private:
 	CircleShape m_debugGeometry;
-
+	
 	list<Edge*> m_edges;
+
+	vector<GameObject *> m_gameObjects;
 };

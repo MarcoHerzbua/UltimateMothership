@@ -34,9 +34,17 @@ void GameplayMoveState::handleKeyInput()
 	if (PlayerManager::getInstance().getActiveUnit()->isMoving())
 		return;
 
+	
 
 	if (InputManager::getInstance().isActionActive(A_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
+		if (playerMng->getActiveShip()->getCurrentMovement() == 0)
+		{
+			m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
+			playerMng->activateNextUnit();
+			return;
+		}
+
 		auto cursorNode = playerMng->getCursor()->getCurrentNode();
 		auto distanceToActive = playerMng->getCursor()->getDistanceToActive();
 		

@@ -139,7 +139,7 @@ void Game::bindKeys()
 	m_inputManager->bind(B_BUTTON_ACTION, Keyboard::Right, 1);
 	m_inputManager->bind(Y_BUTTON_ACTION, Keyboard::Up, 1);
 	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::E, 1);
-	m_inputManager->bind(PREV_UNIT_ACTION, Keyboard::Q, 0);
+	m_inputManager->bind(PREV_UNIT_ACTION, Keyboard::Q, 1);
 
 
 	m_inputManager->bind(MOVE_UP_ACTION, Keyboard::W, 1);

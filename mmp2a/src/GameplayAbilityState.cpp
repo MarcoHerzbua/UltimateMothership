@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "GameplayAbilityState.h"
+#include "CursorComponent.h"
+#include "SteeringComponent.h"
 
 GameplayAbilityState::GameplayAbilityState()
 {
@@ -28,6 +30,8 @@ void GameplayAbilityState::handleKeyInput()
 
 	if (InputManager::getInstance().isActionActive(A_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
+		auto cursorNode = playerMng->getCursor()->getCurrentNode();
+		auto shipNode = playerMng->getActiveUnit()->g
 		Eventbus::getInstance().fireEvent(
 			new GameplayStateChangeEvent(this, m_gameplayStateManager->getState(ATTACK_GAMEPLAY_STATE)));
 		Eventbus::getInstance().fireEvent(
