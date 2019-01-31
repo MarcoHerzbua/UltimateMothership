@@ -24,6 +24,12 @@ void GameObjectManager::init(Game* game)
 
 void GameObjectManager::update(const float deltaTimeSeconds)
 {
+	for (auto obj : m_markedForDelete)
+	{
+		removeGameObject(obj);
+	}
+	m_markedForDelete.clear();
+
 	for (auto obj : m_objects)
 		obj->update(deltaTimeSeconds);
 }
@@ -55,8 +61,8 @@ void GameObjectManager::removeGameObject(GameObject* o)
 	{
 		m_objects.erase(oIti);
 
-		(*oIti)->exit();
-		delete *oIti;
+		o->exit();
+		delete o;
 	}
 }
 
@@ -65,10 +71,11 @@ void GameObjectManager::removeGameObjects(const GameObjects oId)
 	auto oIti = findFirstGameObjectIterator(oId);
 	while (oIti != m_objects.end())
 	{
+		auto o = *oIti;
 		m_objects.erase(oIti);
 
-		(*oIti)->exit();
-		delete *oIti;
+		o->exit();
+		delete o;
 
 		oIti = findFirstGameObjectIterator(oId);
 	}
@@ -117,6 +124,11 @@ vector<GameObject*>::iterator GameObjectManager::findFirstGameObjectIterator(Gam
 	return m_objects.end();
 }
 
+
+void GameObjectManager::markForDelete(GameObject* o)
+{
+	m_markedForDelete.push_back(o);
+}
 
 void GameObjectManager::exit()
 {

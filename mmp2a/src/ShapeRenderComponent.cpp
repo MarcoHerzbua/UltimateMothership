@@ -54,9 +54,6 @@ void ShapeRenderComponent::draw(RenderWindow* window)
 	window->draw(m_shape);
 }
 
-void ShapeRenderComponent::exit()
-{
-}
 
 void ShapeRenderComponent::setScale(const float scale)
 {

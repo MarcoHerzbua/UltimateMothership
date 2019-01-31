@@ -72,6 +72,42 @@ void PlayerManager::registerUnit(int p, SteeringComponent* s)
 }
 
 
+void PlayerManager::removeUnit(SteeringComponent* s)
+{
+	for (auto& player : m_units)
+	{
+		auto sIti = player.second.begin();
+
+		while (sIti != player.second.end())
+		{
+			if (*sIti == s)
+			{
+				player.second.erase(sIti);
+				return;
+			}
+
+			sIti++;
+		}
+	}
+}
+
+void PlayerManager::removeShip(ShipComponent* s)
+{
+	for (auto& player : m_ships)
+	{
+		auto sIti = player.second.begin();
+
+		while (sIti != player.second.end())
+		{
+			if (*sIti == s)
+			{
+				player.second.erase(sIti);
+				return;
+			}
+			sIti++;
+		}
+	}
+}
 
 void PlayerManager::changeActivePlayer()
 {
@@ -171,7 +207,7 @@ void PlayerManager::activateFirstPlayer()
 
 void PlayerManager::activateLastPlayer()
 {
-	m_activePlayer = m_players.end()--;
+	m_activePlayer = --m_players.end();
 
 	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(0));
 	Eventbus::getInstance().fireEvent(new UpdatePlayerStatsEvent(1));
@@ -201,7 +237,7 @@ void PlayerManager::activatePrevPlayer()
 {
 	Eventbus::getInstance().fireEvent(new ToggleLabelTextEvent(false, *m_activePlayer));
 	if (m_activePlayer == m_players.begin())
-		m_activePlayer = m_players.end()--;
+		m_activePlayer = --m_players.end();
 
 
 	else

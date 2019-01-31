@@ -50,7 +50,7 @@ void BasicAttackAbilityComponent::useAbility(Target t)
 		origin->getDamage(getBaseDamage(), targetStats.attack);
 		if (origin->isDead())
 		{
-			PlayerManager::getInstance().increaseRessources(targetPlayerIndex, 5); 
+			PlayerManager::getInstance().increaseRessources(targetPlayerIndex, 5);
 		}
 	}
 }
