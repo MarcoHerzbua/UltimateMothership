@@ -32,8 +32,6 @@ public:
 	virtual void update(const float deltaTimeSeconds) override;
 	virtual void draw(RenderWindow* window) override;
 
-	virtual void exit() override;
-
 	virtual void setScale(const float scale) override {};
 
 	//void setColor(sf::Color color);

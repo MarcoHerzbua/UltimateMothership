@@ -49,7 +49,3 @@ void DebugGeometryRenderComponent::draw(RenderWindow* window)
 	window->draw(m_debugShape);
 }
 
-void DebugGeometryRenderComponent::exit()
-{
-
-}

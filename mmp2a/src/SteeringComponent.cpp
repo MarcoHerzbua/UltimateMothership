@@ -85,6 +85,15 @@ void SteeringComponent::setCurrentNode(Node * node)
 
 void SteeringComponent::exit()
 {
+	// if (m_currentNode)
+	// 	m_currentNode->removeGameObject(m_gameObject);
+
+	auto ship = getShipFromGameObject(m_gameObject);
+
+	PlayerManager::getInstance().removeUnit(this);
+	if (ship)
+		PlayerManager::getInstance().removeShip(ship);
+
 	for (auto c : m_controller)
 	{
 		c->exit();

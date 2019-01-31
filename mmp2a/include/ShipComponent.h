@@ -56,6 +56,8 @@ public:
 	void restoreLife(int amount);
 
 	bool isDead() { return m_currentStats.life <= 0; };
+	void die();
+
 
 	IAbilityComponent * getAbilityComponent(Abilities a);
 	string getName() { return m_name; };

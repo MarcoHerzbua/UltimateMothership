@@ -29,6 +29,9 @@ public:
 	void registerUnit(int p, SteeringComponent* s);
 	void registerCursor(CursorComponent* c);
 
+	void removeUnit(SteeringComponent* s);
+	void removeShip(ShipComponent* s);
+
 	void changeActivePlayer();
 	void preChangeActiveUnit();
 	void changeActiveUnit();
