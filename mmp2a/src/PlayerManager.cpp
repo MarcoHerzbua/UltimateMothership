@@ -5,6 +5,7 @@
 #include "CursorComponent.h"
 #include "InputManager.h"
 #include "ShipComponent.h"
+#include "SpriteSwitcherComponent.h"
 
 void PlayerManager::update(const float deltaTimeSeconds)
 {
@@ -69,44 +70,84 @@ void PlayerManager::registerUnit(int p, SteeringComponent* s)
 	m_ships[p].push_back(getShipFromGameObject(s->getGameObjectPtr()));
 }
 
+
+
 void PlayerManager::changeActivePlayer()
 {
 	for (auto ship : m_ships[*m_activePlayer])
 		ship->resetMovement();
 }
 
+
+void PlayerManager::changeActiveUnit()
+{
+	static_cast<SteeringComponent*>(m_cursor->getGameObjectPtr()->findComponents(STEERING_COMPONENT)[0])->setCurrentNode((*m_activeUnit)->getCurrentNode());
+	static_cast<SpriteSwitcherComponent*>((*m_activeUnit)->getGameObjectPtr()->findComponents(SPRITE_SWITCHER_COMPONENT)[0])->activateSet(1);
+}
+
+void PlayerManager::preChangeActiveUnit()
+{
+	if (!m_firstActiveUnit)
+		static_cast<SpriteSwitcherComponent*>((*m_activeUnit)->getGameObjectPtr()->findComponents(SPRITE_SWITCHER_COMPONENT)[0])->activateSet(0);
+}
+
+
+
+
+
 void PlayerManager::activateFirstUnit()
 {
+	preChangeActiveUnit();
+
 	m_activeUnit = m_units[*m_activePlayer].begin();
 	m_activeShip = m_ships[*m_activePlayer].begin();
+
+	changeActiveUnit();
 }
 
 void PlayerManager::activateLastUnit()
 {
+	preChangeActiveUnit();
+	
 	m_activeUnit = m_units[*m_activePlayer].end()--;
 	m_activeShip = m_ships[*m_activePlayer].end()--;
+	
+	changeActiveUnit();
 }
 
 void PlayerManager::activateNextUnit()
 {
+	preChangeActiveUnit();
+
 	m_activeUnit++;
 	m_activeShip++;
 
 	if (m_activeUnit == m_units[*m_activePlayer].end())
-		activateFirstUnit();
-		
+	{
+		m_activeUnit = m_units[*m_activePlayer].begin();
+		m_activeShip = m_ships[*m_activePlayer].begin();
+	}
+
+	changeActiveUnit();
 }
 
 void PlayerManager::activatePrevUnit()
 {
+	preChangeActiveUnit();
+
 	if (m_activeUnit == m_units[*m_activePlayer].begin())
-		activateLastUnit();
+	{
+		m_activeUnit = m_units[*m_activePlayer].end()--;
+		m_activeShip = m_ships[*m_activePlayer].end()--;
+	}
 
 	else
 	{
 		m_activeUnit--;
 		m_activeShip--;
 	}
+
+	changeActiveUnit();
 }
 
 void PlayerManager::activateFirstPlayer()
@@ -131,7 +172,8 @@ void PlayerManager::activateNextPlayer()
 	m_activePlayer++;
 
 	if (m_activePlayer == m_players.end())
-		activateFirstPlayer();
+		m_activePlayer = m_players.begin();
+	
 
 	activateFirstUnit();
 	changeActivePlayer();
@@ -140,7 +182,8 @@ void PlayerManager::activateNextPlayer()
 void PlayerManager::activatePrevPlayer()
 {
 	if (m_activePlayer == m_players.begin())
-		activateLastPlayer();
+		m_activePlayer = m_players.end()--;
+
 
 	else
 		m_activePlayer--;
