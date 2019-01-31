@@ -378,6 +378,9 @@
     <ClInclude Include="..\include\SpriteSwitcherComponent.h">
       <Filter>Header Files\GameComponents\RenderComponents</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\ShipManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\GameObject.cpp">
@@ -598,6 +601,9 @@
     </ClCompile>
     <ClCompile Include="..\src\SpriteSwitcherComponent.cpp">
       <Filter>Source Files\GameComponents\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ShipManager.cpp">
+      <Filter>Source Files\Managers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

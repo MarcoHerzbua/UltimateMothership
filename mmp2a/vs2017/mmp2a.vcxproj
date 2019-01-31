@@ -95,6 +95,7 @@
     <ClInclude Include="..\include\RenderManager.h" />
     <ClInclude Include="..\include\ShapeRenderComponent.h" />
     <ClInclude Include="..\include\ShipComponent.h" />
+    <ClInclude Include="..\include\ShipManager.h" />
     <ClInclude Include="..\include\SpriteRenderComponent.h" />
     <ClInclude Include="..\include\SpriteSwitcherComponent.h" />
     <ClInclude Include="..\include\Stats.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="..\src\RenderManager.cpp" />
     <ClCompile Include="..\src\ShapeRenderComponent.cpp" />
     <ClCompile Include="..\src\ShipComponent.cpp" />
+    <ClCompile Include="..\src\ShipManager.cpp" />
     <ClCompile Include="..\src\SpriteRenderComponent.cpp" />
     <ClCompile Include="..\src\SpriteSwitcherComponent.cpp" />
     <ClCompile Include="..\src\stdafx.cpp" />
