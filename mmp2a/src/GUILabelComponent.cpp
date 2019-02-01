@@ -61,6 +61,10 @@ void GUILabelComponent::initTmxData()
 			textSize = stoi(property->value);
 		if (name == "XAlignment")
 			xAlignment = static_cast<tgui::Label::HorizontalAlignment>(stoi(property->value));
+		if (name == "isVisible")
+			if (property->value == "false")
+				label->setVisible(false);
+
 	}
 
 

@@ -283,9 +283,9 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	{
 		auto ev = dynamic_cast<TogglePopupEvent*>(event);
 
-		auto panel = static_pointer_cast<tgui::Panel>(m_gui->get("PanelPopup"));
-		panel->setVisible(ev->m_isVisible);
-		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonOne"));
+		auto button = static_pointer_cast<tgui::Button>(m_gui->get("PanelPopup"));
+		button->setVisible(ev->m_isVisible);
+		auto panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonOne"));
 		panel->setVisible(ev->m_isVisible);
 		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonTwo"));
 		panel->setVisible(ev->m_isVisible);
@@ -311,7 +311,7 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 		string player = "P" + to_string(ev->m_playerIdx + 1);
 
 		Color color;
-		ev->m_isVisible ? color = Color::Blue : color = Color::White;
+		ev->m_isVisible ? color = Color::Green : color = Color::White;
 
 		vector<string> labelNames =
 		{
@@ -328,6 +328,23 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 		}
 	}
 	break;
+	case TOGGLE_GAME_OVER_EVENT:
+	{
+		auto ev = dynamic_cast<ToggleGameOverEvent*>(event);
+
+		int winPlayerIdx = ev->m_winPlayerIdx;
+		string winText = "GAME OVER!!!! Player " + to_string(winPlayerIdx + 1) + " won!";
+
+		auto button = static_pointer_cast<tgui::Button>(m_gui->get("PanelGameOver"));
+		button->setVisible(true);
+		auto label = static_pointer_cast<tgui::Label>(m_gui->get("GameOverHeader"));
+		label->setVisible(true);
+		label->setText(winText);
+
+		label = static_pointer_cast<tgui::Label>(m_gui->get("GameOverText"));
+		label->setVisible(true);
+
+	}
 	default:
 		break;
 	}

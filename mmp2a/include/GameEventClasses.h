@@ -36,8 +36,8 @@ public:
 class UpdatePlayerStatsEvent : public virtual IGameEvent
 {
 public:
-	UpdatePlayerStatsEvent(/*int resources*/);
-	/*int m_resources;*/
+	UpdatePlayerStatsEvent(int playerIdx);
+	int m_playerIdx;
 };
 
 class UpdateButtonMapEvent : public virtual IGameEvent
@@ -81,6 +81,13 @@ public:
 	ToggleLabelTextEvent(bool setVisible, int playeridx);
 	bool m_isVisible;
 	int m_playerIdx;
+};
+
+class ToggleGameOverEvent : public virtual IGameEvent
+{
+public:
+	ToggleGameOverEvent(int winPlayerIdx);
+	int m_winPlayerIdx;
 };
 
 //THis method gets called when Buttons with Events are created in Tiled (Action_ = ...)

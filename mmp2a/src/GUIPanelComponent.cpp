@@ -59,6 +59,10 @@ void GUIPanelComponent::initTmxData()
 		}
 		if (name == "TextSize");
 			//textSize = stoi(property->value);
+		if (name == "isVisible")
+			if (property->value == "false")
+				panel->setVisible(false);
+
 	}
 
 	//auto bg = make_shared<tgui::Picture>("background.jpg");

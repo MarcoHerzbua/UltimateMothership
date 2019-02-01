@@ -32,10 +32,12 @@
     <ClInclude Include="..\include\GameplayAbilityState.h" />
     <ClInclude Include="..\include\GameplayAttackState.h" />
     <ClInclude Include="..\include\GameplayEndTurnState.h" />
+    <ClInclude Include="..\include\GameplayGameOverState.h" />
     <ClInclude Include="..\include\GameplayMoveState.h" />
     <ClInclude Include="..\include\GameplaySelectionState.h" />
     <ClInclude Include="..\include\GameplayStates.h" />
     <ClInclude Include="..\include\GameplayTransitionState.h" />
+    <ClInclude Include="..\include\GameplayUltimateState.h" />
     <ClInclude Include="..\include\GUIControllerComponent.h" />
     <ClInclude Include="..\include\GUIInputComponent.h" />
     <ClInclude Include="..\include\GUILabelComponent.h" />
@@ -115,11 +117,13 @@
     <ClCompile Include="..\src\GameplayAbilityState.cpp" />
     <ClCompile Include="..\src\GameplayAttackState.cpp" />
     <ClCompile Include="..\src\GameplayEndTurnState.cpp" />
+    <ClCompile Include="..\src\GameplayGameOverState.cpp" />
     <ClCompile Include="..\src\GameplayMoveState.cpp" />
     <ClCompile Include="..\src\GameplaySelectionState.cpp" />
     <ClCompile Include="..\src\GameplayStateManager.cpp" />
     <ClCompile Include="..\src\GameplayTransitionState.cpp" />
     <ClCompile Include="..\src\CursorComponent.cpp" />
+    <ClCompile Include="..\src\GameplayUltimateState.cpp" />
     <ClCompile Include="..\src\GUIControllerComponent.cpp" />
     <ClCompile Include="..\src\GUIInputComponent.cpp" />
     <ClCompile Include="..\src\GUILabelComponent.cpp" />

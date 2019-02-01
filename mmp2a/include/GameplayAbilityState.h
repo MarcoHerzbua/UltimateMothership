@@ -25,7 +25,5 @@ public:
 
 private:
 	void handleKeyInput() override;
-
-
-
+	vector<GameObjects> getPossibleEnemyShipIDs(GameObjects go);
 };

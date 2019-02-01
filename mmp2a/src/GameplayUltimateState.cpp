@@ -1,47 +1,56 @@
 #include "stdafx.h"
-#include "GameplayAttackState.h"
+#include "GameplayUltimateState.h"
 #include "CursorComponent.h"
 #include "SteeringComponent.h"
 #include "GameObjects.h"
 #include "IAbilityComponent.h"
 #include "Stats.h"
 #include "MotherShipComponent.h"
-#include "BasicAttackAbilityComponent.h"
+#include "UltimateAttackAbilityComponent.h"
 
-GameplayAttackState::GameplayAttackState()
+GameplayUltimateState::GameplayUltimateState()
 {
-	m_id = ATTACK_GAMEPLAY_STATE;
+	m_id = ULTIMATE_GAMEPLAY_STATE;
 
 	GameplayStateManager::getInstance().registerState(m_id, this);
-
 }
 
-void GameplayAttackState::init()
+void GameplayUltimateState::init()
 {
 	IGameplayState::init();
 }
 
-void GameplayAttackState::update(const float deltaTimeSeconds)
+void GameplayUltimateState::update(const float deltaTimeSeconds)
 {
 	handleKeyInput();
 }
 
-void GameplayAttackState::exit()
+void GameplayUltimateState::exit()
 {
 }
 
-void GameplayAttackState::handleKeyInput()
+void GameplayUltimateState::handleKeyInput()
 {
 	auto playerMng = &PlayerManager::getInstance();
-	auto abilitiy = static_cast<BasicAttackAbilityComponent*>(playerMng->getActiveShip()->getAbilityComponent(BASIC_ATTACK_ABILITY));
+	auto motherShip = dynamic_cast<MotherShipComponent*>(playerMng->getActiveShip());
+	if (!motherShip)
+	{
+		auto abilityState = m_gameplayStateManager->getState(ABILITY_GAMEPLAY_STATE);
+		Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(abilityState, abilityState));
+		Eventbus::getInstance().fireEvent(new UpdatePopupEvent("Select your mothership first if you want to cast an ultimate"));
+		return;
+	}
 
-	playerMng->getCursor()->setPossibleRange(abilitiy->getRange());
+	auto ability = static_cast<UltimateAttackAbilityComponent*>(motherShip->getAbilityComponent(ULTIMATE_ATTACK_ABILITY));
+
+	playerMng->getCursor()->setPossibleRange(ability->getRange());
 
 	if (InputManager::getInstance().isActionActive(A_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
+
 		auto cursorNode = playerMng->getCursor()->getCurrentNode();
 		auto distanceToActive = playerMng->getCursor()->getDistanceToActive();
-		auto attackRange = playerMng->getActiveShip()->getAbilityComponent(BASIC_ATTACK_ABILITY)->getRange();
+		auto attackRange = ability->getRange();
 
 		if (attackRange >= distanceToActive)
 		{
@@ -63,14 +72,24 @@ void GameplayAttackState::handleKeyInput()
 				enemyShip = cursorNode->getGameObject(go);
 				if (enemyShip) //nullptr means no Object of this type found
 				{
+					//TODO: UlitmateCosts are hardcoded at the moment
+					if (playerMng->getRessources(playerMng->getActivePlayer()) < 10)
+					{
+						Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(this, this));
+						Eventbus::getInstance().fireEvent(new UpdatePopupEvent("Not enough Resources to cast Ultimate!!"));
+						return;
+					}
+
+					playerMng->decreaseRessources(playerMng->getActivePlayer(), 10);
+
 					Target t = { playerMng->getActiveShip()->getGameObjectPtr(), enemyShip };
-					playerMng->getActiveShip()->addTarget(t, BASIC_ATTACK_ABILITY);
-					
+					playerMng->getActiveShip()->addTarget(t, ULTIMATE_ATTACK_ABILITY);
+
 					auto enemyShipComp = getShipFromGameObject(enemyShip);
 					auto shipStats = playerMng->getActiveShip()->getCurrentStats();
-					int damage = enemyShipComp->calcDamage(abilitiy->getBaseDamage(), shipStats.attack);
-					string damageString = damage + " Damage!!";
-					
+					int damage = enemyShipComp->calcDamage(ability->getBaseDamage(), shipStats.attack);
+					string damageString = to_string(damage) + " Damage!!";
+
 					//decrease Movement to 0
 					playerMng->getActiveShip()->decreasMovement(playerMng->getActiveShip()->getCurrentMovement());
 
@@ -82,7 +101,6 @@ void GameplayAttackState::handleKeyInput()
 						new GameplayStateChangeEvent(this, m_gameplayStateManager->getState(SELECTION_GAMEPLAY_STATE)));
 					Eventbus::getInstance().fireEvent(
 						new UpdatePopupEvent("Your attack was successful!! You did " + damageString));
-					playerMng->activateNextUnit();
 					return;
 				}
 			}
@@ -94,20 +112,15 @@ void GameplayAttackState::handleKeyInput()
 			return;
 		}
 
-		Eventbus::getInstance().fireEvent(
-			new GameplayStateChangeEvent(this, this));
-		Eventbus::getInstance().fireEvent(
-			new UpdatePopupEvent("The target is out of attack range!!"));
 	}
 	if (InputManager::getInstance().isActionActive(B_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
 		m_gameplayStateManager->setState(ABILITY_GAMEPLAY_STATE);
 	}
 
-
 }
 
-vector<GameObjects> GameplayAttackState::getPossibleEnemyShipIDs(GameObjects go)
+vector<GameObjects> GameplayUltimateState::getPossibleEnemyShipIDs(GameObjects go)
 {
 	vector<GameObjects> possibleEnemyShipIds;
 	switch (go)

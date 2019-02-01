@@ -12,10 +12,10 @@
 
 #pragma endregion
 
-class GameplayAttackState : public IGameplayState
+class GameplayUltimateState : public IGameplayState
 {
 public:
-	GameplayAttackState();
+	GameplayUltimateState();
 
 	void init() override;
 

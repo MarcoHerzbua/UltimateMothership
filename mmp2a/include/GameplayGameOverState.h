@@ -12,10 +12,10 @@
 
 #pragma endregion
 
-class GameplayAttackState : public IGameplayState
+class GameplayGameOverState : public IGameplayState
 {
 public:
-	GameplayAttackState();
+	GameplayGameOverState();
 
 	void init() override;
 
@@ -25,7 +25,5 @@ public:
 
 private:
 	void handleKeyInput() override;
-
-	vector<GameObjects> getPossibleEnemyShipIDs(GameObjects go);
 
 };

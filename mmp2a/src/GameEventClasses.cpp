@@ -22,10 +22,10 @@ UpdateShipStatsEvent::UpdateShipStatsEvent(ShipComponent * cmp)
 	m_shipComponent = cmp;
 }
 
-UpdatePlayerStatsEvent::UpdatePlayerStatsEvent(/*int resources*/)
+UpdatePlayerStatsEvent::UpdatePlayerStatsEvent(int playerIdx)
 {
 	m_id = UPDATE_PLAYERSTATS_EVENT;
-	//m_resources = resources;
+	m_playerIdx = playerIdx;
 }
 
 UpdateButtonMapEvent::UpdateButtonMapEvent(vector<sf::String> buttonMap)
@@ -64,4 +64,10 @@ ToggleLabelTextEvent::ToggleLabelTextEvent(bool setVisible, int playerIdx)
 	m_isVisible = setVisible;
 	m_playerIdx = playerIdx;
 
+}
+
+ToggleGameOverEvent::ToggleGameOverEvent(int winPlayerIdx)
+{
+	m_id = TOGGLE_GAME_OVER_EVENT;
+	m_winPlayerIdx = winPlayerIdx;
 }
