@@ -1,0 +1,592 @@
+ <objectgroup color="#f7ff52" id="10" name="p1Mother">
+  <object id="3" name="sprite" type="SpriteRenderComponent" x="-279.667" y="-60" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="11"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="4" name="steering" type="SteeringComponent" x="-339.667" y="-48" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="1"/>
+    <property name="StartCol" type="int" value="13"/>
+    <property name="StartRow" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="6" name="ship" type="MotherShipComponent" x="-340.667" y="15" width="57" height="48"/>
+  <object id="75" name="spriteSwitcher" type="SpriteSwitcherComponent" x="-236" y="-136" width="58.6667" height="58.6667"/>
+  <object id="76" name="sprite" type="SpriteRenderComponent" x="-186.5" y="-59.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="11"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff8787" id="11" name="p1Farm">
+  <object id="3" name="sprite" type="SpriteRenderComponent" x="-455.667" y="311" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="3"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="4" name="steering" type="SteeringComponent" x="-515.667" y="323" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="1"/>
+    <property name="StartCol" type="int" value="15"/>
+    <property name="StartRow" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="6" name="ship" type="FarmShipComponent" x="-516.667" y="386" width="57" height="48"/>
+  <object id="74" name="spriteSwitcher" type="SpriteSwitcherComponent" x="-414" y="227.333" width="58.6667" height="58.6667"/>
+  <object id="77" name="sprite" type="SpriteRenderComponent" x="-382.5" y="300.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="3"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff9e27" id="15" name="p1Farm">
+  <object id="15" name="sprite" type="SpriteRenderComponent" x="-159" y="301" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="3"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="16" name="steering" type="SteeringComponent" x="-219" y="313" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="1"/>
+    <property name="StartCol" type="int" value="16"/>
+    <property name="StartRow" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="17" name="ship" type="FarmShipComponent" x="-220" y="376" width="57" height="48"/>
+  <object id="73" name="spriteSwitcher" type="SpriteSwitcherComponent" x="-110.667" y="233.333" width="58.6667" height="58.6667"/>
+  <object id="78" name="sprite" type="SpriteRenderComponent" x="-77.5" y="304.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="3"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff0091" id="12" name="p1Fighter">
+  <object id="3" name="sprite" type="SpriteRenderComponent" x="-200.334" y="824.666" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="4" name="steering" type="SteeringComponent" x="-260.334" y="836.666" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="1"/>
+    <property name="StartCol" type="int" value="12"/>
+    <property name="StartRow" type="int" value="7"/>
+   </properties>
+  </object>
+  <object id="6" name="ship" type="FighterShipComponent" x="-261.334" y="899.666" width="57" height="48"/>
+  <object id="72" name="spriteSwitcher" type="SpriteSwitcherComponent" x="-168.667" y="746" width="58.6667" height="58.6667"/>
+  <object id="83" name="sprite" type="SpriteRenderComponent" x="-125.5" y="829.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff0000" id="16" name="p1Fighter">
+  <object id="18" name="sprite" type="SpriteRenderComponent" x="-450.333" y="831.333" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="19" name="steering" type="SteeringComponent" x="-510.333" y="843.333" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="1"/>
+    <property name="StartCol" type="int" value="12"/>
+    <property name="StartRow" type="int" value="6"/>
+   </properties>
+  </object>
+  <object id="20" name="ship" type="FighterShipComponent" x="-511.333" y="906.333" width="57" height="48"/>
+  <object id="71" name="spriteSwitcher" type="SpriteSwitcherComponent" x="-404" y="749.333" width="58.6667" height="58.6667"/>
+  <object id="82" name="sprite" type="SpriteRenderComponent" x="-366.5" y="830.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ffd1aa" id="17" name="p1Fighter">
+  <object id="21" name="sprite" type="SpriteRenderComponent" x="-423.666" y="588.667" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="22" name="steering" type="SteeringComponent" x="-483.666" y="600.667" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="1"/>
+    <property name="StartCol" type="int" value="13"/>
+    <property name="StartRow" type="int" value="7"/>
+   </properties>
+  </object>
+  <object id="23" name="ship" type="FighterShipComponent" x="-484.666" y="663.667" width="57" height="48"/>
+  <object id="70" name="spriteSwitcher" type="SpriteSwitcherComponent" x="-384" y="497.333" width="58.6667" height="58.6667"/>
+  <object id="80" name="sprite" type="SpriteRenderComponent" x="-333.5" y="581.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff3de6" id="18" name="p1Fighter">
+  <object id="24" name="sprite" type="SpriteRenderComponent" x="-650.334" y="592" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="25" name="steering" type="SteeringComponent" x="-710.334" y="604" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="1"/>
+    <property name="StartCol" type="int" value="13"/>
+    <property name="StartRow" type="int" value="6"/>
+   </properties>
+  </object>
+  <object id="26" name="ship" type="FighterShipComponent" x="-711.334" y="667" width="57" height="48"/>
+  <object id="69" name="spriteSwitcher" type="SpriteSwitcherComponent" x="-606.667" y="518.667" width="58.6667" height="58.6667"/>
+  <object id="79" name="sprite" type="SpriteRenderComponent" x="-570.5" y="586.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#0019ff" id="19" name="p1Fighter">
+  <object id="27" name="sprite" type="SpriteRenderComponent" x="-201" y="582.667" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="28" name="steering" type="SteeringComponent" x="-261" y="594.667" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="1"/>
+    <property name="StartCol" type="int" value="13"/>
+    <property name="StartRow" type="int" value="8"/>
+   </properties>
+  </object>
+  <object id="29" name="ship" type="FighterShipComponent" x="-262" y="657.667" width="57" height="48"/>
+  <object id="68" name="spriteSwitcher" type="SpriteSwitcherComponent" x="-167.333" y="501.333" width="58.6667" height="58.6667"/>
+  <object id="81" name="sprite" type="SpriteRenderComponent" x="-124.5" y="575.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="7"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#acb5ff" id="27" name="p0Mother">
+  <object id="51" name="sprite" type="SpriteRenderComponent" x="1960.33" y="44.6667" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="8"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="52" name="steering" type="SteeringComponent" x="1900.33" y="56.6667" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="0"/>
+    <property name="StartCol" type="int" value="44"/>
+    <property name="StartRow" type="int" value="18"/>
+   </properties>
+  </object>
+  <object id="53" name="ship" type="MotherShipComponent" x="1899.33" y="119.667" width="57" height="48"/>
+  <object id="67" name="spriteSwitcher" type="SpriteSwitcherComponent" x="1998.67" y="-31.3333" width="58.6667" height="58.6667"/>
+  <object id="91" name="sprite" type="SpriteRenderComponent" x="2039.5" y="46.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="8"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ffe29e" id="26" name="p0Farm">
+  <object id="48" name="sprite" type="SpriteRenderComponent" x="1953.67" y="307" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="0"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="49" name="steering" type="SteeringComponent" x="1889.67" y="318.333" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="0"/>
+    <property name="StartCol" type="int" value="42"/>
+    <property name="StartRow" type="int" value="18"/>
+   </properties>
+  </object>
+  <object id="50" name="ship" type="FarmShipComponent" x="1892.67" y="382" width="57" height="48"/>
+  <object id="66" name="spriteSwitcher" type="SpriteSwitcherComponent" x="1990.67" y="232" width="58.6667" height="58.6667"/>
+  <object id="89" name="sprite" type="SpriteRenderComponent" x="2033.5" y="303.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="0"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ffc7e5" id="25" name="p0Farm">
+  <object id="45" name="sprite" type="SpriteRenderComponent" x="2257.33" y="304.667" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="0"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="46" name="steering" type="SteeringComponent" x="2172" y="321.333" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="0"/>
+    <property name="StartCol" type="int" value="41"/>
+    <property name="StartRow" type="int" value="18"/>
+   </properties>
+  </object>
+  <object id="47" name="ship" type="FarmShipComponent" x="2171" y="384.333" width="57" height="48"/>
+  <object id="65" name="spriteSwitcher" type="SpriteSwitcherComponent" x="2290" y="223.333" width="58.6667" height="58.6667"/>
+  <object id="90" name="sprite" type="SpriteRenderComponent" x="2331.5" y="304.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="0"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#1cff1c" id="24" name="p0Fighter">
+  <object id="42" name="sprite" type="SpriteRenderComponent" x="2238.33" y="786" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="43" name="steering" type="SteeringComponent" x="2178.33" y="798" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="0"/>
+    <property name="StartCol" type="int" value="45"/>
+    <property name="StartRow" type="int" value="15"/>
+   </properties>
+  </object>
+  <object id="44" name="ship" type="FighterShipComponent" x="2177.33" y="861" width="57" height="48"/>
+  <object id="64" name="spriteSwitcher" type="SpriteSwitcherComponent" x="2277.33" y="704" width="58.6667" height="58.6667"/>
+  <object id="85" name="sprite" type="SpriteRenderComponent" x="2321.5" y="776.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#0f8fff" id="23" name="p0Fighter">
+  <object id="39" name="sprite" type="SpriteRenderComponent" x="1933" y="766" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="40" name="steering" type="SteeringComponent" x="1873" y="778" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="0"/>
+    <property name="StartCol" type="int" value="45"/>
+    <property name="StartRow" type="int" value="16"/>
+   </properties>
+  </object>
+  <object id="41" name="ship" type="FighterShipComponent" x="1872" y="841" width="57" height="48"/>
+  <object id="63" name="spriteSwitcher" type="SpriteSwitcherComponent" x="1972" y="694" width="58.6667" height="58.6667"/>
+  <object id="84" name="sprite" type="SpriteRenderComponent" x="2017.5" y="769.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ec8cff" id="22" name="p0Fighter">
+  <object id="36" name="sprite" type="SpriteRenderComponent" x="2180.34" y="554.667" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="37" name="steering" type="SteeringComponent" x="2120.34" y="566.667" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="0"/>
+    <property name="StartCol" type="int" value="44"/>
+    <property name="StartRow" type="int" value="15"/>
+   </properties>
+  </object>
+  <object id="38" name="ship" type="FighterShipComponent" x="2119.34" y="629.667" width="57" height="48"/>
+  <object id="62" name="spriteSwitcher" type="SpriteSwitcherComponent" x="2224.67" y="470.667" width="58.6667" height="58.6667"/>
+  <object id="87" name="sprite" type="SpriteRenderComponent" x="2264.5" y="546.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#58e9ff" id="21" name="p0Fighter">
+  <object id="33" name="sprite" type="SpriteRenderComponent" x="1931" y="546" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="34" name="steering" type="SteeringComponent" x="1871" y="558" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="0"/>
+    <property name="StartCol" type="int" value="44"/>
+    <property name="StartRow" type="int" value="16"/>
+   </properties>
+  </object>
+  <object id="35" name="ship" type="FighterShipComponent" x="1870" y="621" width="57" height="48"/>
+  <object id="61" name="spriteSwitcher" type="SpriteSwitcherComponent" x="1970" y="472" width="58.6667" height="58.6667"/>
+  <object id="86" name="sprite" type="SpriteRenderComponent" x="2006.5" y="544.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#de38ff" id="20" name="p0Fighter">
+  <object id="30" name="sprite" type="SpriteRenderComponent" x="2429.67" y="513.333" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1.png"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+  <object id="31" name="steering" type="SteeringComponent" x="2369.67" y="525.333" width="46" height="32">
+   <properties>
+    <property name="PlayerIndex" type="int" value="0"/>
+    <property name="StartCol" type="int" value="44"/>
+    <property name="StartRow" type="int" value="14"/>
+   </properties>
+  </object>
+  <object id="32" name="ship" type="FighterShipComponent" x="2368.67" y="588.333" width="57" height="48"/>
+  <object id="60" name="spriteSwitcher" type="SpriteSwitcherComponent" x="2465.15" y="432.788" width="58.6667" height="58.6667"/>
+  <object id="88" name="sprite" type="SpriteRenderComponent" x="2501.5" y="513.5" width="61" height="57">
+   <properties>
+    <property name="Texture" value="shipsSheet1Highlight.png"/>
+    <property name="active" type="bool" value="false"/>
+    <property name="loadFromSet" type="bool" value="true"/>
+    <property name="posX" type="int" value="0"/>
+    <property name="posY" type="int" value="4"/>
+    <property name="setId" type="int" value="1"/>
+    <property name="sizeX" type="int" value="32"/>
+    <property name="sizeY" type="int" value="32"/>
+    <property name="tileSize" type="int" value="32"/>
+    <property name="zIndex" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>

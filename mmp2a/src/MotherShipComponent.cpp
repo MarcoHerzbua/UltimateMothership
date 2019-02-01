@@ -7,6 +7,9 @@
 #include "UltimateAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
 
+#include "Eventbus.h"
+#include "GameEventClasses.h"
+
 MotherShipComponent::MotherShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)
 {
@@ -55,4 +58,11 @@ void MotherShipComponent::initTmxData()
 		return;
 
 	m_mapObject = nullptr;
+}
+
+void MotherShipComponent::die()
+{
+	ShipComponent::die();
+
+	Eventbus::getInstance().fireEvent(new ToggleGameOverEvent(PlayerManager::getInstance().getActivePlayer()));
 }

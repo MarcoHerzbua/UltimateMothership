@@ -69,7 +69,7 @@ void GameplayAttackState::handleKeyInput()
 					auto enemyShipComp = getShipFromGameObject(enemyShip);
 					auto shipStats = playerMng->getActiveShip()->getCurrentStats();
 					int damage = enemyShipComp->calcDamage(abilitiy->getBaseDamage(), shipStats.attack);
-					string damageString = damage + " Damage!!";
+					string damageString = std::to_string(damage) + " Damage!!";
 					
 					//decrease Movement to 0
 					playerMng->getActiveShip()->decreasMovement(playerMng->getActiveShip()->getCurrentMovement());
