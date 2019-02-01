@@ -70,7 +70,7 @@ void ShipComponent::getDamage(int baseDamage, int attack)
 	// formula used to calculate damage
 	// Damage = Base Damage * 2 ^ ((Attack - Defense)/Doubling Rate)
 
-	float doublingRate = 25; //TODO chagne doublingRate according to tests
+	float doublingRate = 12; //TODO chagne doublingRate according to tests
 
 	int damage = (float)(attack * (pow(2, ((attack - m_currentStats.defense) / doublingRate))));
 

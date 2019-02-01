@@ -13,7 +13,7 @@ public:
 
 	void useAbility(Target t) override;
 private:
-	static constexpr int m_baseDamage = 10;
+	static constexpr int m_baseDamage = 11;
 
 	int getBaseDamage() override { return m_baseDamage; };
 };
