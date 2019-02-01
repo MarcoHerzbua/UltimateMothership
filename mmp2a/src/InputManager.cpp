@@ -76,24 +76,26 @@ bool InputManager::isStickPushed(const ControllerStickMapping stickIdx, const in
 	float rightStickHorizontalValue = Joystick::getAxisPosition(playerIdx, Joystick::Axis::Z);
 	float rightStickVerticalValue = Joystick::getAxisPosition(playerIdx, Joystick::Axis::U);
 
+	float threshhold = 20.f;
+
 	switch (stickIdx)
 	{
 	case LEFT_STICK_DOWN:
-		return leftStickVerticalValue >= 10.f;
+		return leftStickVerticalValue >= threshhold;
 	case LEFT_STICK_UP:
-		return leftStickVerticalValue <= -10.f;
+		return leftStickVerticalValue <= -threshhold;
 	case LEFT_STICK_LEFT:
-		return leftStickHorizontalValue <= -10.f;
+		return leftStickHorizontalValue <= -threshhold;
 	case LEFT_STICK_RIGHT:
-		return leftStickHorizontalValue >= 10.f;
+		return leftStickHorizontalValue >= threshhold;
 	case RIGHT_STICK_DOWN:
-		return rightStickVerticalValue >= 10.f;
+		return rightStickVerticalValue >= threshhold;
 	case RIGHT_STICK_UP:
-		return rightStickVerticalValue <= -10.f;
+		return rightStickVerticalValue <= -threshhold;
 	case RIGHT_STICK_LEFT:
-		return rightStickHorizontalValue <= -10.f;
+		return rightStickHorizontalValue <= -threshhold;
 	case RIGHT_STICK_RIGHT:
-		return rightStickHorizontalValue >= 10.f;
+		return rightStickHorizontalValue >= threshhold;
 	default:
 		break;
 	}

@@ -15,6 +15,6 @@ public:
 
 	int getBaseDamage() override { return m_baseDamage; };
 private:
-	static constexpr int m_baseDamage = 50;
+	static constexpr int m_baseDamage = 25;
 
 };

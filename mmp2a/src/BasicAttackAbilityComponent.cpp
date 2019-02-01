@@ -45,12 +45,12 @@ void BasicAttackAbilityComponent::useAbility(Target t)
 	{
 		PlayerManager::getInstance().increaseRessources(originPlayerIndex, 5);
 	}
-	else
+	/*else
 	{
 		origin->getDamage(getBaseDamage(), targetStats.attack);
 		if (origin->isDead())
 		{
 			PlayerManager::getInstance().increaseRessources(targetPlayerIndex, 5);
 		}
-	}
+	}*/
 }

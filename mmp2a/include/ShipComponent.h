@@ -57,7 +57,7 @@ public:
 	void restoreLife(int amount);
 
 	bool isDead() { return m_currentStats.life <= 0; };
-	void die();
+	virtual void die();
 
 
 	IAbilityComponent * getAbilityComponent(Abilities a);
