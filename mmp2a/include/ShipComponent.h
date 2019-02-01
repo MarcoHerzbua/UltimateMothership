@@ -51,7 +51,8 @@ public:
 	// =============================================================
 
 	// basedamage of ability, attack of other player
-	void getDamage(int baseDamage, int attack);
+	void getDamage(int baseDamage, int attack); //calculated damage gets subtracted from life
+	int calcDamage(int baseDamage, int attack); //only for calculation of damage
 
 	void restoreLife(int amount);
 

@@ -77,6 +77,12 @@ void GameplayStateManager::setState(GameplayStates name)
 	case(GAME_OVER_GAMEPLAY_STATE):
 		eventBus->fireEvent(new UpdateButtonMapEvent({ "Game Over", "Confirm", "Decline", "", "" }));
 		break;
+	case(ULTIMATE_GAMEPLAY_STATE):
+		eventBus->fireEvent(new UpdateButtonMapEvent({ "Ultimate", "Use", "Back to Abilities", "", "" }));
+		break;
+	case(ATTACK_GAMEPLAY_STATE):
+		eventBus->fireEvent(new UpdateButtonMapEvent({ "Attack", "Confirm Attack", "Back to Abilities", "", "" }));
+		break;
 	default:
 		break;
 	}

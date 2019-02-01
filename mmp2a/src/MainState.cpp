@@ -14,6 +14,7 @@
 #include "GameEventClasses.h"
 #include "GameplayEndTurnState.h"
 #include "GameplayGameOverState.h"
+#include "GameplayUltimateState.h"
 // singleton
 #include "InputManager.h"
 #include "GameStateManager.h"
@@ -51,6 +52,7 @@ void MainState::init()
 	auto transitionState = new GameplayTransitionState();
 	auto endTurnState = new GameplayEndTurnState();
 	auto gameOverState = new GameplayGameOverState();
+	auto ultimateState = new GameplayUltimateState();
 
 	Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(selectState, selectState));
 	Eventbus::getInstance().fireEvent(new UpdatePopupEvent("The Game is about to start! Player 1 goes first"));

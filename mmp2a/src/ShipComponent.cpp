@@ -67,17 +67,22 @@ void ShipComponent::resolveTargets(Abilities a)
 
 void ShipComponent::getDamage(int baseDamage, int attack)
 {
-	// formula used to calculate damage
-	// Damage = Base Damage * 2 ^ ((Attack - Defense)/Doubling Rate)
-
-	float doublingRate = 25; //TODO chagne doublingRate according to tests
-
-	int damage = (float)(attack * (pow(2, ((attack - m_currentStats.defense) / doublingRate))));
+	int damage = calcDamage(baseDamage, attack);
 
 	m_currentStats.life -= m_currentStats.life - damage >= 0 ? damage : m_currentStats.life;
 
 	if (isDead())
 		die();
+}
+
+int ShipComponent::calcDamage(int baseDamage, int attack)
+{
+	// formula used to calculate damage
+	// Damage = Base Damage * 2 ^ ((Attack - Defense)/Doubling Rate)
+
+	float doublingRate = 25; //TODO chagne doublingRate according to tests
+
+	return (float)(attack * (pow(2, ((attack - m_currentStats.defense) / doublingRate))));
 }
 
 void ShipComponent::restoreLife(int amount)

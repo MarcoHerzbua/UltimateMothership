@@ -381,6 +381,9 @@
     <ClInclude Include="..\include\GameplayGameOverState.h">
       <Filter>Header Files\GameState\GameplayStates</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\GameplayUltimateState.h">
+      <Filter>Header Files\GameState\GameplayStates</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\GameObject.cpp">
@@ -603,6 +606,9 @@
       <Filter>Source Files\GameComponents\RenderComponents</Filter>
     </ClCompile>
     <ClCompile Include="..\src\GameplayGameOverState.cpp">
+      <Filter>Source Files\GameState\GameplayStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplayUltimateState.cpp">
       <Filter>Source Files\GameState\GameplayStates</Filter>
     </ClCompile>
   </ItemGroup>

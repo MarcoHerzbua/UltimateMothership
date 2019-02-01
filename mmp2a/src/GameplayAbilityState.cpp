@@ -32,114 +32,35 @@ void GameplayAbilityState::handleKeyInput()
 {
 	auto playerMng = &PlayerManager::getInstance();
 
+	playerMng->getCursor()->setPossibleRange(0);
+
 	if (InputManager::getInstance().isActionActive(A_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
-		auto cursorNode = playerMng->getCursor()->getCurrentNode();
-		auto distanceToActive = playerMng->getCursor()->getDistanceToActive();
-		auto attackRange = playerMng->getActiveShip()->getAbilityComponent(BASIC_ATTACK_ABILITY)->getRange();
-
-		if (attackRange >= distanceToActive)
+		if (playerMng->getActiveShip()->getCurrentMovement() == 0)
 		{
-			if (!cursorNode->isNodeOccupied())
-			{
-				Eventbus::getInstance().fireEvent(
-					new GameplayStateChangeEvent(this, this));
-				Eventbus::getInstance().fireEvent(
-					new UpdatePopupEvent("There is nothing here to attack!!"));
-				return;
-			}
-
-			GameObjects activeShipId = playerMng->getActiveShip()->getGameObjectPtr()->getId();
-			vector<GameObjects> possibleEnemyShipIds = getPossibleEnemyShipIDs(activeShipId);
-
-			GameObject * enemyShip = nullptr;
-			for (GameObjects go : possibleEnemyShipIds)
-			{
-				enemyShip = cursorNode->getGameObject(go);
-				if (enemyShip) //nullptr means no Object of this type found
-				{
-					Target t = { playerMng->getActiveShip()->getGameObjectPtr(), enemyShip };
-					playerMng->getActiveShip()->addTarget(t, BASIC_ATTACK_ABILITY);
-
-					Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(playerMng->getActiveShip()));
-					Eventbus::getInstance().fireEvent(
-						new GameplayStateChangeEvent(this, m_gameplayStateManager->getState(ATTACK_GAMEPLAY_STATE)));
-					Eventbus::getInstance().fireEvent(
-						new UpdatePopupEvent("You are about to attack an enemy!! Continue?"));
-					return;
-				}
-			}
-
+			auto selectState = m_gameplayStateManager->getState(SELECTION_GAMEPLAY_STATE);
+			Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(selectState, selectState));
 			Eventbus::getInstance().fireEvent(
-				new GameplayStateChangeEvent(this, this));
-			Eventbus::getInstance().fireEvent(
-				new UpdatePopupEvent("There is no enemy ship here to attack!!"));
+				new	UpdatePopupEvent("Unit cannot attack anymore this round! Let me switch to the next Unit for you :*"));
+			playerMng->activateNextUnit();
 			return;
 		}
-
+		else
+			m_gameplayStateManager->setState(ATTACK_GAMEPLAY_STATE);
 	}
 	if (InputManager::getInstance().isActionActive(X_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
-		auto motherShip = dynamic_cast<MotherShipComponent*>(playerMng->getActiveShip());
-		if (!motherShip)
+		if (playerMng->getActiveShip()->getCurrentMovement() == 0)
 		{
-			Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(this, this));
-			Eventbus::getInstance().fireEvent(new UpdatePopupEvent("Select your mothership first if you want to cast an ultimate"));
+			auto selectState = m_gameplayStateManager->getState(SELECTION_GAMEPLAY_STATE);
+			Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(selectState, selectState));
+			Eventbus::getInstance().fireEvent(
+				new	UpdatePopupEvent("Unit cannot attack anymore this round! Let me switch to the next Unit for you :*"));
+			playerMng->activateNextUnit();
 			return;
 		}
-
-		auto cursorNode = playerMng->getCursor()->getCurrentNode();
-		auto distanceToActive = playerMng->getCursor()->getDistanceToActive();
-		auto attackRange = playerMng->getActiveShip()->getAbilityComponent(ULTIMATE_ATTACK_ABILITY)->getRange();
-
-		if (attackRange >= distanceToActive)
-		{
-			if (!cursorNode->isNodeOccupied())
-			{
-				Eventbus::getInstance().fireEvent(
-					new GameplayStateChangeEvent(this, this));
-				Eventbus::getInstance().fireEvent(
-					new UpdatePopupEvent("There is nothing here to attack!!"));
-				return;
-			}
-
-			GameObjects activeShipId = playerMng->getActiveShip()->getGameObjectPtr()->getId();
-			vector<GameObjects> possibleEnemyShipIds = getPossibleEnemyShipIDs(activeShipId);
-
-			GameObject * enemyShip = nullptr;
-			for (GameObjects go : possibleEnemyShipIds)
-			{
-				enemyShip = cursorNode->getGameObject(go);
-				if (enemyShip) //nullptr means no Object of this type found
-				{
-					//TODO: UlitmateCosts are hardcoded at the moment
-					if (playerMng->getRessources(playerMng->getActivePlayer()) < 10)
-					{
-						Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(this, this));
-						Eventbus::getInstance().fireEvent(new UpdatePopupEvent("Not enough Resources to cast Ultimate!!"));
-						return;
-					}
-
-					playerMng->decreaseRessources(playerMng->getActivePlayer(), 10);
-
-					Target t = { playerMng->getActiveShip()->getGameObjectPtr(), enemyShip };
-					playerMng->getActiveShip()->addTarget(t, ULTIMATE_ATTACK_ABILITY);
-
-					Eventbus::getInstance().fireEvent(new UpdateShipStatsEvent(playerMng->getActiveShip()));
-					Eventbus::getInstance().fireEvent(
-						new GameplayStateChangeEvent(this, m_gameplayStateManager->getState(ATTACK_GAMEPLAY_STATE)));
-					Eventbus::getInstance().fireEvent(
-						new UpdatePopupEvent("You are about to use an Ultimate on an enemy!! Continue?"));
-					return;
-				}
-			}
-
-			Eventbus::getInstance().fireEvent(
-				new GameplayStateChangeEvent(this, this));
-			Eventbus::getInstance().fireEvent(
-				new UpdatePopupEvent("There is no enemy ship here to attack!!"));
-			return;
-		}
+		else
+			m_gameplayStateManager->setState(ULTIMATE_GAMEPLAY_STATE);
 
 	}
 
@@ -148,32 +69,6 @@ void GameplayAbilityState::handleKeyInput()
 		m_gameplayStateManager->setState(SELECTION_GAMEPLAY_STATE);
 	}
 
-}
-
-vector<GameObjects> GameplayAbilityState::getPossibleEnemyShipIDs(GameObjects go)
-{
-	vector<GameObjects> possibleEnemyShipIds;
-	switch (go)
-	{
-	case P1_FARMER_OBJECT:
-	case P1_FIGHTER_OBJECT:
-	case P1_MOTHER_OBJECT:
-	{
-		possibleEnemyShipIds = { P2_FARMER_OBJECT, P2_FIGHTER_OBJECT, P2_MOTHER_OBJECT };
-	}
-	break;
-	case P2_FIGHTER_OBJECT:
-	case P2_MOTHER_OBJECT:
-	case P2_FARMER_OBJECT:
-	{
-		possibleEnemyShipIds = { P1_FARMER_OBJECT, P1_FIGHTER_OBJECT, P1_MOTHER_OBJECT };
-	}
-	break;
-	default:
-		err() << "Current Ship does not have a GameObject ID when Attacking";
-		break;
-	}
-	return possibleEnemyShipIds;
 }
 
 

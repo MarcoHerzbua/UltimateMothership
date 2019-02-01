@@ -4,6 +4,7 @@
 #include "GameObjectManager.h"
 #include "SteeringComponent.h"
 #include "CursorComponent.h"
+#include "ShipComponent.h"
 
 GameplayMoveState::GameplayMoveState()
 {
@@ -34,7 +35,7 @@ void GameplayMoveState::handleKeyInput()
 	if (PlayerManager::getInstance().getActiveUnit()->isMoving())
 		return;
 
-	
+	playerMng->getCursor()->setPossibleRange(playerMng->getActiveShip()->getCurrentMovement());
 
 	if (InputManager::getInstance().isActionActive(A_BUTTON_ACTION, playerMng->getActivePlayer()))
 	{
