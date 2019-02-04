@@ -6,6 +6,7 @@
 #include "GameObject.h"
 #include "IGameComponent.h"
 #include "SteeringComponent.h"
+#include "GameEvents.h"
 
 #include "NodeGraphRenderComponent.h"
 
@@ -60,7 +61,7 @@ function<void(float)> HumanInputComponent::generateFunction(InputActions action)
 	auto function = [steeringComp = this->m_steeringComp, action, dir]
 		(const float deltaTime) -> void {
 			if (steeringComp->getTimeSinceLastInput() >= steeringComp->getTimeDelay()
-				&& InputManager::getInstance().isKeyPressed(action, steeringComp->getPlayerIndex()))
+				&& InputManager::getInstance().isActionActive(action, steeringComp->getPlayerIndex()))
 			{
 				Node* currentNode = steeringComp->getCurrentNode();
 				Node* targetNode = currentNode->getTargetNode(dir);

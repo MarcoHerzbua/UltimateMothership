@@ -6,11 +6,6 @@
 // abstract
 #include "RenderComponent.h"
 
-// enums
-#include "GameComponents.h"
-
-// forward declaration
-class Game;
 class GameObject;
 
 using namespace sf;
@@ -26,15 +21,18 @@ public:
 
 	void update(const float deltaTime) override;
 	void draw(RenderWindow* window) override;
-	void exit() override;
 	void setScale(const float scale) override;
 
-
 	void initTmxData() override;
+
+	void activate() { m_active = true; };
+	void deactivate() { m_active = false; };
 
 private:
 	Texture m_texture;
 	Sprite m_textureSprite;
+	bool m_active = true;
+	int m_setId = 0;
 	
-	void init(const string& path, const Vector2f& size);
+	void init(const string& path, const Vector2f& size, const Vector2f& setPos);
 };

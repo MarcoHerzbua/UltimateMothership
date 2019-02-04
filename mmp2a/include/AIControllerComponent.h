@@ -10,6 +10,8 @@
 class GameObject;
 class SteeringComponent;
 
+class Node;
+
 #pragma endregion
 
 class AIControllerComponent : public ControllerComponent
@@ -22,6 +24,9 @@ public:
 	void initTmxData() override;
 
 	void activate() override;
+	void moveToTargetNode(Node* n);
+
+	bool isMoving() { return m_aiActionStack.size() != 0; };
 
 	InputActions getNextActionFromStack();
 private:

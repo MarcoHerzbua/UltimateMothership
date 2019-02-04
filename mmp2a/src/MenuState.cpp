@@ -31,6 +31,13 @@ void MenuState::init()
 	TmxLoader::loadTmxFile("MenuMap.tmx", sf::Vector2f());
 }
 
+void MenuState::exit()
+{
+	IGameState::exit();
+
+	//Eventbus::getInstance().removeListener(this);
+}
+
 void MenuState::update(const float deltaTimeSeconds)
 {
 	m_gameObjectManager->update(deltaTimeSeconds);
@@ -38,27 +45,16 @@ void MenuState::update(const float deltaTimeSeconds)
 	handleKeyInput();
 }
 
-void MenuState::onEvent(IGameEvent * event)
-{
-	if (event->getID() == START_GAME_EVENT)
-		m_gameStateManager->setState(GameStates::MAIN_STATE);
-	if (event->getID() == EXIT_GAME_EVENT)
-	{
-		RenderWindow * window = GameStateManager::getInstance().getGamePtr()->getWindowPtr();
-		window->close();
-	}
-}
-
 
 void MenuState::handleKeyInput()
 {
-	//if (m_inputManager->isKeyPressed(InputActions::EXIT_ACTION, 0))
+	//if (m_inputManager->isKeyPressed(InputActions::B_BUTTON_ACTION, 0))
 	//{
 	//	RenderWindow * window = m_gameStateManager->getGamePtr()->getWindowPtr();
 	//	window->close();
 	//}
 	
-	//if (m_inputManager->isKeyPressed(InputActions::SWITCH_STATE_ACTION, 0))
+	//if (m_inputManager->isKeyPressed(InputActions::CONFIRM_ACTION, 0))
 	//{
 	//	m_gameStateManager->setState(GameStates::MAIN_STATE);
 	//}

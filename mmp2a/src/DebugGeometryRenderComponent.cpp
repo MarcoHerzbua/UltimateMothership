@@ -13,12 +13,14 @@ DebugGeometryRenderComponent::DebugGeometryRenderComponent(GameObject * gameObje
 	: RenderComponent(gameObject)
 {
 	m_id = DEBUG_GEOMETRY_RENDER_COMPONENT;
+	m_zIndex = 100;
 }
 
 DebugGeometryRenderComponent::DebugGeometryRenderComponent(GameObject * gameObject, NLTmxMapObject & mapObject)
 	: RenderComponent(gameObject, mapObject)
 {
 	m_id = DEBUG_GEOMETRY_RENDER_COMPONENT;
+	m_zIndex = 100;
 }
 
 void DebugGeometryRenderComponent::initTmxData()
@@ -47,7 +49,3 @@ void DebugGeometryRenderComponent::draw(RenderWindow* window)
 	window->draw(m_debugShape);
 }
 
-void DebugGeometryRenderComponent::exit()
-{
-
-}

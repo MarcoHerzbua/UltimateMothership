@@ -23,7 +23,7 @@ public:
 	IGUIWidgetComponent(GameObject* gameObject, NLTmxMapObject& mapObject);
 
 	virtual void update(const float deltaTimeSeconds) = 0;
-	virtual void exit() = 0;
+	virtual void exit();
 
 	virtual void init() = 0;
 	virtual void initTmxData() override;
@@ -33,12 +33,14 @@ public:
 	sf::Vector2f getWidgetSize() { return m_widget->getSize(); };
 	sf::Vector2f getWidgetPosition() { return m_widget->getPosition(); };
 
-	void setActive();
-	void setInactive();
+	virtual void setWidgetText(sf::String s);
+
+	virtual void setActive();
+	virtual void setInactive();
 	void onActivation();
 protected:
 	string m_widgetName;
 	tgui::Widget::Ptr m_widget;
 	GUIRenderComponent * m_guiRenderComponent;
-	vector<IGameEvent *> m_events;
+	vector<GameEvents> m_events;
 };

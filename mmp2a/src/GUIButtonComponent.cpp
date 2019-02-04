@@ -28,11 +28,7 @@ void GUIButtonComponent::update(const float deltaTimeSeconds)
 
 void GUIButtonComponent::exit()
 {
-	for (auto *e : m_events)
-	{
-		delete e;
-	}
-	m_events.clear();
+	IGUIWidgetComponent::exit();
 }
 
 void GUIButtonComponent::init()
@@ -50,9 +46,8 @@ void GUIButtonComponent::initTmxData()
 	button->setSize(m_mapObject->width, m_mapObject->height);
 
 	string path = GameObjectManager::getInstance().getAssetPath();
-	string text = "This is a placeholder text!";
-	sf::Color color = sf::Color(255, 255, 255);
-
+	string text = "";
+	int textSize = 16;
 
 	for (auto property : m_mapObject->properties)
 	{
@@ -65,8 +60,13 @@ void GUIButtonComponent::initTmxData()
 		{
 			auto event = stringToGameEvents(property->value);
 			if (event == NULL_GAME_EVENT) err() << "NULL_GAME_EVENT when creating " << m_mapObject->name << "\n";
-			m_events.push_back(createGameEvent(event));
+			m_events.push_back(event);
 		}
+		if (name == "TextSize")
+			textSize = stoi(property->value);
+		if (name == "isVisible")
+			if (property->value == "false")
+				button->setVisible(false);
 	}
 
 	//if (!m_font.loadFromFile(path))
@@ -76,7 +76,23 @@ void GUIButtonComponent::initTmxData()
 	//}
 
 	button->setText(text);
+	button->setTextSize(textSize);
 	m_guiRenderComponent->addWidgetComponent(this);
 	m_mapObject = nullptr;
+
+}
+
+void GUIButtonComponent::setActive()
+{
+	IGUIWidgetComponent::setActive();
+
+	static_pointer_cast<tgui::Button>(m_widget)->getRenderer()->setTextColor(Color(255, 0, 0));
+}
+
+void GUIButtonComponent::setInactive()
+{
+	IGUIWidgetComponent::setInactive();
+
+	static_pointer_cast<tgui::Button>(m_widget)->getRenderer()->setTextColor(Color(255, 255, 255));
 
 }

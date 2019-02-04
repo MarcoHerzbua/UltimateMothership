@@ -19,21 +19,41 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\Abilities.h" />
     <ClInclude Include="..\include\AIControllerComponent.h" />
+    <ClInclude Include="..\include\AttackAbilityComponent.h" />
+    <ClInclude Include="..\include\BasicAttackAbilityComponent.h" />
+    <ClInclude Include="..\include\ControllerMapping.h" />
+    <ClInclude Include="..\include\CursorComponent.h" />
     <ClInclude Include="..\include\Eventbus.h" />
+    <ClInclude Include="..\include\FarmAbilityComponent.h" />
     <ClInclude Include="..\include\GameEventClasses.h" />
     <ClInclude Include="..\include\GameEvents.h" />
+    <ClInclude Include="..\include\GameplayAbilityState.h" />
+    <ClInclude Include="..\include\GameplayAttackState.h" />
+    <ClInclude Include="..\include\GameplayEndTurnState.h" />
+    <ClInclude Include="..\include\GameplayGameOverState.h" />
+    <ClInclude Include="..\include\GameplayMoveState.h" />
+    <ClInclude Include="..\include\GameplaySelectionState.h" />
+    <ClInclude Include="..\include\GameplayStates.h" />
+    <ClInclude Include="..\include\GameplayTransitionState.h" />
+    <ClInclude Include="..\include\GameplayUltimateState.h" />
+    <ClInclude Include="..\include\GUIControllerComponent.h" />
+    <ClInclude Include="..\include\GUIInputComponent.h" />
+    <ClInclude Include="..\include\GUILabelComponent.h" />
+    <ClInclude Include="..\include\GUIPanelComponent.h" />
+    <ClInclude Include="..\include\GUISteeringComponent.h" />
+    <ClInclude Include="..\include\IAbilityComponent.h" />
     <ClInclude Include="..\include\IEventListener.h" />
     <ClInclude Include="..\include\GUIButtonComponent.h" />
     <ClInclude Include="..\include\IGameEvent.h" />
+    <ClInclude Include="..\include\IGameplayState.h" />
     <ClInclude Include="..\include\IGUIWidgetComponent.h" />
     <ClInclude Include="..\include\AiInputComponent.h" />
     <ClInclude Include="..\include\CameraComponent.h" />
-    <ClInclude Include="..\include\CollisionComponent.h" />
     <ClInclude Include="..\include\ControllerComponent.h" />
     <ClInclude Include="..\include\ComponentLoader.h" />
     <ClInclude Include="..\include\ControllerComponents.h" />
-    <ClInclude Include="..\include\DeathZoneComponent.h" />
     <ClInclude Include="..\include\DebugGeometryRenderComponent.h" />
     <ClInclude Include="..\include\Direction.h" />
     <ClInclude Include="..\include\Edge.h" />
@@ -58,27 +78,28 @@
     <ClInclude Include="..\include\LayerLoader.h" />
     <ClInclude Include="..\include\LayerRenderComponent.h" />
     <ClInclude Include="..\include\MainState.h" />
+    <ClInclude Include="..\include\GameplayStateManager.h" />
     <ClInclude Include="..\include\MapLoader.h" />
     <ClInclude Include="..\include\MenuState.h" />
+    <ClInclude Include="..\include\MotherShipComponent.h" />
     <ClInclude Include="..\include\NLTmxMap.h" />
     <ClInclude Include="..\include\Node.h" />
     <ClInclude Include="..\include\NodeGraphRenderComponent.h" />
     <ClInclude Include="..\include\NodeGraphLoader.h" />
     <ClInclude Include="..\include\ObjectLoader.h" />
-    <ClInclude Include="..\include\ObservableComponent.h" />
-    <ClInclude Include="..\include\ObserverComponent.h" />
-    <ClInclude Include="..\include\PhysicsManager.h" />
     <ClInclude Include="..\include\HumanControllerComponent.h" />
-    <ClInclude Include="..\include\PointCounterComponent.h" />
+    <ClInclude Include="..\include\PlayerManager.h" />
     <ClInclude Include="..\include\rapidxml\rapidxml.hpp" />
     <ClInclude Include="..\include\rapidxml\rapidxml_iterators.hpp" />
     <ClInclude Include="..\include\rapidxml\rapidxml_print.hpp" />
     <ClInclude Include="..\include\rapidxml\rapidxml_utils.hpp" />
     <ClInclude Include="..\include\RenderComponent.h" />
     <ClInclude Include="..\include\RenderManager.h" />
-    <ClInclude Include="..\include\RigidBodyComponent.h" />
     <ClInclude Include="..\include\ShapeRenderComponent.h" />
+    <ClInclude Include="..\include\ShipComponent.h" />
     <ClInclude Include="..\include\SpriteRenderComponent.h" />
+    <ClInclude Include="..\include\SpriteSwitcherComponent.h" />
+    <ClInclude Include="..\include\Stats.h" />
     <ClInclude Include="..\include\stdafx.h" />
     <ClInclude Include="..\include\SteeringComponent.h" />
     <ClInclude Include="..\include\targetver.h" />
@@ -86,15 +107,36 @@
     <ClInclude Include="..\include\TextureLoader.h" />
     <ClInclude Include="..\include\TmxLoader.h" />
     <ClInclude Include="..\include\Transformation.h" />
+    <ClInclude Include="..\include\UltimateAttackAbilityComponent.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\assets\ball.png" />
-    <Image Include="..\assets\pinball_background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\include\IEventListener.cpp" />
+    <ClCompile Include="..\include\FarmShipComponent.h" />
+    <ClCompile Include="..\include\FighterShipComponent.h" />
     <ClCompile Include="..\src\AIControllerComponent.cpp" />
     <ClCompile Include="..\src\AiInputComponent.cpp" />
+    <ClCompile Include="..\src\GameplayAbilityState.cpp" />
+    <ClCompile Include="..\src\GameplayAttackState.cpp" />
+    <ClCompile Include="..\src\GameplayEndTurnState.cpp" />
+    <ClCompile Include="..\src\GameplayGameOverState.cpp" />
+    <ClCompile Include="..\src\GameplayMoveState.cpp" />
+    <ClCompile Include="..\src\GameplaySelectionState.cpp" />
+    <ClCompile Include="..\src\GameplayStateManager.cpp" />
+    <ClCompile Include="..\src\GameplayTransitionState.cpp" />
+    <ClCompile Include="..\src\CursorComponent.cpp" />
+    <ClCompile Include="..\src\GameplayUltimateState.cpp" />
+    <ClCompile Include="..\src\GUIControllerComponent.cpp" />
+    <ClCompile Include="..\src\GUIInputComponent.cpp" />
+    <ClCompile Include="..\src\GUILabelComponent.cpp" />
+    <ClCompile Include="..\src\GUIPanelComponent.cpp" />
+    <ClCompile Include="..\src\GUISteeringComponent.cpp" />
+    <ClCompile Include="..\src\AttackAbilityComponent.cpp" />
+    <ClCompile Include="..\src\BasicAttackAbilityComponent.cpp" />
+    <ClCompile Include="..\src\FarmAbilityComponent.cpp" />
+    <ClCompile Include="..\src\FarmShipComponent.cpp" />
+    <ClCompile Include="..\src\FighterShipComponent.cpp" />
+    <ClCompile Include="..\src\IAbilityComponent.cpp" />
+    <ClCompile Include="..\src\IEventListener.cpp" />
+    <ClCompile Include="..\src\IGameplayState.cpp" />
     <ClCompile Include="..\src\mmp2a.cpp" />
     <ClCompile Include="..\src\Eventbus.cpp" />
     <ClCompile Include="..\src\GameEventClasses.cpp" />
@@ -102,10 +144,8 @@
     <ClCompile Include="..\src\IGameEvent.cpp" />
     <ClCompile Include="..\src\IGUIWidgetComponent.cpp" />
     <ClCompile Include="..\src\CameraComponent.cpp" />
-    <ClCompile Include="..\src\CollisionComponent.cpp" />
     <ClCompile Include="..\src\ControllerComponent.cpp" />
     <ClCompile Include="..\src\ComponentLoader.cpp" />
-    <ClCompile Include="..\src\DeathZoneComponent.cpp" />
     <ClCompile Include="..\src\DebugGeometryRenderComponent.cpp" />
     <ClCompile Include="..\src\Edge.cpp" />
     <ClCompile Include="..\src\Game.cpp" />
@@ -125,31 +165,26 @@
     <ClCompile Include="..\src\MainState.cpp" />
     <ClCompile Include="..\src\MapLoader.cpp" />
     <ClCompile Include="..\src\MenuState.cpp" />
+    <ClCompile Include="..\src\MotherShipComponent.cpp" />
     <ClCompile Include="..\src\NLTmxMap.cpp" />
     <ClCompile Include="..\src\Node.cpp" />
     <ClCompile Include="..\src\NodeGraphRenderComponent.cpp" />
     <ClCompile Include="..\src\NodeGraphLoader.cpp" />
     <ClCompile Include="..\src\ObjectLoader.cpp" />
-    <ClCompile Include="..\src\ObservableComponent.cpp" />
-    <ClCompile Include="..\src\PhysicsManager.cpp" />
     <ClCompile Include="..\src\HumanControllerComponent.cpp" />
-    <ClCompile Include="..\src\PointCounterComponent.cpp" />
+    <ClCompile Include="..\src\PlayerManager.cpp" />
     <ClCompile Include="..\src\RenderComponent.cpp" />
     <ClCompile Include="..\src\RenderManager.cpp" />
-    <ClCompile Include="..\src\RigidBodyComponent.cpp" />
     <ClCompile Include="..\src\ShapeRenderComponent.cpp" />
+    <ClCompile Include="..\src\ShipComponent.cpp" />
     <ClCompile Include="..\src\SpriteRenderComponent.cpp" />
+    <ClCompile Include="..\src\SpriteSwitcherComponent.cpp" />
     <ClCompile Include="..\src\stdafx.cpp" />
     <ClCompile Include="..\src\SteeringComponent.cpp" />
     <ClCompile Include="..\src\GUIRenderComponent.cpp" />
     <ClCompile Include="..\src\TextureLoader.cpp" />
     <ClCompile Include="..\src\TmxLoader.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\assets\vgafix.fon" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="..\assets\REFSAN.TTF" />
+    <ClCompile Include="..\src\UltimateAttackAbilityComponent.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

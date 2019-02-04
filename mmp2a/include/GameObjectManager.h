@@ -38,6 +38,7 @@ public:
 	vector<GameObject*>::iterator findFirstGameObjectIterator(const GameObjects oId);
 	vector<GameObject*>::iterator findFirstGameObjectIterator(GameObject* o);
 
+	void markForDelete(GameObject* o);
 	
 	void exit();
 
@@ -53,9 +54,10 @@ private:
 
 	Game * m_game;
 
-	vector<GameObject *> m_objects;
+	vector<GameObject*> m_objects;
+	vector<GameObject*> m_markedForDelete;
 
-	const string m_assetPath = "../assets/";
+	const string m_assetPath = "../spaceAssets/";
 
 	bool m_firstRegister = true;
 }; 

@@ -2,7 +2,7 @@
 
 #pragma once
 #include "stdafx.h"
-
+#include "IEventListener.h"
 // enums
 #include "GameStates.h"
 
@@ -12,7 +12,7 @@ class IGameState;
 
 #pragma endregion
 
-class GameStateManager
+class GameStateManager : IEventListener
 {
 public:
 	static GameStateManager& getInstance();
@@ -22,6 +22,8 @@ public:
 	void update(const float deltaTimeSeconds);
 
 	void exit();
+
+	void onEvent(IGameEvent * event) override;
 
 	void registerState(GameStates name, IGameState * state);
 	void setState(GameStates name);

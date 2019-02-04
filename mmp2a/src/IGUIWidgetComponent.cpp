@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "IGUIWidgetComponent.h"
-
+#include "GameEventClasses.h"
 // game classes
 #include "Game.h"
 #include "GameObject.h"
@@ -19,6 +19,11 @@ IGUIWidgetComponent::IGUIWidgetComponent(GameObject * gameObject, NLTmxMapObject
 {
 }
 
+void IGUIWidgetComponent::exit()
+{
+	m_events.clear();
+}
+
 void IGUIWidgetComponent::initTmxData()
 {
 	auto cmp = m_gameObject->findComponents(GUI_RENDER_COMPONENT)[0];
@@ -29,6 +34,11 @@ void IGUIWidgetComponent::initTmxData()
 	m_widgetName = m_mapObject->name;
 }
 
+
+
+void IGUIWidgetComponent::setWidgetText(sf::String s)
+{
+}
 
 void IGUIWidgetComponent::setActive()
 {
@@ -53,9 +63,9 @@ void IGUIWidgetComponent::setInactive()
 
 void IGUIWidgetComponent::onActivation()
 {
-	for (auto *e : m_events)
+	for (auto e : m_events)
 	{
-		Eventbus::getInstance().fireEvent(e);
+		Eventbus::getInstance().fireEvent(createGameEvent(e));
 	}
 }
 

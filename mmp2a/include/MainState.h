@@ -2,6 +2,7 @@
 
 #pragma once
 #include "stdafx.h"
+#include "GameplayStateManager.h"
 
 // interface
 #include "IGameState.h"
@@ -20,6 +21,10 @@ public:
 
 	void update(const float deltaTimeSeconds) override;
 
+	void exit() override;
+
 private:
 	void handleKeyInput() override;
+
+	GameplayStateManager * m_gameplayStateManager;
 };

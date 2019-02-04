@@ -5,7 +5,7 @@
 
 // abstract
 #include "RenderComponent.h"
-#include "RigidBodyComponent.h"
+//#include "RigidBodyComponent.h"
 
 // enums
 #include "GameComponents.h"
@@ -31,8 +31,6 @@ public:
 
 	virtual void update(const float deltaTimeSeconds) override;
 	virtual void draw(RenderWindow* window) override;
-
-	virtual void exit() override;
 
 	virtual void setScale(const float scale) override {};
 

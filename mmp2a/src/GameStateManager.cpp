@@ -65,6 +65,18 @@ void GameStateManager::exit()
 	m_states.clear();
 }
 
+void GameStateManager::onEvent(IGameEvent * event)
+{
+	if (event->getID() == START_GAME_EVENT)
+		setState(GameStates::MAIN_STATE);
+	if (event->getID() == EXIT_GAME_EVENT)
+	{
+		RenderWindow * window = getGamePtr()->getWindowPtr();
+		window->close();
+	}
+
+}
+
 Game * GameStateManager::getGamePtr()
 {
 	return m_game;
