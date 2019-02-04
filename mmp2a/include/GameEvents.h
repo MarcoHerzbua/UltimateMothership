@@ -8,6 +8,8 @@ enum GameEvents
 {
 	START_GAME_EVENT,
 	EXIT_GAME_EVENT,
+	SHOW_CREDITS_EVENT,
+	BACK_TO_MENU_EVENT,
 	NAVIGATE_UP_EVENT,
 	NAVIGATE_DOWN_EVENT,
 	NAVIGATE_LEFT_EVENT,
@@ -31,6 +33,8 @@ static GameEvents stringToGameEvents(string s) {
 	static const std::map<std::string, GameEvents> optionStrings
 	{
 		{ "startgameevent",					START_GAME_EVENT						},
+		{ "showcreditsevent",				SHOW_CREDITS_EVENT						},
+		{ "backtomenuevent",				BACK_TO_MENU_EVENT						},
 		{ "navigateupevent",				NAVIGATE_UP_EVENT						},
 		{ "navigatedownevent",				NAVIGATE_DOWN_EVENT						},
 		{ "navigateleftevent",				NAVIGATE_LEFT_EVENT						},
@@ -56,7 +60,7 @@ static GameEvents inputToGameEvents(InputActions s) {
 		{ MOVE_LEFT_ACTION,				NAVIGATE_LEFT_EVENT						},
 		{ MOVE_RIGHT_ACTION,			NAVIGATE_RIGHT_EVENT					},
 		{ A_BUTTON_ACTION,				CONFIRM_EVENT							},
-		{ ESCAPE_ACTION,					EXIT_GAME_EVENT						}
+		{ ESCAPE_ACTION,				EXIT_GAME_EVENT						}
 
 	};
 

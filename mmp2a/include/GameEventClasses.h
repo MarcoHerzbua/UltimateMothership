@@ -90,6 +90,18 @@ public:
 	int m_winPlayerIdx;
 };
 
+class ShowCreditsEvent : public virtual IGameEvent
+{
+public:
+	ShowCreditsEvent();
+};
+
+class BackToMenuEvent : public virtual IGameEvent
+{
+public:
+	BackToMenuEvent();
+};
+
 //THis method gets called when Buttons with Events are created in Tiled (Action_ = ...)
 static IGameEvent * createGameEvent(GameEvents event)
 {
@@ -100,6 +112,12 @@ static IGameEvent * createGameEvent(GameEvents event)
 		break;
 	case(EXIT_GAME_EVENT):
 		return new ExitGameEvent();
+		break;
+	case(SHOW_CREDITS_EVENT):
+		return new ShowCreditsEvent();
+		break;
+	case(BACK_TO_MENU_EVENT):
+		return new BackToMenuEvent();
 		break;
 	default:
 		return nullptr;
