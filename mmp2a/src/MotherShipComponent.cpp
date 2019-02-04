@@ -7,6 +7,9 @@
 #include "UltimateAttackAbilityComponent.h"
 #include "FarmAbilityComponent.h"
 
+#include "Eventbus.h"
+#include "GameEventClasses.h"
+
 MotherShipComponent::MotherShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)
 {
@@ -28,14 +31,14 @@ void MotherShipComponent::update(const float deltaTime)
 
 void MotherShipComponent::initBaseStats()
 {
-	m_baseStats.attack = 50;
-	m_baseStats.defense = 50;
-	m_baseStats.life = 100;
+	m_baseStats.attack = 27;
+	m_baseStats.defense = 20;
+	m_baseStats.life = 80;
 	m_baseStats.movement = 5;
 
-	m_currentStats.attack = 50;
-	m_currentStats.defense = 50;
-	m_currentStats.life = 100;
+	m_currentStats.attack = 27;
+	m_currentStats.defense = 20;
+	m_currentStats.life = 80;
 	m_currentStats.movement = 5;
 
 	IAbilityComponent* basicAttack = new BasicAttackAbilityComponent(m_gameObject);
@@ -55,4 +58,11 @@ void MotherShipComponent::initTmxData()
 		return;
 
 	m_mapObject = nullptr;
+}
+
+void MotherShipComponent::die()
+{
+	ShipComponent::die();
+
+	Eventbus::getInstance().fireEvent(new ToggleGameOverEvent(PlayerManager::getInstance().getActivePlayer()));
 }

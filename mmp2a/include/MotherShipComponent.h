@@ -15,5 +15,6 @@ public:
 
 	void initTmxData() override;
 
+	void die() override;
 protected:
 };
