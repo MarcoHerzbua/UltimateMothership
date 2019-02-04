@@ -14,6 +14,7 @@
 // derived
 #include "MenuState.h"
 #include "MainState.h"
+#include "CreditsState.h"
 
 // enum
 #include "GameStates.h"
@@ -84,6 +85,7 @@ bool Game::init()
 
 	MenuState * menuState = new MenuState();
 	MainState * mainState = new MainState();
+	CreditsState * creditsState = new CreditsState();
 
 	m_gameStateManager->setState(GameStates::MENU_STATE);
 
@@ -148,6 +150,7 @@ void Game::bindKeys()
 	m_inputManager->bind(MOVE_RIGHT_ACTION, LEFT_STICK_RIGHT, 1);
 
 
+	m_inputManager->bind(A_BUTTON_ACTION, Keyboard::Space, 1);
 	m_inputManager->bind(A_BUTTON_ACTION, Keyboard::Down, 1);
 	m_inputManager->bind(X_BUTTON_ACTION, Keyboard::Left, 1);
 	m_inputManager->bind(B_BUTTON_ACTION, Keyboard::Right, 1);
@@ -160,6 +163,7 @@ void Game::bindKeys()
 	m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 1);
 	m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 1);
 
+	m_inputManager->bind(A_BUTTON_ACTION, Keyboard::Space, 0);
 	m_inputManager->bind(A_BUTTON_ACTION, Keyboard::Down, 0);
 	m_inputManager->bind(X_BUTTON_ACTION, Keyboard::Left, 0);
 	m_inputManager->bind(B_BUTTON_ACTION, Keyboard::Right, 0);

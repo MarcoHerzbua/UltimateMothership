@@ -71,3 +71,13 @@ ToggleGameOverEvent::ToggleGameOverEvent(int winPlayerIdx)
 	m_id = TOGGLE_GAME_OVER_EVENT;
 	m_winPlayerIdx = winPlayerIdx;
 }
+
+ShowCreditsEvent::ShowCreditsEvent()
+{
+	m_id = SHOW_CREDITS_EVENT;
+}
+
+BackToMenuEvent::BackToMenuEvent()
+{
+	m_id = BACK_TO_MENU_EVENT;
+}

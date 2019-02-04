@@ -67,14 +67,28 @@ void GameStateManager::exit()
 
 void GameStateManager::onEvent(IGameEvent * event)
 {
-	if (event->getID() == START_GAME_EVENT)
+	auto id = event->getID();
+
+	switch (id)
+	{
+	case START_GAME_EVENT:
 		setState(GameStates::MAIN_STATE);
-	if (event->getID() == EXIT_GAME_EVENT)
+		break;
+	case EXIT_GAME_EVENT:
 	{
 		RenderWindow * window = getGamePtr()->getWindowPtr();
 		window->close();
 	}
-
+		break;
+	case SHOW_CREDITS_EVENT:
+		setState(CREDITS_STATE);
+		break;
+	case BACK_TO_MENU_EVENT:
+		setState(MENU_STATE);
+		break;
+	default:
+		break;
+	}
 }
 
 Game * GameStateManager::getGamePtr()
