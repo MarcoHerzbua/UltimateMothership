@@ -219,12 +219,12 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	{
 	case(NAVIGATE_DOWN_EVENT):
 	{
-		setNextWidgetActive();
+		setPreviousWidgetActive();
 	}
 	break;
 	case(NAVIGATE_UP_EVENT):
 	{
-		setPreviousWidgetActive();
+		setNextWidgetActive();
 	}
 	break;
 	case(CONFIRM_EVENT):

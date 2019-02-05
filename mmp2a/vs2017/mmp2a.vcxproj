@@ -24,6 +24,7 @@
     <ClInclude Include="..\include\AttackAbilityComponent.h" />
     <ClInclude Include="..\include\BasicAttackAbilityComponent.h" />
     <ClInclude Include="..\include\ControllerMapping.h" />
+    <ClInclude Include="..\include\CreditsState.h" />
     <ClInclude Include="..\include\CursorComponent.h" />
     <ClInclude Include="..\include\Eventbus.h" />
     <ClInclude Include="..\include\FarmAbilityComponent.h" />
@@ -114,6 +115,7 @@
     <ClCompile Include="..\include\FighterShipComponent.h" />
     <ClCompile Include="..\src\AIControllerComponent.cpp" />
     <ClCompile Include="..\src\AiInputComponent.cpp" />
+    <ClCompile Include="..\src\CreditsState.cpp" />
     <ClCompile Include="..\src\GameplayAbilityState.cpp" />
     <ClCompile Include="..\src\GameplayAttackState.cpp" />
     <ClCompile Include="..\src\GameplayEndTurnState.cpp" />
