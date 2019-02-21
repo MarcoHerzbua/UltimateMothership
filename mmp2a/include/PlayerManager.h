@@ -67,8 +67,6 @@ private:
 	PlayerManager(const PlayerManager& p) = delete;
 	PlayerManager& operator=(PlayerManager const&) = delete;
 
-	// TODO save instance of Eventbus to more effectively fire events
-
 	vector<int> m_players;
 	map<int, vector<SteeringComponent*>> m_units;
 	map<int, vector<ShipComponent*>> m_ships;

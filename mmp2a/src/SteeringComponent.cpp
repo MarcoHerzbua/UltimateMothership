@@ -37,13 +37,10 @@ void SteeringComponent::update(const float deltaTimeSeconds)
 
 void SteeringComponent::updateUnit(const float deltaTimeSeconds)
 {
-	//TODO movement of GameObject -> could be moved to a MovementManager etc (like physicsManager without physics)
 	m_gameObject->setPosition(m_currentNode->getPosition());
 
 	addTimeSinceLastInput(deltaTimeSeconds);
 
-
-	//TODO: Just for testing, add functionality somewhere else
 	if (InputManager::getInstance().isKeyPressed(SWITCH_HUMAN_AI, m_playerIndex))
 	{
 		if (m_aiControlled)

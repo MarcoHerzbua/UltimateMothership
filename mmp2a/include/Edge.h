@@ -14,7 +14,6 @@ using namespace sf;
 class Edge
 {
 public:
-	
 	Edge() = default;
 	Edge(float cost, Node* node2);
 

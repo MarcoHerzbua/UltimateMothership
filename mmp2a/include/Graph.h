@@ -27,7 +27,7 @@ public:
 	Graph() = default;
 	Graph(int rows, int cols);
 
-	~Graph(); //TODO rule of three
+	~Graph();
 
 	void draw(RenderWindow* window);
 

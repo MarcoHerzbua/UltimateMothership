@@ -205,9 +205,6 @@ void GUIRenderComponent::exit()
 	}
 	m_widgets.clear();
 	delete m_gui;
-
-	//TODO: m_theme is shared_ptr: Check if Object is deleted correctly
-	//delete m_theme;
 }
 
 void GUIRenderComponent::setScale(const float scale)
