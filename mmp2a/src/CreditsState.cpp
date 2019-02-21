@@ -19,7 +19,7 @@ void CreditsState::init()
 {
 	IGameState::init();
 
-	TmxLoader::loadTmxFile("Credits.tmx", sf::Vector2f());
+	TmxLoader::loadTmxFile("CreditsMap.tmx", sf::Vector2f());
 }
 
 void CreditsState::exit()
