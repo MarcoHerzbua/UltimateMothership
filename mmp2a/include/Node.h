@@ -20,7 +20,7 @@ using namespace hm;
 class Node
 {
 public:
-	~Node(); // TODO rule of three
+	~Node();
 
 	void draw(RenderWindow* window);
 

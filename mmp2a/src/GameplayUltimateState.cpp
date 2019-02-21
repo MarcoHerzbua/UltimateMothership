@@ -81,7 +81,6 @@ void GameplayUltimateState::handleKeyInput()
 				enemyShip = cursorNode->getGameObject(go);
 				if (enemyShip) //nullptr means no Object of this type found
 				{
-					//TODO: UlitmateCosts are hardcoded at the moment
 					if (playerMng->getRessources(playerMng->getActivePlayer()) < 12)
 					{
 						Eventbus::getInstance().fireEvent(new GameplayStateChangeEvent(this, this));

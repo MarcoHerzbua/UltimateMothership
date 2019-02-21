@@ -26,5 +26,5 @@ protected:
 
 	GameplayStateManager * m_gameplayStateManager;
 
-	virtual void handleKeyInput() = 0; // TODO remove handlyKeyInput
+	virtual void handleKeyInput() = 0;
 };

@@ -191,7 +191,8 @@ bool InputManager::isKeyReleased(const InputActions action, const int playerInde
 
 bool InputManager::bind(const InputActions action, const Keyboard::Key keyCode, const int playerIndex)
 {
-	if (playerIndex <= m_keyBindings.size()) // TODO probably bugy because playerindex can be higher than possible range eg. playerindex = 10 and size = 2 -> exception
+	// BUG probably bugy because playerindex can be higher than possible range eg. playerindex = 10 and size = 2 -> exception
+	if (playerIndex <= m_keyBindings.size()) 
 		m_keyBindings.push_back(std::map<const InputActions, const Keyboard::Key>());
 
 	if (m_keyBindings[playerIndex].find(action) != m_keyBindings[playerIndex].end())
@@ -232,7 +233,8 @@ bool InputManager::unbind(const InputActions action, const int playerIndex)
 
 bool InputManager::bind(const InputActions action, const ControllerButtonMapping buttonCode, const int playerIndex)
 {
-	if (playerIndex <= m_buttonBindings.size()) // TODO probably bugy because playerindex can be higher than possible range eg. playerindex = 10 and size = 2 -> exception
+	// BUG probably bugy because playerindex can be higher than possible range eg. playerindex = 10 and size = 2 -> exception
+	if (playerIndex <= m_buttonBindings.size()) 
 		m_buttonBindings.push_back(std::map<const InputActions, const ControllerButtonMapping>());
 
 	if (playerIndex <= m_wasButtonDownLastFrame.size())
@@ -249,7 +251,8 @@ bool InputManager::bind(const InputActions action, const ControllerButtonMapping
 
 bool InputManager::bind(const InputActions action, const ControllerStickMapping stickCode, const int playerIndex)
 {
-	if (playerIndex <= m_stickBindings.size()) // TODO probably bugy because playerindex can be higher than possible range eg. playerindex = 10 and size = 2 -> exception
+	// BUG probably bugy because playerindex can be higher than possible range eg. playerindex = 10 and size = 2 -> exception
+	if (playerIndex <= m_stickBindings.size()) 
 		m_stickBindings.push_back(std::map<const InputActions, const ControllerStickMapping>());
 
 

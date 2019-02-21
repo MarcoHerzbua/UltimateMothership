@@ -106,7 +106,6 @@ void PlayerManager::removeShip(ShipComponent* s)
 
 void PlayerManager::changeActivePlayer()
 {
-	// TODO: set Playerindex of Cursor to active Player
 	for (auto ship : m_ships[*m_activePlayer])
 		ship->resetMovement();
 }
