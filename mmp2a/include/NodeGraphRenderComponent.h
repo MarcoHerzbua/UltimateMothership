@@ -3,17 +3,13 @@
 #pragma once
 #include "stdafx.h"
 #include "RenderComponent.h"
-#include "Direction.h"
-#include "GameObject.h"
-#include "InputActions.h"
-#include "Graph.h"
 
 #include "HelperMethods.h"
 
-// forward declaration
-class Game;
-class GameObject;
 class Node;
+class Graph;
+class NLTmxMapLayer;
+class NLTmxMap;
 
 using namespace sf;
 using namespace std;

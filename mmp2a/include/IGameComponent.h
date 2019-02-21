@@ -3,13 +3,10 @@
 #pragma once
 #include "stdafx.h"
 
-// enums
 #include "GameComponents.h"
-#include "NLTmxMap.h"
 
-// forward declaration
-class Game;
 class GameObject;
+class NLTmxMapObject;
 
 #pragma endregion
 

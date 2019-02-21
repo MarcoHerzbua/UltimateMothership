@@ -6,9 +6,7 @@
 #include "IInputComponent.h"
 
 #include "InputActions.h"
-#include "NLTmxMap.h"
 
-class GameObject;
 class SteeringComponent;
 
 using namespace std;

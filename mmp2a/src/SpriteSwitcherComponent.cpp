@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "SpriteSwitcherComponent.h"
+
 #include "SpriteRenderComponent.h"
 
 SpriteSwitcherComponent::SpriteSwitcherComponent(GameObject* gameObject)

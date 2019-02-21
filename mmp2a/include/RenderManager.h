@@ -3,9 +3,9 @@
 #pragma once
 #include "stdafx.h"
 
-#include "RenderComponent.h"
-
 #include "HelperMethods.h"
+
+class RenderComponent;
 
 using namespace sf;
 using namespace hm;
@@ -19,7 +19,7 @@ class RenderManager
 public:
 	static RenderManager& getInstance();
 
-	void draw(sf::RenderWindow* window);
+	void draw(RenderWindow* window);
 
 	void addComponent(RenderComponent* c);
 	void removeComponent(RenderComponent* c);

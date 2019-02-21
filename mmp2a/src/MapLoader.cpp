@@ -1,6 +1,8 @@
 #include "stdafx.h"
-
 #include "MapLoader.h"
+
+#include "NLTmxMap.h"
+#include "GameObjectManager.h"
 
 NLTmxMap * MapLoader::loadTileMap(const string & filename)
 {

@@ -3,17 +3,9 @@
 #include "stdafx.h"
 #include "MenuState.h"
 
-// game classes
-#include "Game.h"
-#include "GameObject.h"
-
-// components
-#include "SpriteRenderComponent.h"
-#include "GUIRenderComponent.h"
-
-// singleton
-#include "InputManager.h"
 #include "GameStateManager.h"
+#include "GameObjectManager.h"
+
 #include "TmxLoader.h"
 #pragma endregion
 
@@ -34,8 +26,6 @@ void MenuState::init()
 void MenuState::exit()
 {
 	IGameState::exit();
-
-	//Eventbus::getInstance().removeListener(this);
 }
 
 void MenuState::update(const float deltaTimeSeconds)

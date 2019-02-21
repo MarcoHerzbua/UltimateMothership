@@ -3,6 +3,7 @@
 
 #include "GameObject.h"
 #include "ShipComponent.h"
+#include "Node.h"
 
 
 float hm::calcNodeDistance(Node& a, Node& b)

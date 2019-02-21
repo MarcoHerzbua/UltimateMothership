@@ -3,17 +3,19 @@
 #include "stdafx.h"
 #include "SteeringComponent.h"
 
+#include "ControllerComponent.h"
 #include "HumanControllerComponent.h"
 #include "AIControllerComponent.h"
 
 #include "InputManager.h"
 #include "GameObjectManager.h"
-
-#include "ControllerComponent.h"
+#include "PlayerManager.h"
 
 #include "GameObject.h"
-
-#include "PlayerManager.h"
+#include "NLTmxMap.h"
+#include "Node.h"
+#include "Graph.h"
+#include "NodeGraphRenderComponent.h"
 
 #pragma endregion
 

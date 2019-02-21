@@ -1,7 +1,14 @@
 #pragma once
 
 #include "stdafx.h"
-#include "NodeGraphRenderComponent.h"
+
+class NodeGraphRenderComponent;
+class NLTmxMapLayer;
+class NLTmxMap;
+class GameObject;
+
+using namespace std;
+using namespace sf;
 
 class NodeGraphLoader
 {

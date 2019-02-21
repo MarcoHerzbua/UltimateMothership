@@ -3,14 +3,9 @@
 #pragma once
 #include "stdafx.h"
 
-// enums
 #include "GameplayStates.h"
 
-// singleton
-#include "GameplayStateManager.h"
-#include "InputManager.h"
-#include "GameEventClasses.h"
-#include "PlayerManager.h"
+class GameplayStateManager;
 
 #pragma endregion
 
@@ -31,5 +26,5 @@ protected:
 
 	GameplayStateManager * m_gameplayStateManager;
 
-	virtual void handleKeyInput() = 0;
+	virtual void handleKeyInput() = 0; // TODO remove handlyKeyInput
 };

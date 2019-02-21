@@ -3,8 +3,11 @@
 #include "stdafx.h"
 #include "IGameState.h"
 
-// game classes
-#include "GameObject.h"
+#include "InputManager.h"
+#include "GameStateManager.h"
+#include "RenderManager.h"
+#include "GameObjectManager.h"
+#include "PlayerManager.h"
 
 #pragma endregion
 
@@ -15,7 +18,6 @@ void IGameState::init()
 
 	m_renderManager = &RenderManager::getInstance();
 	m_gameObjectManager = &GameObjectManager::getInstance();
-	//m_physicsManager = &PhysicsManager::getInstance();
 
 	m_playerManager = &PlayerManager::getInstance();
 }
@@ -23,7 +25,6 @@ void IGameState::init()
 void IGameState::exit()
 {
 	if (m_renderManager) m_renderManager->clearComponents();
-	//if (m_physicsManager) m_physicsManager->clearComponents();
 	if (m_gameObjectManager) m_gameObjectManager->clearGameObjects();
 	if (m_playerManager) m_playerManager->clearComponents();
 }

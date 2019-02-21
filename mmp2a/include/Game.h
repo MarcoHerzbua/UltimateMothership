@@ -1,21 +1,19 @@
-// Game.h : Defines the class structure for the Game class
-
 #pragma region include 
 
 #pragma once
 #include "stdafx.h"
 
-#include "GameStateManager.h"
-#include "InputManager.h"
-#include "GameObjectManager.h"
-#include "RenderManager.h"
-#include "Eventbus.h"
-
-#include "PlayerManager.h"
-#pragma endregion
+class Eventbus;
+class GameStateManager;
+class InputManager;
+class GameObjectManager;
+class RenderManager;
+class PlayerManager;
 
 using namespace std;
 using namespace sf;
+
+#pragma endregion
 
 class Game
 {
@@ -30,19 +28,19 @@ public:
 private:
 	RenderWindow m_window;
 
-	GameStateManager * m_gameStateManager;
-	InputManager * m_inputManager;
-	GameObjectManager * m_gameObjectManager;
+	GameStateManager* m_gameStateManager;
+	InputManager* m_inputManager;
+	GameObjectManager* m_gameObjectManager;
 	RenderManager* m_renderManager;
 	PlayerManager* m_playerManager;
 
-	Eventbus * m_eventbus;
+	Eventbus* m_eventbus;
 
 	Vector2u m_windowSize;
 
 	bool init();
 
-	void update(const float delta);
+	void update(float delta);
 	void draw();
 
 	void shutdown();

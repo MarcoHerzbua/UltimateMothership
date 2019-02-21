@@ -1,13 +1,5 @@
-#pragma region include
-
 #include "stdafx.h"
 #include "IGameComponent.h"
-
-// game classes 
-#include "Game.h"
-#include "GameObject.h"
-
-#pragma endregion
 
 IGameComponent::IGameComponent(GameObject* gameObject)
 	: m_gameObject(gameObject)

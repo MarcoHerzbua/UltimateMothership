@@ -1,10 +1,10 @@
 #pragma once
 #include "stdafx.h"
 
-#include "Node.h"
-
 class GameObject;
 class ShipComponent;
+
+class Node;
 
 using namespace std;
 using namespace sf;

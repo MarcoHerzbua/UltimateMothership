@@ -3,17 +3,9 @@
 #pragma once
 #include "stdafx.h"
 
-// abstract
 #include "RenderComponent.h"
-#include "IGameComponent.h"
 #include "IEventListener.h"
 
-// enums
-#include "GameComponents.h"
-
-// forward declaration
-class Game;
-class GameObject;
 class IGUIWidgetComponent;
 
 #pragma endregion

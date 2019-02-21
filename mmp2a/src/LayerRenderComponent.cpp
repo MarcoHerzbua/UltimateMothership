@@ -2,9 +2,10 @@
 
 #include "stdafx.h"
 #include "LayerRenderComponent.h"
+
 #include "RenderManager.h"
-#include "Game.h"
 #include "SpriteRenderComponent.h"
+#include "NLTmxMap.h"
 
 #pragma endregion
 

@@ -6,6 +6,8 @@
 #include "GameObjectManager.h"
 #include "SteeringComponent.h"
 #include "PlayerManager.h"
+#include "Node.h"
+#include "NLTmxMap.h"
 
 
 ShipComponent::ShipComponent(GameObject * gameObject)

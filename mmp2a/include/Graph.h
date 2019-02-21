@@ -3,13 +3,15 @@
 #pragma once
 #include "stdafx.h"
 
-#include "Node.h"
 #include "InputActions.h"
 
-#pragma endregion
+class Node;
 
 using namespace std;
 using namespace sf;
+
+#pragma endregion
+
 
 struct NodeRecord
 {

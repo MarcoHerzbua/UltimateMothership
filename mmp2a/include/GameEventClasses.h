@@ -1,10 +1,16 @@
 #pragma region include
 #pragma once
 #include "stdafx.h"
+
 #include "IGameEvent.h"
-#include "Direction.h"
-#include "ShipComponent.h"
-#include "IGameplayState.h"
+#include "GameEvents.h"
+
+class IGameplayState;
+class ShipComponent;
+
+using namespace std;
+using namespace sf;
+
 #pragma endregion
 
 

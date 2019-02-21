@@ -3,17 +3,7 @@
 #pragma once
 #include "stdafx.h"
 
-// abstract
 #include "RenderComponent.h"
-//#include "RigidBodyComponent.h"
-
-// enums
-#include "GameComponents.h"
-
-// forward declaration
-class Game;
-class GameObject;
-
 
 using namespace sf;
 using namespace std;

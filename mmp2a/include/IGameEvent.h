@@ -2,7 +2,11 @@
 
 #pragma once
 #include "stdafx.h"
+
 #include "GameEvents.h"
+
+using namespace std;
+using namespace sf;
 
 #pragma endregion
 

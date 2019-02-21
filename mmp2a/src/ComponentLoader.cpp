@@ -1,18 +1,15 @@
 #include "stdafx.h"
 #include "ComponentLoader.h"
 
-#include "GameObjectManager.h"
-
 #include "IGameComponent.h"
+#include "GameObject.h"
+#include "NLTmxMap.h"
+
 #include "SpriteRenderComponent.h"
 #include "SpriteSwitcherComponent.h"
 #include "ShapeRenderComponent.h"
 #include "CameraComponent.h"
-// #include "RigidBodyComponent.h"
-// #include "CollisionComponent.h"
 #include "DebugGeometryRenderComponent.h"
-// #include "PointCounterComponent.h"
-// #include "DeathZoneComponent.h"
 #include "GUIRenderComponent.h"
 #include "SteeringComponent.h"
 #include "CursorComponent.h"
@@ -37,13 +34,6 @@ vector<IGameComponent*> ComponentLoader::loadComponents(const NLTmxMapObjectGrou
 		IGameComponent* component = createComponent(id, *mapObj, gameObject);
 		
 		components.push_back(component);
-
-		//add a debugComponent to visualize BoundingBox
-		// if (id == GameComponents::COLLISION_COMPONENT)
-		// {
-		// 	IGameComponent * debugComp = createComponent(DEBUG_GEOMETRY_RENDER_COMPONENT, *mapObj, gameObject);
-		// 	gameObject->addComponent(debugComp);
-		// }
 	}
 
 	return components;
@@ -57,11 +47,7 @@ IGameComponent* ComponentLoader::createComponent(const GameComponents id, NLTmxM
 	case SPRITE_SWITCHER_COMPONENT:			return new SpriteSwitcherComponent(gameObject, mapObject);
 	case SHAPE_RENDER_COMPONENT:			return new ShapeRenderComponent(gameObject, mapObject);
 	case CAMERA_COMPONENT:					return new CameraComponent(gameObject, mapObject);
-	// case RIGID_BODY_COMPONENT:				return new RigidBodyComponent(gameObject, mapObject);
-	// case COLLISION_COMPONENT:				return new CollisionComponent(gameObject, mapObject);
 	case DEBUG_GEOMETRY_RENDER_COMPONENT:	return new DebugGeometryRenderComponent(gameObject, mapObject);
-	// case POINT_COUNTER_COMPONENT:			return new PointCounterComponent(gameObject, mapObject);
-	// case DEATH_ZONE_COMPONENT:				return new DeathZoneComponent(gameObject, mapObject);
 	case STEERING_COMPONENT:				return new SteeringComponent(gameObject, mapObject);
 	case CURSOR_COMPONENT:					return new CursorComponent(gameObject, mapObject);
 	case GUI_RENDER_COMPONENT:				return new GUIRenderComponent(gameObject, mapObject);

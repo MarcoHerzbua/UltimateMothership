@@ -2,16 +2,11 @@
 
 #pragma once
 #include "stdafx.h"
-#include "NLTmxMap.h"
 
-// enums
 #include "GameObjects.h"
-#include "GameComponents.h"
 
-// forward declaration
 class Game;
 class GameObject;
-class IGameComponent;
 
 using namespace std;
 using namespace sf;
@@ -23,7 +18,7 @@ class GameObjectManager
 public:
 	static GameObjectManager& getInstance();
 
-	void init(Game * game);
+	void init(Game* game);
 
 	void update(const float deltaTimeSeconds);
 
@@ -52,7 +47,7 @@ private:
 	GameObjectManager& operator=(GameObjectManager const&) = delete;
 
 
-	Game * m_game;
+	Game* m_game;
 
 	vector<GameObject*> m_objects;
 	vector<GameObject*> m_markedForDelete;

@@ -3,14 +3,13 @@
 #pragma once
 #include "stdafx.h"
 
-// enums
 #include "InputActions.h"
 #include "ControllerMapping.h"
-// using
+
+using namespace std;
 using namespace sf;
 
 #pragma endregion
-
 
 class InputManager
 {
@@ -56,11 +55,11 @@ private:
 	InputManager(const InputManager& p) = delete;
 	InputManager& operator=(InputManager const&) = delete;
 
-	std::vector<std::map<const InputActions, const Keyboard::Key>> m_keyBindings;
-	std::map<Keyboard::Key, bool> m_wasKeyDownLastFrame;
+	vector<map<const InputActions, const Keyboard::Key>> m_keyBindings;
+	map<Keyboard::Key, bool> m_wasKeyDownLastFrame;
 
 	//Controller
-	std::vector<std::map<const InputActions, const ControllerButtonMapping>> m_buttonBindings;
-	std::vector<std::map<const InputActions, const ControllerStickMapping>> m_stickBindings;
-	std::vector<std::map<ControllerButtonMapping, bool>> m_wasButtonDownLastFrame;
+	vector<map<const InputActions, const ControllerButtonMapping>> m_buttonBindings;
+	vector<map<const InputActions, const ControllerStickMapping>> m_stickBindings;
+	vector<map<ControllerButtonMapping, bool>> m_wasButtonDownLastFrame;
 };

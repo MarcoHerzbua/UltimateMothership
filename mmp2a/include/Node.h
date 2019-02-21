@@ -4,18 +4,18 @@
 #include "stdafx.h"
 
 #include "Direction.h"
-#include "GameObject.h"
-#include "Edge.h"
+#include "GameObjects.h"
+
+class Edge;
+class GameObject;
 
 namespace hm {}
-
-#include "HelperMethods.h"
-
-#pragma endregion
 
 using namespace std;
 using namespace sf;
 using namespace hm;
+
+#pragma endregion
 
 class Node
 {

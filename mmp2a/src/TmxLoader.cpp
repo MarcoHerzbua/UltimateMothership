@@ -7,8 +7,11 @@
 #include "ObjectLoader.h"
 #include "NodeGraphLoader.h"
 
+#include "NodeGraphRenderComponent.h"
+
 #include "GameObject.h"
 
+#include "GameObjectManager.h"
 #include "RenderManager.h"
 
 void TmxLoader::loadTmxFile(const string& path, const Vector2f& offset)

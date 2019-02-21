@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "BasicAttackAbilityComponent.h"
 
-#include "IGameComponent.h"
 #include "SteeringComponent.h"
 #include "PlayerManager.h"
 
 #include "ShipComponent.h"
+#include "GameObject.h"
 
 
 BasicAttackAbilityComponent::BasicAttackAbilityComponent(GameObject* gameObject)

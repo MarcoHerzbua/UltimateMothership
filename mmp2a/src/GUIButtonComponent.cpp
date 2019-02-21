@@ -2,11 +2,12 @@
 
 #include "stdafx.h"
 #include "GUIButtonComponent.h"
-#include "GameEventClasses.h"
 
-// game classes
-#include "Game.h"
-#include "GameObject.h"
+#include "GameEventClasses.h"
+#include "GameObjectManager.h"
+#include "NLTmxMap.h"
+#include "GUIRenderComponent.h"
+
 
 #pragma endregion
 

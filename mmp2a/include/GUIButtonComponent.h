@@ -3,14 +3,11 @@
 #pragma once
 #include "stdafx.h"
 
-// abstract
 #include "IGUIWidgetComponent.h"
-#include "GameEventClasses.h"
 
-// forward declaration
-class Game;
-class GameObject;
 
+using namespace std;
+using namespace sf;
 #pragma endregion
 
 class GUIButtonComponent : public IGUIWidgetComponent

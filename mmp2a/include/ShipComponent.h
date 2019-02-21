@@ -8,7 +8,6 @@
 #include "Stats.h"
 
 class IAbilityComponent;
-class GameObject;
 
 class ShipComponent : public IGameComponent
 {

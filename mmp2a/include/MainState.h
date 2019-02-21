@@ -2,13 +2,13 @@
 
 #pragma once
 #include "stdafx.h"
-#include "GameplayStateManager.h"
 
-// interface
 #include "IGameState.h"
 
-// forward declaration
-class GameStateManager;
+class GameplayStateManager;
+
+using namespace std;
+using namespace sf;
 
 #pragma endregion
 

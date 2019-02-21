@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "NodeGraphLoader.h"
 
+#include "NodeGraphRenderComponent.h"
+#include "NLTmxMap.h"
+#include "GameObject.h"
+
 NodeGraphRenderComponent * NodeGraphLoader::createNodeGraphComponent(const vector<NLTmxMapLayer*>& layers
 	, GameObject * tilemapObject
 	, const Vector2f & offset

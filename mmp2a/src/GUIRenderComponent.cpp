@@ -2,13 +2,14 @@
 
 #include "stdafx.h"
 #include "GUIRenderComponent.h"
-#include "IGUIWidgetComponent.h"
-#include "Eventbus.h"
-#include "GameEventClasses.h"
 
-// game classes
-#include "Game.h"
-#include "GameObject.h"
+#include "IGUIWidgetComponent.h"
+#include "GameEventClasses.h"
+#include "GameObjectManager.h"
+#include "PlayerManager.h"
+#include "ShipComponent.h"
+#include "NLTmxMap.h"
+
 
 #pragma endregion
 

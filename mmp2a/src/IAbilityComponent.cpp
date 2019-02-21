@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "IAbilityComponent.h"
 
-#include "GameObject.h"
-#include "ShipComponent.h"
-
 IAbilityComponent::IAbilityComponent(GameObject * gameObject)
 	: m_gameObject(gameObject)
 {

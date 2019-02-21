@@ -2,6 +2,7 @@
 #include "ObjectLoader.h"
 
 #include "GameObject.h"
+#include "NLTmxMap.h"
 #include "Transformation.h"
 #include "ComponentLoader.h"
 

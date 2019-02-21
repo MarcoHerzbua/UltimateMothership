@@ -1,10 +1,8 @@
 #pragma region include
 #pragma once
 #include "stdafx.h"
-#include "IInputComponent.h"
-#include "InputActions.h"
+
 #include "HumanInputComponent.h"
-#include "IGameEvent.h"
 #pragma endregion
 
 class GUIInputComponent : public HumanInputComponent
