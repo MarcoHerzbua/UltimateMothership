@@ -6,9 +6,8 @@
 #include "GameObject.h"
 #include "SteeringComponent.h"
 
-#include "ControllerComponents.h"
-
 #include "HumanInputComponent.h"
+#include "NLTmxMap.h"
 #pragma endregion
 
 HumanControllerComponent::HumanControllerComponent(GameObject * gameObject, SteeringComponent* steeringComponent)

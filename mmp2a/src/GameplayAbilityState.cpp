@@ -1,11 +1,14 @@
 #include "stdafx.h"
 #include "GameplayAbilityState.h"
+
 #include "CursorComponent.h"
-#include "SteeringComponent.h"
-#include "GameObjects.h"
-#include "IAbilityComponent.h"
-#include "Stats.h"
-#include "MotherShipComponent.h"
+#include "GameplayStateManager.h"
+#include "PlayerManager.h"
+#include "InputManager.h"
+#include "GameEventClasses.h"
+#include "Eventbus.h"
+
+#include "ShipComponent.h"
 
 GameplayAbilityState::GameplayAbilityState()
 {

@@ -1,11 +1,9 @@
 #pragma once
 #include "stdafx.h"
 
-// enums
 #include "IGameComponent.h"
 
 class SpriteRenderComponent;
-class GameObject;
 
 using namespace sf;
 using namespace std;

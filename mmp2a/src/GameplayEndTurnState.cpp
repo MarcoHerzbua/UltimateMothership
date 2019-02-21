@@ -1,6 +1,12 @@
 #include "stdafx.h"
 #include "GameplayEndTurnState.h"
 
+#include "GameplayStateManager.h"
+#include "PlayerManager.h"
+#include "GameEventClasses.h"
+#include "Eventbus.h"
+
+
 GameplayEndTurnState::GameplayEndTurnState()
 {
 	m_id = END_TURN_GAMEPLAY_STATE;

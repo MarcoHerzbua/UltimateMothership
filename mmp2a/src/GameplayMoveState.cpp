@@ -1,10 +1,18 @@
 #include "stdafx.h"
 #include "GameplayMoveState.h"
+
 #include "NodeGraphRenderComponent.h"
-#include "GameObjectManager.h"
 #include "SteeringComponent.h"
 #include "CursorComponent.h"
 #include "ShipComponent.h"
+
+#include "GameplayStateManager.h"
+#include "PlayerManager.h"
+#include "InputManager.h"
+#include "Eventbus.h"
+
+#include "GameEventClasses.h"
+#include "Node.h"
 
 GameplayMoveState::GameplayMoveState()
 {

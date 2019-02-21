@@ -4,14 +4,14 @@
 #include "stdafx.h"
 
 #include "IGameComponent.h"
-#include "GameComponents.h"
-
-#include "NodeGraphRenderComponent.h"
 
 #include "ControllerComponents.h"
 
-class GameObject;
 class ControllerComponent;
+class Node;
+
+using namespace std;
+using namespace sf;
 
 #pragma endregion
 

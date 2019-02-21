@@ -3,11 +3,9 @@
 #include "stdafx.h"
 #include "GameStateManager.h"
 
-// game classes
 #include "Game.h"
-
-// interface
 #include "IGameState.h"
+#include "IGameEvent.h"
 
 #pragma endregion
 

@@ -2,10 +2,12 @@
 
 #include "stdafx.h"
 #include "IGUIWidgetComponent.h"
+
 #include "GameEventClasses.h"
-// game classes
-#include "Game.h"
 #include "GameObject.h"
+#include "Eventbus.h"
+#include "NLTmxMap.h"
+#include "GUIRenderComponent.h"
 
 #pragma endregion
 

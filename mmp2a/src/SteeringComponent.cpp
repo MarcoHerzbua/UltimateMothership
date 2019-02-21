@@ -3,17 +3,19 @@
 #include "stdafx.h"
 #include "SteeringComponent.h"
 
+#include "ControllerComponent.h"
 #include "HumanControllerComponent.h"
 #include "AIControllerComponent.h"
 
 #include "InputManager.h"
 #include "GameObjectManager.h"
-
-#include "ControllerComponent.h"
+#include "PlayerManager.h"
 
 #include "GameObject.h"
-
-#include "PlayerManager.h"
+#include "NLTmxMap.h"
+#include "Node.h"
+#include "Graph.h"
+#include "NodeGraphRenderComponent.h"
 
 #pragma endregion
 
@@ -35,13 +37,10 @@ void SteeringComponent::update(const float deltaTimeSeconds)
 
 void SteeringComponent::updateUnit(const float deltaTimeSeconds)
 {
-	//TODO movement of GameObject -> could be moved to a MovementManager etc (like physicsManager without physics)
 	m_gameObject->setPosition(m_currentNode->getPosition());
 
 	addTimeSinceLastInput(deltaTimeSeconds);
 
-
-	//TODO: Just for testing, add functionality somewhere else
 	if (InputManager::getInstance().isKeyPressed(SWITCH_HUMAN_AI, m_playerIndex))
 	{
 		if (m_aiControlled)

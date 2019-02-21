@@ -3,11 +3,12 @@
 
 #include "SteeringComponent.h"
 #include "CursorComponent.h"
-#include "InputManager.h"
 #include "ShipComponent.h"
+
 #include "SpriteSwitcherComponent.h"
 #include "Eventbus.h"
 #include "GameEventClasses.h"
+#include "GameObject.h"
 
 void PlayerManager::update(const float deltaTimeSeconds)
 {
@@ -30,12 +31,6 @@ void PlayerManager::update(const float deltaTimeSeconds)
 
 	if ((*m_activeUnit)->isMoving())
 		return;
-
-	//if (InputManager::getInstance().isKeyPressed(NEXT_PLAYER_ACTION, *m_activePlayer))
-	//{
-	//	activateNextPlayer();
-	//}
-
 
 	updateCursor(deltaTimeSeconds);
 }
@@ -111,7 +106,6 @@ void PlayerManager::removeShip(ShipComponent* s)
 
 void PlayerManager::changeActivePlayer()
 {
-	//TODO: set Playerindex of Cursor to active Player
 	for (auto ship : m_ships[*m_activePlayer])
 		ship->resetMovement();
 }

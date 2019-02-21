@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "Node.h"
 
+#include "GameObject.h"
+#include "Edge.h"
+
+#include "HelperMethods.h"
+
 Node::~Node()
 {
 	for (auto e : m_edges) 

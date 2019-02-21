@@ -3,9 +3,8 @@
 #include "stdafx.h"
 #include "ShapeRenderComponent.h"
 
-// game classes
-#include "Game.h"
 #include "GameObject.h"
+#include "NLTmxMap.h"
 
 #pragma endregion
 

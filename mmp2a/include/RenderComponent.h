@@ -3,15 +3,7 @@
 #pragma once
 #include "stdafx.h"
 
-// interface
 #include "IGameComponent.h"
-
-// enums
-#include "GameComponents.h"
-
-// forward declaration
-class Game;
-class GameObject;
 
 #pragma endregion
 

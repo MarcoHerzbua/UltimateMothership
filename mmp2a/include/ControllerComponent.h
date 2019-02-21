@@ -2,16 +2,12 @@
 
 #pragma once
 #include "stdafx.h"
-#include "NodeGraphRenderComponent.h"
 
 #include "IControllerComponent.h"
 
 #include "InputComponents.h"
 
-class GameObject;
-class SteeringComponent;
 class IInputComponent;
-
 
 #pragma endregion
 

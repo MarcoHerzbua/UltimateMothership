@@ -2,13 +2,15 @@
 
 #pragma once
 #include "stdafx.h"
+
 #include "IEventListener.h"
-// enums
 #include "GameStates.h"
 
-// forward declaration
 class Game;
 class IGameState;
+
+using namespace std;
+using namespace sf;
 
 #pragma endregion
 
@@ -45,7 +47,7 @@ private:
 	Game * m_game;
 
 	IGameState * m_currentState = nullptr;
-	std::map<GameStates, IGameState *> m_states;
+	map<GameStates, IGameState *> m_states;
 
 	bool m_firstRegister = true;
 };

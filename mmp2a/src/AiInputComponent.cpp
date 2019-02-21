@@ -6,12 +6,10 @@
 #include "AIControllerComponent.h"
 
 #include "GameObject.h"
-#include "IGameComponent.h"
 #include "SteeringComponent.h"
 
-#include "NodeGraphRenderComponent.h"
-
-#include "InputManager.h"
+#include "Direction.h"
+#include "Node.h"
 
 #pragma endregion
 

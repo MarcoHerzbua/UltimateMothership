@@ -1,10 +1,12 @@
 #pragma once
 
 #include "stdafx.h"
+
 #include "GameObjects.h"
-#include "NLTmxMap.h"
 
 class GameObject;
+class NLTmxMap;
+class NLTmxMapObjectGroup;
 
 using namespace std;
 using namespace sf;

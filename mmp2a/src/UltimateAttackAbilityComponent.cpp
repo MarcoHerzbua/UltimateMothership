@@ -35,6 +35,6 @@ void UltimateAttackAbilityComponent::useAbility(Target t)
 
 	if (target->isDead())
 	{
-		//TODO Player origin wins
+		// Player origin wins
 	}
 }

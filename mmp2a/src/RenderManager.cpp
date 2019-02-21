@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "RenderManager.h"
 
+#include "RenderComponent.h"
 
 #pragma endregion
 
@@ -12,7 +13,7 @@ RenderManager& RenderManager::getInstance()
 	return m_instance;
 }
 
-void RenderManager::draw(sf::RenderWindow* window)
+void RenderManager::draw(RenderWindow* window)
 {
 	for (auto comp : m_components)
 	{
@@ -47,7 +48,7 @@ void RenderManager::removeComponent(RenderComponent * c)
 		i++;
 	}
 
-	err() << "RenderManager::removeComponent --- could not find component to remove" << std::endl;
+	err() << "RenderManager::removeComponent --- could not find component to remove" << endl;
 }
 
 void RenderManager::clearComponents()

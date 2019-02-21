@@ -3,25 +3,26 @@
 #include "stdafx.h"
 #include "MainState.h"
 
-// game classes
-#include "Game.h"
-#include "GameObject.h"
 #include "GameplayAbilityState.h"
 #include "GameplayAttackState.h"
 #include "GameplayMoveState.h"
 #include "GameplaySelectionState.h"
 #include "GameplayTransitionState.h"
-#include "GameEventClasses.h"
 #include "GameplayEndTurnState.h"
 #include "GameplayGameOverState.h"
 #include "GameplayUltimateState.h"
-// singleton
+
 #include "InputManager.h"
 #include "GameStateManager.h"
-//#include "PhysicsManager.h"
+#include "PlayerManager.h"
+#include "GameplayStateManager.h"
+#include "GameObjectManager.h"
+#include "Eventbus.h"
 
 #include "GameEventClasses.h"
+
 #include "TmxLoader.h"
+
 
 #pragma endregion
 
@@ -44,7 +45,7 @@ void MainState::init()
 
 	m_gameplayStateManager = &GameplayStateManager::getInstance();
 
-	//states get registered automatically when constructed
+	//states get registered automatically when constructed TODO thats what rado meant in the email
 	auto abilityState = new GameplayAbilityState();
 	auto attackState = new GameplayAttackState();
 	auto moveState = new GameplayMoveState();
@@ -83,6 +84,5 @@ void MainState::handleKeyInput()
 	{
 		m_gameStateManager->setState(GameStates::MENU_STATE);
 	}
-
 }
 

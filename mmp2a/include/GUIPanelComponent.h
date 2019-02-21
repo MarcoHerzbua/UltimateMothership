@@ -3,13 +3,7 @@
 #pragma once
 #include "stdafx.h"
 
-// abstract
 #include "IGUIWidgetComponent.h"
-#include "GameEventClasses.h"
-
-// forward declaration
-class Game;
-class GameObject;
 
 #pragma endregion
 

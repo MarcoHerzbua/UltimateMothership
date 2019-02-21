@@ -3,13 +3,10 @@
 #include "stdafx.h"
 #include "CameraComponent.h"
 
-#include "IGameComponent.h"
-
-// game classes 
-#include "Game.h"
+#include "GameObjectManager.h"
 #include "GameObject.h"
-
-#include <limits>
+#include "NLTmxMap.h"
+#include "Game.h"
 
 #pragma endregion
 

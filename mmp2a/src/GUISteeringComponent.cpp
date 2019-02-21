@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "GUISteeringComponent.h"
+
 #include "GameObject.h"
 #include "GUIControllerComponent.h"
+#include "NLTmxMap.h"
 
 GUISteeringComponent::GUISteeringComponent(GameObject * gameObject)
 	:SteeringComponent(gameObject)

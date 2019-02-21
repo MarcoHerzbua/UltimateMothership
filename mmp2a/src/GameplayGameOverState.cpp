@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "GameplayGameOverState.h"
+
 #include "GameStateManager.h"
+#include "GameplayStateManager.h"
+#include "PlayerManager.h"
+#include "InputManager.h"
 
 GameplayGameOverState::GameplayGameOverState()
 {

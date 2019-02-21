@@ -3,13 +3,15 @@
 #pragma once
 #include "stdafx.h"
 
-#include "Node.h"
 #include "InputActions.h"
 
-#pragma endregion
+class Node;
 
 using namespace std;
 using namespace sf;
+
+#pragma endregion
+
 
 struct NodeRecord
 {
@@ -25,7 +27,7 @@ public:
 	Graph() = default;
 	Graph(int rows, int cols);
 
-	~Graph(); //TODO rule of three
+	~Graph();
 
 	void draw(RenderWindow* window);
 

@@ -6,6 +6,8 @@
 #include "GameObjectManager.h"
 #include "SteeringComponent.h"
 #include "PlayerManager.h"
+#include "Node.h"
+#include "NLTmxMap.h"
 
 
 ShipComponent::ShipComponent(GameObject * gameObject)
@@ -24,7 +26,6 @@ void ShipComponent::exit()
 {
 	for (auto ability : m_abilities)
 	{
-		// TODO do as soon as possible
 		ability.second->exit();
 		delete ability.second;
 	}
@@ -81,7 +82,7 @@ int ShipComponent::calcDamage(int baseDamage, int attack)
 	// formula used to calculate damage
 	// Damage = Base Damage * 2 ^ ((Attack - Defense)/Doubling Rate)
 
-	float doublingRate = 12; //TODO chagne doublingRate according to tests
+	float doublingRate = 12;
 
 	return (float)(baseDamage * (pow(2, ((attack - m_currentStats.defense) / doublingRate))));
 }

@@ -3,11 +3,11 @@
 
 #include "stdafx.h"
 #include "GUIPanelComponent.h"
-#include "GameEventClasses.h"
 
-// game classes
-#include "Game.h"
 #include "GameObject.h"
+#include "GameObjectManager.h"
+#include "GUIRenderComponent.h"
+#include "NLTmxMap.h"
 
 #pragma endregion
 
@@ -57,7 +57,7 @@ void GUIPanelComponent::initTmxData()
 		{
 			background = property->value;
 		}
-		if (name == "TextSize");
+		//if (name == "TextSize");
 			//textSize = stoi(property->value);
 		if (name == "isVisible")
 			if (property->value == "false")

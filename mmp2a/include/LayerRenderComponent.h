@@ -6,10 +6,10 @@
 
 #include "RenderComponent.h"
 
-#include "GameComponents.h"
 #include "LayerComponents.h"
 
-#include "NLTmxMap.h"
+class NLTmxMapLayer;
+class NLTmxMap;
 
 using namespace std;
 using namespace sf;

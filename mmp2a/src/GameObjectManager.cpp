@@ -1,26 +1,13 @@
-#pragma region include
-
 #include "stdafx.h"
 #include "GameObjectManager.h"
-#include "RenderManager.h"
 
-// game classes
 #include "Game.h"
 #include "GameObject.h"
-
-//enums
-#include "GameComponents.h"
-
-
-
-#pragma endregion
-
 
 void GameObjectManager::init(Game* game)
 {
 	m_game = game;
 }
-
 
 void GameObjectManager::update(const float deltaTimeSeconds)
 {

@@ -3,11 +3,6 @@
 #include "stdafx.h"
 #include "RenderComponent.h"
 
-// game classes 
-#include "Game.h"
-#include "GameObject.h"
-
-// manager
 #include "RenderManager.h"
 
 #pragma endregion

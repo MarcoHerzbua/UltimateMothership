@@ -2,10 +2,10 @@
 
 #include "stdafx.h"
 
-#include "NLTmxMap.h"
-#include "GameObject.h"
-
 class IGameComponent;
+class NLTmxMapLayer;
+class NLTmxMap;
+class GameObject;
 
 using namespace std;
 using namespace sf;

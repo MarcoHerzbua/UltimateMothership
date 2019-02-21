@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "TextureLoader.h"
 
+#include "NLTmxMap.h"
+#include "GameObjectManager.h"
+
 map<string, Texture*> TextureLoader::loadTextures(const NLTmxMap& tilemap)
 {
 	map<string, Texture*> textures;

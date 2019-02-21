@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Graph.h"
 
+#include "Node.h"
+#include "Edge.h"
 
 Graph::Graph(int rows, int cols)
 	: m_rows(rows)

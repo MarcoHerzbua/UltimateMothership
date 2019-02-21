@@ -3,17 +3,17 @@
 #pragma once
 #include "stdafx.h"
 
-#pragma endregion
-
 class Node;
 
 using namespace std;
 using namespace sf;
 
+#pragma endregion
+
+
 class Edge
 {
 public:
-	
 	Edge() = default;
 	Edge(float cost, Node* node2);
 

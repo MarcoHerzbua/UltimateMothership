@@ -4,13 +4,12 @@
 #include "GameObject.h"
 #include "SteeringComponent.h"
 #include "PlayerManager.h"
-#include "InputManager.h"
 #include "AIControllerComponent.h"
 #include "GameObjectManager.h"
 
-#include "ShipComponent.h"
 #include "SpriteSwitcherComponent.h"
-#include "Stats.h"
+#include "Graph.h"
+#include "NodeGraphRenderComponent.h"
 
 CursorComponent::CursorComponent(GameObject* gameObject)
 	: IGameComponent(gameObject)

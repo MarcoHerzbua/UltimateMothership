@@ -3,8 +3,7 @@
 #include "stdafx.h"
 #include "DebugGeometryRenderComponent.h"
 
-// game classes
-#include "Game.h"
+#include "NLTmxMap.h"
 #include "GameObject.h"
 
 #pragma endregion

@@ -3,49 +3,49 @@
 #pragma once
 #include "stdafx.h"
 
-// stuff
 #include "Transformation.h"
-
-// interface
-#include "IGameComponent.h"
-
-// enums
 #include "GameObjects.h"
+#include "GameComponents.h"
+
+class IGameComponent;
+
+using namespace std;
+using namespace sf;
 
 #pragma endregion
 
-class GameObject : sf::Transform
+class GameObject : Transform
 {
 public:
-	GameObject(const GameObjects id);
-	GameObject(const GameObjects id, const Transformation transform);
+	GameObject(GameObjects id);
+	GameObject(GameObjects id, Transformation transform);
 
-	void update(const float deltaTimeSeconds);
+	void update(float deltaTimeSeconds);
 
 	void exit();
 
-	void moveObject(const sf::Vector2f move);
+	void moveObject(sf::Vector2f move);
 	void setPosition(const sf::Vector2f& pos);
-	void scaleObject(const sf::Vector2f scale); // TODO Refactoring
-	void scaleObject(const float scale);
-	void rotateObject(const float angle);
+	void scaleObject(sf::Vector2f scale); // TODO Refactoring
+	void scaleObject(float scale);
+	void rotateObject(float angle);
 
 	void initTmxData();
 
 	void addComponent(IGameComponent* c);
 	void addComponents(vector<IGameComponent*> cv);
 	void removeComponent(IGameComponent* c);
-	void removeComponents(const GameComponents cId);
+	void removeComponents(GameComponents cId);
 	void clearComponents();
-	vector<IGameComponent*> findComponents(const GameComponents cId);
-	vector<IGameComponent*>::iterator findFirstComponentIterator(const GameComponents cId);
+	vector<IGameComponent*> findComponents(GameComponents cId);
+	vector<IGameComponent*>::iterator findFirstComponentIterator(GameComponents cId);
 	vector<IGameComponent*>::iterator findFirstComponentIterator(IGameComponent* c);
 
 	//Get-Methods
 	GameObjects getId() { return m_id; };
 
-	Transformation & getOriginalTf() { return m_originalTransformation; };
-	Transformation & getCurrentTf() { return m_currentTransformation; };
+	Transformation& getOriginalTf() { return m_originalTransformation; };
+	Transformation& getCurrentTf() { return m_currentTransformation; };
 
 	sf::Vector2f getVelocity() { return m_velocity; };
 
@@ -56,7 +56,7 @@ public:
 	void setCurrentTf(Transformation tf) { m_currentTransformation = tf; };
 
 private:
-	std::vector<IGameComponent *> m_components;
+	vector<IGameComponent *> m_components;
 
 	GameObjects m_id;
 

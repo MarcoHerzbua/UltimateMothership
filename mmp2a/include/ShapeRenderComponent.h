@@ -3,15 +3,7 @@
 #pragma once
 #include "stdafx.h"
 
-// abstract
 #include "RenderComponent.h"
-
-// enums
-#include "GameComponents.h"
-
-// forward declaration
-class Game;
-class GameObject;
 
 using namespace std;
 using namespace sf;
@@ -36,5 +28,5 @@ public:
 	void setOrigin(const Vector2f& origin);
 
 private:
-	sf::RectangleShape m_shape;
+	RectangleShape m_shape;
 };

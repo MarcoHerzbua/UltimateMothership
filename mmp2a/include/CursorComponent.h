@@ -5,9 +5,10 @@
 
 #include "HelperMethods.h"
 
-class GameObject;
 class SteeringComponent;
 
+using namespace std;
+using namespace sf;
 using namespace hm;
 
 class CursorComponent : public IGameComponent

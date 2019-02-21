@@ -1,8 +1,13 @@
 #include "stdafx.h"
 #include "GameplaySelectionState.h"
 
+#include "GameplayStateManager.h"
+#include "PlayerManager.h"
+#include "InputManager.h"
+#include "GameEventClasses.h"
 #include "CursorComponent.h"
 #include "ShipComponent.h"
+#include "Eventbus.h"
 
 GameplaySelectionState::GameplaySelectionState()
 {

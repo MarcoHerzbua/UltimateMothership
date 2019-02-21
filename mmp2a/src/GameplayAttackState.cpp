@@ -1,12 +1,21 @@
 #include "stdafx.h"
 #include "GameplayAttackState.h"
+
+#include "IAbilityComponent.h"
+#include "BasicAttackAbilityComponent.h"
 #include "CursorComponent.h"
 #include "SteeringComponent.h"
-#include "GameObjects.h"
-#include "IAbilityComponent.h"
+#include "ShipComponent.h"
+
+#include "GameplayStateManager.h"
+#include "PlayerManager.h"
+#include "InputManager.h"
+#include "Eventbus.h"
+
+#include "GameEventClasses.h"
 #include "Stats.h"
-#include "MotherShipComponent.h"
-#include "BasicAttackAbilityComponent.h"
+#include "Node.h"
+#include "GameObject.h"
 
 GameplayAttackState::GameplayAttackState()
 {

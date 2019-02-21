@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "Eventbus.h"
-#include "IEventListener.h"
 
+#include "IEventListener.h"
+#include "IGameEvent.h"
 
 Eventbus & Eventbus::getInstance()
 {
@@ -56,7 +57,6 @@ void Eventbus::notifyListeners(IGameEvent * event)
 {
 	for (auto *l : m_listeners)
 	{
-		//TODO: rework to properly remove listeners from m_listeners
 		if (l)
 			l->onEvent(event);
 		else

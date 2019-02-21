@@ -4,13 +4,10 @@
 #include "HumanInputComponent.h"
 
 #include "GameObject.h"
-#include "IGameComponent.h"
 #include "SteeringComponent.h"
-#include "GameEvents.h"
-
-#include "NodeGraphRenderComponent.h"
 
 #include "InputManager.h"
+#include "Node.h"
 
 #pragma endregion
 

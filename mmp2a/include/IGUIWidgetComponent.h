@@ -2,17 +2,16 @@
 
 #pragma once
 #include "stdafx.h"
-#include "GUIRenderComponent.h"
 
-// abstract
 #include "IGameComponent.h"
 
-// enums
+#include "GameEvents.h"
 
-// forward declaration
-class Game;
-class GameObject;
-class IGameEvent;
+class GUIRenderComponent;
+
+using namespace std;
+using namespace sf;
+
 #pragma endregion
 
 
