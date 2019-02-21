@@ -3,10 +3,11 @@
 #include "stdafx.h"
 #include "SpriteRenderComponent.h"
 
-// game classes
-#include "Game.h"
 #include "GameObject.h"
 #include "SpriteSwitcherComponent.h"
+#include "GameObjectManager.h"
+#include "NLTmxMap.h"
+
 
 #pragma endregion
 

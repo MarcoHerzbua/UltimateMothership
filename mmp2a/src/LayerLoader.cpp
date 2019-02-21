@@ -1,9 +1,11 @@
 #include "stdafx.h"
-
 #include "LayerLoader.h"
+
 #include "GameObject.h"
+#include "IGameComponent.h"
+#include "NLTmxMap.h"
+
 #include "LayerRenderComponent.h"
-#include "GameObjectManager.h"
 
 vector<NLTmxMapLayer*> LayerLoader::loadMapLayers(const NLTmxMap& tilemap)
 {

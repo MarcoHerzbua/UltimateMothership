@@ -2,10 +2,12 @@
 
 #pragma once
 #include "stdafx.h"
-#include "IGameEvent.h"
-
 
 class IEventListener;
+class IGameEvent;
+
+using namespace std;
+using namespace sf;
 #pragma endregion
 
 class Eventbus
@@ -16,7 +18,7 @@ public:
 	void update();
 	
 	void registerListener(IEventListener * listener);
-	std::vector<IEventListener *>::iterator findListenerIterator(const IEventListener * listener);
+	vector<IEventListener *>::iterator findListenerIterator(const IEventListener * listener);
 	void removeListener(const IEventListener * listener);
 
 	void notifyListeners(IGameEvent * event);
@@ -28,8 +30,8 @@ private:
 	Eventbus(const Eventbus &e) = delete;
 	Eventbus& operator= (Eventbus const&) = delete;
 
-	std::queue<IGameEvent *> m_events_0;
-	std::queue<IGameEvent *> m_events_1;
-	std::queue<IGameEvent *> * m_activeQueue = &m_events_0;
-	std::vector<IEventListener *> m_listeners;
+	queue<IGameEvent *> m_events_0;
+	queue<IGameEvent *> m_events_1;
+	queue<IGameEvent *> * m_activeQueue = &m_events_0;
+	vector<IEventListener *> m_listeners;
 };

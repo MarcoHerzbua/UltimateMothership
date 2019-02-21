@@ -2,17 +2,13 @@
 #pragma once
 #include "stdafx.h"
 #include "ControllerComponent.h"
-#include "IGameComponent.h"
-#include "IInputComponent.h"
-#include "InputComponents.h"
-#include "GUIInputComponent.h"
-class GameObject;
 
+using namespace std;
+using namespace sf;
 #pragma endregion
 
 
-class GUIControllerComponent
-	: public ControllerComponent
+class GUIControllerComponent : public ControllerComponent
 {
 public:
 	GUIControllerComponent(GameObject* gameObject, SteeringComponent* steeringComponent);

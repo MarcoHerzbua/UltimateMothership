@@ -2,13 +2,11 @@
 
 #pragma once
 #include "stdafx.h"
+
 #include "IGameplayState.h"
 
-// enums
-#include "GameplayStates.h"
-
-// singleton
-#include "GameplayStateManager.h"
+using namespace std;
+using namespace sf;
 
 #pragma endregion
 

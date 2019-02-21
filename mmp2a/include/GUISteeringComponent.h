@@ -3,8 +3,8 @@
 #include "stdafx.h"
 #include "SteeringComponent.h"
 
-class GameObject;
-class ControllerComponent;
+using namespace std;
+using namespace sf;
 
 #pragma endregion
 

@@ -3,21 +3,17 @@
 #pragma once
 #include "stdafx.h"
 
-// game classes
-#include "GameObject.h"
-
-// enums
 #include "GameStates.h"
 
-// singleton
-#include "InputManager.h"
-#include "GameStateManager.h"
-#include "RenderManager.h"
-#include "GameObjectManager.h"
-//#include "PhysicsManager.h"
-#include "PlayerManager.h"
+class InputManager;
+class GameStateManager;
+class RenderManager;
+class GameObjectManager;
+class PlayerManager;
 
-#include "HelperMethods.h"
+using namespace std;
+using namespace sf;
+
 #pragma endregion
 
 class IGameState
@@ -39,7 +35,6 @@ protected:
 
 	RenderManager * m_renderManager;
 	GameObjectManager * m_gameObjectManager;
-	//PhysicsManager * m_physicsManager;
 	PlayerManager* m_playerManager;
 
 	virtual void handleKeyInput() = 0;

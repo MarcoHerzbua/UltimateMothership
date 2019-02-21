@@ -7,9 +7,6 @@
 
 #include "Stats.h"
 
-#include "Eventbus.h"
-#include "GameEventClasses.h"
-
 FighterShipComponent::FighterShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)
 {

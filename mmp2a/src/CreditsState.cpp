@@ -3,16 +3,7 @@
 #include "stdafx.h"
 #include "CreditsState.h"
 
-// game classes
-#include "Game.h"
-#include "GameObject.h"
-
-// components
-#include "SpriteRenderComponent.h"
-#include "GUIRenderComponent.h"
-
-// singleton
-#include "InputManager.h"
+#include "GameObjectManager.h"
 #include "GameStateManager.h"
 #include "TmxLoader.h"
 #pragma endregion

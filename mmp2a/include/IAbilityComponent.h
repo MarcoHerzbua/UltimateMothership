@@ -2,15 +2,14 @@
 
 #include "stdafx.h"
 
-#include "NLTmxMap.h"
 #include "Abilities.h"
 
 #include "Stats.h"
 
 #include "HelperMethods.h"
 
-class ShipComponent;
 class GameObject;
+class NLTmxMapObject;
 
 using namespace hm;
 

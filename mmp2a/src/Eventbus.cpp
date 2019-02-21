@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "Eventbus.h"
-#include "IEventListener.h"
 
+#include "IEventListener.h"
+#include "IGameEvent.h"
 
 Eventbus & Eventbus::getInstance()
 {

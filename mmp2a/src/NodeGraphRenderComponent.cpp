@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "NodeGraphRenderComponent.h"
 
-#include "GameObjectManager.h"
-#include "Game.h"
 #include "RenderManager.h"
+#include "NLTmxMap.h"
+#include "Node.h"
+#include "Graph.h"
+#include "Edge.h"
 
 NodeGraphRenderComponent::NodeGraphRenderComponent(GameObject * gameObject)
 {

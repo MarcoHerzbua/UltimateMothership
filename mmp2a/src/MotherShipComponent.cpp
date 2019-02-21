@@ -9,6 +9,7 @@
 
 #include "Eventbus.h"
 #include "GameEventClasses.h"
+#include "PlayerManager.h"
 
 MotherShipComponent::MotherShipComponent(GameObject * gameObject)
 	: ShipComponent(gameObject)

@@ -3,7 +3,6 @@
 
 class GameObject;
 
-
 struct Target
 {
 	GameObject* origin;

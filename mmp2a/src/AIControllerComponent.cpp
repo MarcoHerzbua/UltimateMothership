@@ -14,6 +14,8 @@
 #include "AiInputComponent.h"
 
 #include "Node.h"
+#include "Graph.h"
+#include "NodeGraphRenderComponent.h"
 
 #pragma endregion
 

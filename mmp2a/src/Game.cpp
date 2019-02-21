@@ -5,22 +5,19 @@
 #include "stdafx.h"
 #include "Game.h"
 
-// game classes
+#include "Eventbus.h"
 #include "GameStateManager.h"
+#include "GameplayStateManager.h"
+#include "InputManager.h"
+#include "GameObjectManager.h"
+#include "RenderManager.h"
+#include "PlayerManager.h"
 
-// interface 
-#include "IGameState.h"
-
-// derived
 #include "MenuState.h"
 #include "MainState.h"
 #include "CreditsState.h"
 
-// enum
 #include "GameStates.h"
-
-// singleton
-#include "InputManager.h"
 
 #pragma endregion
 

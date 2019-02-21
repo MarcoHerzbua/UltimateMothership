@@ -3,11 +3,14 @@
 #pragma once
 #include "stdafx.h"
 
-#include "NLTmxMap.h"
 #include "InputComponents.h"
 
 class GameObject;
+class NLTmxMapObject;
 class IControllerComponent;
+
+using namespace std;
+using namespace sf;
 
 #pragma endregion
 

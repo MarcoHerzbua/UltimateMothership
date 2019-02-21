@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "GUIControllerComponent.h"
+#include "NLTmxMap.h"
+#include "GUIInputComponent.h"
 
 GUIControllerComponent::GUIControllerComponent(GameObject* gameObject, SteeringComponent* steeringComponent)
 	: ControllerComponent(gameObject, steeringComponent)

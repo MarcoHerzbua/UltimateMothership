@@ -2,13 +2,11 @@
 
 #pragma once
 #include "stdafx.h"
-#include "NodeGraphRenderComponent.h"
 
 #include "ControllerComponent.h"
 
-class GameObject;
-class SteeringComponent;
-
+using namespace std;
+using namespace sf;
 #pragma endregion
 
 class HumanControllerComponent : public ControllerComponent

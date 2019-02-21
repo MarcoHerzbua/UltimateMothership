@@ -1,6 +1,12 @@
 #include "stdafx.h"
 #include "GameplayTransitionState.h"
 
+#include "GameplayStateManager.h"
+#include "GameEventClasses.h"
+#include "PlayerManager.h"
+#include "InputManager.h"
+#include "Eventbus.h"
+
 GameplayTransitionState::GameplayTransitionState()
 {
 	m_id = TRANSITION_GAMEPLAY_STATE;

@@ -1,8 +1,12 @@
 #pragma region include
 #pragma once
 #include "stdafx.h"
-#include "IGameEvent.h"
-#include "Eventbus.h"
+
+class IGameEvent;
+
+using namespace std;
+using namespace sf;
+
 #pragma endregion
 
 class IEventListener

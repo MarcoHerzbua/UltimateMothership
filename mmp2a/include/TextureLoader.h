@@ -1,12 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-
-#include "NLTmxMap.h"
-
-#include "GameObjectManager.h"
+class NLTmxMap;
 
 using namespace std;
 using namespace sf;

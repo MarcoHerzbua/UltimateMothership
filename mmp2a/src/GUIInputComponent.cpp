@@ -7,6 +7,7 @@
 #include "SteeringComponent.h"
 #include "InputManager.h"
 #include "Eventbus.h"
+#include "GameObject.h"
 
 GUIInputComponent::GUIInputComponent(GameObject * gameObject, IControllerComponent * controllerComponent)
 	: HumanInputComponent(gameObject, controllerComponent)

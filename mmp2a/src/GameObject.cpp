@@ -3,11 +3,9 @@
 #include "stdafx.h"
 #include "GameObject.h"
 
-// interface
 #include "IGameComponent.h"
+
 #include "GameObjectManager.h"
-// enum
-#include "GameObjects.h"
 
 #pragma endregion
 
@@ -38,8 +36,6 @@ void GameObject::update(const float deltaTimeSeconds)
 		component->update(deltaTimeSeconds);
 	}
 
-	//if (m_velocity != Vector2f(0.0f, 0.0f)) NormalizeVec2f(m_velocity);
-	//m_velocity *= MOVEMENT_SPEED * deltaTimeSeconds;
 	moveObject(m_velocity);
 }
 
