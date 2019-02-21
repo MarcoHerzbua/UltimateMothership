@@ -74,6 +74,7 @@ void MainState::update(const float deltaTimeSeconds)
 void MainState::exit()
 {
 	IGameState::exit();
+	GameplayStateManager::getInstance().exit();
 }
 
 
