@@ -122,7 +122,7 @@ void Game::bindKeys()
 	m_inputManager->bind(ESCAPE_ACTION, BUTTON_BACK, 0);
 	m_inputManager->bind(ESCAPE_ACTION, Keyboard::Escape, 1);
 	m_inputManager->bind(ESCAPE_ACTION, BUTTON_BACK, 1);
-
+	
 
 	m_inputManager->bind(A_BUTTON_ACTION, BUTTON_A, 0);
 	m_inputManager->bind(X_BUTTON_ACTION, BUTTON_X, 0);
