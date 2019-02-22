@@ -81,6 +81,9 @@ void GameStateManager::onEvent(IGameEvent * event)
 	case SHOW_CREDITS_EVENT:
 		setState(CREDITS_STATE);
 		break;
+	case SHOW_CONTROLS_EVENT:
+		setState(CONTROLS_STATE);
+		break;
 	case BACK_TO_MENU_EVENT:
 		setState(MENU_STATE);
 		break;

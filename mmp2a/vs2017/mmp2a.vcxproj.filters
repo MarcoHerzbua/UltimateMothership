@@ -387,6 +387,9 @@
     <ClInclude Include="..\include\CreditsState.h">
       <Filter>Header Files\GameState</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\ControlsState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\GameObject.cpp">
@@ -615,6 +618,9 @@
       <Filter>Source Files\GameState\GameplayStates</Filter>
     </ClCompile>
     <ClCompile Include="..\src\CreditsState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ControlsState.cpp">
       <Filter>Source Files\GameState</Filter>
     </ClCompile>
   </ItemGroup>

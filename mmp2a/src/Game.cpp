@@ -16,6 +16,7 @@
 #include "MenuState.h"
 #include "MainState.h"
 #include "CreditsState.h"
+#include "ControlsState.h"
 
 #include "GameStates.h"
 
@@ -83,6 +84,7 @@ bool Game::init()
 	MenuState * menuState = new MenuState();
 	MainState * mainState = new MainState();
 	CreditsState * creditsState = new CreditsState();
+	ControlsState * controlsState = new ControlsState();
 
 	m_gameStateManager->setState(GameStates::MENU_STATE);
 
@@ -179,15 +181,15 @@ void Game::bindKeys()
 	//m_inputManager->bind(MOVE_DOWN_ACTION, Keyboard::S, 1);
 	//m_inputManager->bind(MOVE_RIGHT_ACTION, Keyboard::D, 1);
 
-	m_inputManager->bind(SWITCH_HUMAN_AI, Keyboard::Num1, 0);
-	m_inputManager->bind(SWITCH_HUMAN_AI, Keyboard::Num1, 1);
+	//m_inputManager->bind(SWITCH_HUMAN_AI, Keyboard::Num1, 0);
+	//m_inputManager->bind(SWITCH_HUMAN_AI, Keyboard::Num1, 1);
 
-	m_inputManager->bind(NEXT_PLAYER_ACTION, Keyboard::Num9, 0);
-	m_inputManager->bind(NEXT_PLAYER_ACTION, Keyboard::Num9, 1);
+	//m_inputManager->bind(NEXT_PLAYER_ACTION, Keyboard::Num9, 0);
+	//m_inputManager->bind(NEXT_PLAYER_ACTION, Keyboard::Num9, 1);
 
-	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::Num0, 0);
-	m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::Num0, 1);
+	//m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::Num0, 0);
+	//m_inputManager->bind(NEXT_UNIT_ACTION, Keyboard::Num0, 1);
 
-	m_inputManager->bind(MOVE_ABILITY_ACTION, Keyboard::Num8, 0);
-	m_inputManager->bind(MOVE_ABILITY_ACTION, Keyboard::Num8, 1);
+	//m_inputManager->bind(MOVE_ABILITY_ACTION, Keyboard::Num8, 0);
+	//m_inputManager->bind(MOVE_ABILITY_ACTION, Keyboard::Num8, 1);
 }

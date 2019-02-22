@@ -83,3 +83,8 @@ BackToMenuEvent::BackToMenuEvent()
 {
 	m_id = BACK_TO_MENU_EVENT;
 }
+
+ShowControlsEvent::ShowControlsEvent()
+{
+	m_id = SHOW_CONTROLS_EVENT;
+}

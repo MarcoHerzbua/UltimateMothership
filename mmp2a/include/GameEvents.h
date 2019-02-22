@@ -9,6 +9,7 @@ enum GameEvents
 	START_GAME_EVENT,
 	EXIT_GAME_EVENT,
 	SHOW_CREDITS_EVENT,
+	SHOW_CONTROLS_EVENT,
 	BACK_TO_MENU_EVENT,
 	NAVIGATE_UP_EVENT,
 	NAVIGATE_DOWN_EVENT,
@@ -24,6 +25,7 @@ enum GameEvents
 	GAMEPLAYSTATE_END_TURN_EVENT,
 	TOGGLE_LABEL_TEXT_EVENT,
 	TOGGLE_GAME_OVER_EVENT,
+
 	NULL_GAME_EVENT
 };
 
@@ -34,6 +36,7 @@ static GameEvents stringToGameEvents(string s) {
 	{
 		{ "startgameevent",					START_GAME_EVENT						},
 		{ "showcreditsevent",				SHOW_CREDITS_EVENT						},
+		{ "showcontrolsevent",				SHOW_CONTROLS_EVENT						},
 		{ "backtomenuevent",				BACK_TO_MENU_EVENT						},
 		{ "navigateupevent",				NAVIGATE_UP_EVENT						},
 		{ "navigatedownevent",				NAVIGATE_DOWN_EVENT						},

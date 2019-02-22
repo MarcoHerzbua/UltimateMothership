@@ -9,5 +9,6 @@ enum GameStates
 	MAIN_STATE,
 	MENU_STATE,
 	CREDITS_STATE,
+	CONTROLS_STATE
 
 };

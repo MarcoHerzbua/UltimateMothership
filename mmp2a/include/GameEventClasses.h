@@ -108,6 +108,12 @@ public:
 	BackToMenuEvent();
 };
 
+class ShowControlsEvent : public virtual IGameEvent
+{
+public:
+	ShowControlsEvent();
+};
+
 //THis method gets called when Buttons with Events are created in Tiled (Action_ = ...)
 static IGameEvent * createGameEvent(GameEvents event)
 {
@@ -121,6 +127,9 @@ static IGameEvent * createGameEvent(GameEvents event)
 		break;
 	case(SHOW_CREDITS_EVENT):
 		return new ShowCreditsEvent();
+		break;
+	case(SHOW_CONTROLS_EVENT):
+		return new ShowControlsEvent();
 		break;
 	case(BACK_TO_MENU_EVENT):
 		return new BackToMenuEvent();
