@@ -281,9 +281,10 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 	{
 		auto ev = dynamic_cast<TogglePopupEvent*>(event);
 
-		auto button = static_pointer_cast<tgui::Button>(m_gui->get("PanelPopup"));
-		button->setVisible(ev->m_isVisible);
-		auto panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonOne"));
+		auto panel = static_pointer_cast<tgui::Panel>(m_gui->get("PanelPopup"));
+		panel->getRenderer()->setBackgroundColor(Color(64, 64, 64, 208));
+		panel->setVisible(ev->m_isVisible);
+		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonOne"));
 		panel->setVisible(ev->m_isVisible);
 		panel = static_pointer_cast<tgui::Panel>(m_gui->get("PopupButtonTwo"));
 		panel->setVisible(ev->m_isVisible);
@@ -333,8 +334,9 @@ void GUIRenderComponent::onEvent(IGameEvent * event)
 		int winPlayerIdx = ev->m_winPlayerIdx;
 		string winText = "GAME OVER!!!! Player " + to_string(winPlayerIdx + 1) + " won!";
 
-		auto button = static_pointer_cast<tgui::Button>(m_gui->get("PanelGameOver"));
-		button->setVisible(true);
+		auto panel = static_pointer_cast<tgui::Button>(m_gui->get("PanelGameOver"));
+		panel->getRenderer()->setBackgroundColor(Color(64, 64, 64, 256));
+		panel->setVisible(true);
 		auto label = static_pointer_cast<tgui::Label>(m_gui->get("GameOverHeader"));
 		label->setVisible(true);
 		label->setText(winText);

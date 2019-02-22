@@ -65,7 +65,7 @@ void GameplayStateManager::setState(GameplayStates name)
 		eventBus->fireEvent(new UpdateButtonMapEvent({ "Popup", "Confirm", "Decline", "", "" }));
 		break;
 	case(SELECTION_GAMEPLAY_STATE):
-		eventBus->fireEvent(new UpdateButtonMapEvent({ "Selection", "Move", "End Turn", "Use Abilities", "Recruit" }));
+		eventBus->fireEvent(new UpdateButtonMapEvent({ "Selection", "Move", "End Turn", "Use Abilities", "" }));
 		break;	
 	case(ABILITY_GAMEPLAY_STATE):
 		eventBus->fireEvent(new UpdateButtonMapEvent({ "Abilities", "Attack", "Back to Unitselect", "Ultimate (12 res)", "" }));
